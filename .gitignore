@@ -2,7 +2,7 @@
 /.idea
 /vendor
 .DS_Store
-.swp
+*.swp
 /uploads
 
 # Gulp related files
