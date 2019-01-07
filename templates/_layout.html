@@ -1,0 +1,26 @@
+{# Basic Structure #}
+{% set slug = craft.request.firstSegment %}{# auf welcher seite befinden wir uns? #}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beling Thoenen</title>
+  {% include 'includes/head.html'  %}
+</head>
+<body id="{{ slug }}">
+
+  <header>
+    {% include 'includes/header.html'  %}
+  </header>
+
+  <main>
+  {% block content %}
+    <p>If you see this, there is a malfunction in the templates and you should contact your Admin.</p>
+  {% endblock %}
+  </main>
+
+  <!-- Where are we? -->
+  <script>console.log('{{ slug }}');</script>
+</body>
+</html>
