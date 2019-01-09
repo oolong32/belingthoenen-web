@@ -3,65 +3,32 @@
   
 {% block content %}
 
+{% set projects = craft.entries().section('projects').all() %}
+
+
 <main class="main-carousel">
+
+  {% for project in projects %}
   <div class="carousel-cell">
-    <!-- Mindestens das erste Video sollte nicht mit lazy-load geladen werden! -->
-    <video src="./testMovies/film1.mp4" autoplay playsinline loop muted>
-    <!-- Mindestens das erste Video sollte nicht mit lazy-load geladen werden! -->
+    {% if loop.first %} {# erstes Video sofort laden #}
+    <video src="{{ project.video[0].url }}" autoplay playsinline loop muted>
+    {% else %} {# alle weiteren lazyload #}
+    <!-- lazy load markup -->
+    <video class="lazy" poster="{{ project.standbild[0].url }}" autoplay playsinline loop muted>
+      <source data-src="{{ project.video[0].url }}" type="video/mp4">
+      <!-- lazy load markup -->
+    {% endif %}
       Sorry, your browser doesn't support embedded videos, 
-      but don't worry, you can <a href="#">download it</a>
+      but don't worry, you can <a href="{{ project.video[0].url }}">download it</a>
       and watch it with your favorite video player!
     </video>
     <div class="description hidden">
       <img class="close" src="/assets/_pic/close.svg" alt="cute close button">
-      <p><em>Das Projekt</em> lorem ipsum dolor sit amet.</p>
+      <p><em>{{ project.title }}</em> {{ project.description }}</p>
     </div>
   </div>
+{% endfor %}
 
-  <div class="carousel-cell">
-    <!-- lazy load markup -->
-    <video class="lazy" poster="img/lazy3.jpg" autoplay playsinline loop muted>
-      <source data-src="./testMovies/film2.mp4" type="video/mp4">
-      <!-- lazy load markup -->
-      Sorry, your browser doesn't support embedded videos, 
-      but don't worry, you can <a href="#">download it</a>
-      and watch it with your favorite video player!
-    </video>
-    <div class="description hidden">
-      <img class="close" src="assets/_pic/close.svg" alt="cute close button">
-      <p><em>Projekt X</em> Social-Media-Strategie, Newsletter, Website, Foto- & Video-Produktion, Animation, Content-Produktion</p>
-    </div>
-  </div>
-
-  <div class="carousel-cell">
-    <!-- lazy load markup -->
-    <video class="lazy" poster="img/lazy.jpg" autoplay playsinline loop muted>
-      <source data-src="./testMovies/film3.mp4" type="video/mp4">
-      <!-- lazy load markup -->
-      Sorry, your browser doesn't support embedded videos, 
-      but don't worry, you can <a href="#">download it</a>
-      and watch it with your favorite video player!
-    </video>
-    <div class="description hidden">
-      <img class="close" src="assets/_pic/close.svg" alt="cute close button">
-      <p><em>Projekt Alpha</em> lorem ipsum.</p>
-    </div>
-  </div>
-
-  <div class="carousel-cell">
-    <!-- lazy load markup -->
-    <video class="lazy" poster="img/lazy2.jpg" autoplay playsinline loop muted>
-      <source data-src="./testMovies/film-4.MOV" type="video/mp4">
-      <!-- lazy load markup -->
-      Sorry, your browser doesn't support embedded videos, 
-      but don't worry, you can <a href="#">download it</a>
-      and watch it with your favorite video player!
-    </video>
-    <div class="description hidden">
-      <img class="close" src="assets/_pic/close.svg" alt="cute close button">
-      <p><em>Micasa</em> Hauptkataloge, Kampagnen, Blog Myhome, Website, Foto- & Video-Produktion, Animation, Content-Produktion</p>
-    </div>
-  </div>
 </main>
 
 <script src="/assets/js/jquery.js"></script>
