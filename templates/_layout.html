@@ -10,15 +10,12 @@
 </head>
 <body id="{{ slug }}">
 
-  <header>
-    {% include 'includes/header.html'  %}
-  </header>
+  {% include 'includes/header.html'  %}
+  {% include 'includes/footer.html' %}
 
-  <main>
   {% block content %}
     <p>If you see this, there is a malfunction in the templates and you should contact your Admin.</p>
   {% endblock %}
-  </main>
 
   <!-- Where are we? -->
   <script>console.log('{{ slug }}');</script>

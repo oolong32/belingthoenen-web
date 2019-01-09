@@ -1,9 +1,7 @@
 @charset "UTF-8";
 html, * {
-  margin: 0;
-  padding: 0;
-  font-family: 'Work Sans';
-  background: transparent; }
+  font-family: 'Work Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box; }
 
 body {
   background: black;
@@ -64,13 +62,12 @@ header {
   top: 0;
   width: 100%;
   z-index: 10; }
-
-header #masthead {
-  background: black;
-  color: white;
-  z-index: 100;
-  text-align: center;
-  padding: 0.5em; }
+  header #masthead {
+    background: black;
+    color: white;
+    z-index: 100;
+    text-align: center;
+    padding: 0.5em; }
 
 footer {
   position: fixed;

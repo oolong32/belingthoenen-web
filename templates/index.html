@@ -3,15 +3,93 @@
   
 {% block content %}
 
-  <h2>Hello World</h2>
-  
-  <script src="/assets/js/jquery.js"></script>
-  <script src="/assets/js/flickity.js"></script>
-  <script src="/assets/js/initializeFlickity.js"></script>
-  <script src="/assets/js/lazy.js"></script>
-  <script src="/assets/js/marquee.js"></script>
-  <script>
-    console.log("hello world");
-  </script>
+<main class="main-carousel">
+  <div class="carousel-cell">
+    <!-- Mindestens das erste Video sollte nicht mit lazy-load geladen werden! -->
+    <video src="./testMovies/film1.mp4" autoplay playsinline loop muted>
+    <!-- Mindestens das erste Video sollte nicht mit lazy-load geladen werden! -->
+      Sorry, your browser doesn't support embedded videos, 
+      but don't worry, you can <a href="#">download it</a>
+      and watch it with your favorite video player!
+    </video>
+    <div class="description hidden">
+      <img class="close" src="/assets/_pic/close.svg" alt="cute close button">
+      <p><em>Das Projekt</em> lorem ipsum dolor sit amet.</p>
+    </div>
+  </div>
+
+  <div class="carousel-cell">
+    <!-- lazy load markup -->
+    <video class="lazy" poster="img/lazy3.jpg" autoplay playsinline loop muted>
+      <source data-src="./testMovies/film2.mp4" type="video/mp4">
+      <!-- lazy load markup -->
+      Sorry, your browser doesn't support embedded videos, 
+      but don't worry, you can <a href="#">download it</a>
+      and watch it with your favorite video player!
+    </video>
+    <div class="description hidden">
+      <img class="close" src="assets/_pic/close.svg" alt="cute close button">
+      <p><em>Projekt X</em> Social-Media-Strategie, Newsletter, Website, Foto- & Video-Produktion, Animation, Content-Produktion</p>
+    </div>
+  </div>
+
+  <div class="carousel-cell">
+    <!-- lazy load markup -->
+    <video class="lazy" poster="img/lazy.jpg" autoplay playsinline loop muted>
+      <source data-src="./testMovies/film3.mp4" type="video/mp4">
+      <!-- lazy load markup -->
+      Sorry, your browser doesn't support embedded videos, 
+      but don't worry, you can <a href="#">download it</a>
+      and watch it with your favorite video player!
+    </video>
+    <div class="description hidden">
+      <img class="close" src="assets/_pic/close.svg" alt="cute close button">
+      <p><em>Projekt Alpha</em> lorem ipsum.</p>
+    </div>
+  </div>
+
+  <div class="carousel-cell">
+    <!-- lazy load markup -->
+    <video class="lazy" poster="img/lazy2.jpg" autoplay playsinline loop muted>
+      <source data-src="./testMovies/film-4.MOV" type="video/mp4">
+      <!-- lazy load markup -->
+      Sorry, your browser doesn't support embedded videos, 
+      but don't worry, you can <a href="#">download it</a>
+      and watch it with your favorite video player!
+    </video>
+    <div class="description hidden">
+      <img class="close" src="assets/_pic/close.svg" alt="cute close button">
+      <p><em>Micasa</em> Hauptkataloge, Kampagnen, Blog Myhome, Website, Foto- & Video-Produktion, Animation, Content-Produktion</p>
+    </div>
+  </div>
+</main>
+
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/flickity.js"></script>
+<script src="/assets/js/initializeFlickity.js"></script>
+<script src="/assets/js/lazy.js"></script>
+<script src="/assets/js/marquee.js"></script>
+
+<script>
+  console.clear();
+  console.log("beling thoenen projects");
+
+  // event handlers
+  $('video').click(function() {
+    $('.description').removeClass('hidden'); 
+    $('footer').addClass('hidden'); 
+  });
+
+  $('.close').click(function() {
+    $('.description').addClass('hidden');
+    $('footer').removeClass('hidden'); 
+  });
+
+  $(function (){
+    $('.simple-marquee-container').SimpleMarquee(
+      {hover: false, duration: 40000}
+    );
+  });
+</script>
 
 {% endblock %}
