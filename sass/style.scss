@@ -60,6 +60,9 @@ header {
     z-index: 100;
     text-align: center;
     padding: 0.5em;
+    a { text-decoration: none; }
+    a:link, a:visited { color: white; }
+    a:hover *, a:focus * { color: deeppink; }
   }
 }
 

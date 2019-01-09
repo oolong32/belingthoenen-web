@@ -68,6 +68,12 @@ header {
     z-index: 100;
     text-align: center;
     padding: 0.5em; }
+    header #masthead a {
+      text-decoration: none; }
+    header #masthead a:link, header #masthead a:visited {
+      color: white; }
+    header #masthead a:hover *, header #masthead a:focus * {
+      color: deeppink; }
 
 footer {
   position: fixed;

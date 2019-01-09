@@ -1,24 +1,18 @@
 <footer>
   <section id="archive">
+    {% set archive = craft.entries().section('archive').all() %}
    <ul>
-      <li><a href="#"><img src="./img/archive/wallis.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/archive/gents.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/archive/style2.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/archive/si.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/archive/joerg.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/archive/style.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/archive/landliebe.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/archive/flasche.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/archive/gm.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/archive/starticket.jpg" alt=""></a></li>
+      {% for entry in archive %}
+      <li><a href="{# should this be a button or anything else? #}"><img src="{{ entry.archiveImg[0].url }}" alt=""></a></li>
+      {% endfor %}
     </ul> 
   </section>
 
   <nav>
     <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Follow</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/follow">Follow</a></li>
+      <li><a href="/contact">Contact</a></li>
     </ul> 
   </nav>
 </footer>

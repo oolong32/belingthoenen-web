@@ -16,8 +16,18 @@
   {% block content %}
     <p>If you see this, there is a malfunction in the templates and you should contact your Admin.</p>
   {% endblock %}
+  <script src="/assets/js/jquery.js"></script>
+  <script src="/assets/js/marquee.js"></script>
 
   <!-- Where are we? -->
-  <script>console.log('{{ slug }}');</script>
+  <script>
+    // Where is I?
+    console.log('{{ slug }}');
+    $(function (){
+      $('.simple-marquee-container').SimpleMarquee(
+        {hover: false, duration: 40000}
+      );
+    });
+  </script>
 </body>
 </html>
