@@ -32,6 +32,7 @@
 </main>
 
 <script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/project-info.js"></script>
 <script src="/assets/js/marquee.js"></script>
 <script src="/assets/js/flickity.js"></script>
 <script src="/assets/js/initializeFlickity.js"></script>
@@ -41,16 +42,6 @@
   console.clear();
   console.log("beling thoenen projects");
 
-  // event handlers
-  $('video').click(function() {
-    $('.description').removeClass('hidden'); 
-    $('footer').addClass('hidden'); 
-  });
-
-  $('.close').click(function() {
-    $('.description').addClass('hidden');
-    $('footer').removeClass('hidden'); 
-  }); 
 </script>
 
 {% endblock %}

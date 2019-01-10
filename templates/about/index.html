@@ -2,7 +2,42 @@
 {% extends "_layout.html" %}
   
 {% block content %}
-  <h2 style="color: lawngreen; font-size: 100px; margin: auto;">About</h2>
-  <script src="/assets/js/jquery.js"></script>
-  <script src="/assets/js/marquee.js"></script>
+  <main style="display: block; overflow: visible">
+    <h2 style="color: lawngreen; font-size: 100px; margin: auto;">About</h2>
+    <p style="color: lawngreen; font-size: 40px;" >Ipsum perferendis nam nihil nisi aperiam Temporibus ipsum dolor unde qui saepe Doloremque accusamus corrupti pariatur reprehenderit porro Nemo ullam mollitia omnis error iusto. Doloribus fugiat totam molestiae nihil provident?</p>
+  </main>
+  
+<script src="/assets/js/jquery.js"></script>
+<script>
+  console.clear();
+  console.log("beling thoenen projects");
+  
+
+
+  // plain js, no animation
+  //window.setTimeout(() => {
+    /*
+    var carousel = document.querySelector('main');
+    var height =  carousel.scrollHeight;
+    window.scrollTo({top: height, left: 0, behavior: 'smooth'});
+    console.log('scrolled by ' + height + ' px');
+  */
+  //}, 3000);
+
+  // jquery, animated
+  setInterval(function(){
+
+    //time to scroll to bottom
+    $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+
+    //scroll to top
+    setTimeout(function() {
+       $('html, body').animate({scrollTop:0}, 8000);
+    },2000);//call every 2000 miliseconds
+
+},2000);//call every 2000 miliseconds
+
+
+
+</script>
 {% endblock %}

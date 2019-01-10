@@ -1,5 +1,7 @@
 html, * {
   font-family: 'Work Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
 
@@ -21,7 +23,7 @@ body {
   /*overflow: hidden;*/ /* no scroll balken */
 
 }
-h1, h2, h3, h4, h5, h6, bold, em { font-weight: 800; }
+h1, h2, h3, h4, h5, h6, bold, em { font-weight: 700; }
 h1 { font-size: 1.125em; letter-spacing: 0.3px; }
 p { font-size: 0.8125em; }
 em { font-style: normal; }
@@ -41,7 +43,7 @@ em { font-style: normal; }
   color: white;
   border-radius: 10px;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
   text-align: center;
   display: inline-block;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -116,6 +118,12 @@ footer #archive ul {
 footer #archive ul li { margin-right: 0.25em; }
 footer #archive ul li img { height: 95px; }
 
+body:not(#index) {
+  div.simple-marquee-container { display: none; }
+  section#archive {display: none; }
+
+}
+
 .main-carousel {
   position: absolute;
   top: 0;
@@ -125,7 +133,7 @@ footer #archive ul li img { height: 95px; }
 }
 .carousel-cell {
   width: 100%;
-  height: 105vh;
+  height: 110vh;
   overflow: hidden;
 }
 .carousel-cell>img, 
@@ -151,20 +159,19 @@ footer #archive ul li img { height: 95px; }
   background: black;
   // animate
   transition: all 0.3s;
-  // doesn’t work transition-delay: 0.25s; // wait for footer to disapear
 }
 .carousel-cell div.description img { // close button
   // would be better to refer by class
   position: absolute;
   top: -22px;
-  right: 100px; // this is odd, should be less
+  right: 20px; // this is odd, should be less
 }
 .carousel-cell div.description p {
   font-size: 0.6875em;
   color: white;
 }
 div.description.hidden {
-  transform: translateY(300px) ;
+  transform: translateY(500px) ;
 }
 
 #modal, footer {
@@ -190,15 +197,67 @@ footer.hidden {
 }
 
 @media (min-width: 767px) {
-  p { font-size: 1em;}
+  .carousel-cell div.description p {
+    font-size: 1em;
+    letter-spacing: 0.0125em;
+  }
+  .carousel-cell div.description p em {
+    letter-spacing: 0.025em;
+  }
   .flickity-button { display: block; }
   /* für videos sollten hier höhe und breite angegeben werden. */
 
-  .carousel-cell { height: 100vh; }
-  .carousel-cell>img, 
-  .carousel-cell video {
-    position: static; // static?
-    position: static;
+  body { 
+    background: rgb(44, 44, 44);
   }
 
+  header { position: relative; }
+  header h1 {
+    font-size: 1.75em;
+    letter-spacing: 0.03em;
+  }
+  header p {
+    font-size: 1.3125em;
+    word-spacing: -0.05em;
+  }
+
+  .main-carousel {
+    position: relative;
+    border: 5px solid white;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .carousel-cell {
+    width: 360px;
+    height: 640px;
+    margin-right: 100px;
+  }
+
+  .carousel-cell>img, 
+  .carousel-cell video {
+    position: static;
+    object-fit: contain;
+    width: auto;
+  }
+  .carousel-cell.is-selected .description {
+    background: deeppink;
+  }
+
+  footer {
+    padding-top: .5em;
+  }
+  footer #archive ul {
+    overflow: visible;
+    justify-content: center;
+  }
+
+  footer #archive ul li {
+    margin-right: .5em;
+  }
+
+  footer #archive ul li img {
+    height: 150px;
+
+  }
 }

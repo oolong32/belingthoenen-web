@@ -1,6 +1,8 @@
 @charset "UTF-8";
 html, * {
   font-family: 'Work Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box; }
 
 body {
@@ -22,7 +24,7 @@ body {
   /* no scroll balken */ }
 
 h1, h2, h3, h4, h5, h6, bold, em {
-  font-weight: 800; }
+  font-weight: 700; }
 
 h1 {
   font-size: 1.125em;
@@ -49,7 +51,7 @@ em {
   color: white;
   border-radius: 10px;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
   text-align: center;
   display: inline-block;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -125,6 +127,12 @@ footer #archive ul li {
 footer #archive ul li img {
   height: 95px; }
 
+body:not(#index) div.simple-marquee-container {
+  display: none; }
+
+body:not(#index) section#archive {
+  display: none; }
+
 .main-carousel {
   position: absolute;
   top: 0;
@@ -134,7 +142,7 @@ footer #archive ul li img {
 
 .carousel-cell {
   width: 100%;
-  height: 105vh;
+  height: 110vh;
   overflow: hidden; }
 
 .carousel-cell > img,
@@ -158,14 +166,14 @@ footer #archive ul li img {
 .carousel-cell div.description img {
   position: absolute;
   top: -22px;
-  right: 100px; }
+  right: 20px; }
 
 .carousel-cell div.description p {
   font-size: 0.6875em;
   color: white; }
 
 div.description.hidden {
-  transform: translateY(300px); }
+  transform: translateY(500px); }
 
 #modal, footer {
   opacity: 1;
@@ -186,14 +194,46 @@ footer.hidden {
   /* #modal { display: none;} */ }
 
 @media (min-width: 767px) {
-  p {
-    font-size: 1em; }
+  .carousel-cell div.description p {
+    font-size: 1em;
+    letter-spacing: 0.0125em; }
+  .carousel-cell div.description p em {
+    letter-spacing: 0.025em; }
   .flickity-button {
     display: block; }
   /* für videos sollten hier höhe und breite angegeben werden. */
+  body {
+    background: #2c2c2c; }
+  header {
+    position: relative; }
+  header h1 {
+    font-size: 1.75em;
+    letter-spacing: 0.03em; }
+  header p {
+    font-size: 1.3125em;
+    word-spacing: -0.05em; }
+  .main-carousel {
+    position: relative;
+    border: 5px solid white;
+    width: 80%;
+    margin: 0 auto; }
   .carousel-cell {
-    height: 100vh; }
+    width: 360px;
+    height: 640px;
+    margin-right: 100px; }
   .carousel-cell > img,
   .carousel-cell video {
     position: static;
-    position: static; } }
+    object-fit: contain;
+    width: auto; }
+  .carousel-cell.is-selected .description {
+    background: deeppink; }
+  footer {
+    padding-top: .5em; }
+  footer #archive ul {
+    overflow: visible;
+    justify-content: center; }
+  footer #archive ul li {
+    margin-right: .5em; }
+  footer #archive ul li img {
+    height: 150px; } }

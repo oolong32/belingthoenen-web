@@ -8,7 +8,7 @@
   <title>Beling Thoenen</title>
   {% include 'includes/head.html'  %}
 </head>
-<body id="{{ slug }}">
+<body id="{{ slug ? slug : 'index' }}">
 
   {% include 'includes/header.html'  %}
   {% include 'includes/footer.html' %}
