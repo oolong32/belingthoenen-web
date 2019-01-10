@@ -4,5 +4,6 @@ var flkty = new Flickity( elem, {
   cellAlign: 'left',
   contain: true,
   pageDots: false,
-  wrapAround: true
+  wrapAround: true,
+  setGallerySize: false // https://flickity.metafizzy.co/options.html#setgallerysize
 });
