@@ -70,11 +70,12 @@ footer {
   // position: sticky;
   // position: -webkit-sticky;
   position: fixed;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
-  background: transparent;
+  background: black;
+  padding-top: 5px;
   z-index: 20;
 }
 
@@ -121,20 +122,10 @@ footer #archive ul li img { height: 95px; }
   left: 0;
   width: 100%;
   height: 100%
-  // position: sticky;
-  // position: -webkit-sticky;
-  // bottom: 0;
-  // height: 100%;
-  // height: 110vh;
-  // background: red;
 }
 .carousel-cell {
-  // position: sticky;
-  // position: -webkit-sticky;
-  // bottom: 0;
-  // height: 100%;
-  // height: 110vh;
   width: 100%;
+  height: 105vh;
   overflow: hidden;
 }
 .carousel-cell>img, 
@@ -142,7 +133,6 @@ footer #archive ul li img { height: 95px; }
   position: sticky;
   position: -webkit-sticky;
   bottom: 0;
-  height: 102vh;
   width: 100%;
   object-fit: cover;
 }
@@ -204,14 +194,11 @@ footer.hidden {
   .flickity-button { display: block; }
   /* für videos sollten hier höhe und breite angegeben werden. */
 
+  .carousel-cell { height: 100vh; }
   .carousel-cell>img, 
   .carousel-cell video {
-    position: sticky; // static?
-    position: -webkit-sticky;
-    bottom: 0;
-    height: 100vh; // reset height
-    width: 100%;
-    object-fit: cover;
+    position: static; // static?
+    position: static;
   }
 
 }
