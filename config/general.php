@@ -29,13 +29,13 @@ return [
         'maxUploadFileSize' => 20971520,
 
         // use project.yaml
-        'useProjectConfigFile' => true,
+        //'useProjectConfigFile' => true,
     ],
 
     // Production environment settings
     'production' => [
         // Disable project config changes, because project.yaml
-        'allowAdminChanges' => false,
+        //'allowAdminChanges' => false,
     ],
 
     // Dev environment settings
