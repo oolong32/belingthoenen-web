@@ -55,17 +55,20 @@ header {
   position: -webkit-sticky;
   top: 0;
   width: 100%;
+  height: 85px;
+  background: black;
   z-index: 10;
   #masthead {
-    background: black;
     color: white;
     z-index: 100;
     text-align: center;
     padding: 0.5em;
-    a { text-decoration: none; } // Auszeichnung Header
-    a:link, a:visited { color: white; }
-    a:hover *, a:focus * { color: deeppink; }
   }
+  nav { display: none; }
+  a { text-decoration: none; }
+  a:link, a:visited { color: white; }
+  a:hover, a:focus { color: rgb(155, 20, 255); }
+  .simple-marquee-container { position: absolute; bottom: 0;}
 }
 
 footer {
@@ -118,12 +121,6 @@ footer #archive ul {
 footer #archive ul li { margin-right: 0.25em; }
 footer #archive ul li img { height: 95px; }
 
-body:not(#index) {
-  div.simple-marquee-container { display: none; }
-  section#archive {display: none; }
-
-}
-
 .main-carousel {
   position: absolute;
   top: 0;
@@ -145,10 +142,6 @@ body:not(#index) {
   object-fit: cover;
 }
 .carousel-cell div.description {
-  // position: sticky;
-  // position: -webkit-sticky;
-  // bottom: 0;
-  // left: 0;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -170,16 +163,19 @@ body:not(#index) {
   font-size: 0.6875em;
   color: white;
 }
-div.description.hidden {
+.is-selected div.description.hidden {
   transform: translateY(500px) ;
 }
 
-#modal, footer {
+.carousel-cell:not(.is-selected) div.description {
+  display: none;
+}
+
+footer {
   opacity: 1;
   transition: all 0.3s;
 }
 
-#modal.hidden,
 footer.hidden {
   //display: none;
   opacity: 0;
@@ -211,7 +207,16 @@ footer.hidden {
     background: rgb(44, 44, 44);
   }
 
-  header { position: relative; }
+  header {
+    // position: relative; 
+    width: 100vw;
+    height: 140px;
+    display: grid;
+    padding-top: 28px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    background: transparent;
+  }
   header h1 {
     font-size: 1.75em;
     letter-spacing: 0.03em;
@@ -219,6 +224,31 @@ footer.hidden {
   header p {
     font-size: 1.3125em;
     word-spacing: -0.05em;
+  }
+
+  header nav {
+    display: block; // einblenden
+    ul {
+      display: flex;
+      height: 100%;
+      align-items: center; 
+      justify-content: center;
+      li {
+        margin-top: .5em;
+        font-size: 0.8125em;
+      }
+    }
+  }
+
+  header .simple-marquee-container {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100vw;
+  }
+
+  body:not(#index) header {
+    padding-top: 28px; // fehlenden marquee auffangen
   }
 
   .main-carousel {
@@ -241,12 +271,13 @@ footer.hidden {
     width: auto;
   }
   .carousel-cell.is-selected .description {
-    background: deeppink;
+    //background: deeppink;
   }
 
   footer {
     padding-top: .5em;
   }
+
   footer #archive ul {
     overflow: visible;
     justify-content: center;

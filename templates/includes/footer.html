@@ -1,4 +1,12 @@
+{#
+  Footer, bzw. was am unteren Rand des Viewports steht.
+  Auf der Index-Seite: Archiv-Projekte
+  Auf Mobile: die Navigation
+#}
+
 <footer>
+
+{% if slug == "index" %} {# Archiv nur sichtbar auf Index/Home #}
   <section id="archive">
     {% set archive = craft.entries().section('archive').all() %}
    <ul>
@@ -7,6 +15,7 @@
       {% endfor %}
     </ul> 
   </section>
+{% endif %}
 
   <nav>
     <ul>
@@ -15,4 +24,5 @@
       <li><a href="/contact">Contact</a></li>
     </ul> 
   </nav>
+
 </footer>

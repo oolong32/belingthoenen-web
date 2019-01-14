@@ -1,11 +1,15 @@
-<header>
-  <section id="masthead">
-    <a href="{{ siteUrl }}">
-      <h1>Beling Thoenen</h1>
-      <p class="byline">Content Driven Design</p>
-    </a>
-  </section>
+{#
+  Header, bzw. was am oberen Rand steht.
+  Desktop: mit Navigation
+  Mobile: ohne Navigation
+  Index/Home: Marquee
 
+  Navigation auseinandergerissen, weil sich sonst nav und masthead überlagern.
+  Ich bin nicht happy mit dieser Anordnung.
+#}
+<header>
+
+  {% if slug == "index" %}
   <div class="simple-marquee-container">
     <div id="news" class="marquee">
       <ul class="marquee-content-items">
@@ -15,4 +19,25 @@
       </ul>
     </div>
   </div>
+  {% endif %}
+
+  <nav>
+    <ul>
+        <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <section id="masthead">
+    <a href="{{ siteUrl }}">
+      <h1>Beling Thoenen</h1>
+      <p class="byline">Content Driven Design</p>
+    </a>
+  </section>
+
+  <nav>
+    <ul>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
 </header>

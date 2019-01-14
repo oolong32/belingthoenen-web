@@ -1,5 +1,5 @@
 {# Basic Structure #}
-{% set slug = craft.request.firstSegment %}{# auf welcher seite befinden wir uns? #}
+{% set slug = craft.request.firstSegment ? craft.request.firstSegment : 'index' %}{# auf welcher seite befinden wir uns? #}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
   <title>Beling Thoenen</title>
   {% include 'includes/head.html'  %}
 </head>
-<body id="{{ slug ? slug : 'index' }}">
+<body id="{{ slug }}"> {# index slug scheint "beling thoenen projects zu sein!? #}
 
   {% include 'includes/header.html'  %}
   {% include 'includes/footer.html' %}
@@ -20,14 +20,7 @@
   <!-- Where are we? -->
   <script>
     // Where is I?
-    console.log('{{ slug }}');
-
-    // Initialize Marquee
-    $(function (){
-      $('.simple-marquee-container').SimpleMarquee(
-        {hover: false, duration: 40000}
-      );
-    });
+    console.log('{{ slug }}'); 
   </script>
 </body>
 </html>
