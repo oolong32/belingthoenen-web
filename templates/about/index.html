@@ -2,23 +2,26 @@
 {% extends "_layout.html" %}
   
 {% block content %}
-  <main style="display: block; overflow: visible">
 
-  <article>
-    <p style="color: white;">We provide services from branding to crossmedia publications. Art direction through production, we will guide you from the initial enquiry or briefing to delivery from Print to Digital.</p>
+{#{% set aboutPages = craft.entries().section('about').all() %}#}
+
+  <main class="about-carousel">
+
+  {# {% for aboutPage in aboutPages %} #}
+  <article class="carousel-cell">
+    <p style="color: white; font-size: 18px; margin: 15px 30px;">We provide services from branding to crossmedia publications. Art direction through production, we will guide you from the initial enquiry or briefing to delivery from Print to Digital.</p>
+      <img src="/assets/uploads/images/about/aboutTest2.png" alt="Name">
+      <p>Ulrike Beling<br>Founder</p>
+    </section>
     <section>
       <img src="/assets/uploads/images/about/aboutTest1.png" alt="Name">
       <p>Nina Thoenen<br>Founder</p>
     </section>
   <section>
-      <img src="/assets/uploads/images/about/aboutTest2.png" alt="Name">
-      <p>Ulrike Beling<br>Founder</p>
-    </section>
   </article>
 
   <article>
   <article>
-    <p style="color: white;">We provide services from branding to crossmedia publications. Art direction through production, we will guide you from the initial enquiry or briefing to delivery from Print to Digital.</p>
     <section>
       <img src="/assets/uploads/images/about/aboutTest3.png" alt="Name">
       <p>Ulrike Beling<br>Founder</p>
@@ -37,6 +40,9 @@
   </main>
   
 <script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/flickity.js"></script>
+<script src="/assets/js/initializeAboutFlickity.js"></script>
+
 <script>
   console.clear();
   console.log("beling thoenen projects");

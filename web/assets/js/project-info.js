@@ -6,7 +6,7 @@ $('video').click(function() {
   $('footer').addClass('hidden'); 
 });
 */
-let videos = document.querySelectorAll('video');
+const videos = document.querySelectorAll('video');
 
 for (let i = 0; i < videos.length; i++) {
   videos[i].addEventListener('click' || 'touchend', handleClick);

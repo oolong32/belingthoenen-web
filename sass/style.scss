@@ -70,6 +70,7 @@ header {
   a:hover, a:focus { color: rgb(155, 20, 255); }
   .simple-marquee-container { position: absolute; bottom: 0;}
 }
+body:not(#index) header { height: 45px; }
 
 footer {
   // position: sticky;
@@ -83,6 +84,7 @@ footer {
   padding-top: 5px;
   z-index: 20;
 }
+body:not(#index) footer { padding-top: 1em; }
 
 footer nav { padding-bottom: 1em; }
 footer nav ul {
@@ -121,12 +123,17 @@ footer #archive ul {
 footer #archive ul li { margin-right: 0.25em; }
 footer #archive ul li img { height: 95px; }
 
+.about-carousel,
 .main-carousel {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%
+}
+.about-carousel:after { // enable slider in css in order to destroy it on large viewports
+  content: 'flickity';
+  display: none;
 }
 .carousel-cell {
   width: 100%;
@@ -249,8 +256,10 @@ footer.hidden {
 
   body:not(#index) header {
     padding-top: 28px; // fehlenden marquee auffangen
+    height: 140px;
   }
 
+  // .about-carousel,
   .main-carousel {
     position: relative;
     border: 5px solid white;
@@ -258,11 +267,25 @@ footer.hidden {
     margin: 0 auto;
   }
 
+  .about-carousel:after {
+    content: '';
+    // width: 770px;
+    // border: 5px solid yellow;
+    // box-style: border-box;
+  }
+
   .carousel-cell {
     width: 360px;
     height: 640px;
     margin-right: 100px;
   }
+
+  // .about-carousel .is-selected,
+  // .about-carousel .carousel-cell {
+  //   width: 375px;
+  //   background: black;
+  //   img { width: 100%}
+  // }
 
   .carousel-cell>img, 
   .carousel-cell video {

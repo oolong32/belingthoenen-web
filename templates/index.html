@@ -5,7 +5,6 @@
 
 {% set projects = craft.entries().section('projects').all() %}
 
-
 <main class="main-carousel">
 
   {% for project in projects %}
@@ -14,8 +13,9 @@
     <video src="{{ project.video[0].url }}" autoplay playsinline loop muted>
     {% else %} {# alle weiteren lazyload #}
     <!-- lazy load markup -->
-    <video class="lazy" poster="{{ project.standbild[0].url }}" autoplay playsinline loop muted>
-      <source data-src="{{ project.video[0].url }}" type="video/mp4">
+    <video src="{{ project.video[0].url }}" paused playsinline loop muted>
+    {#<video class="lazy" poster="{{ project.standbild[0].url }}" playsinline loop muted>#}
+      {#<source data-src="{{ project.video[0].url }}" type="video/mp4">#}
       <!-- lazy load markup -->
     {% endif %}
       Sorry, your browser doesn't support embedded videos, 
@@ -36,18 +36,16 @@
 <script src="/assets/js/marquee.js"></script>
 <script src="/assets/js/flickity.js"></script>
 <script src="/assets/js/initializeFlickity.js"></script>
-<script src="/assets/js/lazy.js"></script>
+{#<script src="/assets/js/lazy.js"></script>#} {# lazy load raus, wir starten & stoppen per carousel-event #}
 
 <script>
-  console.clear();
-  console.log("beling thoenen projects");
+  // Initialize Marquee
+  $(function (){
+    $('.simple-marquee-container').SimpleMarquee(
+      {hover: false, duration: 40000}
+    );
+  });
 
-    // Initialize Marquee
-    $(function (){
-      $('.simple-marquee-container').SimpleMarquee(
-        {hover: false, duration: 40000}
-      );
-    });
 </script>
 
 {% endblock %}
