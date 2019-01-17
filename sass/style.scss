@@ -70,7 +70,7 @@ header {
   a:hover, a:focus { color: rgb(155, 20, 255); }
   .simple-marquee-container { position: absolute; bottom: 0;}
 }
-body:not(#index) header { height: 45px; }
+body:not(#index) header { height: 60px; }
 
 footer {
   // position: sticky;
@@ -160,7 +160,14 @@ footer #archive ul li img { height: 95px; }
   // animate
   transition: all 0.3s;
 }
-.carousel-cell div.description img { // close button
+.carousel-cell div.description .link { // link button
+  position: absolute;
+  top: -22px;
+  right: 80px; // this is odd, should be less
+}
+.carousel-cell div.description img { transition: transform 0.2s ease-in-out; }
+.carousel-cell div.description img:hover { transform: scale(1.1); }
+.carousel-cell div.description .close { // close button
   // would be better to refer by class
   position: absolute;
   top: -22px;

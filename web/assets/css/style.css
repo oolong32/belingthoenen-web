@@ -84,7 +84,7 @@ header {
     bottom: 0; }
 
 body:not(#index) header {
-  height: 45px; }
+  height: 60px; }
 
 footer {
   position: fixed;
@@ -174,7 +174,18 @@ footer #archive ul li img {
   background: black;
   transition: all 0.3s; }
 
+.carousel-cell div.description .link {
+  position: absolute;
+  top: -22px;
+  right: 80px; }
+
 .carousel-cell div.description img {
+  transition: transform 0.2s ease-in-out; }
+
+.carousel-cell div.description img:hover {
+  transform: scale(1.1); }
+
+.carousel-cell div.description .close {
   position: absolute;
   top: -22px;
   right: 20px; }

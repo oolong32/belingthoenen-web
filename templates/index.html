@@ -23,6 +23,9 @@
       and watch it with your favorite video player!
     </video>
     <div class="description hidden">
+      {% if project.extLink|length %}
+      <a href="{{ project.extLink }}" target="_blank"><img class="link" src="/assets/_pic/link.svg" alt="cute link button"></a>
+      {% endif %}
       <img class="close" src="/assets/_pic/close.svg" alt="cute close button">
       <p><em>{{ project.title }}</em> {{ project.description }}</p>
     </div>
