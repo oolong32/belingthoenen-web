@@ -13,13 +13,13 @@ for (let i = 0; i < videos.length; i++) {
   videos[i].addEventListener('click' || 'touchend', handleClick);
 }
 
+// Handle Click auf Projekt-Videos
 function handleClick(e) {
   let container = e.target.parentElement;
   if (container.classList.contains('is-selected')) {
+   // hide footer
     let description = container.children[1]; // +1 Exp. for daring to hardcode this.
     description.classList.remove('hidden');
-
-    // hide footer
     footer.classList.add('hidden');
 
     // attach event listener to close button
@@ -28,10 +28,14 @@ function handleClick(e) {
   }
 }
 
+// Projektbeschrieb ausblenden
 function hideDescription(e) {
-  // Projektbeschrieb ausblenden
   let description = e.target.parentElement;
   description.classList.add('hidden');
-  // hide footer
-  footer.classList.remove('hidden');
+  footer.classList.remove('hidden'); // hide footer
 }
+
+
+// das ist alles noch nicht so sauber,
+// verhalten karusell vs. sichtbarkeit description
+// ist nicht konsistent!

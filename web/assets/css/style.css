@@ -275,6 +275,8 @@ footer.hidden {
     position: static;
     object-fit: contain;
     width: auto; }
+  .carousel-cell.is-selected .description {
+    position: absolute; }
   footer {
     padding-top: .5em; }
   footer #archive ul {

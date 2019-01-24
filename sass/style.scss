@@ -150,7 +150,7 @@ footer #archive ul li img { height: 95px; }
 }
 .carousel-cell div.description {
   width: 100%;
-  position: fixed;
+  position: fixed; // sollte absolute sein! 
   bottom: 0;
   // height: 250px;
   z-index: 300;
@@ -304,6 +304,7 @@ footer.hidden {
   }
   .carousel-cell.is-selected .description {
     //background: deeppink;
+    position: absolute;
   }
 
   footer {
