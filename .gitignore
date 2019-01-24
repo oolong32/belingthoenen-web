@@ -3,6 +3,7 @@
 /vendor
 .DS_Store
 *.swp
+*.swo
 /uploads
 
 # Gulp related files
