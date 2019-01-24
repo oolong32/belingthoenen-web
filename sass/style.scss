@@ -137,7 +137,7 @@ footer #archive ul li img { height: 95px; }
 }
 .carousel-cell {
   width: 100%;
-  height: 110vh;
+  height: 103vh;
   overflow: hidden;
 }
 .carousel-cell>img, 
@@ -150,30 +150,30 @@ footer #archive ul li img { height: 95px; }
 }
 .carousel-cell div.description {
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  height: 250px;
+  // height: 250px;
   z-index: 300;
   // padding: 1em 5em 4em 1em;
-  padding: 1em 5em 0 1em;
   background: black;
   // animate
   transition: all 0.3s;
 }
-.carousel-cell div.description .link { // link button
-  position: absolute;
-  top: -22px;
-  right: 80px; // this is odd, should be less
-}
 .carousel-cell div.description img { transition: transform 0.2s ease-in-out; }
 .carousel-cell div.description img:hover { transform: scale(1.1); }
+.carousel-cell div.description .link { // link button
+  position: absolute;
+  top: -30px;
+  right: 80px; // this is odd, should be less
+}
 .carousel-cell div.description .close { // close button
   // would be better to refer by class
   position: absolute;
-  top: -22px;
+  top: -30px;
   right: 20px; // this is odd, should be less
 }
 .carousel-cell div.description p {
+  margin: 1em 5em 1em 1em;
   font-size: 0.6875em;
   color: white;
 }
@@ -284,6 +284,8 @@ footer.hidden {
   .carousel-cell {
     width: 360px;
     height: 640px;
+    // height: calc(100vh - 350px);
+    // width: calc((100vh - 250px)/144);
     margin-right: 100px;
   }
 
