@@ -238,6 +238,28 @@ body#about {
   display: none;
 }
 
+/* Follow, Insta-Feed {{{*/
+#follow {
+  justify-content: flex-start;
+  main {
+    color: white;
+    p { font-size: 0.8125em; }
+    .insta-post {
+      display: none;
+      border: 1px solid yellow;
+      p.text { font-size: 1em; }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .insta-post:first-of-type {
+      display: block;
+    }
+  }
+}
+/* End Follow, Insta-Feed }}}*/
+
 footer {
   opacity: 1;
   transition: all 0.3s;
@@ -400,6 +422,12 @@ body#about {
   // wohin mit den Dots?
   // wohin mit den Dots?
   // wohin mit den Dots?
+
+  /* Follow, Insta-Feed {{{ */
+  #follow main {
+    .insta-post { display: block; }
+  }
+  /* End Follow, Insta-Feed }}} */
 
   footer {
     padding-top: .5em;

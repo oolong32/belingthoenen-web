@@ -234,6 +234,25 @@ body#about {
 .carousel-cell:not(.is-selected) div.description {
   display: none; }
 
+/* Follow, Insta-Feed {{{*/
+#follow {
+  justify-content: flex-start; }
+  #follow main {
+    color: white; }
+    #follow main p {
+      font-size: 0.8125em; }
+    #follow main .insta-post {
+      display: none;
+      border: 1px solid yellow; }
+      #follow main .insta-post p.text {
+        font-size: 1em; }
+      #follow main .insta-post img {
+        width: 100%;
+        height: auto; }
+    #follow main .insta-post:first-of-type {
+      display: block; }
+
+/* End Follow, Insta-Feed }}}*/
 footer {
   opacity: 1;
   transition: all 0.3s; }
@@ -263,7 +282,8 @@ footer.hidden {
   body {
     background: #2c2c2c; }
   header {
-    width: 100vw;
+    width: 1165px;
+    margin: 0 auto;
     height: 140px;
     display: grid;
     padding-top: 28px;
@@ -285,14 +305,15 @@ footer.hidden {
       display: flex;
       height: 100%;
       align-items: center;
-      justify-content: center; }
+      justify-content: flex-end; }
       header nav ul li {
         margin-top: .5em;
         margin-left: 2em;
         font-size: 0.8125em; }
   header .simple-marquee-container {
-    position: absolute;
+    position: fixed;
     top: 0;
+    left: 0;
     display: block;
     width: 100vw; }
   body:not(#index) header {
@@ -333,7 +354,7 @@ footer.hidden {
   .main-carousel {
     position: relative;
     border: 5px solid white;
-    width: 80%;
+    width: 1165px;
     margin: 0 auto; }
     body#about main.about-carousel .carousel-cell,
     .main-carousel .carousel-cell {
@@ -351,6 +372,10 @@ footer.hidden {
   main.about-carousel .flickity-page-dots {
     position: fixed;
     bottom: 180px; }
+  /* Follow, Insta-Feed {{{ */
+  #follow main .insta-post {
+    display: block; }
+  /* End Follow, Insta-Feed }}} */
   footer {
     padding-top: .5em;
     bottom: -120px; }
