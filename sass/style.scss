@@ -1,3 +1,6 @@
+// Variables
+$desktop-width: 1165px;
+
 html, * {
   font-family: 'Work Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -267,16 +270,15 @@ footer.hidden {
   .flickity-button { display: block; }
   /* für videos sollten hier höhe und breite angegeben werden. */
 
-  body { 
-    background: rgb(44, 44, 44);
-  }
+  body { background: rgb(44, 44, 44); }
 
   header {
     // position: relative; 
-    width: 100vw;
+    width: $desktop-width;
+    margin: 0 auto;
     height: 140px;
     display: grid;
-    padding-top: 28px;
+    padding-top: 28px; // marquee
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     background: transparent;
@@ -300,7 +302,7 @@ footer.hidden {
       display: flex;
       height: 100%;
       align-items: center; 
-      justify-content: center; // should be right, and header-width same as main
+      justify-content: flex-end; // should be right, and header-width same as main
       li {
         margin-top: .5em;
         margin-left: 2em;
@@ -310,8 +312,9 @@ footer.hidden {
   }
 
   header .simple-marquee-container {
-    position: absolute;
+    position: fixed;
     top: 0;
+    left: 0;
     display: block;
     width: 100vw;
   }
@@ -325,9 +328,7 @@ footer.hidden {
   body#about {
       display: block;
       height: auto;
-    header {
-      position: static;
-    } 
+    header { position: static; } // achtung: menü springt!
   }
 
 /* About-Page: Layout & Slider {{{ */
@@ -365,7 +366,7 @@ body#about {
   .main-carousel {
     position: relative;
     border: 5px solid white;
-    width: 80%;
+    width: $desktop-width;
     margin: 0 auto;
     .carousel-cell {
       width: 360px;
