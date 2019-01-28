@@ -8,8 +8,9 @@ var flkty = new Flickity( elem, {
     }
   },
   cellAlign: 'center', // Wrap-Around funktioniert nicht (Lücke)
-  contain: true,
-  pageDots: false,
+
+  // contain: true,
+  pageDots: true,
   wrapAround: true,
   autoPlay: 5000,
   setGallerySize: false, // https://flickity.metafizzy.co/options.html#setgallerysize
@@ -17,23 +18,19 @@ var flkty = new Flickity( elem, {
 });
 
 // video on for selected, pause for deselected
-if (videos === 'undefined') {
-  const videos = document.querySelectorAll('video');
-}
-
 flkty.on( 'select', function( index ) {
 
-  var allVids = document.querySelectorAll('video');
+  let allVids = document.querySelectorAll('video');
   for (var i = 0; i < allVids.length; i++) {
     if (i != index) { // we don’t want to process the currently selected video
-      var video = videos[i];
+      var video = allVids[i];
       if (!video.paused) {
         video.pause();
       }
     }
     // allVids[i].pause();
   }
-  var selected_video = videos[index];
+  var selected_video = allVids[index];
   selected_video.play();
   // start/continue selected video
 });

@@ -134,6 +134,15 @@ footer #archive ul li img {
   height: 103vh;
   overflow: hidden; }
 
+.main-carousel .flickity-page-dots {
+  position: fixed;
+  bottom: 160px;
+  left: 0;
+  background: transparent; }
+
+.main-carousel .flickity-page-dots.hidden {
+  display: none; }
+
 /* About-Page: Layout & Slider {{{ */
 body#about {
   display: flex;
@@ -334,6 +343,8 @@ footer.hidden {
     width: auto; }
   .carousel-cell.is-selected .description {
     position: absolute; }
+  main.about-carousel .flickity-page-dots {
+    position: static; }
   footer {
     padding-top: .5em; }
   footer #archive ul {

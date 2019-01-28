@@ -118,6 +118,17 @@ footer #archive ul li img { height: 95px; }
   overflow: hidden;
 }
 
+.main-carousel .flickity-page-dots {
+  position: fixed;
+  bottom: 160px; // Test! (sollte über dem footer sein)
+  left: 0;
+  background: transparent;
+}
+
+.main-carousel .flickity-page-dots.hidden {
+  display: none;
+}
+
 /* About-Page: Layout & Slider {{{ */
 
 body#about {
@@ -305,7 +316,6 @@ footer.hidden {
     height: 140px;
   }
 
-
   // about page layout
   body#about {
       display: block;
@@ -368,6 +378,18 @@ body#about {
     width: auto;
   }
   .carousel-cell.is-selected .description { position: absolute; }
+  // wohin mit den Dots?
+  // wohin mit den Dots?
+  // wohin mit den Dots?
+  // wohin mit den Dots?
+  // wohin mit den Dots?
+  // wohin mit den Dots?
+  main.about-carousel .flickity-page-dots { position: static; } // Wohin mit den Dots?
+  // wohin mit den Dots?
+  // wohin mit den Dots?
+  // wohin mit den Dots?
+  // wohin mit den Dots?
+  // wohin mit den Dots?
 
   footer { padding-top: .5em; }
 
