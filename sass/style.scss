@@ -281,6 +281,9 @@ footer.hidden {
     grid-template-rows: auto;
     background: transparent;
   }
+  header #masthead {
+    grid-column: 2/3;
+  }
   header h1 {
     font-size: 1.75em;
     letter-spacing: 0.03em;
@@ -292,13 +295,15 @@ footer.hidden {
 
   header nav {
     display: block; // einblenden
+    grid-column: 3/-1;
     ul {
       display: flex;
       height: 100%;
       align-items: center; 
-      justify-content: center;
+      justify-content: center; // should be right, and header-width same as main
       li {
         margin-top: .5em;
+        margin-left: 2em;
         font-size: 0.8125em;
       }
     }
@@ -384,15 +389,25 @@ body#about {
   // wohin mit den Dots?
   // wohin mit den Dots?
   // wohin mit den Dots?
-  main.about-carousel .flickity-page-dots { position: static; } // Wohin mit den Dots?
+  main.main-carousel .flickity-page-dots,
+  main.about-carousel .flickity-page-dots {
+    position: fixed;
+    bottom: 180px;
+  } // Wohin mit den Dots?
   // wohin mit den Dots?
   // wohin mit den Dots?
   // wohin mit den Dots?
   // wohin mit den Dots?
   // wohin mit den Dots?
 
-  footer { padding-top: .5em; }
-
+  footer {
+    padding-top: .5em;
+    bottom: -120px;
+  }
+  footer:hover {
+    bottom: 0px;
+  }
+  footer nav { display: none; }
   footer #archive ul {
     overflow: visible;
     justify-content: center;

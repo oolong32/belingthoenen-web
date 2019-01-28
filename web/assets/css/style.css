@@ -270,6 +270,8 @@ footer.hidden {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     background: transparent; }
+  header #masthead {
+    grid-column: 2/3; }
   header h1 {
     font-size: 1.75em;
     letter-spacing: 0.03em; }
@@ -277,7 +279,8 @@ footer.hidden {
     font-size: 1.3125em;
     word-spacing: -0.05em; }
   header nav {
-    display: block; }
+    display: block;
+    grid-column: 3/-1; }
     header nav ul {
       display: flex;
       height: 100%;
@@ -285,6 +288,7 @@ footer.hidden {
       justify-content: center; }
       header nav ul li {
         margin-top: .5em;
+        margin-left: 2em;
         font-size: 0.8125em; }
   header .simple-marquee-container {
     position: absolute;
@@ -343,10 +347,17 @@ footer.hidden {
     width: auto; }
   .carousel-cell.is-selected .description {
     position: absolute; }
+  main.main-carousel .flickity-page-dots,
   main.about-carousel .flickity-page-dots {
-    position: static; }
+    position: fixed;
+    bottom: 180px; }
   footer {
-    padding-top: .5em; }
+    padding-top: .5em;
+    bottom: -120px; }
+  footer:hover {
+    bottom: 0px; }
+  footer nav {
+    display: none; }
   footer #archive ul {
     overflow: visible;
     justify-content: center; }
