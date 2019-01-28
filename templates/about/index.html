@@ -3,48 +3,38 @@
   
 {% block content %}
 
-{#{% set aboutPages = craft.entries().section('about').all() %}#}
+{% set aboutEntries = craft.entries().section('aboutEntries').all() %}
 
-  <main class="about-carousel">
+<main class="about-carousel">
 
   {# {% for aboutPage in aboutPages %} #}
-  <article class="carousel-cell">
+  <div class="carousel-cell">
+  <section>
     <p style="color: white; font-size: 18px; margin: 15px 30px;">We provide services from branding to crossmedia publications. Art direction through production, we will guide you from the initial enquiry or briefing to delivery from Print to Digital.</p>
-      <img src="/assets/uploads/images/about/aboutTest2.png" alt="Name">
-      <p>Ulrike Beling<br>Founder</p>
-    </section>
-    <section>
-      <img src="/assets/uploads/images/about/aboutTest1.png" alt="Name">
-      <p>Nina Thoenen<br>Founder</p>
-    </section>
-  <section>
-  </article>
-
-  <article>
-  <article>
-    <section>
-      <img src="/assets/uploads/images/about/aboutTest3.png" alt="Name">
-      <p>Ulrike Beling<br>Founder</p>
-    </section>
-  </article>
-  <section>
-    <img src="/assets/uploads/images/about/aboutTest1.png" alt="Name">
-    <p>Nina Thoenen<br>Founder</p>
   </section>
-    <section>
-      <img src="/assets/uploads/images/about/aboutTest2.png" alt="Name">
-      <p>Ulrike Beling<br>Founder</p>
-    </section>
-  </article>
 
-  </main>
+   <section style="margin-top: 170px">
+      <img style="display: block; margin: 0 auto;" src="/assets/_pic/arrow_right.svg" alt="arrow">
+      <p style="color: white; font-size: 18px; text-align: center"><strong>Team</strong></p>
+   </section>
+  </div>
+
+  {% for entry in aboutEntries %}
+  <div class="carousel-cell" style="background: url('{{ entry.teamImg[0].url }}') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+      <p class="name">{{ entry.teamName }}{{ entry.teamRole|length ? "<br>#{entry.teamRole}" | raw : '' }}</p>
+  </div>
+  {% endfor %}
+
+</main>
   
 <script src="/assets/js/jquery.js"></script>
 <script src="/assets/js/flickity.js"></script>
 <script src="/assets/js/initializeAboutFlickity.js"></script>
+<script src="/assets/js/handleAboutEvents.js"></script>
 
 <script>
   console.clear();
   console.log("beling thoenen projects");
+
 </script>
 {% endblock %}
