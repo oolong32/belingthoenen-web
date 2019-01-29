@@ -36,6 +36,19 @@ p {
 em {
   font-style: normal; }
 
+/* Links {{{ */
+a,
+a:link,
+a:active,
+a:visited {
+  color: white;
+  text-decoration: none; }
+
+a:focus,
+a:hover {
+  color: #9b14ff; }
+
+/* End Links }}} */
 header {
   position: sticky;
   /* reicht das?*/
@@ -240,19 +253,55 @@ body#about {
   #follow main {
     color: white; }
     #follow main p {
+      margin: 0 30px;
       font-size: 0.8125em; }
     #follow main .insta-post {
-      display: none;
-      border: 1px solid yellow; }
+      padding-top: 15px;
+      padding-bottom: 15px;
+      background: black;
+      display: none; }
       #follow main .insta-post p.text {
+        margin-top: 12px;
         font-size: 1em; }
+      #follow main .insta-post .error-type {
+        color: lawngreen;
+        letter-spacing: 0.025em;
+        transform: rotate(-7deg);
+        transform-origin: bottom left;
+        position: relative;
+        top: 10px; }
+      #follow main .insta-post .error {
+        color: deeppink;
+        transform: rotate(-7deg);
+        transform-origin: bottom left;
+        position: relative;
+        left: 6px; }
+      #follow main .insta-post video,
       #follow main .insta-post img {
         width: 100%;
-        height: auto; }
+        height: auto;
+        margin-top: 30px;
+        margin-bottom: 25px; }
     #follow main .insta-post:first-of-type {
       display: block; }
 
 /* End Follow, Insta-Feed }}}*/
+/* Contact Page {{{ */
+#contact {
+  justify-content: flex-start; }
+  #contact main .contact-data {
+    padding-top: 15px;
+    background: black; }
+    #contact main .contact-data address {
+      font-size: 1.125em;
+      font-style: normal;
+      color: white;
+      margin: 0 30px; }
+    #contact main .contact-data img {
+      margin: 105px 0 0;
+      width: 100%; }
+
+/* Contact Page }}}*/
 footer {
   opacity: 1;
   transition: all 0.3s; }
@@ -373,9 +422,33 @@ footer.hidden {
     position: fixed;
     bottom: 180px; }
   /* Follow, Insta-Feed {{{ */
-  #follow main .insta-post {
-    display: block; }
+  #follow main {
+    width: 1165px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0 20px;
+    margin: 0 auto; }
+    #follow main .insta-post {
+      display: block;
+      width: 375px; }
+    #follow main section.links {
+      grid-column: 1/-1; }
+      #follow main section.links p.ext-facebook-link {
+        margin: 0;
+        text-align: right; }
   /* End Follow, Insta-Feed }}} */
+  /* Contact Page {{{ */
+  #contact main {
+    width: 1165px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0 20px;
+    margin: 0 auto; }
+    #contact main .contact-data {
+      grid-column: 2/3;
+      display: flex;
+      flex-direction: column; }
+  /* Contact Page }}}*/
   footer {
     padding-top: .5em;
     bottom: -120px; }
