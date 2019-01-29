@@ -429,8 +429,10 @@ footer.hidden {
     grid-gap: 0 20px;
     margin: 0 auto; }
     #follow main .insta-post {
-      display: block;
-      width: 375px; }
+      width: 375px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
     #follow main section.links {
       grid-column: 1/-1; }
       #follow main section.links p.ext-facebook-link {

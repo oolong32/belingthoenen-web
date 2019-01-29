@@ -1,9 +1,6 @@
 {# Instagramm Feed #}
 {% extends "_layout.html" %}
 
-{% set hasNoVideo = true %} {# Zum prüfen, ob bereits ein Video im Feed steht #}
-
-  
 {% block content %}
 <main>
 
@@ -14,47 +11,26 @@
       <p class="text">{{ instagramdata.caption }}</p>
 
     {% if instagramdata.video_standard_resolution != "" %}
-      <video poster="{{ instagramdata.standard_resolution }}" autoplay playsinline preload="auto" loop muted>
-        <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      {% set hasNoVideo = false %} {# we know now that there are videos in the feed #}
+      <a href="{{ instagramdata.link }}">
+        <video poster="{{ instagramdata.standard_resolution }}" autoplay playsinline preload="auto" loop muted>
+          <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </a>
     {% else %}
-      <p><img src="{{instagramdata.standard_resolution}}"></p>
+      <a href="{{ instagramdata.link }}">
+        <img src="{{instagramdata.standard_resolution}}">
+      </a>
     {% endif %}
 
-      <img src="/assets/_pic/insta_1.png" alt="">
+      <p class="likes">{{ instagramdata.likes}} likes</p>
 
-      <p class="likes">xxx likes</p>
     {% else %}
       <p class="text error-type"><strong>{{ instagramdata.error_type }}</strong></p>
       <p class="text error">{{ instagramdata.error_message }}</p>
     {% endif %}
   </section>
   {% endfor %}
-
-{#
-  <section class="insta-post">
-    <p class="date">XX. Month YYYY</p>
-    <p class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo …</p>
-    <img src="/assets/_pic/insta_1.png" alt="">
-    <p class="likes">xxx likes</p>
-  </section>
-
-  <section class="insta-post">
-    <p class="date">XX. Month YYYY</p>
-    <p class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo …</p>
-    <img src="/assets/_pic/insta_2.png" alt="">
-    <p class="likes">xxx likes</p>
-  </section>
-
-  <section class="insta-post">
-    <p class="date">XX. Month YYYY</p>
-    <p class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo …</p>
-    <img src="/assets/_pic/insta_3.png" alt="">
-    <p class="likes">xxx likes</p>
-  </section>
-#}
 
   <section class="links">
     {# <p class="ext-insta-link"><a target="_blank" href="https://www.instagram.com/belingthoenen/">on instagram</a></p> #}
@@ -64,7 +40,5 @@
 {% endblock %}
 
 {# 
-
   <h3>{{instagramdata.caption|length > 52 ? instagramdata.caption|slice(0, 52) ~ " …" : instagramdata.caption }}</h3>
-
 #}
