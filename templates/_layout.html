@@ -1,5 +1,5 @@
 {# Basic Structure #}
-{% set slug = craft.request.firstSegment ? craft.request.firstSegment : 'index' %}{# auf welcher seite befinden wir uns? #}
+{% set slug = craft.app.request.segments|first ? craft.app.request.segments|first : 'index' %}{# auf welcher seite befinden wir uns? #}
 
 <!DOCTYPE html>
 <html lang="en">
