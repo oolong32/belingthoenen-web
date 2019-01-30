@@ -9,13 +9,19 @@
 #}
 <header>
 
+{% set entry = craft.entries().section('home').first() %}
+{% set marquee = entry.newsTicker %}
+
+
   {% if slug == "index" %}
   <div class="simple-marquee-container">
     <div id="news" class="marquee">
       <ul class="marquee-content-items">
-        <li><strong>Coming Soon</strong> Seeschau</li>
-        <li><strong>Coming Soon</strong> Schweizer Illustrierte & Style</li>
-        <li><strong>Coming Soon</strong> Greentopf</li>
+
+      {% for newsTickerItem in marquee %}
+        <li><strong>Coming Soon</strong> {{ newsTickerItem.text }}</li>
+      {% endfor %}
+
       </ul>
     </div>
   </div>
