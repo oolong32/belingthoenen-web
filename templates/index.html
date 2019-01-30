@@ -38,6 +38,7 @@
 <script src="/assets/js/project-info.js"></script>
 <script src="/assets/js/marquee.js"></script>
 <script src="/assets/js/flickity.js"></script>
+<script src="/assets/js/handleArchiveEvents.js"></script>
 <script src="/assets/js/initializeFlickity.js"></script>
 {#<script src="/assets/js/lazy.js"></script>#} {# lazy load raus, wir starten & stoppen per carousel-event #}
 
@@ -48,22 +49,6 @@
       {hover: false, duration: 40000}
     );
   });
-
-  const archive = document.querySelectorAll('.archive-project');
-  for (let i = 0; i < archive.length; i++ ) {
-    let archiveProject = archive[i];
-    console.log('project: ' + archiveProject);
-    archiveProject.addEventListener('click' || 'touchend', (e) => {
-      console.log('target: ' + e.target);
-      let description = archiveProject.querySelector('.archive-project-description');
-      description.classList.remove('hidden');
-      window.setTimeout(() => description.classList.add('hidden'), 300 );
-      // description.addEventListener('click' || 'touchend', (e) => {
-      //   console.log(description);
-      //   description.classList.add('hidden');
-      // }, {once: true});
-    });
-  }
 
 </script>
 
