@@ -261,7 +261,7 @@ body#about {
       background: black;
       display: none; }
       #follow main .insta-post p.text {
-        margin-top: 12px;
+        margin-bottom: 12px;
         font-size: 1em; }
       #follow main .insta-post .error-type {
         color: lawngreen;
@@ -280,8 +280,7 @@ body#about {
       #follow main .insta-post img {
         width: 100%;
         height: auto;
-        margin-top: 30px;
-        margin-bottom: 25px; }
+        margin: 15px 0; }
     #follow main .insta-post:first-of-type {
       display: block; }
 

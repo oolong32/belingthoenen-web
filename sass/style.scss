@@ -267,7 +267,7 @@ body#about {
       display: none;
       // border: 1px solid yellow;
       p.text {
-        margin-top: 12px;
+        margin-bottom: 12px;
         font-size: 1em;
       }
       .error-type {
@@ -289,8 +289,7 @@ body#about {
       img {
         width: 100%;
         height: auto;
-        margin-top: 30px;
-        margin-bottom: 25px;
+        margin: 15px 0;
       }
     }
     .insta-post:first-of-type {

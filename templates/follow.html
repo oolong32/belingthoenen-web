@@ -8,20 +8,21 @@
   <section class="insta-post">
     {% if instagramdata.status == "true" %}
       <p class="date">{{ instagramdata.created_time|date('d. F Y') }}</p>
-      <p class="text">{{ instagramdata.caption }}</p>
 
-    {% if instagramdata.video_standard_resolution != "" %}
-      <a href="{{ instagramdata.link }}">
-        <video poster="{{ instagramdata.standard_resolution }}" autoplay playsinline preload="auto" loop muted>
-          <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </a>
-    {% else %}
-      <a href="{{ instagramdata.link }}">
-        <img src="{{instagramdata.standard_resolution}}">
-      </a>
-    {% endif %}
+      {% if instagramdata.video_standard_resolution != "" %}
+        <a href="{{ instagramdata.link }}">
+          <video poster="{{ instagramdata.standard_resolution }}" autoplay playsinline preload="auto" loop muted>
+            <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </a>
+      {% else %}
+        <a href="{{ instagramdata.link }}">
+          <img src="{{instagramdata.standard_resolution}}">
+        </a>
+      {% endif %}
+
+      <p class="text">{{ instagramdata.caption }}</p>
 
       <p class="likes">{{ instagramdata.likes}} likes</p>
 
