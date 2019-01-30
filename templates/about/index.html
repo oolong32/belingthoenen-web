@@ -3,6 +3,8 @@
   
 {% block content %}
 
+{% set aboutSingle = craft.entries().section('about').first() %}
+{% set aboutIntro = aboutSingle.aboutIntro %}
 {% set aboutEntries = craft.entries().section('aboutEntries').all() %}
 
 <main class="about-carousel">
@@ -10,7 +12,7 @@
   {# {% for aboutPage in aboutPages %} #}
   <div class="carousel-cell">
   <section>
-    <p style="color: white; font-size: 18px; margin: 15px 30px;">We provide services from branding to crossmedia publications. Art direction through production, we will guide you from the initial enquiry or briefing to delivery from Print to Digital.</p>
+    <p style="color: white; font-size: 18px; margin: 15px 30px;">{{ aboutIntro}}</p>
   </section>
 
    <section style="margin-top: 170px">
