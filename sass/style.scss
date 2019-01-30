@@ -356,7 +356,7 @@ footer.hidden {
   body { background: rgb(44, 44, 44); }
 
   header {
-    // position: relative; 
+    position: static;
     width: $desktop-width;
     margin: 0 auto;
     height: 140px;

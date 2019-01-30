@@ -330,6 +330,7 @@ footer.hidden {
   body {
     background: #2c2c2c; }
   header {
+    position: static;
     width: 1165px;
     margin: 0 auto;
     height: 140px;
