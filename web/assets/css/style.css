@@ -458,10 +458,22 @@ footer.hidden {
     bottom: 0px; }
   footer nav {
     display: none; }
+  /* Archive Projects {{{ */
   footer #archive ul {
     overflow: visible;
     justify-content: center; }
   footer #archive ul li {
     margin-right: .5em; }
   footer #archive ul li img {
-    height: 150px; } }
+    height: 150px; }
+  .archive-project-description {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: yellow;
+    opacity: 0.2; }
+  .archive-project-description.hidden {
+    display: none; }
+  /* End Archive Projects }}} */ }

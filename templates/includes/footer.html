@@ -9,11 +9,13 @@
 {% if slug == "index" %} {# Archiv nur sichtbar auf Index/Home #}
   <section id="archive">
     {% set archive = craft.entries().section('archive').all() %}
-   <ul>
+
+   <ul id="#archive">
       {% for entry in archive %}
-      <li><a href="{# should this be a button or anything else? #}"><img src="{{ entry.archiveImg[0].url }}" alt=""></a></li>
+      <li class="archive-project"><img src="{{ entry.archiveImg[0].url }}" alt=""><section class="archive-project-description hidden"></section></li>
       {% endfor %}
     </ul> 
+
   </section>
 {% endif %}
 
