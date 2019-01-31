@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6, bold, em {
   font-weight: 700; }
 
 h1 {
-  font-size: 1.125em;
+  font-size: 1.1em;
   letter-spacing: 0.3px; }
 
 p {
@@ -62,6 +62,12 @@ header {
     z-index: 100;
     text-align: center;
     padding: 0.5em; }
+    header #masthead h1 {
+      font-family: 'american typewriter';
+      word-spacing: -2px;
+      letter-spacing: -0.05px; }
+    header #masthead p {
+      line-height: 1.1; }
   header nav {
     display: none; }
   header a {
@@ -140,7 +146,7 @@ footer #archive ul li img {
 
 /* End Footer }}} */
 /* Home Carousel {{{ */
-.main-carousel {
+.carousel {
   position: absolute;
   top: 0;
   left: 0;
@@ -174,16 +180,11 @@ body#about {
     height: 60px; }
 
 .about-carousel {
-  position: static;
-  box-style: border-box;
   width: 100%;
-  height: calc(100vh - 170px);
+  height: 100%;
   overflow: hidden;
   display: flex;
   align-items: stretch; }
-
-.about-carousel .flickity-viewport {
-  position: static; }
 
 .about-carousel .flickity-page-dots {
   bottom: 60px;
@@ -329,9 +330,9 @@ body#about {
     grid-template-rows: auto; }
   header #masthead {
     grid-column: 2/3; }
-  header h1 {
-    font-size: 1.75em;
-    letter-spacing: 0.03em; }
+    header #masthead h1 {
+      font-size: 1.75em;
+      letter-spacing: 0.025em; }
   header p {
     font-size: 1.3125em;
     word-spacing: -0.05em; }

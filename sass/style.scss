@@ -29,7 +29,7 @@ body {
 
 /* Text Styles {{{ */
 h1, h2, h3, h4, h5, h6, bold, em { font-weight: 700; }
-h1 { font-size: 1.125em; letter-spacing: 0.3px; }
+h1 { font-size: 1.1em; letter-spacing: 0.3px; }
 p { font-size: 0.8125em; }
 em { font-style: normal; }
 /* End Text Styles }}} */
@@ -61,6 +61,8 @@ header {
     z-index: 100;
     text-align: center;
     padding: 0.5em;
+    h1 { font-family: 'american typewriter'; word-spacing: -2px; letter-spacing: -0.05px;}
+    p { line-height: 1.1;}
   }
   nav { display: none; }
   a { text-decoration: none; }
@@ -129,7 +131,7 @@ footer #archive ul li img { height: 95px; }
 /* End Footer }}} */
 
 /* Home Carousel {{{ */
-.main-carousel {
+.carousel {
   position: absolute;
   top: 0;
   left: 0;
@@ -165,15 +167,14 @@ body#about {
 } 
 
 .about-carousel {
-  position: static;
-  box-style: border-box;
   width: 100%;
-  height: calc(100vh - 170px); // 60px footer, 85px header, 25px slider-dots
+  //height: calc(100vh - 170px); // 60px footer, 85px header, 25px slider-dots
+  height: 100%;
   overflow: hidden;
   display: flex;
   align-items: stretch;
 }
-.about-carousel .flickity-viewport { position: static; }
+//.about-carousel .flickity-viewport { position: static; }
 .about-carousel .flickity-page-dots {
   bottom: 60px;
   left: 0;
@@ -340,10 +341,12 @@ body#about {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
   }
-  header #masthead { grid-column: 2/3; }
-  header h1 {
-    font-size: 1.75em;
-    letter-spacing: 0.03em;
+  header #masthead {
+    grid-column: 2/3;
+    h1 {
+      font-size: 1.75em;
+      letter-spacing: 0.025em;
+    }
   }
   header p {
     font-size: 1.3125em;
