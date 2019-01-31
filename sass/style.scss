@@ -48,8 +48,7 @@ a:hover { color: #9b14ff; }
 
 /* Header {{{ */
 header {
-  position: sticky; /* reicht das?*/
-  position: -webkit-sticky;
+  position: fixed; // mit sticky gibts probleme im about slider
   top: 0;
   left: 0;
   right: 0;

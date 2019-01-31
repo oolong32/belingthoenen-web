@@ -2,7 +2,7 @@ var elem = document.querySelector('.about-carousel');
 var flkty = new Flickity( elem, {
   // options
   contain: true,
-  dragThreshold: 10,
+  //dragThreshold: 10,
   //wrapAround: true,
   contain: true,
   autoPlay: false,

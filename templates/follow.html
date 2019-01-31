@@ -10,7 +10,7 @@
       <p class="date">{{ instagramdata.created_time|date('d. F Y') }}</p>
 
       {% if instagramdata.video_standard_resolution != "" %}
-        <a href="{{ instagramdata.link }}">
+        <a href="{{ instagramdata.link }}" target="_blank">
           <video poster="{{ instagramdata.standard_resolution }}" autoplay playsinline preload="auto" loop muted>
             <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
             Your browser does not support the video tag.

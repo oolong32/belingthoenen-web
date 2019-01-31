@@ -49,9 +49,7 @@ a:hover {
 /* End Links }}} */
 /* Header {{{ */
 header {
-  position: sticky;
-  /* reicht das?*/
-  position: -webkit-sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
