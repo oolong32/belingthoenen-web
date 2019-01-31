@@ -156,10 +156,12 @@ footer #archive ul li img {
   position: fixed;
   bottom: 160px;
   left: 0;
-  background: transparent; }
+  background: transparent;
+  opacity: 1;
+  transition: opacity 0.2s; }
 
 .flickity-page-dots.hidden {
-  display: none; }
+  opacity: 0; }
 
 /* Home Carousel }}}*/
 /* About-Page: Layout & Slider {{{ */

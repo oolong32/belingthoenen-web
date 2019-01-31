@@ -146,8 +146,10 @@ footer #archive ul li img { height: 95px; }
   bottom: 160px; // Test! (sollte über dem footer sein)
   left: 0;
   background: transparent;
+  opacity: 1;
+  transition: opacity 0.2s;
 }
-.flickity-page-dots.hidden { display: none; }
+.flickity-page-dots.hidden { opacity: 0; }
 /* Home Carousel }}}*/
 
 /* About-Page: Layout & Slider {{{ */
