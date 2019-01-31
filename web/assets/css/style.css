@@ -368,7 +368,7 @@ body#about {
   body:not(#index) footer {
     display: none; }
   /* End Desktop Footer }}} */
-  /* Desktop Carousells Global {{{ */
+  /* Desktop Carousels Global {{{ */
   .about-carousel,
   .main-carousel {
     margin: auto;
@@ -395,7 +395,7 @@ body#about {
     opacity: 0; }
   .flickity-prev-next-button {
     opacity: 1;
-    transition: opacity; }
+    transition: opacity 0.2s; }
   .carousel-cell {
     background: black;
     width: 375px;
@@ -412,7 +412,7 @@ body#about {
     position: static; }
   .carousel-cell.is-selected .description {
     position: absolute; }
-  /* Desktop Carousells Global }}} */
+  /* Desktop Carousels Global }}} */
   /* Desktop Carousel Exceptions {{{ */
   .about-carousel .carousel-cell .name {
     bottom: 20px; }

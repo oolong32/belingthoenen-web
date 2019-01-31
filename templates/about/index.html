@@ -7,7 +7,7 @@
 {% set aboutIntro = aboutSingle.aboutIntro %}
 {% set aboutEntries = craft.entries().section('aboutEntries').all() %}
 
-<main class="about-carousel">
+<main class="about-carousel carousel">
 
   {# {% for aboutPage in aboutPages %} #}
   <div class="carousel-cell">
@@ -32,7 +32,7 @@
 <script src="/assets/js/jquery.js"></script>
 <script src="/assets/js/flickity.js"></script>
 <script src="/assets/js/initializeAboutFlickity.js"></script>
-<script src="/assets/js/handleAboutEvents.js"></script>
+<script src="/assets/js/handleArrowButtons.js"></script>
 
 <script>
   console.clear();

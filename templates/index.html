@@ -5,7 +5,7 @@
 
 {% set projects = craft.entries().section('projects').all() %}
 
-<main class="main-carousel">
+<main class="main-carousel carousel">
 
   {% for project in projects %}
   <div class="carousel-cell">
@@ -40,6 +40,7 @@
 <script src="/assets/js/flickity.js"></script>
 <script src="/assets/js/handleArchiveEvents.js"></script>
 <script src="/assets/js/initializeFlickity.js"></script>
+<script src="/assets/js/handleArrowButtons.js"></script>
 {#<script src="/assets/js/lazy.js"></script>#} {# lazy load raus, wir starten & stoppen per carousel-event #}
 
 <script>
