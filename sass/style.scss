@@ -164,7 +164,7 @@ footer #archive ul li img { height: 95px; }
 body#about {
   // display: flex;
   // flex-direction: column;
-  // height: calc(100vh - 145px); // browser-chrome + footer
+  height: calc(100vh - 145px); // browser-chrome + footer
 
   footer {
     position:fixed;
@@ -189,7 +189,6 @@ body#about {
     left: 0;
     background: black;
   }
-
   main.about-carousel .carousel-cell {
     height: 100%;
     width: 100%;

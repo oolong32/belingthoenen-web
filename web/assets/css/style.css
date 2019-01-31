@@ -167,41 +167,39 @@ footer #archive ul li img {
 
 /* Home Carousel }}}*/
 /* About-Page: Layout & Slider {{{ */
-body#about footer {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  height: 60px; }
-
-body#about main.about-carousel {
-  position: static;
-  box-style: border-box;
-  width: 100%;
-  height: calc(100vh - 170px);
-  overflow: hidden;
-  display: flex;
-  align-items: stretch; }
-
-body#about main.about-carousel .flickity-viewport {
-  position: static; }
-
-body#about main.about-carousel .flickity-page-dots {
-  position: fixed;
-  bottom: 60px;
-  left: 0;
-  background: black; }
-
-body#about main.about-carousel .carousel-cell {
-  height: 100%;
-  width: 100%; }
-  body#about main.about-carousel .carousel-cell .name {
-    font-size: 13px;
-    line-height: 1.2;
-    color: white;
-    background: transparent;
-    position: absolute;
-    left: 30px;
-    bottom: calc(0px + 21vh); }
+body#about {
+  height: calc(100vh - 145px); }
+  body#about footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 60px; }
+  body#about main.about-carousel {
+    position: static;
+    box-style: border-box;
+    width: 100%;
+    height: calc(100vh - 170px);
+    overflow: hidden;
+    display: flex;
+    align-items: stretch; }
+  body#about main.about-carousel .flickity-viewport {
+    position: static; }
+  body#about main.about-carousel .flickity-page-dots {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    background: black; }
+  body#about main.about-carousel .carousel-cell {
+    height: 100%;
+    width: 100%; }
+    body#about main.about-carousel .carousel-cell .name {
+      font-size: 13px;
+      line-height: 1.2;
+      color: white;
+      background: transparent;
+      position: absolute;
+      left: 30px;
+      bottom: calc(0px + 21vh); }
 
 /* End About-Page: Layout & Slider }}} */
 /* Carousel allgemein {{{ */
