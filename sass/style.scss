@@ -1,6 +1,7 @@
 // Variables
 $desktop-width: 1165px;
 $card-width: 375px;
+$card-height: 600px;
 
 html, * {
   font-family: 'Work Sans', 'Helvetica Neue', sans-serif;
@@ -50,6 +51,8 @@ header {
   position: sticky; /* reicht das?*/
   position: -webkit-sticky;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 85px;
   background: black;
@@ -159,17 +162,9 @@ footer #archive ul li img { height: 95px; }
 /* About-Page: Layout & Slider {{{ */
 
 body#about {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 145px); // browser-chrome + footer
-
-  
-  header {
-    height: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
+  // display: flex;
+  // flex-direction: column;
+  // height: calc(100vh - 145px); // browser-chrome + footer
 
   footer {
     position:fixed;
@@ -181,9 +176,8 @@ body#about {
   main.about-carousel {
     position: static;
     box-style: border-box;
-    padding-top: 60px; // weg. fixed header
     width: 100%;
-    height: calc(100% - 170px); // 60px footer, 85px header, 25px slider-dots
+    height: calc(100vh - 170px); // 60px footer, 85px header, 25px slider-dots
     overflow: hidden;
     display: flex;
     align-items: stretch;
@@ -332,7 +326,6 @@ body#about {
 }
 /* Contact Page }}}*/
 
-
 /* Mobile-Landscape Styles {{{ */
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
   /* Kurzer Prozess, aka. Trick 77 */
@@ -353,16 +346,17 @@ body#about {
 
   body { background: rgb(44, 44, 44); }
 
+  /* Desktop Header {{{ */
   header {
     position: static;
+    background: transparent;
     width: $desktop-width;
     margin: 0 auto;
+    padding-top: 28px; // marquee
     height: 140px;
     display: grid;
-    padding-top: 28px; // marquee
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    background: transparent;
   }
   header #masthead {
     grid-column: 2/3;
@@ -375,7 +369,6 @@ body#about {
     font-size: 1.3125em;
     word-spacing: -0.05em;
   }
-
   header nav {
     display: block; // einblenden
     grid-column: 3/-1;
@@ -404,44 +397,51 @@ body#about {
     padding-top: 28px; // fehlenden marquee auffangen
     height: 140px;
   }
+  /* Desktop Header }}} */
 
-  // about page layout
+  /* Desktop Footer {{{ */
+  footer {
+    padding-top: .5em;
+    bottom: -120px;
+  }
+  footer:hover {
+    bottom: 0px;
+  }
+  footer nav { display: none; }
+  body:not(#index) footer { display: none; }
+  /* End Desktop Footer }}} */
+
+  /* About-Page: Layout & Slider {{{ */
   body#about {
       display: block;
       height: auto;
-    header { position: static; } // achtung: menü springt!
+    // footer { height: auto; }
   }
-
-/* About-Page: Layout & Slider {{{ */
-
-body#about {
-  header { position: static; }
-  footer { height: auto; }
-
-  main.about-carousel {
-    box-style: border-box;
-    padding-top: 0;
-    height: calc(100% - 170px); // 60px footer, 85px header, 25px slider-dots
-    //overflow: hidden;
-    display: block;
-  }
-
-  main.about-carousel .flickity-viewport { position: static; }
-  main.about-carousel .flickity-page-dots {
-    position: static;
-    background: transparent;
-  }
-  main.about-carousel .flickity-prev-next-button.hidden { opacity: 0; }
-  main.about-carousel .flickity-prev-next-button { opacity: 1; transition: opacity; }
-  main.about-carousel .carousel-cell {
-    height: auto;
-    background: black;
-    .name {
-      bottom: 20px; // sollte sich noch ändern
+  body#about {
+    main.about-carousel {
+      box-style: border-box;
+      padding-top: 0;
+      height: calc(100% - 170px); // 60px footer, 85px header, 25px slider-dots
+      //overflow: hidden;
+      display: block;
+    } 
+    main.about-carousel .flickity-viewport { position: static; }
+    main.about-carousel .flickity-page-dots {
+      position: static;
+      background: transparent;
+    }
+    main.about-carousel .flickity-prev-next-button.hidden { opacity: 0; }
+    main.about-carousel .flickity-prev-next-button { opacity: 1; transition: opacity; }
+    main.about-carousel .carousel-cell {
+      background: black;
+      width: $card-width;
+      height: $card-height;
+      margin-right: 20px;
+      .name {
+        bottom: 20px; // sollte sich noch ändern
+      }
     }
   }
-}
-/* End About-Page: Layout & Slider }}} */
 
   body#about main.about-carousel,
   .main-carousel {
@@ -450,13 +450,9 @@ body#about {
     width: $desktop-width;
     margin: 0 auto;
     .carousel-cell {
-      width: 360px;
-      height: 640px;
-      // height: calc(100vh - 350px);
-      // width: calc((100vh - 250px)/144);
-      margin-right: 100px;
     }
   }
+  /* End About-Page: Layout & Slider }}} */
 
   .carousel-cell>img, 
   .carousel-cell video {
@@ -520,15 +516,6 @@ body#about {
     }
   }
   /* Contact Page }}}*/
-
-  footer {
-    padding-top: .5em;
-    bottom: -120px;
-  }
-  footer:hover {
-    bottom: 0px;
-  }
-  footer nav { display: none; }
 
   /* Archive Projects {{{ */
   footer #archive ul {
