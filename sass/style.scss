@@ -45,6 +45,7 @@ a:focus,
 a:hover { color: #9b14ff; }
 /* End Links }}} */
 
+/* Header {{{ */
 header {
   position: sticky; /* reicht das?*/
   position: -webkit-sticky;
@@ -66,7 +67,9 @@ header {
   .simple-marquee-container { position: absolute; bottom: 0;}
 }
 body:not(#index) header { height: 60px; }
+/* End Header }}} */
 
+/* Footer {{{ */
 footer {
   position: fixed;
   bottom: 0;
@@ -76,6 +79,12 @@ footer {
   background: black;
   padding-top: 5px;
   z-index: 20;
+  opacity: 1;
+  transition: all 0.3s;
+}
+footer.hidden {
+  opacity: 0;
+  transform: translateY(300px) ;
 }
 body:not(#index) footer { padding-top: 1em; }
 
@@ -115,7 +124,9 @@ footer #archive ul {
 }
 footer #archive ul li { margin-right: 0.25em; }
 footer #archive ul li img { height: 95px; }
+/* End Footer }}} */
 
+/* Home Carousel {{{ */
 .main-carousel {
   position: absolute;
   top: 0;
@@ -123,11 +134,11 @@ footer #archive ul li img { height: 95px; }
   width: 100%;
   height: 100%
 }
-.about-carousel:after { // enable slider in css in order to destroy it on large viewports
-  content: 'flickity';
-  display: none;
-}
-.carousel-cell {
+// .about-carousel:after { // enable slider in css in order to destroy it on large viewports
+//   content: 'flickity';
+//   display: none;
+// }
+.carousel-cell { // betrifft auch About-Carousel :-/
   width: 100%;
   height: 103vh;
   overflow: hidden;
@@ -143,6 +154,7 @@ footer #archive ul li img { height: 95px; }
 .main-carousel .flickity-page-dots.hidden {
   display: none;
 }
+/* Home Carousel }}}*/
 
 /* About-Page: Layout & Slider {{{ */
 
@@ -151,7 +163,6 @@ body#about {
   flex-direction: column;
   height: calc(100vh - 145px); // browser-chrome + footer
 
-  main.about-carousel { position: static; }
   
   header {
     height: 60px;
@@ -168,8 +179,9 @@ body#about {
   }
 
   main.about-carousel {
+    position: static;
     box-style: border-box;
-    padding-top: 60px; // weg. header
+    padding-top: 60px; // weg. fixed header
     width: 100%;
     height: calc(100% - 170px); // 60px footer, 85px header, 25px slider-dots
     overflow: hidden;
@@ -197,14 +209,11 @@ body#about {
       bottom: calc(0px + 21vh);
     }
   }
-}
-
-.about-carousel .carousel-cell {
-  height: 100%;
-}
+} 
 
 /* End About-Page: Layout & Slider }}} */
 
+/* Carousel allgemein {{{ */
 .carousel-cell>img, 
 .carousel-cell video {
   position: sticky;
@@ -245,10 +254,13 @@ body#about {
 .is-selected div.description.hidden {
   transform: translateY(500px) ;
 }
-
 .carousel-cell:not(.is-selected) div.description {
   display: none;
 }
+.flickity-button {
+  display: none;
+}
+/* End Carousel allgemein }}} */
 
 /* Follow, Insta-Feed {{{*/
 #follow {
@@ -263,7 +275,7 @@ body#about {
       padding-top: 15px;
       padding-bottom: 15px;
       background: black;
-      display: none;
+      // display: none;
       // border: 1px solid yellow;
       p.text {
         margin-bottom: 12px;
@@ -320,26 +332,13 @@ body#about {
 }
 /* Contact Page }}}*/
 
-footer {
-  opacity: 1;
-  transition: all 0.3s;
-}
 
-footer.hidden {
-  //display: none;
-  opacity: 0;
-  transform: translateY(300px) ;
-}
-
-.flickity-button {
-  display: none;
-}
-
+/* Mobile-Landscape Styles {{{ */
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-
   /* Kurzer Prozess, aka. Trick 77 */
   header, footer, div.description { display: none; }
 }
+/* End Mobile-Landscape Styles }}} */
 
 @media (min-width: 767px) {
   .carousel-cell div.description p {

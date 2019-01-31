@@ -49,6 +49,7 @@ a:hover {
   color: #9b14ff; }
 
 /* End Links }}} */
+/* Header {{{ */
 header {
   position: sticky;
   /* reicht das?*/
@@ -78,6 +79,8 @@ header {
 body:not(#index) header {
   height: 60px; }
 
+/* End Header }}} */
+/* Footer {{{ */
 footer {
   position: fixed;
   bottom: 0;
@@ -86,7 +89,13 @@ footer {
   overflow: hidden;
   background: black;
   padding-top: 5px;
-  z-index: 20; }
+  z-index: 20;
+  opacity: 1;
+  transition: all 0.3s; }
+
+footer.hidden {
+  opacity: 0;
+  transform: translateY(300px); }
 
 body:not(#index) footer {
   padding-top: 1em; }
@@ -131,16 +140,14 @@ footer #archive ul li {
 footer #archive ul li img {
   height: 95px; }
 
+/* End Footer }}} */
+/* Home Carousel {{{ */
 .main-carousel {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%; }
-
-.about-carousel:after {
-  content: 'flickity';
-  display: none; }
 
 .carousel-cell {
   width: 100%;
@@ -156,13 +163,12 @@ footer #archive ul li img {
 .main-carousel .flickity-page-dots.hidden {
   display: none; }
 
+/* Home Carousel }}}*/
 /* About-Page: Layout & Slider {{{ */
 body#about {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 145px); }
-  body#about main.about-carousel {
-    position: static; }
   body#about header {
     height: 60px;
     position: fixed;
@@ -174,6 +180,7 @@ body#about {
     left: 0px;
     height: 60px; }
   body#about main.about-carousel {
+    position: static;
     box-style: border-box;
     padding-top: 60px;
     width: 100%;
@@ -200,10 +207,8 @@ body#about {
       left: 30px;
       bottom: calc(0px + 21vh); }
 
-.about-carousel .carousel-cell {
-  height: 100%; }
-
 /* End About-Page: Layout & Slider }}} */
+/* Carousel allgemein {{{ */
 .carousel-cell > img,
 .carousel-cell video {
   position: sticky;
@@ -247,6 +252,10 @@ body#about {
 .carousel-cell:not(.is-selected) div.description {
   display: none; }
 
+.flickity-button {
+  display: none; }
+
+/* End Carousel allgemein }}} */
 /* Follow, Insta-Feed {{{*/
 #follow {
   justify-content: flex-start; }
@@ -258,8 +267,7 @@ body#about {
     #follow main .insta-post {
       padding-top: 15px;
       padding-bottom: 15px;
-      background: black;
-      display: none; }
+      background: black; }
       #follow main .insta-post p.text {
         margin-bottom: 12px;
         font-size: 1em; }
@@ -301,22 +309,13 @@ body#about {
       width: 100%; }
 
 /* Contact Page }}}*/
-footer {
-  opacity: 1;
-  transition: all 0.3s; }
-
-footer.hidden {
-  opacity: 0;
-  transform: translateY(300px); }
-
-.flickity-button {
-  display: none; }
-
+/* Mobile-Landscape Styles {{{ */
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
   /* Kurzer Prozess, aka. Trick 77 */
   header, footer, div.description {
     display: none; } }
 
+/* End Mobile-Landscape Styles }}} */
 @media (min-width: 767px) {
   .carousel-cell div.description p {
     font-size: 1em;
