@@ -323,7 +323,8 @@ body#about {
 
 @media (min-width: 767px) {
 
-  body {
+  body,
+  body#about {
     height: 100vh; // flex-column-layout
     background: rgb(44, 44, 44);
   }
