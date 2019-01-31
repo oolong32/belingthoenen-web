@@ -1,5 +1,6 @@
 // Variables
 $desktop-width: 1165px;
+$card-width: 375px;
 
 html, * {
   font-family: 'Work Sans', 'Helvetica Neue', sans-serif;
@@ -17,19 +18,20 @@ body {
   font-family: 'Works Sans', sans-serif;
   font-size: 16px;
   line-height: 1.4;
-  /* FLEX */
-  /* Header oben, Footer unten */
-  /* Slider absolut positioniert im Hintergrund */
+  /* Flex: Header oben, Footer unten, Slider absolut positioniert im Hintergrund */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   /*overflow: hidden;*/ /* no scroll balken */
 
 }
+
+/* Text Styles {{{ */
 h1, h2, h3, h4, h5, h6, bold, em { font-weight: 700; }
 h1 { font-size: 1.125em; letter-spacing: 0.3px; }
 p { font-size: 0.8125em; }
 em { font-style: normal; }
+/* End Text Styles }}} */
 
 /* Links {{{ */
 a,
@@ -41,7 +43,6 @@ a:visited {
 }
 a:focus,
 a:hover { color: #9b14ff; }
-
 /* End Links }}} */
 
 header {
@@ -67,8 +68,6 @@ header {
 body:not(#index) header { height: 60px; }
 
 footer {
-  // position: sticky;
-  // position: -webkit-sticky;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -150,7 +149,7 @@ footer #archive ul li img { height: 95px; }
 body#about {
   display: flex;
   flex-direction: column;
-  height: calc(100% - 145px); // browser-chrome + footer
+  height: calc(100vh - 145px); // browser-chrome + footer
 
   main.about-carousel { position: static; }
   
@@ -337,9 +336,9 @@ footer.hidden {
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+
   /* Kurzer Prozess, aka. Trick 77 */
   header, footer, div.description { display: none; }
-  /* #modal { display: none;} */
 }
 
 @media (min-width: 767px) {
@@ -492,7 +491,7 @@ body#about {
     grid-gap: 15px 20px;
     margin: 0 auto;
     .insta-post {
-      width: 375px;
+      width: $card-width;
       display: flex;
       flex-direction: column;
       justify-content: space-between;

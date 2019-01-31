@@ -14,15 +14,14 @@ body {
   font-family: 'Works Sans', sans-serif;
   font-size: 16px;
   line-height: 1.4;
-  /* FLEX */
-  /* Header oben, Footer unten */
-  /* Slider absolut positioniert im Hintergrund */
+  /* Flex: Header oben, Footer unten, Slider absolut positioniert im Hintergrund */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   /*overflow: hidden;*/
   /* no scroll balken */ }
 
+/* Text Styles {{{ */
 h1, h2, h3, h4, h5, h6, bold, em {
   font-weight: 700; }
 
@@ -36,6 +35,7 @@ p {
 em {
   font-style: normal; }
 
+/* End Text Styles }}} */
 /* Links {{{ */
 a,
 a:link,
@@ -160,7 +160,7 @@ footer #archive ul li img {
 body#about {
   display: flex;
   flex-direction: column;
-  height: calc(100% - 145px); }
+  height: calc(100vh - 145px); }
   body#about main.about-carousel {
     position: static; }
   body#about header {
@@ -315,8 +315,7 @@ footer.hidden {
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
   /* Kurzer Prozess, aka. Trick 77 */
   header, footer, div.description {
-    display: none; }
-  /* #modal { display: none;} */ }
+    display: none; } }
 
 @media (min-width: 767px) {
   .carousel-cell div.description p {
