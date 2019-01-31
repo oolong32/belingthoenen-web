@@ -153,7 +153,8 @@ footer #archive ul li img { height: 95px; }
 
 /* About-Page: Layout & Slider {{{ */
 body#about {
-  height: calc(100vh - 145px); // browser-chrome + footer
+  //height: calc(100vh - 145px); // browser-chrome + footer
+  height: auto;
   footer {
     position:fixed;
     bottom: 0px;
@@ -377,6 +378,7 @@ body#about {
 
   /* Desktop Footer {{{ */
   footer {
+    background: orange;
     padding-top: .5em;
     bottom: -120px;
     background: transparent;
@@ -388,6 +390,7 @@ body#about {
   body:not(#index) footer { display: none; }
   /* End Desktop Footer }}} */
 
+  /* Desktop Carousells Global {{{ */
   .about-carousel,
   .main-carousel {
     margin: auto; // centered in flex-column
@@ -426,6 +429,7 @@ body#about {
   .flickity-button { display: block; }
   .flickity-viewport { position: static; }
   .carousel-cell.is-selected .description { position: absolute; }
+ /* Desktop Carousells Global }}} */
 
   /* Desktop Carousel Exceptions {{{ */
   .about-carousel .carousel-cell .name { bottom: 20px; }
@@ -434,16 +438,6 @@ body#about {
     letter-spacing: 0.0125em;
     em { letter-spacing: 0.025em; }
   }
-
-  body#about {
-      // display: block;
-      // height: auto;
-  }
-  body#about {
-    main.about-carousel {
-      position: relative;
-    } 
-  } 
   /* End Desktop Carousel Exeptions }}} */
 
   /* Follow, Insta-Feed {{{ */

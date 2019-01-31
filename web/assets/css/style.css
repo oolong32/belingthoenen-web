@@ -166,7 +166,7 @@ footer #archive ul li img {
 /* Home Carousel }}}*/
 /* About-Page: Layout & Slider {{{ */
 body#about {
-  height: calc(100vh - 145px); }
+  height: auto; }
   body#about footer {
     position: fixed;
     bottom: 0px;
@@ -359,6 +359,7 @@ body#about {
   /* Desktop Header }}} */
   /* Desktop Footer {{{ */
   footer {
+    background: orange;
     padding-top: .5em;
     bottom: -120px;
     background: transparent; }
@@ -369,6 +370,7 @@ body#about {
   body:not(#index) footer {
     display: none; }
   /* End Desktop Footer }}} */
+  /* Desktop Carousells Global {{{ */
   .about-carousel,
   .main-carousel {
     margin: auto;
@@ -412,6 +414,7 @@ body#about {
     position: static; }
   .carousel-cell.is-selected .description {
     position: absolute; }
+  /* Desktop Carousells Global }}} */
   /* Desktop Carousel Exceptions {{{ */
   .about-carousel .carousel-cell .name {
     bottom: 20px; }
@@ -420,8 +423,6 @@ body#about {
     letter-spacing: 0.0125em; }
     .main-carousel .carousel-cell div.description p em {
       letter-spacing: 0.025em; }
-  body#about main.about-carousel {
-    position: relative; }
   /* End Desktop Carousel Exeptions }}} */
   /* Follow, Insta-Feed {{{ */
   #follow main {
