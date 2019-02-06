@@ -11,9 +11,9 @@
 
   <div class="carousel-cell">
     <section id="about-intro">
-      <p style="color: white; font-size: 18px; margin: 15px 30px;">{{ aboutIntro}}</p>
+      <p>{{ aboutIntro}}</p>
 
-      <ul id="team-list" style="font-size: 18px; line-height: 2.25; margin: 15px 30px;">
+      <ul id="team-list">
       {% for entry in aboutEntries %}
         <li>
           <button class="jump-button" onclick="flkty.select({{ loop.index }}, true, false)" style="cursor: pointer; border: none; padding: 0; background: black; font-size: 18px; color: white;">{{ entry.teamName }}</button>
@@ -28,7 +28,6 @@
         <p style="color: white; font-size: 18px; text-align: center"><strong>Team</strong></p>
      </section>
      #}
-
 
   </div>
 
