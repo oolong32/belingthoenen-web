@@ -9,21 +9,27 @@
 
 <main class="about-carousel carousel">
 
-  {# {% for aboutPage in aboutPages %} #}
   <div class="carousel-cell">
-  <section id="about-intro">
-    <p style="color: white; font-size: 18px; margin: 15px 30px;">{{ aboutIntro}}</p>
-    <ul id="team-list">
-    {% for entry in aboutEntries %}
-      <li><a href="">{{ entry.teamName }}</a></li>
-    {% endfor %}
-    </ul>
-  </section>
+    <section id="about-intro">
+      <p style="color: white; font-size: 18px; margin: 15px 30px;">{{ aboutIntro}}</p>
 
-   <section style="margin-top: 170px">
-      <img style="display: block; margin: 0 auto;" src="/assets/_pic/arrow_right.svg" alt="arrow">
-      <p style="color: white; font-size: 18px; text-align: center"><strong>Team</strong></p>
-   </section>
+      <ul id="team-list" style="font-size: 18px; line-height: 2.25; margin: 15px 30px;">
+      {% for entry in aboutEntries %}
+        <li>
+          <button class="jump-button" onclick="flkty.select({{ loop.index }}, true, false)" style="cursor: pointer; border: none; padding: 0; background: black; font-size: 18px; color: white;">{{ entry.teamName }}</button>
+        </li>
+      {% endfor %}
+      </ul>
+    </section>
+
+     {#
+     <section style="margin-top: 170px">
+        <img style="display: block; margin: 0 auto;" src="/assets/_pic/arrow_right.svg" alt="arrow">
+        <p style="color: white; font-size: 18px; text-align: center"><strong>Team</strong></p>
+     </section>
+     #}
+
+
   </div>
 
   {% for entry in aboutEntries %}
@@ -39,17 +45,4 @@
 <script src="/assets/js/initializeAboutFlickity.js"></script>
 <script src="/assets/js/handleArrowButtons.js"></script>
 
-<script>
-  console.clear();
-  console.log("beling thoenen projects");
-
-  let team = document.querySelectorAll('#team-list li');
-  for (foo of team) {
-    foo.addEventListener('click' || 'touchend', function(e) {
-      e.preventDefault();
-      flkty.select(i, true, false);
-    });
-  }
-
-</script>
 {% endblock %}

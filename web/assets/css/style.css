@@ -186,6 +186,9 @@ body#about {
   display: flex;
   align-items: stretch; }
 
+.about-carousel .flickity-viewport {
+  width: 100%; }
+
 .about-carousel .flickity-page-dots {
   bottom: 60px;
   left: 0;
@@ -408,7 +411,7 @@ body#about {
   .carousel-cell > img,
   .carousel-cell video {
     position: static;
-    object-fit: contain;
+    object-fit: cover;
     width: auto; }
   .flickity-button {
     display: block; }
