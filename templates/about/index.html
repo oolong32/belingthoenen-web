@@ -11,8 +11,13 @@
 
   {# {% for aboutPage in aboutPages %} #}
   <div class="carousel-cell">
-  <section>
+  <section id="about-intro">
     <p style="color: white; font-size: 18px; margin: 15px 30px;">{{ aboutIntro}}</p>
+    <ul id="team-list">
+    {% for entry in aboutEntries %}
+      <li><a href="">{{ entry.teamName }}</a></li>
+    {% endfor %}
+    </ul>
   </section>
 
    <section style="margin-top: 170px">
@@ -37,6 +42,14 @@
 <script>
   console.clear();
   console.log("beling thoenen projects");
+
+  let team = document.querySelectorAll('#team-list li');
+  for (foo of team) {
+    foo.addEventListener('click' || 'touchend', ()=> {
+      flkty.select(3, true, false);
+      // ächz
+    });
+  }
 
 </script>
 {% endblock %}

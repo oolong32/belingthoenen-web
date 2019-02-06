@@ -8,29 +8,30 @@
 <main class="main-carousel carousel">
 
   {% for project in projects %}
-  <div class="carousel-cell">
-    {% if loop.first %} {# erstes Video sofort laden #}
-    <video src="{{ project.video[0].url }}" autoplay playsinline loop muted>
-    {% else %} {# alle weiteren lazyload #}
-    <!-- lazy load markup -->
-    <video src="{{ project.video[0].url }}" paused playsinline loop muted>
-    {#<video class="lazy" poster="{{ project.standbild[0].url }}" playsinline loop muted>#}
-      {#<source data-src="{{ project.video[0].url }}" type="video/mp4">#}
-      <!-- lazy load markup -->
-    {% endif %}
-      Sorry, your browser doesn't support embedded videos, 
-      but don't worry, you can <a href="{{ project.video[0].url }}">download it</a>
-      and watch it with your favorite video player!
-    </video>
-    <div class="description hidden">
-      {% if project.extLink|length %}
-      <a href="{{ project.extLink }}" target="_blank"><img class="link" src="/assets/_pic/link.svg" alt="cute link button"></a>
+    <div class="carousel-cell">
+      {% if loop.first %} {# erstes Video sofort laden #}
+        <video src="{{ project.video[0].url }}" autoplay playsinline loop muted>
+      {% else %} {# alle weiteren lazyload #}
+        <!-- lazy load markup -->
+        <video src="{{ project.video[0].url }}" paused playsinline loop muted>
+        {#<video class="lazy" poster="{{ project.standbild[0].url }}" playsinline loop muted>#}
+          {#<source data-src="{{ project.video[0].url }}" type="video/mp4">#}
+          <!-- lazy load markup -->
       {% endif %}
-      <img class="close" src="/assets/_pic/close.svg" alt="cute close button">
-      <p><em>{{ project.title }}</em> {{ project.description }}</p>
+        Sorry, your browser doesn't support embedded videos, 
+        but don't worry, you can <a href="{{ project.video[0].url }}">download it</a>
+        and watch it with your favorite video player!
+      </video>
+
+      <div class="description hidden">
+        {% if project.extLink|length %}
+          <a href="{{ project.extLink }}" target="_blank"><img class="link" src="/assets/_pic/link.svg" alt="cute link button"></a>
+        {% endif %}
+        <img class="close" src="/assets/_pic/close.svg" alt="cute close button">
+        <p><em>{{ project.title }}</em> {{ project.description }}</p>
+      </div>
     </div>
-  </div>
-{% endfor %}
+  {% endfor %}
 
 </main>
 
