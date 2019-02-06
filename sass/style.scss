@@ -447,6 +447,10 @@ body#about {
     object-fit: cover;
     width: auto;
   }
+  .carousel-cell video {
+    height: $card-height;
+    width: $card-width
+  }
   .flickity-button { display: block; }
   .flickity-viewport { position: static; }
   .carousel-cell.is-selected .description { position: absolute; }
