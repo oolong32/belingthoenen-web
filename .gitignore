@@ -5,6 +5,7 @@
 *.swp
 *.swo
 /uploads
+config/general.php
 
 # Gulp related files
 gulpfile.js
