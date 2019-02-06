@@ -3,7 +3,7 @@
   
 {% block content %}
 
-{% set aboutSingle = craft.entries().section('about').first() %}
+{% set aboutSingle = craft.entries().section('about').one() %}
 {% set aboutIntro = aboutSingle.aboutIntro %}
 {% set aboutEntries = craft.entries().section('aboutEntries').all() %}
 
@@ -45,9 +45,9 @@
 
   let team = document.querySelectorAll('#team-list li');
   for (foo of team) {
-    foo.addEventListener('click' || 'touchend', ()=> {
-      flkty.select(3, true, false);
-      // ächz
+    foo.addEventListener('click' || 'touchend', function(e) {
+      e.preventDefault();
+      flkty.select(i, true, false);
     });
   }
 
