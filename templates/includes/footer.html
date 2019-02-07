@@ -12,7 +12,11 @@
 
    <ul id="#archive">
       {% for entry in archive %}
-      <li class="archive-project"><img src="{{ entry.archiveImg[0].url }}" alt=""><section class="archive-project-description hidden"></section></li>
+      <li class="archive-project"><img src="{{ entry.archiveImg[0].url }}" alt="">
+        <section class="archive-project-description hidden">
+          <img src="{{ entry.archiveImg[0].url }}" alt="">
+        </section>
+      </li>
       {% endfor %}
     </ul> 
 
