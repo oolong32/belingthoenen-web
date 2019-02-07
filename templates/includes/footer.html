@@ -7,6 +7,7 @@
 <footer>
 
 {% if slug == "index" %} {# Archiv nur sichtbar auf Index/Home #}
+
   <section id="archive">
     {% set archive = craft.entries().section('archive').all() %}
 
@@ -21,6 +22,7 @@
     </ul> 
 
   </section>
+
 {% endif %}
 
   <nav>
