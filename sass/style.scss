@@ -229,9 +229,8 @@ body#about {
   width: 100%;
   position: fixed; // sollte absolute sein! 
   bottom: 0;
-  // background: purple;
-  // padding-bottom: 100px;
-  // height: 250px;
+  background: purple;
+  padding-bottom: 100px;
   z-index: 300;
   // padding: 1em 5em 4em 1em;
   // animate
@@ -462,7 +461,10 @@ body#about {
   }
   .flickity-button { display: block; }
   .flickity-viewport { position: static; }
-  .carousel-cell.is-selected .description { position: absolute; }
+  .carousel-cell.is-selected .description {
+    position: absolute;
+    padding-bottom: 0;
+  }
  /* Desktop Carousels Global }}} */
 
   /* Desktop Carousel Exceptions {{{ */
