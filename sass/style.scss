@@ -268,7 +268,7 @@ body#about {
 
 /* Follow, Insta-Feed {{{*/
 #follow {
-  justify-content: flex-start;
+  // justify-content: flex-start;
   main {
     color: white;
     p {
@@ -491,21 +491,20 @@ body#about {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px 20px;
-    margin: 0 auto;
+    margin: auto;
     .insta-post {
       width: $card-width;
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: space-between;
+      height: $card-height;
       img, video {
         margin: 0 0 15px;
       }
     }
     section.links {
       grid-column: 1/-1;
-      p.ext-facebook-link {
+      p.ext-links {
         margin: 0;
-        text-align: right;
+        padding: 0;
+        text-align: left;
       }
     }
   }

@@ -272,41 +272,39 @@ body#about {
 
 /* End Carousel allgemein }}} */
 /* Follow, Insta-Feed {{{*/
-#follow {
-  justify-content: flex-start; }
-  #follow main {
-    color: white; }
-    #follow main p {
-      margin: 0 30px;
-      font-size: 0.8125em; }
-    #follow main .insta-post {
-      padding-bottom: 15px;
-      background: black; }
-      #follow main .insta-post p.text {
-        margin-bottom: 12px;
-        font-size: 1em; }
-      #follow main .insta-post .error-type {
-        color: lawngreen;
-        letter-spacing: 0.025em;
-        transform: rotate(-7deg);
-        transform-origin: bottom left;
-        position: relative;
-        top: 10px; }
-      #follow main .insta-post .error {
-        color: deeppink;
-        transform: rotate(-7deg);
-        transform-origin: bottom left;
-        position: relative;
-        left: 6px; }
-      #follow main .insta-post video,
-      #follow main .insta-post img {
-        width: 100%;
-        height: 375px;
-        object-fit: cover;
-        object-position: center top;
-        margin: 60px 0 15px; }
-    #follow main .insta-post:first-of-type {
-      display: block; }
+#follow main {
+  color: white; }
+  #follow main p {
+    margin: 0 30px;
+    font-size: 0.8125em; }
+  #follow main .insta-post {
+    padding-bottom: 15px;
+    background: black; }
+    #follow main .insta-post p.text {
+      margin-bottom: 12px;
+      font-size: 1em; }
+    #follow main .insta-post .error-type {
+      color: lawngreen;
+      letter-spacing: 0.025em;
+      transform: rotate(-7deg);
+      transform-origin: bottom left;
+      position: relative;
+      top: 10px; }
+    #follow main .insta-post .error {
+      color: deeppink;
+      transform: rotate(-7deg);
+      transform-origin: bottom left;
+      position: relative;
+      left: 6px; }
+    #follow main .insta-post video,
+    #follow main .insta-post img {
+      width: 100%;
+      height: 375px;
+      object-fit: cover;
+      object-position: center top;
+      margin: 60px 0 15px; }
+  #follow main .insta-post:first-of-type {
+    display: block; }
 
 /* End Follow, Insta-Feed }}}*/
 /* Contact Page {{{ */
@@ -460,16 +458,18 @@ body#about {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px 20px;
-    margin: 0 auto; }
+    margin: auto; }
     #follow main .insta-post {
-      width: 375px; }
+      width: 375px;
+      height: 600px; }
       #follow main .insta-post img, #follow main .insta-post video {
         margin: 0 0 15px; }
     #follow main section.links {
       grid-column: 1/-1; }
-      #follow main section.links p.ext-facebook-link {
+      #follow main section.links p.ext-links {
         margin: 0;
-        text-align: right; }
+        padding: 0;
+        text-align: left; }
   /* End Follow, Insta-Feed }}} */
   /* Contact Page {{{ */
   #contact main {
