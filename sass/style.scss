@@ -276,7 +276,7 @@ body#about {
       font-size: 0.8125em;
     }
     .insta-post {
-      padding-top: 15px;
+      // padding-top: 15px;
       padding-bottom: 15px;
       background: black;
       // display: none;
@@ -306,7 +306,7 @@ body#about {
         height: 375px;
         object-fit: cover;
         object-position: center top;
-        margin: 15px 0;
+        margin: 60px 0 15px;
       }
     }
     .insta-post:first-of-type {
@@ -494,9 +494,12 @@ body#about {
     margin: 0 auto;
     .insta-post {
       width: $card-width;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-between;
+      img, video {
+        margin: 0 0 15px;
+      }
     }
     section.links {
       grid-column: 1/-1;

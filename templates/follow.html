@@ -7,7 +7,8 @@
   {% for instagramdata in craft.picPuller.media_recent({'user_id' : 1,  'use_stale_cache' : true, 'limit': 3}) %}
   <section class="insta-post">
     {% if instagramdata.status == "true" %}
-      <p class="date">{{ instagramdata.created_time|date('d. F Y') }}</p>
+      
+      {# <p class="date">{{ instagramdata.created_time|date('d. F Y') }}</p> #}
 
       {% if instagramdata.video_standard_resolution != "" %}
         <a href="{{ instagramdata.link }}" target="_blank">

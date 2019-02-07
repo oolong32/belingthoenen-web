@@ -280,7 +280,6 @@ body#about {
       margin: 0 30px;
       font-size: 0.8125em; }
     #follow main .insta-post {
-      padding-top: 15px;
       padding-bottom: 15px;
       background: black; }
       #follow main .insta-post p.text {
@@ -305,7 +304,7 @@ body#about {
         height: 375px;
         object-fit: cover;
         object-position: center top;
-        margin: 15px 0; }
+        margin: 60px 0 15px; }
     #follow main .insta-post:first-of-type {
       display: block; }
 
@@ -463,10 +462,9 @@ body#about {
     grid-gap: 15px 20px;
     margin: 0 auto; }
     #follow main .insta-post {
-      width: 375px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; }
+      width: 375px; }
+      #follow main .insta-post img, #follow main .insta-post video {
+        margin: 0 0 15px; }
     #follow main section.links {
       grid-column: 1/-1; }
       #follow main section.links p.ext-facebook-link {
