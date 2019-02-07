@@ -221,6 +221,7 @@ body#about {
 
 .carousel-cell video.square {
   object-fit: contain;
+  object-position: center 85px; // no support in ios :-(
   // Platzierung ok? 
   //    - iPhone 8 ok
 }
@@ -459,6 +460,7 @@ body#about {
     height: $card-height;
     width: $card-width
   }
+  .carousel-cell video.square { object-position: center center; }
   .flickity-button { display: block; }
   .flickity-viewport { position: static; }
   .carousel-cell.is-selected .description {

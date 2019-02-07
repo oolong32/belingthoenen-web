@@ -228,7 +228,8 @@ body#about {
   object-fit: cover; }
 
 .carousel-cell video.square {
-  object-fit: contain; }
+  object-fit: contain;
+  object-position: center 85px; }
 
 .carousel-cell div.description {
   width: 100%;
@@ -431,6 +432,8 @@ body#about {
   .carousel-cell video {
     height: 600px;
     width: 375px; }
+  .carousel-cell video.square {
+    object-position: center center; }
   .flickity-button {
     display: block; }
   .flickity-viewport {
