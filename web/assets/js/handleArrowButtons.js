@@ -1,3 +1,5 @@
+// show/hide arrows on mouse-enter/-leave of carousel
+
 let carousel = document.querySelector('.carousel');
 let mouse_arrows = document.querySelectorAll('.flickity-prev-next-button');
 
