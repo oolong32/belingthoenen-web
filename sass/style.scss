@@ -214,17 +214,26 @@ body#about {
   position: sticky;
   position: -webkit-sticky;
   bottom: 0;
+  height: 100%;
   width: 100%;
   object-fit: cover;
 }
+
+.carousel-cell video.square {
+  object-fit: contain;
+  // Platzierung ok? 
+  //    - iPhone 8 ok
+}
+
 .carousel-cell div.description {
   width: 100%;
   position: fixed; // sollte absolute sein! 
   bottom: 0;
+  // background: purple;
+  // padding-bottom: 100px;
   // height: 250px;
   z-index: 300;
   // padding: 1em 5em 4em 1em;
-  background: black;
   // animate
   transition: all 0.3s;
 }

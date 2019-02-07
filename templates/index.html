@@ -9,7 +9,8 @@
 
   {% for project in projects %}
     <div class="carousel-cell">
-      <video src="{{ project.video[0].url }}" autoplay playsinline loop muted>
+      {% set aspectRatio = project.aspectRatio.options[0].selected %}
+      <video src="{{ project.video[0].url }}" autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }}">
       {# {% if loop.first %} #} {# erstes Video sofort laden #}
         {#<video src="{{ project.video[0].url }}" autoplay playsinline loop muted> #}
       {# {% else %} #} {# alle weiteren lazyload #}
