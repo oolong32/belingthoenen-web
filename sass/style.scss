@@ -303,7 +303,9 @@ body#about {
       video,
       img {
         width: 100%;
-        height: auto;
+        height: 375px;
+        object-fit: cover;
+        object-position: center top;
         margin: 15px 0;
       }
     }
