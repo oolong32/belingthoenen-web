@@ -9,15 +9,17 @@
 
   {% for project in projects %}
     <div class="carousel-cell">
-      {% if loop.first %} {# erstes Video sofort laden #}
-        <video src="{{ project.video[0].url }}" autoplay playsinline loop muted>
-      {% else %} {# alle weiteren lazyload #}
+      <video src="{{ project.video[0].url }}" autoplay playsinline loop muted>
+      {# {% if loop.first %} #} {# erstes Video sofort laden #}
+        {#<video src="{{ project.video[0].url }}" autoplay playsinline loop muted> #}
+      {# {% else %} #} {# alle weiteren lazyload #}
+        {#
         <!-- lazy load markup -->
-        <video src="{{ project.video[0].url }}" paused playsinline loop muted>
-        {#<video class="lazy" poster="{{ project.standbild[0].url }}" playsinline loop muted>#}
-          {#<source data-src="{{ project.video[0].url }}" type="video/mp4">#}
+        <video class="lazy" poster="{{ project.standbild[0].url }}" playsinline loop muted>
+          <source data-src="{{ project.video[0].url }}" type="video/mp4">
           <!-- lazy load markup -->
-      {% endif %}
+        #}
+      {# {% endif %} #}
         Sorry, your browser doesn't support embedded videos, 
         but don't worry, you can <a href="{{ project.video[0].url }}">download it</a>
         and watch it with your favorite video player!
