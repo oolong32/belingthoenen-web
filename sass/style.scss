@@ -128,6 +128,19 @@ footer #archive ul {
 }
 footer #archive ul li { margin-right: 0.25em; }
 footer #archive ul li img { height: 95px; }
+footer #archive section.hidden { display: none; }
+footer #archive section {
+  position: fixed; // mobile wtf???
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: purple;
+  display: flex;
+  flex-direction: column;
+  z-index: 100000;
+  img { margin: auto; }
+}
 /* End Footer }}} */
 
 /* Home Carousel {{{ */
