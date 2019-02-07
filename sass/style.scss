@@ -107,14 +107,9 @@ footer nav ul li a:link {
 }
 footer nav ul li a:hover,
 footer nav ul li a:focus,
-footer nav ul li a:active {
-  color: rgb(155, 20, 255);
-}
+footer nav ul li a:active { color: rgb(155, 20, 255); }
 
-footer #archive {
-  margin-bottom: 1em;
-}
-
+footer #archive { margin-bottom: 1em; }
 footer #archive ul {
   width: 100%;
   overflow-x: scroll;
@@ -128,18 +123,33 @@ footer #archive ul {
 }
 footer #archive ul li { margin-right: 0.25em; }
 footer #archive ul li img { height: 95px; }
-footer #archive section.hidden { display: none; }
+footer #archive section.hidden {
+  display: none;
+  opacity: 0;
+}
 footer #archive section {
+}
+section.archive-project-description {
+  opacity: 1;
+  transition: opacity 0.2s;
+  display: flex;
+  flex-direction: column;
   position: fixed; // mobile wtf???
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: purple;
-  display: flex;
-  flex-direction: column;
-  z-index: 100000;
+  background: black;
   img { margin: auto; }
+  p.archive-project-description-text {
+    text-align: center;
+    color: white;
+  }
+  .close {
+    border: none;
+    background: transparent;
+    img {}
+  }
 }
 /* End Footer }}} */
 
@@ -562,12 +572,6 @@ body#about {
     position: fixed;
     top: 0; bottom: 0; left: 0; right: 0;
     background: deeppink;
-    opacity: 0.2;
-    transition: opacity 0.2s;
-  }
-  .archive-project-description.hidden {
-    display: none;
-    opacity: 0;
   }
   /* End Archive Projects }}} */
 }

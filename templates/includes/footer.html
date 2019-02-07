@@ -11,11 +11,13 @@
   <section id="archive">
     {% set archive = craft.entries().section('archive').all() %}
 
-   <ul id="#archive">
+   <ul>
       {% for entry in archive %}
       <li class="archive-project"><img src="{{ entry.archiveImg[0].url }}" alt="">
         <section class="archive-project-description hidden">
           <img src="{{ entry.archiveImg[0].url }}" alt="">
+          <p class="archive-project-description-text">Lorem Ipsum</p>
+          <img class="close" src="/assets/_pic/close.svg" alt="close icon">
         </section>
       </li>
       {% endfor %}
