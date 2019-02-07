@@ -12,14 +12,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var footer = document.querySelector('footer');
   var dots = document.querySelector('.flickity-page-dots');
 
-  for (let i = 0; i < videos.length; i++) {
+  for (var i = 0; i < videos.length; i++) {
     videos[i].addEventListener('click' || 'touchend', handleClick);
   }
 
   function handleClick(e) {
-    let container = e.target.parentElement;
+    var container = e.target.parentElement;
     if (container.classList.contains('is-selected')) {
-      let description = container.children[1]; // +1 Exp. for daring to hardcode this.
+      var description = container.children[1]; // +1 Exp. for daring to hardcode this.
       description.classList.remove('hidden');
 
       // hide footer
@@ -28,14 +28,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
       dots.classList.add('hidden');
 
       // attach event listener to close button
-      let close = description.querySelector('.close');
+      var close = description.querySelector('.close');
       close.addEventListener('click' || 'touchend', hideDescription, {once: true})
     }
   }
 
   function hideDescription(e) {
     // Projektbeschrieb ausblenden
-    let description = e.target.parentElement;
+    var description = e.target.parentElement;
     description.classList.add('hidden');
     // hide footer
     footer.classList.remove('hidden');
