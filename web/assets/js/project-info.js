@@ -8,9 +8,9 @@ $('video').click(function() {
 */
 
 document.addEventListener("DOMContentLoaded", function(event) {
-  const videos = document.querySelectorAll('video');
-  const footer = document.querySelector('footer');
-  const dots = document.querySelector('.flickity-page-dots');
+  var videos = document.querySelectorAll('video');
+  var footer = document.querySelector('footer');
+  var dots = document.querySelector('.flickity-page-dots');
 
   for (let i = 0; i < videos.length; i++) {
     videos[i].addEventListener('click' || 'touchend', handleClick);
