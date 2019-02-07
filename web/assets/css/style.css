@@ -321,6 +321,8 @@ body#about {
       margin: 60px 0 15px; }
   #follow main .insta-post:first-of-type {
     display: block; }
+  #follow main .links p a {
+    font-weight: bold; }
 
 /* End Follow, Insta-Feed }}}*/
 /* Contact Page {{{ */
