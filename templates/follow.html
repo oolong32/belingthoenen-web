@@ -6,6 +6,7 @@
 
   {% for instagramdata in craft.picPuller.media_recent({'user_id' : 1,  'use_stale_cache' : true, 'limit': 3}) %}
   <section class="insta-post">
+
     {% if instagramdata.status == "true" %}
       
       {# <p class="date">{{ instagramdata.created_time|date('d. F Y') }}</p> #}
@@ -23,12 +24,13 @@
         </a>
       {% endif %}
 
-      <p class="text">{{ instagramdata.caption }}</p>
+      <p class="text">{{ instagramdata.caption|split('#')[0]  }}</p>
 
     {% else %}
       <p class="text error-type"><strong>{{ instagramdata.error_type }}</strong></p>
       <p class="text error">{{ instagramdata.error_message }}</p>
     {% endif %}
+
   </section>
   {% endfor %}
 
