@@ -57,6 +57,7 @@ header {
   background: black;
   z-index: 10;
   #masthead {
+    align-self: center;
     color: white;
     z-index: 100;
     text-align: center;
@@ -64,6 +65,13 @@ header {
     h1, p {
       position: absolute;
       top: -1000px;
+    }
+    img#word-mark { transition: transform 0.2s ease-in-out; }
+  }
+  #masthead:hover {
+    img#word-mark {
+      transform: scale(1.05);
+      transform-origin: center center;
     }
   }
   nav { display: none; }
