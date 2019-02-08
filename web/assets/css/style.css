@@ -62,12 +62,9 @@ header {
     z-index: 100;
     text-align: center;
     padding: 0.5em; }
-    header #masthead h1 {
-      font-family: 'american typewriter';
-      word-spacing: -2px;
-      letter-spacing: -0.05px; }
-    header #masthead p {
-      line-height: 1.1; }
+    header #masthead h1, header #masthead p {
+      position: absolute;
+      top: -1000px; }
   header nav {
     display: none; }
   header a {
@@ -352,11 +349,6 @@ body#about {
       margin: 15px 30px 0; }
 
 /* Contact Page }}}*/
-/* Logo Test*/
-#logo-test {
-  display: none; }
-
-/* End Logo Test*/
 /* Mobile-Landscape Styles {{{ */
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
   /* Kurzer Prozess, aka. Trick 77 */
@@ -536,14 +528,4 @@ body#about {
     left: 0;
     right: 0;
     background: deeppink; }
-  /* End Archive Projects }}} */
-  /* Logo Test {{{ */
-  #logo-test {
-    display: block; }
-  #logo2 {
-    display: none; }
-  header:hover #logo2 {
-    display: block; }
-  header:hover #logo1 {
-    display: none; }
-  /* End Logo Test }}} */ }
+  /* End Archive Projects }}} */ }
