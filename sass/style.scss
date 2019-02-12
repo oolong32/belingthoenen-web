@@ -264,7 +264,7 @@ body#about {
   position: fixed; // sollte absolute sein! 
   bottom: 0;
   background: black;
-  padding-bottom: 100px;
+  padding-bottom: 130px; // etwas hoch für iPhone 8, weil iPhone X höheren Menu-Bar hat.
   z-index: 300;
   // padding: 1em 5em 4em 1em;
   // animate
