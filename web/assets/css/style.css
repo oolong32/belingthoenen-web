@@ -57,10 +57,10 @@ header {
   left: 0;
   right: 0;
   width: 100%;
-  height: 85px;
-  background: black;
-  z-index: 10; }
+  z-index: 100;
+  height: 85px; }
   header #masthead {
+    background: black;
     align-self: center;
     color: white;
     z-index: 100;
@@ -85,6 +85,8 @@ header {
   header .simple-marquee-container {
     position: absolute;
     bottom: 0; }
+  header .simple-marquee-container.hidden {
+    display: none; }
 
 body:not(#index) header {
   height: 60px; }
@@ -148,33 +150,44 @@ footer #archive ul {
 footer #archive ul li {
   margin-right: 0.25em; }
 
-footer #archive ul li img {
+footer #archive ul li > img {
   height: 95px; }
 
 footer #archive section.hidden {
   display: none;
   opacity: 0; }
 
+footer #archive ul.active {
+  height: 100vh; }
+
 section.archive-project-description {
   opacity: 1;
   transition: opacity 0.2s;
-  display: flex;
-  flex-direction: column;
   position: fixed;
-  top: 0;
+  top: 60px;
   bottom: 0;
   left: 0;
   right: 0;
   background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* End Archive Projects */ }
   section.archive-project-description img {
-    margin: auto; }
+    width: 300px;
+    height: auto;
+    margin-bottom: 5vh; }
   section.archive-project-description p.archive-project-description-text {
     text-align: center;
-    color: white; }
-  section.archive-project-description .close {
-    border: none;
-    background: transparent; }
+    color: white;
+    order: 1;
+    margin-bottom: 2em; }
+  section.archive-project-description img.close {
+    width: 44px;
+    height: 44px;
+    margin: 0 10px 0 0;
+    align-self: flex-end; }
 
 /* End Footer }}} */
 /* Home Carousel {{{ */
@@ -376,7 +389,6 @@ body#about {
   header {
     box-sizing: border-box;
     position: static;
-    background: transparent;
     width: 1165px;
     margin: 0 auto;
     padding-top: 28px;
@@ -385,6 +397,7 @@ body#about {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto; }
   header #masthead {
+    background: transparent;
     grid-column: 2/3; }
     header #masthead h1 {
       font-size: 1.75em;
@@ -416,16 +429,49 @@ body#about {
   /* Desktop Header }}} */
   /* Desktop Footer {{{ */
   footer {
-    background: orange;
     padding-top: .5em;
     bottom: -120px;
     background: transparent; }
-  footer:hover {
+  footer:hover, footer.active {
     bottom: 0px; }
   footer nav {
     display: none; }
   body:not(#index) footer {
     display: none; }
+  /* Archive Projects */
+  footer #archive {
+    margin-bottom: 0; }
+  footer #archive ul {
+    overflow: visible;
+    justify-content: center; }
+  footer #archive ul.active {
+    align-items: flex-end;
+    height: auto; }
+  footer #archive ul li {
+    margin-right: .5em; }
+  footer #archive ul li > img {
+    height: 150px;
+    transition: all 0.2s ease-in-out; }
+  footer #archive ul li.active > img {
+    height: 180px; }
+  section.archive-project-description {
+    width: 1185px;
+    background: black;
+    top: 18vh;
+    margin: 0 auto;
+    z-index: -1;
+    justify-content: flex-start; }
+    section.archive-project-description img {
+      order: 1;
+      margin-bottom: 25px; }
+    section.archive-project-description img.close {
+      order: -1;
+      align-self: flex-end;
+      margin: 0;
+      position: relative;
+      top: -22px;
+      left: 22px; }
+  /* End Archive Projects */
   /* End Desktop Footer }}} */
   /* Desktop Carousels Global {{{ */
   .about-carousel,
@@ -523,20 +569,4 @@ body#about {
       height: 600px; }
       #contact main .contact-data img {
         margin: 0; }
-  /* Contact Page }}}*/
-  /* Archive Projects {{{ */
-  footer #archive ul {
-    overflow: visible;
-    justify-content: center; }
-  footer #archive ul li {
-    margin-right: .5em; }
-  footer #archive ul li img {
-    height: 150px; }
-  .archive-project-description {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: deeppink; }
-  /* End Archive Projects }}} */ }
+  /* Contact Page }}}*/ }

@@ -55,10 +55,10 @@ header {
   left: 0;
   right: 0;
   width: 100%;
+  z-index: 100;
   height: 85px;
-  background: black;
-  z-index: 10;
   #masthead {
+    background: black;
     align-self: center;
     color: white;
     z-index: 100;
@@ -80,7 +80,11 @@ header {
   a { text-decoration: none; }
   a:link, a:visited { color: white; }
   a:hover, a:focus { color: rgb(155, 20, 255); }
-  .simple-marquee-container { position: absolute; bottom: 0;}
+  .simple-marquee-container {
+    position: absolute;
+    bottom: 0;
+  }
+  .simple-marquee-container.hidden { display: none; }
 }
 body:not(#index) header { height: 60px; }
 /* End Header }}} */
@@ -136,32 +140,43 @@ footer #archive ul {
   padding: 0 0.25em;
 }
 footer #archive ul li { margin-right: 0.25em; }
-footer #archive ul li img { height: 95px; }
+footer #archive ul li>img { height: 95px; } // thumbnails
 footer #archive section.hidden {
   display: none;
   opacity: 0;
 }
-footer #archive section { }
+// set archive ul to full height in order to
+// show everything relevant on mobile
+footer #archive ul.active { height: 100vh; }
 section.archive-project-description {
   opacity: 1;
   transition: opacity 0.2s;
-  display: flex;
-  flex-direction: column;
-  position: fixed; // mobile wtf???
-  top: 0;
+  position: fixed;
+  top: 60px; // just below the header
   bottom: 0;
   left: 0;
   right: 0;
   background: black;
-  img { margin: auto; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 300px; 
+    height: auto; 
+    margin-bottom: 5vh;
+  }
   p.archive-project-description-text {
     text-align: center;
     color: white;
+    order: 1; // place after close-button
+    margin-bottom: 2em;
   }
-  .close {
-    border: none;
-    background: transparent;
-    img {}
+  img.close {
+    width: 44px;
+    height: 44px;
+    margin: 0 10px 0 0;
+    align-self: flex-end;
   }
   /* End Archive Projects */
 }
@@ -401,7 +416,6 @@ body#about {
   header {
     box-sizing: border-box;
     position: static;
-    background: transparent;
     width: $desktop-width;
     margin: 0 auto;
     padding-top: 28px; // marquee
@@ -411,6 +425,7 @@ body#about {
     grid-template-rows: auto;
   }
   header #masthead {
+    background: transparent;
     grid-column: 2/3;
     h1 {
       font-size: 1.75em;
@@ -451,16 +466,59 @@ body#about {
 
   /* Desktop Footer {{{ */
   footer {
-    background: orange;
     padding-top: .5em;
     bottom: -120px;
     background: transparent;
   }
-  footer:hover {
+  footer:hover, footer.active {
+    // hover or visible archive project
     bottom: 0px;
   }
   footer nav { display: none; }
   body:not(#index) footer { display: none; }
+
+  /* Archive Projects */
+  footer #archive { margin-bottom: 0; }
+
+  footer #archive ul {
+    overflow: visible;
+    justify-content: center;
+  }
+  footer #archive ul.active {
+    align-items: flex-end; // archive thumbnails at bottom
+    height: auto;
+  }
+
+  footer #archive ul li { margin-right: .5em; }
+  footer #archive ul li>img { // thumbnails
+    height: 150px;
+    transition: all 0.2s ease-in-out;
+  }
+  footer #archive ul li.active>img {
+    height: 180px;
+  }
+
+  section.archive-project-description {
+    width: 1185px;
+    background: black;
+    top: 18vh;
+    margin: 0 auto; 
+    z-index: -1;
+    justify-content: flex-start;
+    img {
+      order: 1;
+      margin-bottom: 25px;
+    }
+    img.close {
+      order: -1;
+      align-self: flex-end;
+      margin: 0;
+      position: relative;
+      top: -22px;
+      left: 22px;
+    }
+  }
+  /* End Archive Projects */
   /* End Desktop Footer }}} */
 
   /* Desktop Carousels Global {{{ */
@@ -574,21 +632,6 @@ body#about {
     }
   }
   /* Contact Page }}}*/
-
-  /* Archive Projects {{{ */
-  footer #archive ul {
-    overflow: visible;
-    justify-content: center;
-  }
-
-  footer #archive ul li { margin-right: .5em; }
-  footer #archive ul li img { height: 150px; }
-  .archive-project-description {
-    position: fixed;
-    top: 0; bottom: 0; left: 0; right: 0;
-    background: deeppink;
-  }
-  /* End Archive Projects }}} */
 
 }
 

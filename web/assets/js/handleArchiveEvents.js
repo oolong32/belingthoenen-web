@@ -5,7 +5,6 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
   var archive = document.querySelectorAll('.archive-project');
-  console.log(archive);
 
   for (var i = 0; i < archive.length; i++ ) {
     archive[i].addEventListener('click' || 'touchend', handleArchiveClick);
@@ -34,10 +33,31 @@ function handleArchiveClick(e) {
   var close = archiveDescription.querySelector('.close');
   close.addEventListener('click' || 'touchend', hideArchiveDescription, {once: true})
 
+
   // parent list shall grow to display all it’s wonderful content
   var parentLi = archiveDescription.parentElement;
   var parentUl = parentLi.parentElement;
-  parentUl.classList.add = 'active';
+  var allLiItems = parentUl.children;
+  var footer = document.querySelector('footer');
+  var marquee = document.querySelector('.simple-marquee-container');
+  // check what’s active and reset it
+  for (var i = 0; i < allLiItems.length; i++) {
+    if (allLiItems[i].classList.contains('active')) { // there was already an active archive project
+      var activeLi = allLiItems[i];
+      activeLi.classList.remove('active');
+      var activeDescription = activeLi.children[1];
+      activeDescription.classList.add('hidden');
+      // var activeClose = activeDescription.children[2];
+      // activeClose.removeEventListener('click' || 'touchend', hideArchiveDescription);
+      // this doesn’t work, let’s hope it doesn’t cause trouble
+
+    }
+  }
+  // set everything involved to active 
+  parentUl.classList.add('active');
+  parentLi.classList.add('active');
+  footer.classList.add('active');
+  marquee.classList.add('hidden');
 }
 
 function hideArchiveDescription(e) {
@@ -48,5 +68,10 @@ function hideArchiveDescription(e) {
   // parent list shall shrink
   var parentLi = description.parentElement;
   var parentUl = parentLi.parentElement;
-  parentUl.classList.remove = 'active';
+  var footer = document.querySelector('footer');
+  var marquee = document.querySelector('.simple-marquee-container');
+  parentLi.classList.remove('active');
+  parentUl.classList.remove('active');
+  footer.classList.remove('active');
+  marquee.classList.remove('hidden');
 }
