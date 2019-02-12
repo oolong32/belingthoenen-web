@@ -164,13 +164,17 @@ section.archive-project-description {
   img {
     width: 300px; 
     height: auto; 
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
   }
-  p.archive-project-description-text {
-    text-align: center;
-    color: white;
+  div.archive-project-description-text {
     order: 1; // place after close-button
     margin-bottom: 2em;
+    width: calc(100% - 30px);
+    white-space: normal;
+    p {
+      color: white;
+      text-align: center;
+    }
   }
   img.close {
     width: 44px;
@@ -505,6 +509,7 @@ body#about {
     margin: 0 auto; 
     z-index: -1;
     justify-content: flex-start;
+    div.archive-project-description-text { width: 345px; }
     img {
       order: 1;
       margin-bottom: 25px;

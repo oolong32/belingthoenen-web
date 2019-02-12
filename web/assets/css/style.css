@@ -177,12 +177,15 @@ section.archive-project-description {
   section.archive-project-description img {
     width: 300px;
     height: auto;
-    margin-bottom: 5vh; }
-  section.archive-project-description p.archive-project-description-text {
-    text-align: center;
-    color: white;
+    margin-bottom: 2vh; }
+  section.archive-project-description div.archive-project-description-text {
     order: 1;
-    margin-bottom: 2em; }
+    margin-bottom: 2em;
+    width: calc(100% - 30px);
+    white-space: normal; }
+    section.archive-project-description div.archive-project-description-text p {
+      color: white;
+      text-align: center; }
   section.archive-project-description img.close {
     width: 44px;
     height: 44px;
@@ -461,6 +464,8 @@ body#about {
     margin: 0 auto;
     z-index: -1;
     justify-content: flex-start; }
+    section.archive-project-description div.archive-project-description-text {
+      width: 345px; }
     section.archive-project-description img {
       order: 1;
       margin-bottom: 25px; }

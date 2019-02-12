@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function handleArchiveClick(e) {
+  if (e.target.classList.contains('archive-project-description')) {
+    // clicked on the description
+    // such click should not close the modal
+    return true;
+  }
+  console.log(e.target);
   var archiveDescription = e.target.parentElement.children[1];
   archiveDescription.classList.remove('hidden');
   var close = archiveDescription.querySelector('.close');
