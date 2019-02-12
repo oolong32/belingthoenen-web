@@ -19,6 +19,9 @@ body {
   /*overflow: hidden;*/
   /* no scroll balken */ }
 
+main.hidden {
+  display: none; }
+
 /* Text Styles {{{ */
 h1, h2, h3, h4, h5, h6, bold, em {
   font-weight: 700; }
@@ -122,6 +125,7 @@ footer nav ul li a:link {
   color: white;
   text-decoration: none; }
 
+/* Archive Projects */
 footer nav ul li a:hover,
 footer nav ul li a:focus,
 footer nav ul li a:active {
@@ -161,7 +165,8 @@ section.archive-project-description {
   bottom: 0;
   left: 0;
   right: 0;
-  background: black; }
+  background: black;
+  /* End Archive Projects */ }
   section.archive-project-description img {
     margin: auto; }
   section.archive-project-description p.archive-project-description-text {

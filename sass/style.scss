@@ -27,6 +27,8 @@ body {
 
 }
 
+main.hidden { display: none; } // needed for archive modal
+
 /* Text Styles {{{ */
 h1, h2, h3, h4, h5, h6, bold, em { font-weight: 700; }
 h1 { font-size: 1.1em; letter-spacing: 0.3px; }
@@ -115,6 +117,8 @@ footer nav ul li a:link {
   color: white;
   text-decoration: none;
 }
+
+/* Archive Projects */
 footer nav ul li a:hover,
 footer nav ul li a:focus,
 footer nav ul li a:active { color: rgb(155, 20, 255); }
@@ -137,8 +141,7 @@ footer #archive section.hidden {
   display: none;
   opacity: 0;
 }
-footer #archive section {
-}
+footer #archive section { }
 section.archive-project-description {
   opacity: 1;
   transition: opacity 0.2s;
@@ -160,6 +163,7 @@ section.archive-project-description {
     background: transparent;
     img {}
   }
+  /* End Archive Projects */
 }
 /* End Footer }}} */
 
