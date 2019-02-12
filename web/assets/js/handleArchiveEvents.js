@@ -37,7 +37,7 @@ function handleArchiveClick(e) {
   // parent list shall grow to display all it’s wonderful content
   var parentLi = archiveDescription.parentElement;
   var parentUl = parentLi.parentElement;
-  parentUl.style.height = '100vh';
+  parentUl.classList.add = 'active';
 }
 
 function hideArchiveDescription(e) {
@@ -48,5 +48,5 @@ function hideArchiveDescription(e) {
   // parent list shall shrink
   var parentLi = description.parentElement;
   var parentUl = parentLi.parentElement;
-  parentUl.style.height = 'auto';
+  parentUl.classList.remove = 'active';
 }
