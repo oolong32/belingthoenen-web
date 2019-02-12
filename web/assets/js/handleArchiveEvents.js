@@ -5,7 +5,6 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
   var archive = document.querySelectorAll('.archive-project');
-  var main = document.querySelector('main');
   console.log(archive);
 
   for (var i = 0; i < archive.length; i++ ) {
@@ -34,8 +33,11 @@ function handleArchiveClick(e) {
   archiveDescription.classList.remove('hidden');
   var close = archiveDescription.querySelector('.close');
   close.addEventListener('click' || 'touchend', hideArchiveDescription, {once: true})
-  
-  //main.style.display = 'none';
+
+  // parent list shall grow to display all it’s wonderful content
+  var parentLi = archiveDescription.parentElement;
+  var parentUl = parentLi.parentElement;
+  parentUl.style.height = '100vh';
 }
 
 function hideArchiveDescription(e) {
@@ -43,5 +45,8 @@ function hideArchiveDescription(e) {
   var description = e.target.parentElement;
   description.classList.add('hidden');
 
-  //main.style.display = 'block';
+  // parent list shall shrink
+  var parentLi = description.parentElement;
+  var parentUl = parentLi.parentElement;
+  parentUl.style.height = 'auto';
 }
