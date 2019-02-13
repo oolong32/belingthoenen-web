@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       dots.classList.add('hidden');
 
       // attach event listener to close button
-      var close = description.querySelector('.close');
-      close.addEventListener('click' || 'touchend', hideDescription, {once: true})
+      var closeButton = description.querySelector('.close');
+      closeButton.addEventListener('click' || 'touchend', hideDescription, {once: true})
     }
   }
 
