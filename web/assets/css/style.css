@@ -256,24 +256,16 @@ body#about {
     line-height: 1.2;
     color: white;
     background: transparent;
-    transform: translateY(50px);
+    transform: translateY(0);
     transition: all 0.2s ease-in-out; }
   .about-carousel .carousel-cell.team-member .name.up {
-    transform: translateY(0px); }
+    transform: translateY(-10px); }
   .about-carousel .carousel-cell.team-member .contact-data {
     position: relative;
     padding: 10px 30px 30px;
     background: black;
     color: white;
-    opacity: 1;
     transition: all 0.3s ease-in-out; }
-    .about-carousel .carousel-cell.team-member .contact-data .close {
-      cursor: pointer;
-      width: 44px;
-      height: 44px;
-      position: absolute;
-      top: -34px;
-      right: 10px; }
   .about-carousel .carousel-cell.team-member .contact-data.hidden {
     opacity: 0;
     transform: translateY(100px); }
@@ -349,16 +341,16 @@ body#follow {
 
 .carousel-cell div.description .link {
   position: absolute;
-  top: -30px;
+  top: -34px;
   right: 80px; }
 
 .carousel-cell div.description .close {
   position: absolute;
-  top: -30px;
+  top: -34px;
   right: 20px; }
 
 .carousel-cell div.description p {
-  margin: 1em 5em 1em 1em;
+  margin: 1em 1em 1em 1em;
   font-size: 0.6875em;
   color: white; }
 

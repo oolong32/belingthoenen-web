@@ -251,31 +251,28 @@ body#about {
     line-height: 1.2;
     color: white;
     background: transparent;
-    transform: translateY(50px);
+    transform: translateY(0);
     transition: all 0.2s ease-in-out;
   }
-  .name.up { transform: translateY(0px); }
+  .name.up { transform: translateY(-10px); }
   .contact-data {
     position: relative;
     padding: 10px 30px 30px;
     background: black;
     color: white;
-    opacity: 1;
     transition: all 0.3s ease-in-out;
     .close {
-      cursor: pointer;
-      width: 44px;
-      height: 44px;
-      position: absolute;
-      top: -34px;
-      right: 10px;
+      // position: absolute;
+      // top: -34px;
+      // right: 10px;
+      // width: 44px;
+      // height: 44px;
+      // cursor: pointer;
     }
   }
   .contact-data.hidden {
     opacity: 0;
     transform: translateY(100px);
-
-
   }
 }
 .about-carousel #about-intro {
@@ -356,17 +353,16 @@ body#follow {
 .carousel-cell div.description img:hover { transform: scale(1.1); }
 .carousel-cell div.description .link { // link button
   position: absolute;
-  top: -30px;
+  top: -34px;
   right: 80px; // this is odd, should be less
 }
 .carousel-cell div.description .close { // close button
-  // would be better to refer by class
   position: absolute;
-  top: -30px;
+  top: -34px;
   right: 20px; // this is odd, should be less
 }
 .carousel-cell div.description p {
-  margin: 1em 5em 1em 1em;
+  margin: 1em 1em 1em 1em;
   font-size: 0.6875em;
   color: white;
 }
