@@ -37,9 +37,9 @@
 
   <nav>
     <ul>
-      <li><a href="/about">About</a></li>
-      <li><a href="/follow">Follow</a></li>
-      <li><a href="/contact">Contact</a></li>
+      <li{{ slug == 'about' ? ' class="active"' : '' }}><a href="/about">About</a></li>
+      <li{{ slug == 'follow' ? ' class="active"' : '' }}><a href="/follow">Follow</a></li>
+      <li{{ slug == 'contact' ? ' class="active"' : '' }}><a href="/contact">Contact</a></li>
     </ul>
   </nav>
 
