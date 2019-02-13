@@ -210,12 +210,10 @@ section.archive-project-description {
   position: fixed;
   bottom: 160px;
   left: 0;
-  background: transparent;
-  opacity: 1;
-  transition: opacity 0.2s; }
+  background: transparent; }
 
 .flickity-page-dots.hidden {
-  opacity: 0; }
+  display: none; }
 
 /* Home Carousel }}}*/
 /* About-Page: Layout & Slider {{{ */
@@ -256,7 +254,7 @@ body#about {
     line-height: 1.2;
     color: white;
     background: transparent;
-    transform: translateY(0);
+    transform: translateY(-25px);
     transition: all 0.2s ease-in-out; }
   .about-carousel .carousel-cell.team-member .name.up {
     transform: translateY(-10px); }
@@ -342,12 +340,14 @@ body#follow {
 .carousel-cell div.description .link {
   position: absolute;
   top: -34px;
-  right: 80px; }
+  right: 80px;
+  cursor: pointer; }
 
-.carousel-cell div.description .close {
+.carousel-cell .close {
   position: absolute;
   top: -34px;
-  right: 20px; }
+  right: 20px;
+  cursor: pointer; }
 
 .carousel-cell div.description p {
   margin: 1em 1em 1em 1em;

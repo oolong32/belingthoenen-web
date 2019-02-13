@@ -204,10 +204,8 @@ section.archive-project-description {
   bottom: 160px; // Test! (sollte über dem footer sein)
   left: 0;
   background: transparent;
-  opacity: 1;
-  transition: opacity 0.2s;
 }
-.flickity-page-dots.hidden { opacity: 0; }
+.flickity-page-dots.hidden { display: none; }
 /* Home Carousel }}}*/
 
 /* About-Page: Layout & Slider {{{ */
@@ -251,7 +249,7 @@ body#about {
     line-height: 1.2;
     color: white;
     background: transparent;
-    transform: translateY(0);
+    transform: translateY(-25px);
     transition: all 0.2s ease-in-out;
   }
   .name.up { transform: translateY(-10px); }
@@ -261,14 +259,6 @@ body#about {
     background: black;
     color: white;
     transition: all 0.3s ease-in-out;
-    .close {
-      // position: absolute;
-      // top: -34px;
-      // right: 10px;
-      // width: 44px;
-      // height: 44px;
-      // cursor: pointer;
-    }
   }
   .contact-data.hidden {
     opacity: 0;
@@ -355,11 +345,13 @@ body#follow {
   position: absolute;
   top: -34px;
   right: 80px; // this is odd, should be less
+  cursor: pointer;
 }
-.carousel-cell div.description .close { // close button
+.carousel-cell .close { // close button
   position: absolute;
   top: -34px;
   right: 20px; // this is odd, should be less
+  cursor: pointer;
 }
 .carousel-cell div.description p {
   margin: 1em 1em 1em 1em;

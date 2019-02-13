@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   function hideDescription(e) {
-    e.preventDefault();
+    //e.preventDefault();
     var closeButton = e.target
     console.log(closeButton);
     // Projektbeschrieb ausblenden
