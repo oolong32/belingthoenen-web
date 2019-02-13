@@ -18,7 +18,7 @@ var flkty = new Flickity( elem, {
 // video on for selected, pause for deselected
 flkty.on( 'select', function( index ) {
 
-  let allVids = document.querySelectorAll('video');
+  var allVids = document.querySelectorAll('video');
   for (var i = 0; i < allVids.length; i++) {
     if (i != index) { // we don’t want to process the currently selected video
       var video = allVids[i];

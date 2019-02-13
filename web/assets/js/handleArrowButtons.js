@@ -9,13 +9,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
   hideArrows(); // hide arrows at first;
 
   function hideArrows() {
-    for (arrow of mouse_arrows) {
+    for (var i = 0; i < mouse_arrows.length; i++) {
+      var arrow = mouse_arrows[i];
       arrow.classList.add('hidden');
     }
   }
 
   function showArrows() {
-    for (arrow of mouse_arrows) {
+    for (var i = 0; i < mouse_arrows.length; i++) {
+      var arrow = mouse_arrows[i];
       arrow.classList.remove('hidden');
     }
   }

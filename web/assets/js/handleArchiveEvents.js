@@ -33,7 +33,7 @@ function handleArchiveClick(e) {
     // such click should not close the modal
     return true;
   }
-  console.log(e.target);
+  // console.log(e.target);
   var archiveDescription = e.target.parentElement.children[1];
   archiveDescription.classList.remove('hidden');
   var close = archiveDescription.querySelector('.close');
