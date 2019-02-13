@@ -22,19 +22,12 @@
       </ul>
     </section>
 
-
-    {#
-     <section style="margin-top: 170px">
-        <img style="display: block; margin: 0 auto;" src="/assets/_pic/arrow_right.svg" alt="arrow">
-        <p style="color: white; font-size: 18px; text-align: center"><strong>Team</strong></p>
-     </section>
-     #}
-
   </div>
 
   {% for entry in aboutEntries %}
-  <div class="carousel-cell" style="background: url('{{ entry.teamImg[0].url }}') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+  <div class="carousel-cell team-member" style="background: url('{{ entry.teamImg[0].url }}') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
       <p class="name">{{ entry.teamName }}{{ entry.teamRole|length ? "<br>#{entry.teamRole}" | raw : '' }}</p>
+      <div class="contact-data hidden" style="background: red; height: 10px; width: 10px; border-radius: 5px;"></div>
   </div>
   {% endfor %}
 
@@ -44,5 +37,6 @@
 <script src="/assets/js/flickity.js"></script>
 <script src="/assets/js/initializeAboutFlickity.js"></script>
 <script src="/assets/js/handleArrowButtons.js"></script>
+<script src="/assets/js/about-info.js"></script>
 
 {% endblock %}
