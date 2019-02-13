@@ -1,11 +1,4 @@
 // event handlers
-/*
-$('video').click(function() {
-  $('.description').removeClass('hidden'); 
-  $('.is-selected').style('height: ' + 800 +'px');
-  $('footer').addClass('hidden'); 
-});
-*/
 
 document.addEventListener("DOMContentLoaded", function(event) {
   var videos = document.querySelectorAll('video');
@@ -29,11 +22,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       // attach event listener to close button
       var closeButton = description.querySelector('.close');
-      closeButton.addEventListener('click' || 'touchend', hideDescription, {once: true})
+      closeButton.addEventListener('click' || 'touchend', hideDescription, {once: true});
     }
   }
 
   function hideDescription(e) {
+    e.preventDefault();
     // Projektbeschrieb ausblenden
     var description = e.target.parentElement;
     description.classList.add('hidden');
