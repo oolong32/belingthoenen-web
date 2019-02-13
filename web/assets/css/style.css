@@ -587,8 +587,6 @@ body#follow {
     padding-bottom: 0; }
   /* Desktop Carousels Global }}} */
   /* Desktop Carousel Exceptions {{{ */
-  .about-carousel .carousel-cell .name {
-    bottom: 20px; }
   .main-carousel .carousel-cell div.description p {
     font-size: 1em;
     letter-spacing: 0.0125em; }
@@ -596,6 +594,12 @@ body#follow {
       letter-spacing: 0.025em; }
   .about-carousel #about-intro {
     padding: 15px 30px 0; }
+  .about-carousel .carousel-cell.team-member .name {
+    transform: translateY(40px); }
+  .about-carousel .carousel-cell.team-member .name.up {
+    transform: translateY(0px); }
+  .about-carousel .flickity-page-dots.hidden {
+    display: block; }
   /* End Desktop Carousel Exeptions }}} */
   /* Follow, Insta-Feed {{{ */
   #follow main .insta-post {
