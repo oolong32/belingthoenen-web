@@ -2,10 +2,10 @@
 {% extends "_layout.html" %}
 
 {% block content %}
-<main>
+<main class="follow-carousel carousel">
 
-  {% for instagramdata in craft.picPuller.media_recent({'user_id' : 1,  'use_stale_cache' : true, 'limit': 3}) %}
-  <section class="insta-post">
+  {% for instagramdata in craft.picPuller.media_recent({'user_id' : 1,  'use_stale_cache' : true, 'limit': 6}) %}
+  <section class="insta-post carousel-cell">
 
     {% if instagramdata.status == "true" %}
       
@@ -35,10 +35,16 @@
   </section>
   {% endfor %}
 
-  <section class="links">
-    <p class="ext-links">Follow us on <a target="_blank" href="https://www.instagram.com/belingthoenen/">instagram</a> or on <a target="_blank" href="https://www.facebook.com/Beling-Thoenen-Design-119797938071895/">facebook</a></p>
-  </section>
 </main>
+
+<div class="links">
+  <p class="ext-links">Follow us on <a target="_blank" href="https://www.instagram.com/belingthoenen/">instagram</a> or on <a target="_blank" href="https://www.facebook.com/Beling-Thoenen-Design-119797938071895/">facebook</a></p>
+</div>
+
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/flickity.js"></script>
+<script src="/assets/js/initializeFollowFlickity.js"></script>
+<script src="/assets/js/handleArrowButtons.js"></script>
 {% endblock %}
 
 {# 

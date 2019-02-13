@@ -265,6 +265,35 @@ body#about {
     line-height: 2.25; }
 
 /* End About-Page: Layout & Slider }}} */
+/* Follow-Page: Slider {{{ */
+body#follow {
+  height: auto; }
+  body#follow footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 60px; }
+
+.follow-carousel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch; }
+
+.follow-carousel .flickity-viewport {
+  width: 100%; }
+
+.follow-carousel .flickity-page-dots {
+  bottom: 60px;
+  left: 0;
+  background: black; }
+
+.follow-carousel .carousel-cell {
+  height: 100%;
+  width: 100%; }
+
+/* End Follow-Page: Slider }}} */
 /* Carousel allgemein {{{ */
 .carousel-cell > img,
 .carousel-cell video {
@@ -329,6 +358,7 @@ body#about {
     padding-bottom: 15px;
     background: black; }
     #follow main .insta-post p.text {
+      display: none;
       margin-bottom: 12px;
       font-size: 1em; }
     #follow main .insta-post p.mobile-follow-links a {
@@ -483,6 +513,7 @@ body#about {
   /* End Archive Projects */
   /* End Desktop Footer }}} */
   /* Desktop Carousels Global {{{ */
+  .follow-carousel,
   .about-carousel,
   .main-carousel {
     margin: auto;
@@ -492,15 +523,18 @@ body#about {
     position: relative;
     width: 1165px;
     height: auto; }
+    .follow-carousel .flickity-viewport,
     .about-carousel .flickity-viewport,
     .main-carousel .flickity-viewport {
       position: static; }
+    .follow-carousel .carousel-cell,
     .about-carousel .carousel-cell,
     .main-carousel .carousel-cell {
       background: black;
       width: 375px;
       height: 600px;
       margin-right: 20px; }
+    .follow-carousel .flickity-page-dots,
     .about-carousel .flickity-page-dots,
     .main-carousel .flickity-page-dots {
       position: static;
@@ -545,26 +579,21 @@ body#about {
     padding: 15px 30px 0; }
   /* End Desktop Carousel Exeptions }}} */
   /* Follow, Insta-Feed {{{ */
-  #follow main {
-    width: 1165px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 15px 20px;
-    margin: auto; }
-    #follow main .insta-post {
-      width: 375px;
-      height: 600px; }
-      #follow main .insta-post p.mobile-follow-links {
-        display: none; }
-      #follow main .insta-post img, #follow main .insta-post video {
-        margin: 0 0 15px; }
-    #follow main section.links {
-      display: block;
-      grid-column: 1/-1; }
-      #follow main section.links p.ext-links {
-        margin: 0;
-        padding: 0;
-        text-align: left; }
+  #follow main .insta-post {
+    width: 375px;
+    height: 600px; }
+    #follow main .insta-post p.text {
+      display: block; }
+    #follow main .insta-post p.mobile-follow-links {
+      display: none; }
+    #follow main .insta-post img, #follow main .insta-post video {
+      margin: 0 0 15px; }
+  #follow main div.links {
+    display: block; }
+    #follow main div.links p.ext-links {
+      margin: 0;
+      padding: 0;
+      text-align: left; }
   /* End Follow, Insta-Feed }}} */
   /* Contact Page {{{ */
   #contact main {

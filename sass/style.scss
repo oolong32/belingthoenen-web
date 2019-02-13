@@ -264,6 +264,37 @@ body#about {
 }
 /* End About-Page: Layout & Slider }}} */
 
+/* Follow-Page: Slider {{{ */
+body#follow {
+  //height: calc(100vh - 145px); // browser-chrome + footer
+  height: auto;
+  footer {
+    position:fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 60px;
+  } 
+} 
+
+.follow-carousel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+.follow-carousel .flickity-viewport { width: 100%; }
+.follow-carousel .flickity-page-dots {
+  bottom: 60px;
+  left: 0;
+  background: black;
+}
+.follow-carousel .carousel-cell {
+  height: 100%;
+  width: 100%;
+}
+/* End Follow-Page: Slider }}} */
+
 /* Carousel allgemein {{{ */
 .carousel-cell>img, 
 .carousel-cell video {
@@ -324,7 +355,6 @@ body#about {
 
 /* Follow, Insta-Feed {{{*/
 #follow {
-  // justify-content: flex-start;
   main {
     color: white;
     p {
@@ -332,12 +362,10 @@ body#about {
       font-size: 0.8125em;
     }
     .insta-post {
-      // padding-top: 15px;
       padding-bottom: 15px;
       background: black;
-      // display: none;
-      // border: 1px solid yellow;
       p.text {
+        display: none;
         margin-bottom: 12px;
         font-size: 1em;
       }
@@ -368,9 +396,7 @@ body#about {
         margin: 60px 0 15px;
       }
     }
-    .insta-post:first-of-type {
-      display: block;
-    }
+    .insta-post:first-of-type { display: block; }
     .links {
       display: none;
       p a { font-weight: bold; }
@@ -403,7 +429,6 @@ body#about {
   }
 }
 /* Contact Page }}}*/
-
 
 /* Mobile-Landscape Styles {{{ */
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
@@ -531,6 +556,7 @@ body#about {
   /* End Desktop Footer }}} */
 
   /* Desktop Carousels Global {{{ */
+  .follow-carousel,
   .about-carousel,
   .main-carousel {
     margin: auto; // centered in flex-column
@@ -598,22 +624,22 @@ body#about {
 
   /* Follow, Insta-Feed {{{ */
   #follow main {
-    width: $desktop-width;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 15px 20px;
-    margin: auto;
+    // width: $desktop-width;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-gap: 15px 20px;
+    // margin: auto;
     .insta-post {
       width: $card-width;
       height: $card-height;
+      p.text { display: block; }
       p.mobile-follow-links { display: none; }
       img, video {
         margin: 0 0 15px;
       }
     }
-    section.links {
+    div.links {
       display: block;
-      grid-column: 1/-1;
       p.ext-links {
         margin: 0;
         padding: 0;
