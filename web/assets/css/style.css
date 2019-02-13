@@ -353,8 +353,10 @@ body#about {
       margin: 60px 0 15px; }
   #follow main .insta-post:first-of-type {
     display: block; }
-  #follow main .links p a {
-    font-weight: bold; }
+  #follow main .links {
+    display: none; }
+    #follow main .links p a {
+      font-weight: bold; }
 
 /* End Follow, Insta-Feed }}}*/
 /* Contact Page {{{ */
@@ -553,6 +555,7 @@ body#about {
       #follow main .insta-post img, #follow main .insta-post video {
         margin: 0 0 15px; }
     #follow main section.links {
+      display: block;
       grid-column: 1/-1; }
       #follow main section.links p.ext-links {
         margin: 0;

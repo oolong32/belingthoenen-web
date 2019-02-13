@@ -368,8 +368,9 @@ body#about {
     .insta-post:first-of-type {
       display: block;
     }
-    .links p a {
-      font-weight: bold;
+    .links {
+      display: none;
+      p a { font-weight: bold; }
     }
   }
 }
@@ -607,6 +608,7 @@ body#about {
       }
     }
     section.links {
+      display: block;
       grid-column: 1/-1;
       p.ext-links {
         margin: 0;
