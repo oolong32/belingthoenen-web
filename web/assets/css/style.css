@@ -240,19 +240,43 @@ body#about {
 .about-carousel .flickity-page-dots {
   bottom: 60px;
   left: 0;
-  background: black; }
+  background: transparent; }
 
 .about-carousel .carousel-cell {
   height: 100%;
   width: 100%; }
-  .about-carousel .carousel-cell .name {
+
+.about-carousel .carousel-cell.team-member {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; }
+  .about-carousel .carousel-cell.team-member .name {
+    padding: 30px 30px 10px;
     font-size: 13px;
     line-height: 1.2;
     color: white;
     background: transparent;
-    position: absolute;
-    left: 30px;
-    bottom: calc(0px + 24vh); }
+    transform: translateY(50px);
+    transition: all 0.2s ease-in-out; }
+  .about-carousel .carousel-cell.team-member .name.up {
+    transform: translateY(0px); }
+  .about-carousel .carousel-cell.team-member .contact-data {
+    position: relative;
+    padding: 10px 30px 30px;
+    background: black;
+    color: white;
+    opacity: 1;
+    transition: all 0.3s ease-in-out; }
+    .about-carousel .carousel-cell.team-member .contact-data .close {
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      position: absolute;
+      top: -34px;
+      right: 10px; }
+  .about-carousel .carousel-cell.team-member .contact-data.hidden {
+    opacity: 0;
+    transform: translateY(100px); }
 
 .about-carousel #about-intro {
   padding: 60px 30px 0; }
