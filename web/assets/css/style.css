@@ -331,6 +331,8 @@ body#about {
     #follow main .insta-post p.text {
       margin-bottom: 12px;
       font-size: 1em; }
+    #follow main .insta-post p.mobile-follow-links a {
+      font-weight: bold; }
     #follow main .insta-post .error-type {
       color: lawngreen;
       letter-spacing: 0.025em;
@@ -552,6 +554,8 @@ body#about {
     #follow main .insta-post {
       width: 375px;
       height: 600px; }
+      #follow main .insta-post p.mobile-follow-links {
+        display: none; }
       #follow main .insta-post img, #follow main .insta-post video {
         margin: 0 0 15px; }
     #follow main section.links {

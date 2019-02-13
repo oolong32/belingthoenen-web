@@ -341,6 +341,9 @@ body#about {
         margin-bottom: 12px;
         font-size: 1em;
       }
+      p.mobile-follow-links {
+        a { font-weight: bold; }
+      }
       .error-type {
         color: lawngreen;
         letter-spacing: 0.025em;
@@ -603,6 +606,7 @@ body#about {
     .insta-post {
       width: $card-width;
       height: $card-height;
+      p.mobile-follow-links { display: none; }
       img, video {
         margin: 0 0 15px;
       }
