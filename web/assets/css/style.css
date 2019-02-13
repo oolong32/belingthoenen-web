@@ -455,6 +455,8 @@ body#follow {
         margin-top: .5em;
         margin-left: 2em;
         font-size: 0.8125em; }
+      header nav ul li.active {
+        font-weight: bold; }
   header .simple-marquee-container {
     position: fixed;
     top: 0;

@@ -35,12 +35,5 @@
     </a>
   </section>
 
-  <nav>
-    <ul>
-      <li{{ slug == 'about' ? ' class="active"' : '' }}><a href="/about">About</a></li>
-      <li{{ slug == 'follow' ? ' class="active"' : '' }}><a href="/follow">Follow</a></li>
-      <li{{ slug == 'contact' ? ' class="active"' : '' }}><a href="/contact">Contact</a></li>
-    </ul>
-  </nav>
-
+  {% include 'includes/nav.html'  %}
 </header>
