@@ -27,7 +27,13 @@
   {% for entry in aboutEntries %}
   <div class="carousel-cell team-member" style="background: url('{{ entry.teamImg[0].url }}') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
       <p class="name">{{ entry.teamName }}{{ entry.teamRole|length ? "<br>#{entry.teamRole}" | raw : '' }}</p>
-      <div class="contact-data hidden" style="background: red; height: 10px; width: 10px; border-radius: 5px;"></div>
+      <div class="contact-data hidden">
+		<p>
+		      <a href=mailto:{{ entry.teamMail }}>{{ entry.teamMail }}</a><br>
+		      <a href="tel:{{ entry.teamTel|split(' ')|join }}">{{ entry.teamTel }}</a>
+		</p>
+		<img class="close" src="/assets/_pic/close.svg" alt="">
+      </div>
   </div>
   {% endfor %}
 
