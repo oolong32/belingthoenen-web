@@ -5,7 +5,7 @@ var flkty = new Flickity( elem, {
   // options
   contain: true,
   //dragThreshold: 10,
-  //wrapAround: true,
+  wrapAround: true,
   freeScroll: false,
   contain: true,
   autoPlay: false,

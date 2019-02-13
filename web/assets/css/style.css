@@ -385,10 +385,11 @@ body#follow {
       margin: 60px 0 15px; }
   #follow main .insta-post:first-of-type {
     display: block; }
-  #follow main .links {
-    display: none; }
-    #follow main .links p a {
-      font-weight: bold; }
+
+#follow .links {
+  display: none; }
+  #follow .links p a {
+    font-weight: bold; }
 
 /* End Follow, Insta-Feed }}}*/
 /* Contact Page {{{ */
@@ -588,12 +589,17 @@ body#follow {
       display: none; }
     #follow main .insta-post img, #follow main .insta-post video {
       margin: 0 0 15px; }
-  #follow main div.links {
-    display: block; }
-    #follow main div.links p.ext-links {
+  #follow div.links {
+    display: block;
+    width: 1165px;
+    margin: 0 auto; }
+    #follow div.links p.ext-links {
       margin: 0;
       padding: 0;
-      text-align: left; }
+      text-align: left;
+      color: white; }
+      #follow div.links p.ext-links a {
+        font-weight: bold; }
   /* End Follow, Insta-Feed }}} */
   /* Contact Page {{{ */
   #contact main {

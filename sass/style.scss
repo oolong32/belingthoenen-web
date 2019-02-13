@@ -397,10 +397,10 @@ body#follow {
       }
     }
     .insta-post:first-of-type { display: block; }
-    .links {
-      display: none;
-      p a { font-weight: bold; }
-    }
+  }
+  .links {
+    display: none;
+    p a { font-weight: bold; }
   }
 }
 /* End Follow, Insta-Feed }}}*/
@@ -638,13 +638,17 @@ body#follow {
         margin: 0 0 15px;
       }
     }
-    div.links {
-      display: block;
-      p.ext-links {
-        margin: 0;
-        padding: 0;
-        text-align: left;
-      }
+  }
+  #follow div.links {
+    display: block;
+    width: $desktop-width;
+    margin: 0 auto;
+    p.ext-links {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      color: white;
+      a { font-weight: bold; }
     }
   }
   /* End Follow, Insta-Feed }}} */
@@ -671,4 +675,3 @@ body#follow {
   /* Contact Page }}}*/
 
 }
-
