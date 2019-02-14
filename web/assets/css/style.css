@@ -452,13 +452,13 @@ body#follow footer {
     padding-top: 28px;
     height: 140px;
     display: grid;
+    background: transparent;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto; }
   header #masthead {
     grid-column: 2/3;
     position: relative;
     top: -3px;
-    background: transparent;
     padding: 0; }
     header #masthead svg {
       width: 199px;

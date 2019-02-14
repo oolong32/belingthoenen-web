@@ -479,6 +479,7 @@ body#follow {
     padding-top: 28px; // marquee
     height: 140px;
     display: grid;
+    background: transparent;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     // background: url('/assets/_pic/header_guides.png');
@@ -487,7 +488,6 @@ body#follow {
     grid-column: 2/3;
     position: relative;
     top: -3px;
-    background: transparent;
     padding: 0;
     svg {
       width: 199px;
