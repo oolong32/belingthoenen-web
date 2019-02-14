@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       // hide footer
       footer.classList.add('hidden');
+
       // hide dots
       dots.classList.add('hidden');
 
