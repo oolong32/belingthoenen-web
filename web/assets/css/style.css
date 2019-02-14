@@ -280,13 +280,11 @@ body#about {
 
 /* End About-Page: Layout & Slider }}} */
 /* Follow-Page: Slider {{{ */
-body#follow {
-  height: auto; }
-  body#follow footer {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    height: 60px; }
+body#follow footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 60px; }
 
 .follow-carousel {
   width: 100%;
@@ -602,19 +600,21 @@ body#follow {
     display: block; }
   /* End Desktop Carousel Exeptions }}} */
   /* Follow, Insta-Feed {{{ */
-  #follow main .insta-post {
-    width: 375px;
-    height: 600px; }
-    #follow main .insta-post p.text {
-      display: block; }
-    #follow main .insta-post p.mobile-follow-links {
-      display: none; }
-    #follow main .insta-post img, #follow main .insta-post video {
-      margin: 0 0 15px; }
+  #follow main {
+    margin: auto auto 0; }
+    #follow main .insta-post {
+      width: 375px;
+      height: 600px; }
+      #follow main .insta-post p.text {
+        display: block; }
+      #follow main .insta-post p.mobile-follow-links {
+        display: none; }
+      #follow main .insta-post img, #follow main .insta-post video {
+        margin: 0 0 15px; }
   #follow div.links {
     display: block;
     width: 1165px;
-    margin: 0 auto; }
+    margin: 0 auto auto; }
     #follow div.links p.ext-links {
       margin: 0;
       padding: 0;

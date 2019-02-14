@@ -282,7 +282,7 @@ body#about {
 /* Follow-Page: Slider {{{ */
 body#follow {
   //height: calc(100vh - 145px); // browser-chrome + footer
-  height: auto;
+  // height: auto;
   footer {
     position:fixed;
     bottom: 0px;
@@ -639,11 +639,7 @@ body#follow {
 
   /* Follow, Insta-Feed {{{ */
   #follow main {
-    // width: $desktop-width;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // grid-gap: 15px 20px;
-    // margin: auto;
+    margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
       width: $card-width;
       height: $card-height;
@@ -657,7 +653,7 @@ body#follow {
   #follow div.links {
     display: block;
     width: $desktop-width;
-    margin: 0 auto;
+    margin: 0 auto auto; // flex: stick to main above
     p.ext-links {
       margin: 0;
       padding: 0;
