@@ -4,31 +4,53 @@
 // shows/hides additional infos
 // and hides/shows slider-dots and footer (mobile only)
 
+// set controller to keep track of visibility
+var infosVisible = false;
+
 document.addEventListener("DOMContentLoaded", function(event) {
 
   // list of elements that need an event listener
   // i.e. all slides (containing a project video)
   var videos = document.querySelectorAll('video');
 
+  // all descriptions (hidden by default)
+  var descriptions = document.querySelectorAll('.description');
+
   // visible elements that need to go in case of event
   var footer = document.querySelector('footer');
   var dots = document.querySelector('.flickity-page-dots');
 
-  // attach event listener
+  // attach event listener to all videos/slides
   for (var i = 0; i < videos.length; i++) {
     videos[i].addEventListener('click' || 'touchend', handleClick);
   }
 
+  // attach event listener to all close buttons
+  var closeButtons = document.querySelectorAll('.description .close');
+  for (var i = 0; i < closeButtons.length; i++) {
+    closeButtons[i].addEventListener('click' || 'touchend', hideDescription);
+    console.log(closeButtons[i]);
+  }
+
   function handleClick(e) {
 
-    // get the slide containing the video and the hidden infos
-    var container = e.target.parentElement;
+    // better test if this has effects on right click
+    e.preventDefault();
 
-    if (container.classList.contains('is-selected')) {
+    if (infosVisible) {
+
+        // nothing
+        return;
+
+    } else {
+
+      // switch controller on
+      infosVisible = true;
 
       // display infos
-      var description = container.children[1]; // +1 Exp. for daring to hardcode this.
-      description.classList.remove('hidden');
+      for (var i = 0; i < descriptions.length; i++) {
+        descriptions[i].classList.remove('hidden');
+      }
 
       // hide footer
       footer.classList.add('hidden');
@@ -36,28 +58,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // hide dots
       dots.classList.add('hidden');
 
-      // attach event listener to close button
-      var closeButton = description.querySelector('.close');
-      closeButton.addEventListener('click' || 'touchend', hideDescription, {once: true});
     }
   }
 
   function hideDescription(e) {
+    infosVisible = false;
 
     // not neccessary, but better safe than sorry
     e.preventDefault();
 
     // hide infos
-    var closeButton = e.target;
-    var description = closeButton.parentElement;
-    description.classList.add('hidden');
+    for (var i = 0; i < descriptions.length; i++) {
+      descriptions[i].classList.add('hidden');
+    }
 
     // show footer
     footer.classList.remove('hidden');
 
     // show dots
     dots.classList.remove('hidden');
+
   }
+
 });
 
 
