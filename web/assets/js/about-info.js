@@ -26,13 +26,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var container = e.target;
 
     if (container.classList.contains('is-selected')) {
-      var name = container.children[0]; // +1 Exp. for daring to hardcode this
 
       // display infos
-      var description = container.children[1]; // +5 Exp.
+      var description = container.children[1]; // +1 Exp. for daring to hardcode this
       description.classList.remove('hidden');
 
       // move name up to accomodate the unhidden infos
+      var name = container.children[0]; // +5 Exp.
       name.classList.add('up');
 
       // hide footer
