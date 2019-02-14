@@ -14,9 +14,11 @@
   <div class="simple-marquee-container">
     <div id="news" class="marquee">
       <ul class="marquee-content-items">
+        
+        <li><strong>Coming Soon</strong></li>
 
       {% for newsTickerItem in marquee %}
-        <li><strong>Coming Soon</strong> {{ newsTickerItem.text }}</li>
+        <li>{{ newsTickerItem.text }}</li>
       {% endfor %}
 
       </ul>
