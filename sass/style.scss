@@ -353,13 +353,13 @@ body#follow {
 .carousel-cell div.description .link { // link button
   position: absolute;
   top: -34px;
-  right: 80px; // this is odd, should be less
+  right: 64px; // this is odd, should be less
   cursor: pointer;
 }
 .carousel-cell .close { // close button
   position: absolute;
   top: -34px;
-  right: 20px; // this is odd, should be less
+  right: 10px; // this is odd, should be less
   cursor: pointer;
 }
 .carousel-cell div.description p {

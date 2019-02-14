@@ -344,13 +344,13 @@ body#follow footer {
 .carousel-cell div.description .link {
   position: absolute;
   top: -34px;
-  right: 80px;
+  right: 64px;
   cursor: pointer; }
 
 .carousel-cell .close {
   position: absolute;
   top: -34px;
-  right: 20px;
+  right: 10px;
   cursor: pointer; }
 
 .carousel-cell div.description p {
