@@ -330,52 +330,48 @@ body#follow {
   object-fit: cover;
 }
 
-.carousel-cell video.square {
-  object-fit: contain;
-  object-position: center 85px; // no support in ios :-(
-  // Platzierung ok? 
-  //    - iPhone 8 ok
+.carousel-cell {
+  video.square {
+    object-fit: contain;
+    object-position: center 85px; // no support in ios :-(
+  }
+   div.description {
+    width: 100%;
+    position: fixed; // sollte absolute sein! 
+    bottom: 0;
+    background: black;
+    padding-bottom: 130px; // etwas hoch für iPhone 8, weil iPhone X höheren Menu-Bar hat.
+    z-index: 300;
+    // padding: 1em 5em 4em 1em;
+    // animate
+    transition: all 0.3s;
+    img { transition: transform 0.2s ease-in-out; }
+    img:hover { transform: scale(1.1); }
+    .link { // link button
+      position: absolute;
+      top: -34px;
+      right: 64px; // this is odd, should be less
+      cursor: pointer;
+    }
+    p {
+      margin: 1em 1em 1em 1em;
+      font-size: 0.6875em;
+      color: white;
+    }
+  }
+  .close { // close button
+    position: absolute;
+    top: -34px;
+    right: 10px; // this is odd, should be less
+    cursor: pointer;
+  }
 }
 
-.carousel-cell div.description {
-  width: 100%;
-  position: fixed; // sollte absolute sein! 
-  bottom: 0;
-  background: black;
-  padding-bottom: 130px; // etwas hoch für iPhone 8, weil iPhone X höheren Menu-Bar hat.
-  z-index: 300;
-  // padding: 1em 5em 4em 1em;
-  // animate
-  transition: all 0.3s;
-}
-.carousel-cell div.description img { transition: transform 0.2s ease-in-out; }
-.carousel-cell div.description img:hover { transform: scale(1.1); }
-.carousel-cell div.description .link { // link button
-  position: absolute;
-  top: -34px;
-  right: 64px; // this is odd, should be less
-  cursor: pointer;
-}
-.carousel-cell .close { // close button
-  position: absolute;
-  top: -34px;
-  right: 10px; // this is odd, should be less
-  cursor: pointer;
-}
-.carousel-cell div.description p {
-  margin: 1em 1em 1em 1em;
-  font-size: 0.6875em;
-  color: white;
-}
 .is-selected div.description.hidden {
   transform: translateY(500px) ;
 }
-.carousel-cell:not(.is-selected) div.description {
-  display: none;
-}
-.flickity-button {
-  display: none;
-}
+.carousel-cell:not(.is-selected) div.description { display: none; }
+.flickity-button { display: none; } // hide Arrows
 /* End Carousel allgemein }}} */
 
 /* Follow, Insta-Feed {{{*/
@@ -610,8 +606,13 @@ body#follow {
       margin-right: 20px;
     }
     .flickity-page-dots {
+      opacity: 1;
       position: static;
       background: transparent;
+    }
+    .flickity-page-dots.hidden { // prevent jumping of flex-layout
+      display: block;
+      opacity: 0;
     }
   } 
   .flickity-prev-next-button.hidden { opacity: 0; }

@@ -334,29 +334,25 @@ body#follow footer {
   padding-bottom: 130px;
   z-index: 300;
   transition: all 0.3s; }
-
-.carousel-cell div.description img {
-  transition: transform 0.2s ease-in-out; }
-
-.carousel-cell div.description img:hover {
-  transform: scale(1.1); }
-
-.carousel-cell div.description .link {
-  position: absolute;
-  top: -34px;
-  right: 64px;
-  cursor: pointer; }
+  .carousel-cell div.description img {
+    transition: transform 0.2s ease-in-out; }
+  .carousel-cell div.description img:hover {
+    transform: scale(1.1); }
+  .carousel-cell div.description .link {
+    position: absolute;
+    top: -34px;
+    right: 64px;
+    cursor: pointer; }
+  .carousel-cell div.description p {
+    margin: 1em 1em 1em 1em;
+    font-size: 0.6875em;
+    color: white; }
 
 .carousel-cell .close {
   position: absolute;
   top: -34px;
   right: 10px;
   cursor: pointer; }
-
-.carousel-cell div.description p {
-  margin: 1em 1em 1em 1em;
-  font-size: 0.6875em;
-  color: white; }
 
 .is-selected div.description.hidden {
   transform: translateY(500px); }
@@ -568,8 +564,14 @@ body#follow footer {
     .follow-carousel .flickity-page-dots,
     .about-carousel .flickity-page-dots,
     .main-carousel .flickity-page-dots {
+      opacity: 1;
       position: static;
       background: transparent; }
+    .follow-carousel .flickity-page-dots.hidden,
+    .about-carousel .flickity-page-dots.hidden,
+    .main-carousel .flickity-page-dots.hidden {
+      display: block;
+      opacity: 0; }
   .flickity-prev-next-button.hidden {
     opacity: 0; }
   .flickity-prev-next-button {
