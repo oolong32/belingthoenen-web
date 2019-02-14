@@ -16,7 +16,7 @@
       <ul id="team-list">
       {% for entry in aboutEntries %}
         <li>
-          <button class="jump-button" onclick="flkty.select({{ loop.index }}, true, false)" style="cursor: pointer; border: none; padding: 0; background: black; font-size: 18px; color: white;">{{ entry.teamName }}</button>
+          <button class="jump-button" onclick="flkty.select({{ loop.index }}, true, false)">{{ entry.teamName }}</button>
         </li>
       {% endfor %}
       </ul>

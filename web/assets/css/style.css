@@ -283,6 +283,13 @@ body#about {
   .about-carousel #about-intro ul#team-list {
     font-size: 18px;
     line-height: 2.25; }
+    .about-carousel #about-intro ul#team-list button.jump-button {
+      cursor: pointer;
+      border: none;
+      padding: 0;
+      background: black;
+      font-size: 18px;
+      color: white; }
 
 /* End About-Page: Layout & Slider }}} */
 /* Follow-Page: Slider {{{ */
