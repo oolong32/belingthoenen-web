@@ -588,9 +588,7 @@ body#follow {
   /* End Desktop Footer }}} */
 
   /* Desktop Carousels Global {{{ */
-  .follow-carousel,
-  .about-carousel,
-  .main-carousel {
+  .carousel {
     margin: auto; // centered in flex-column
     box-style: border-box;
     overflow: hidden;
@@ -619,12 +617,6 @@ body#follow {
   .flickity-prev-next-button {
     opacity: 1;
     transition: opacity 0.2s;
-  }
-  .carousel-cell {
-    background: black;
-    width: $card-width;
-    height: $card-height;
-    margin-right: 20px;
   }
   .carousel-cell>img, 
   .carousel-cell video {

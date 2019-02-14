@@ -540,9 +540,7 @@ body#follow footer {
   /* End Archive Projects */
   /* End Desktop Footer }}} */
   /* Desktop Carousels Global {{{ */
-  .follow-carousel,
-  .about-carousel,
-  .main-carousel {
+  .carousel {
     margin: auto;
     box-style: border-box;
     overflow: hidden;
@@ -550,26 +548,18 @@ body#follow footer {
     position: relative;
     width: 1165px;
     height: auto; }
-    .follow-carousel .flickity-viewport,
-    .about-carousel .flickity-viewport,
-    .main-carousel .flickity-viewport {
+    .carousel .flickity-viewport {
       position: static; }
-    .follow-carousel .carousel-cell,
-    .about-carousel .carousel-cell,
-    .main-carousel .carousel-cell {
+    .carousel .carousel-cell {
       background: black;
       width: 375px;
       height: 600px;
       margin-right: 20px; }
-    .follow-carousel .flickity-page-dots,
-    .about-carousel .flickity-page-dots,
-    .main-carousel .flickity-page-dots {
+    .carousel .flickity-page-dots {
       opacity: 1;
       position: static;
       background: transparent; }
-    .follow-carousel .flickity-page-dots.hidden,
-    .about-carousel .flickity-page-dots.hidden,
-    .main-carousel .flickity-page-dots.hidden {
+    .carousel .flickity-page-dots.hidden {
       display: block;
       opacity: 0; }
   .flickity-prev-next-button.hidden {
@@ -577,11 +567,6 @@ body#follow footer {
   .flickity-prev-next-button {
     opacity: 1;
     transition: opacity 0.2s; }
-  .carousel-cell {
-    background: black;
-    width: 375px;
-    height: 600px;
-    margin-right: 20px; }
   .carousel-cell > img,
   .carousel-cell video {
     position: static;
