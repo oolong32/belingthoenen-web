@@ -18,6 +18,7 @@
         handleArchiveEvents.js kaputt machen!
       #}
       <li class="archive-project"><img src="{{ entry.archiveImg[0].url }}" alt="">
+        {#
         <section class="archive-project-description hidden">
           <img src="{{ entry.archiveImg[0].url }}" alt="">
           <div class="archive-project-description-text">
@@ -25,14 +26,30 @@
           </div>
           <img class="close" src="/assets/_pic/close.svg" alt="close icon">
         </section>
+        #}
       </li>
       {% endfor %}
     </ul> 
 
   </section>
-
 {% endif %}
 
 {% include 'includes/nav.html'  %}
 
 </footer>
+
+  {% if slug == "index" %} {# Archiv nur sichtbar auf Index/Home #}
+  {% set archive = craft.entries().section('archive').all() %}
+  <ul id="archive-descriptions" class="hidden">
+    {% for entry in archive %}
+      <li class="archive-project-description hidden">
+        <img class="archive-image" src="{{ entry.archiveImg[0].url }}" alt="">
+        <div class="archive-project-description-text">
+          <p>{{ entry.description }}</p>
+        </div>
+        <img class="close" src="/assets/_pic/close.svg" alt="close icon">
+      </li>
+    {% endfor %}
+    {% endif %}
+    
+  </ul>
