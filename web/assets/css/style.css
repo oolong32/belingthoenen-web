@@ -462,6 +462,7 @@ body#follow footer {
     grid-column: 2/3;
     position: relative;
     top: -3px;
+    margin: auto;
     padding: 0; }
     header #masthead svg {
       width: 199px;
