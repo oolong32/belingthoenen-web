@@ -47,7 +47,7 @@ a:visited {
 
 a:focus,
 a:hover {
-  color: #9b14ff; }
+  color: #96aaff; }
 
 /* End Links }}} */
 /* Header {{{ */
@@ -76,7 +76,7 @@ header {
       transition: transform 0.2s ease-in-out; }
   header #masthead:hover p.byline,
   header #masthead:hover svg path {
-    fill: #9b14ff; }
+    fill: #96aaff; }
   header nav {
     display: none; }
   header a {
@@ -84,7 +84,7 @@ header {
   header a:link, header a:visited {
     color: white; }
   header a:hover, header a:focus {
-    color: #9b14ff; }
+    color: #96aaff; }
   header .simple-marquee-container {
     position: absolute;
     bottom: 0; }
@@ -479,11 +479,14 @@ body#follow footer {
     display: none; } }
 
 /* End Mobile-Landscape Styles }}} */
+/* Mobile Landscape {{{ */
 @media (min-width: 767px) {
   body,
   body#about {
     height: 100vh;
     background: #2c2c2c; }
+  /* End Mobile Landscape }}} */
+  /* --- Desktop Styles --- */
   /* Desktop Header {{{ */
   header {
     box-sizing: border-box;
@@ -634,7 +637,7 @@ body#follow footer {
   .about-carousel #about-intro {
     padding: 15px 30px 0; }
     .about-carousel #about-intro ul#team-list button.jump-button:hover {
-      color: #9b14ff; }
+      color: #96aaff; }
   .about-carousel .carousel-cell.team-member .name {
     transform: translateY(40px); }
   .about-carousel .carousel-cell.team-member .name.up {

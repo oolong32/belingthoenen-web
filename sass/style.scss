@@ -2,7 +2,7 @@
 $desktop-width: 1165px;
 $card-width: 375px;
 $card-height: 600px;
-$violet: rgb(155, 20, 255);
+$violet: rgb(150, 170, 255); 
 
 html, * {
   font-family: 'Work Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
@@ -46,7 +46,7 @@ a:visited {
   text-decoration: none;
 }
 a:focus,
-a:hover { color: #9b14ff; }
+a:hover { color: $violet; }
 /* End Links }}} */
 
 /* Header {{{ */
@@ -507,6 +507,8 @@ body#follow {
 }
 /* End Mobile-Landscape Styles }}} */
 
+/* Mobile Landscape {{{ */
+// should be combined with aspect-ratio!
 @media (min-width: 767px) {
 
   body,
@@ -514,6 +516,9 @@ body#follow {
     height: 100vh; // flex-column-layout
     background: rgb(44, 44, 44);
   }
+/* End Mobile Landscape }}} */
+
+/* --- Desktop Styles --- */
 
   /* Desktop Header {{{ */
   header {
