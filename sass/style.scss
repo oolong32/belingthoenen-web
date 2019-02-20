@@ -17,7 +17,7 @@ body {
   // Height muss definiert sein, sonst geht header sticky nicht
   height: 100vh; /* Arbeitshypothese: beginnt nach Address-Bar und reicht bis unter Menu-Bar */
   font-weight: 400;
-  font-family: 'Works Sans', sans-serif;
+  font-family: 'Works Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
   font-size: 16px;
   line-height: 1.4;
   // Flex: Header oben, Footer unten, Slider absolut positioniert im Hintergrund
@@ -144,7 +144,7 @@ footer #archive ul {
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   white-space: nowrap;
   padding: 0 0.25em;
 }
@@ -157,13 +157,13 @@ footer #archive ul li>img { height: 95px; } // thumbnails
 /* Archive Project Descriptions */
 ul#archive-descriptions {
   position: fixed;
-  top: 60px;
+  top: 50px;
   left: 0;
   bottom: 0;
   right: 0;
   width: 100%;
   height: 100vh;
-  z-index: 20; // above archive thumbs
+  z-index: 140; // above header
   background: transparent;
   display: flex;
   flex-direction: column;
@@ -180,6 +180,7 @@ ul#archive-descriptions {
     div.archive-project-description-text {
       width: 345px;
       text-align: center;
+      order: 2;
     }
     img.archive-image {
       margin: 20px 0;
@@ -187,12 +188,9 @@ ul#archive-descriptions {
       height: auto;
     }
     .close {
-      background: red;
-      position: absolute;
-      top: 400px;
-      right: 100px;
+      order: 1;
       z-index: 200;
-
+      align-self: flex-end;
     }
   }
   li.archive-project-description.hidden {
@@ -621,36 +619,19 @@ body#follow {
 
   /* Archive Project Descriptions */
   ul#archive-descriptions {
-    // position: fixed;
     top: 18vh;
-    // left: 0;
-    // bottom: 0;
-    // right: 0;
-    // width: 100%;
-    height: 100vh; // calc abzgl. header?
+    height: calc(100% - 140px);
     z-index: 1; // in front of project slider, behind archive
-    // background: transparent;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: stretch;
-    .archive-project-description {
+    li.archive-project-description {
       margin: 0 auto;
+      padding: 0;
       width: $desktop-width;
-      // background: black;
-      // color: white;
-      // height: 100%;
-      // padding: 0 10px;
-      // position: relative;
-      // display: flex;
-      // flex-direction: column;
-      // align-items: center;
       .close {
         position: absolute;
-        top: -22px; // häh?
+        top: -22px;
         right: -22px;
       }
     }
-    .archive-project-description.hidden { display: none; }
   }
   /* End Archive Projects */
   /* End Desktop Footer }}} */
