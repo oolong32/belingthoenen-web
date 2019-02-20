@@ -324,7 +324,7 @@ body#about {
   }
   ul#team-list {
     font-size: 18px;
-    line-height: 2.25;
+    line-height: 1.4;
     button.jump-button {
       cursor: pointer;
       border: none;
@@ -688,7 +688,12 @@ body#follow {
     letter-spacing: 0.0125em;
     em { letter-spacing: 0.025em; }
   }
-  .about-carousel #about-intro { padding: 15px 30px 0; }
+  .about-carousel #about-intro {
+    padding: 15px 30px 0;
+  ul#team-list {
+    background: yellow;
+    button.jump-button { color: $violet; }
+  }
   .about-carousel .carousel-cell.team-member .name { transform: translateY(40px); }
   .about-carousel .carousel-cell.team-member .name.up { transform: translateY(0px); }
   .about-carousel .flickity-page-dots.hidden { display: block; } // no need to hide
