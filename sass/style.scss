@@ -690,9 +690,9 @@ body#follow {
   }
   .about-carousel #about-intro {
     padding: 15px 30px 0;
-  ul#team-list {
-    background: yellow;
-    button.jump-button { color: $violet; }
+    ul#team-list {
+      button.jump-button:hover { color: $violet; }
+    }
   }
   .about-carousel .carousel-cell.team-member .name { transform: translateY(40px); }
   .about-carousel .carousel-cell.team-member .name.up { transform: translateY(0px); }
