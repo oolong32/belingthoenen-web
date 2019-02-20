@@ -77,6 +77,8 @@ header {
   header #masthead:hover p.byline,
   header #masthead:hover svg path {
     fill: #96aaff; }
+  header p#home-link-container {
+    display: none; }
   header nav {
     display: none; }
   header a {
@@ -514,6 +516,22 @@ body#follow footer {
     header #masthead p.byline {
       font-size: 12.25px;
       line-height: 0.9; }
+  header p#home-link-container {
+    display: block;
+    grid-column: 1/2;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start; }
+    header p#home-link-container a#home-link {
+      color: white;
+      position: relative;
+      top: 8px;
+      margin-top: .5em; }
+    header p#home-link-container a#home-link:hover {
+      color: #96aaff; }
+  #index header p#home-link-container {
+    font-weight: bold; }
   header nav {
     display: block;
     grid-column: 3/-1;
@@ -638,6 +656,10 @@ body#follow footer {
     padding: 15px 30px 0; }
     .about-carousel #about-intro ul#team-list button.jump-button:hover {
       color: #96aaff; }
+  .about-carousel .carousel-cell.team-member:hover .name {
+    color: #96aaff; }
+  .about-carousel .carousel-cell.team-member:hover .name.up {
+    color: white; }
   .about-carousel .carousel-cell.team-member .name {
     transform: translateY(40px); }
   .about-carousel .carousel-cell.team-member .name.up {
