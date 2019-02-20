@@ -544,11 +544,10 @@ body#follow footer {
   /* Desktop Header }}} */
   /* Desktop Footer {{{ */
   footer {
-    padding-top: .5em;
-    bottom: -120px;
-    background: transparent; }
+    background: transparent;
+    transform: translateY(100px); }
   footer:hover, footer.active {
-    bottom: 0px; }
+    transform: translateY(0px); }
   footer nav {
     display: none; }
   body:not(#index) footer {
@@ -621,22 +620,31 @@ body#follow footer {
   /* End Desktop About Carousel Exeptions }}} */
   /* Archive Thumb Carousel */
   footer #archive {
-    margin-bottom: 0;
     display: flex;
-    justify-content: center; }
-  footer #archive ul.archive-carousel {
-    /* this is the same as #archive ul */
-    border: solid 1px red;
-    width: 997px;
-    overflow: hidden; }
+    justify-content: center;
+    margin: 0; }
+    footer #archive ul.archive-carousel {
+      /* this is the same as #archive ul */
+      border: solid 1px red;
+      width: 997px;
+      height: 128px;
+      overflow: hidden;
+      display: block; }
+      footer #archive ul.archive-carousel .flickity-viewport {
+        position: static; }
+        footer #archive ul.archive-carousel .flickity-viewport .flickity-slider {
+          background: red; }
+          footer #archive ul.archive-carousel .flickity-viewport .flickity-slider li.archive-carousel-cell {
+            width: 200px;
+            margin-right: .5em;
+            height: 128px;
+            border: 1px solid blue; }
   footer #archive ul.archive-carousel:after {
     content: 'flickity';
     display: none; }
   footer #archive ul.active {
     align-items: flex-end;
     height: auto; }
-  footer #archive ul li.archive-carousel-cell {
-    margin-right: .5em; }
   footer #archive ul li img.archive-thumb {
     height: 150px;
     transition: all 0.2s ease-in-out; }

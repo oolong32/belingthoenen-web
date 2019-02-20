@@ -584,13 +584,13 @@ body#follow {
 
   /* Desktop Footer {{{ */
   footer {
-    padding-top: .5em;
-    bottom: -120px;
+    // padding-top: .5em;
     background: transparent;
+    transform: translateY(100px);
   }
   footer:hover, footer.active {
     // hover or visible archive project
-    bottom: 0px;
+    transform: translateY(0px);
   }
   footer nav { display: none; }
   body:not(#index) footer { display: none; }
@@ -669,16 +669,30 @@ body#follow {
 
   /* Archive Thumb Carousel */
   footer #archive {
-    margin-bottom: 0;
     display: flex;
-    justify-content: center;
+    justify-content: center; // Center carousel
+    margin: 0;
+    ul.archive-carousel { /* this is the same as #archive ul */
+      border: solid 1px red;
+      width: 997px;
+      height: 128px;
+      overflow: hidden; // cells overlapping left and right should be cut off
+      display: block; // disable flex (as on mobile)
+      .flickity-viewport {
+        position: static;
+        .flickity-slider {
+          background: red;
+          li.archive-carousel-cell {
+            width: 200px;
+            margin-right: .5em;
+            height: 128px;
+            border: 1px solid blue;
+          }
+        }
+      }
+    }
   }
 
-  footer #archive ul.archive-carousel { /* this is the same as #archive ul */
-    border: solid 1px red;
-    width: 997px;
-    overflow: hidden; // cells overlapping left and right should be cut off
-  }
   footer #archive ul.archive-carousel:after { // actiate carousel
     content: 'flickity'; // corresponds to the ‘watchCSS’ property
     display: none;
@@ -688,9 +702,6 @@ body#follow {
     height: auto;
   }
 
-  footer #archive ul li.archive-carousel-cell {
-    margin-right: .5em;
-  }
   footer #archive ul li img.archive-thumb { // thumbnails
     height: 150px;
     transition: all 0.2s ease-in-out;
