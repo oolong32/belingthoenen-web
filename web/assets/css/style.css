@@ -68,13 +68,10 @@ header {
     padding: 0.9em 0 0.1em; }
     header #masthead svg {
       width: 158px;
-      height: 18px; }
-    header #masthead h1 {
+      height: 33px; }
+    header #masthead h1, header #masthead p.byline {
       position: absolute;
       top: -1000px; }
-    header #masthead p.byline {
-      font-size: 12.25px;
-      line-height: 0.7; }
     header #masthead img#word-mark {
       transition: transform 0.2s ease-in-out; }
   header #masthead:hover p.byline,
@@ -502,12 +499,12 @@ body#follow footer {
   header #masthead {
     grid-column: 2/3;
     position: relative;
-    top: -3px;
+    top: 1px;
     margin: auto;
     padding: 0; }
     header #masthead svg {
       width: 199px;
-      height: 24px; }
+      height: 42px; }
     header #masthead h1 {
       font-size: 1.75em;
       letter-spacing: 0.025em; }

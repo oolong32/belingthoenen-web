@@ -67,15 +67,11 @@ header {
     padding: 0.9em 0 0.1em;
     svg {
       width: 158px;
-      height: 18px;
+      height: 33px;
     }
-    h1 {
+    h1, p.byline {
       position: absolute;
       top: -1000px;
-    }
-    p.byline {
-      font-size: 12.25px;
-      line-height: 0.7;
     }
     img#word-mark { transition: transform 0.2s ease-in-out; }
   }
@@ -536,12 +532,12 @@ body#follow {
   header #masthead {
     grid-column: 2/3;
     position: relative;
-    top: -3px;
+    top: 1px;
     margin: auto;
     padding: 0;
     svg {
       width: 199px;
-      height: 24px;
+      height: 42px;
     }
     h1 {
       font-size: 1.75em;
