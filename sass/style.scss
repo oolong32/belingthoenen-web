@@ -5,7 +5,7 @@ $card-height: 600px;
 $violet: rgb(155, 20, 255);
 
 html, * {
-  font-family: 'Work Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Work Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
@@ -17,7 +17,7 @@ body {
   // Height muss definiert sein, sonst geht header sticky nicht
   height: 100vh; /* Arbeitshypothese: beginnt nach Address-Bar und reicht bis unter Menu-Bar */
   font-weight: 400;
-  font-family: 'Works Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+  font-family: 'Work Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
   font-size: 16px;
   line-height: 1.4;
   // Flex: Header oben, Footer unten, Slider absolut positioniert im Hintergrund

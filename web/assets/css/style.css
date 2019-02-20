@@ -1,5 +1,5 @@
 html, * {
-  font-family: 'Work Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Work Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box; }
@@ -10,7 +10,7 @@ body {
   height: 100vh;
   /* Arbeitshypothese: beginnt nach Address-Bar und reicht bis unter Menu-Bar */
   font-weight: 400;
-  font-family: 'Works Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+  font-family: 'Work Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
   font-size: 16px;
   line-height: 1.4;
   display: flex;
