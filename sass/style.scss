@@ -81,6 +81,7 @@ header {
       fill: $violet;
     }
   }
+  p#home-link-container { display: none; }
   nav { display: none; }
   a { text-decoration: none; }
   a:link, a:visited { color: white; }
@@ -553,6 +554,20 @@ body#follow {
       line-height: 0.9;
     }
   }
+  header p#home-link-container {
+    display: block; // einblenden
+    grid-column: 1/2;
+    display: flex;
+    height: 100%;
+    align-items: center; 
+    justify-content: flex-start; // should be right, and header-width same as main
+    a#home-link {
+      position: relative;
+      top: 8px;
+      margin-top: .5em;
+    }
+  }
+  #index header p#home-link-container a#home-link { font-weight: bold; }
   header nav {
     display: block; // einblenden
     grid-column: 3/-1;
