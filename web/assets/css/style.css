@@ -409,6 +409,11 @@ body#follow footer {
   display: none; }
 
 /* End Carousel allgemein }}} */
+/* Archive Carousel {{{ */
+.archive-carousel:after {
+  content: ''; }
+
+/* End Archive Carousel }}} */
 /* Follow, Insta-Feed {{{*/
 #follow main {
   color: white; }
@@ -548,36 +553,6 @@ body#follow footer {
     display: none; }
   body:not(#index) footer {
     display: none; }
-  /* Archive Projects */
-  footer #archive {
-    margin-bottom: 0; }
-  footer #archive ul {
-    overflow: visible;
-    justify-content: center; }
-  footer #archive ul.active {
-    align-items: flex-end;
-    height: auto; }
-  footer #archive ul li {
-    margin-right: .5em; }
-  footer #archive ul li > img {
-    height: 150px;
-    transition: all 0.2s ease-in-out; }
-  footer #archive ul li.active > img {
-    height: 180px; }
-  /* Archive Project Descriptions */
-  ul#archive-descriptions {
-    top: 18vh;
-    height: calc(100% - 140px);
-    z-index: 1; }
-    ul#archive-descriptions li.archive-project-description {
-      margin: 0 auto;
-      padding: 0;
-      width: 1165px; }
-      ul#archive-descriptions li.archive-project-description .close {
-        position: absolute;
-        top: -22px;
-        right: -22px; }
-  /* End Archive Projects */
   /* End Desktop Footer }}} */
   /* Desktop Carousels Global {{{ */
   .carousel {
@@ -625,12 +600,14 @@ body#follow footer {
     position: absolute;
     padding-bottom: 0; }
   /* Desktop Carousels Global }}} */
-  /* Desktop Carousel Exceptions {{{ */
+  /* Desktop Main Carousel Exceptions {{{ */
   .main-carousel .carousel-cell div.description p {
     font-size: 1em;
     letter-spacing: 0.0125em; }
     .main-carousel .carousel-cell div.description p em {
       letter-spacing: 0.025em; }
+  /* End Desktop Main Carousel Exeptions }}} */
+  /* Desktop About Carousel Exceptions {{{ */
   .about-carousel #about-intro {
     padding: 15px 30px 0; }
     .about-carousel #about-intro ul#team-list button.jump-button:hover {
@@ -641,7 +618,44 @@ body#follow footer {
     transform: translateY(0px); }
   .about-carousel .flickity-page-dots.hidden {
     display: block; }
-  /* End Desktop Carousel Exeptions }}} */
+  /* End Desktop About Carousel Exeptions }}} */
+  /* Archive Thumb Carousel */
+  footer #archive {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center; }
+  footer #archive ul.archive-carousel {
+    /* this is the same as #archive ul */
+    border: solid 1px red;
+    width: 997px;
+    overflow: hidden; }
+  footer #archive ul.archive-carousel:after {
+    content: 'flickity';
+    display: none; }
+  footer #archive ul.active {
+    align-items: flex-end;
+    height: auto; }
+  footer #archive ul li.archive-carousel-cell {
+    margin-right: .5em; }
+  footer #archive ul li img.archive-thumb {
+    height: 150px;
+    transition: all 0.2s ease-in-out; }
+  footer #archive ul li.active img.archive-thumb {
+    height: 180px; }
+  /* Archive Project Descriptions {{{ */
+  ul#archive-descriptions {
+    top: 18vh;
+    height: calc(100% - 140px);
+    z-index: 1; }
+    ul#archive-descriptions li.archive-project-description {
+      margin: 0 auto;
+      padding: 0;
+      width: 1165px; }
+      ul#archive-descriptions li.archive-project-description .close {
+        position: absolute;
+        top: -22px;
+        right: -22px; }
+  /* End Archive Project Descriptions }}} */
   /* Follow, Insta-Feed {{{ */
   #follow main {
     margin: auto auto 0; }

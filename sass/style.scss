@@ -25,7 +25,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   /*overflow: hidden;*/ /* no scroll balken */
-
 }
 
 main.hidden { display: none; } // needed for archive modal
@@ -423,6 +422,11 @@ body#follow {
 .flickity-button { display: none; } // hide Arrows
 /* End Carousel allgemein }}} */
 
+/* Archive Carousel {{{ */
+// deactivate archive carousel by default
+.archive-carousel:after { content: ''; }
+/* End Archive Carousel }}} */
+
 /* Follow, Insta-Feed {{{*/
 #follow {
   main {
@@ -508,7 +512,6 @@ body#follow {
 /* End Mobile-Landscape Styles }}} */
 
 @media (min-width: 767px) {
-
   body,
   body#about {
     height: 100vh; // flex-column-layout
@@ -592,44 +595,6 @@ body#follow {
   footer nav { display: none; }
   body:not(#index) footer { display: none; }
 
-  /* Archive Projects */
-  footer #archive { margin-bottom: 0; }
-
-  footer #archive ul {
-    overflow: visible;
-    justify-content: center;
-  }
-  footer #archive ul.active { // ul.active = ul containing li.active
-    align-items: flex-end; // archive thumbnails at bottom
-    height: auto;
-  }
-
-  footer #archive ul li { margin-right: .5em; }
-  footer #archive ul li>img { // thumbnails
-    height: 150px;
-    transition: all 0.2s ease-in-out;
-  }
-  footer #archive ul li.active>img {
-    height: 180px;
-  }
-
-  /* Archive Project Descriptions */
-  ul#archive-descriptions {
-    top: 18vh;
-    height: calc(100% - 140px);
-    z-index: 1; // in front of project slider, behind archive
-    li.archive-project-description {
-      margin: 0 auto;
-      padding: 0;
-      width: $desktop-width;
-      .close {
-        position: absolute;
-        top: -22px;
-        right: -22px;
-      }
-    }
-  }
-  /* End Archive Projects */
   /* End Desktop Footer }}} */
 
   /* Desktop Carousels Global {{{ */
@@ -682,12 +647,15 @@ body#follow {
   }
  /* Desktop Carousels Global }}} */
 
-  /* Desktop Carousel Exceptions {{{ */
+  /* Desktop Main Carousel Exceptions {{{ */
   .main-carousel .carousel-cell div.description p {
     font-size: 1em;
     letter-spacing: 0.0125em;
     em { letter-spacing: 0.025em; }
   }
+  /* End Desktop Main Carousel Exeptions }}} */
+
+  /* Desktop About Carousel Exceptions {{{ */
   .about-carousel #about-intro {
     padding: 15px 30px 0;
     ul#team-list {
@@ -697,7 +665,55 @@ body#follow {
   .about-carousel .carousel-cell.team-member .name { transform: translateY(40px); }
   .about-carousel .carousel-cell.team-member .name.up { transform: translateY(0px); }
   .about-carousel .flickity-page-dots.hidden { display: block; } // no need to hide
-  /* End Desktop Carousel Exeptions }}} */
+  /* End Desktop About Carousel Exeptions }}} */
+
+  /* Archive Thumb Carousel */
+  footer #archive {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer #archive ul.archive-carousel { /* this is the same as #archive ul */
+    border: solid 1px red;
+    width: 997px;
+    overflow: hidden; // cells overlapping left and right should be cut off
+  }
+  footer #archive ul.archive-carousel:after { // actiate carousel
+    content: 'flickity'; // corresponds to the ‘watchCSS’ property
+    display: none;
+  }
+  footer #archive ul.active { // ul.active = ul containing li.active
+    align-items: flex-end; // archive thumbnails at bottom
+    height: auto;
+  }
+
+  footer #archive ul li.archive-carousel-cell {
+    margin-right: .5em;
+  }
+  footer #archive ul li img.archive-thumb { // thumbnails
+    height: 150px;
+    transition: all 0.2s ease-in-out;
+  }
+  footer #archive ul li.active img.archive-thumb { height: 180px; }
+
+  /* Archive Project Descriptions {{{ */
+  ul#archive-descriptions {
+    top: 18vh;
+    height: calc(100% - 140px);
+    z-index: 1; // in front of project slider, behind archive
+    li.archive-project-description {
+      margin: 0 auto;
+      padding: 0;
+      width: $desktop-width;
+      .close {
+        position: absolute;
+        top: -22px;
+        right: -22px;
+      }
+    }
+  }
+  /* End Archive Project Descriptions }}} */
 
   /* Follow, Insta-Feed {{{ */
   #follow main {
