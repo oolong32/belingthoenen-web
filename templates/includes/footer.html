@@ -13,11 +13,8 @@
 
    <ul>
       {% for entry in archive %}
-      {# 
-        Eine Änderung der Reihenfolge hier wird das Script
-        handleArchiveEvents.js kaputt machen!
-      #}
-      <li class="archive-project"><img src="{{ entry.archiveImg[0].url }}" alt="">
+      <li class="archive-project">
+        <img src="{{ entry.archiveImg[0].url }}" alt="">
       </li>
       {% endfor %}
     </ul> 

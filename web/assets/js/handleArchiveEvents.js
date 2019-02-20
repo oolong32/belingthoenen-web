@@ -44,10 +44,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         activeThumb.classList.remove('active');
         var activeDescription = descriptions[activeThumb.archiveOrder];
         activeDescription.classList.add('hidden');
-        // var activeClose = activeDescription.children[2];
-        // activeClose.removeEventListener('click' || 'touchend', hideArchiveDescription);
-        // this doesn’t work, let’s hope it doesn’t cause trouble
-
       }
     }
     // set everything involved to active 
