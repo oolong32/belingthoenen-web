@@ -661,7 +661,7 @@ body#follow footer {
   .about-carousel .carousel-cell.team-member:hover .name.up {
     color: white; }
   .about-carousel .carousel-cell.team-member .name {
-    transform: translateY(40px); }
+    transform: translateY(65px); }
   .about-carousel .carousel-cell.team-member .name.up {
     transform: translateY(0px); }
   .about-carousel .flickity-page-dots.hidden {
