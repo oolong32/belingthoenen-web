@@ -2,11 +2,11 @@
 // Thumbs have click/touchend event listeners that toggle visibility of description modal.
 // A visible description modal has a one-time click/touchend event listener that makes it disapear.
 
-
 document.addEventListener("DOMContentLoaded", function(event) {
 
   var archive = document.querySelectorAll('.archive-project');
   var descriptions = document.querySelectorAll('.archive-project-description');
+  var header = document.querySelector('header');
 
   for (var i = 0; i < archive.length; i++ ) {
     archive[i].addEventListener('click' || 'touchend', handleArchiveClick);
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     close.addEventListener('click' || 'touchend', hideArchiveDescription, {once: true})
 
 
-    // parent list shall grow to display all it’s wonderful content
+    // display all the wonderful content
     var clickedThumb = e.target.parentElement; 
     var archiveThumbsUl = clickedThumb.parentElement; 
     var descriptionUl = document.querySelector('#archive-descriptions'); 
@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var footer = document.querySelector('footer');
     var marquee = document.querySelector('.simple-marquee-container');
     // check what’s active and reset it
+    // (grown thumbs should shrink, if there are any
     for (var i = 0; i < allArchiveThumbs.length; i++) {
       if (allArchiveThumbs[i].classList.contains('active')) { // there was already an active archive project
         var activeThumb = allArchiveThumbs[i];
@@ -52,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     clickedThumb.classList.add('active'); // thumb grows
     footer.classList.add('active');  // ?
     marquee.classList.add('hidden'); // hide news ticker
+    header.classList.add('shrink'); // header needs to get smaller
   }
 
   function hideArchiveDescription(e) {
@@ -73,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     archiveThumbsUl.classList.remove('active');
     footer.classList.remove('active');
     marquee.classList.remove('hidden');
+    header.classList.remove('shrink'); // header needs to grow
   }
 
 });
