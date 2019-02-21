@@ -88,6 +88,7 @@ header {
   }
   .simple-marquee-container.hidden { display: none; }
 }
+header.shrink,
 body:not(#index) header {
   height: 45px;
   #masthead {
@@ -151,14 +152,12 @@ footer #archive ul {
 }
 footer #archive ul li { margin-right: 0.25em; }
 footer #archive ul li>img { height: 95px; } // thumbnails
+/* End Footer }}} */
 
-// set archive ul to full height in order to
-// show everything relevant on mobile
-
-/* Archive Project Descriptions */
+/* Archive Project Descriptions {{{ */
 ul#archive-descriptions {
   position: fixed;
-  top: 50px;
+  top: 45px;
   left: 0;
   bottom: 0;
   right: 0;
@@ -201,45 +200,7 @@ ul#archive-descriptions {
   }
 }
 ul#archive-descriptions.hidden {display: none;}
-
-/*
-section.archive-project-description {
-  opacity: 1;
-  transition: opacity 0.2s;
-  position: fixed;
-  top: 60px; // just below the header
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  img {
-    width: 300px; 
-    height: auto; 
-    margin-bottom: 2vh;
-  }
-  div.archive-project-description-text {
-    order: 1; // place after close-button
-    margin-bottom: 2em;
-    width: calc(100% - 30px);
-    white-space: normal;
-    p {
-      color: white;
-      text-align: center;
-    }
-  }
-  img.close {
-    width: 44px;
-    height: 44px;
-    margin: 0 10px 0 0;
-    align-self: flex-end;
-  }
-}
-*/
-/* End Footer }}} */
+/* End Archive Project Descriptions }}} */
 
 /* Home Carousel {{{ */
 .carousel {
@@ -525,6 +486,7 @@ body#follow {
 
 
   /* Desktop Header {{{ */
+  header.shrink,
   header {
     box-sizing: border-box;
     position: static;
@@ -539,6 +501,7 @@ body#follow {
     // background: url('/assets/_pic/header_guides.png');
   }
   body:not(#index) header #masthead, // no exceptions on Desktop
+  header.shrink #masthead,
   header #masthead {
     grid-column: 2/3;
     position: relative;
