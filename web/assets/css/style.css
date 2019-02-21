@@ -180,7 +180,7 @@ ul#archive-descriptions {
     align-items: center;
     padding: 0 10px; }
     ul#archive-descriptions li.archive-project-description div.archive-project-description-text {
-      width: 345px;
+      width: 300px;
       text-align: center;
       order: 2; }
     ul#archive-descriptions li.archive-project-description img.archive-image {
@@ -545,9 +545,9 @@ body#follow footer {
   /* Desktop Footer {{{ */
   footer {
     background: transparent;
-    transform: translateY(100px); }
+    transform: translateY(65px); }
   footer:hover, footer.active {
-    transform: translateY(0px); }
+    transform: translateY(25px); }
   footer nav {
     display: none; }
   body:not(#index) footer {
@@ -618,38 +618,33 @@ body#follow footer {
   .about-carousel .flickity-page-dots.hidden {
     display: block; }
   /* End Desktop About Carousel Exeptions }}} */
-  /* Archive Thumb Carousel */
+  /* Archive Thumb Carousel {{{ */
   footer #archive {
     display: flex;
     justify-content: center;
     margin: 0; }
     footer #archive ul.archive-carousel {
       /* this is the same as #archive ul */
-      border: solid 1px red;
-      width: 997px;
-      height: 128px;
+      width: 964px;
+      height: 120px;
       overflow: hidden;
       display: block; }
       footer #archive ul.archive-carousel .flickity-viewport {
         position: static; }
-        footer #archive ul.archive-carousel .flickity-viewport .flickity-slider {
-          background: red; }
-          footer #archive ul.archive-carousel .flickity-viewport .flickity-slider li.archive-carousel-cell {
-            width: 200px;
-            margin-right: .5em;
-            height: 128px;
-            border: 1px solid blue; }
+        footer #archive ul.archive-carousel .flickity-viewport li.archive-carousel-cell {
+          margin-right: .5em;
+          height: 120px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end; }
   footer #archive ul.archive-carousel:after {
     content: 'flickity';
     display: none; }
-  footer #archive ul.active {
-    align-items: flex-end;
-    height: auto; }
   footer #archive ul li img.archive-thumb {
-    height: 150px;
     transition: all 0.2s ease-in-out; }
-  footer #archive ul li.active img.archive-thumb {
-    height: 180px; }
+  footer #archive ul.archive-carousel .flickity-viewport li.archive-carousel-cell.active img {
+    transform: translateY(-25px); }
+  /* End Archive Thumb Carousel */
   /* Archive Project Descriptions {{{ */
   ul#archive-descriptions {
     top: 18vh;

@@ -173,7 +173,7 @@ ul#archive-descriptions {
     align-items: center;
     padding: 0 10px;
     div.archive-project-description-text {
-      width: 345px;
+      width: 300px;
       text-align: center;
       order: 2;
     }
@@ -586,11 +586,11 @@ body#follow {
   footer {
     // padding-top: .5em;
     background: transparent;
-    transform: translateY(100px);
+    transform: translateY(65px);
   }
   footer:hover, footer.active {
     // hover or visible archive project
-    transform: translateY(0px);
+    transform: translateY(25px);
   }
   footer nav { display: none; }
   body:not(#index) footer { display: none; }
@@ -667,27 +667,25 @@ body#follow {
   .about-carousel .flickity-page-dots.hidden { display: block; } // no need to hide
   /* End Desktop About Carousel Exeptions }}} */
 
-  /* Archive Thumb Carousel */
+  /* Archive Thumb Carousel {{{ */
   footer #archive {
     display: flex;
     justify-content: center; // Center carousel
     margin: 0;
     ul.archive-carousel { /* this is the same as #archive ul */
-      border: solid 1px red;
-      width: 997px;
-      height: 128px;
+      // border: solid 1px red;
+      width: 964px;
+      height: 120px;
       overflow: hidden; // cells overlapping left and right should be cut off
       display: block; // disable flex (as on mobile)
       .flickity-viewport {
         position: static;
-        .flickity-slider {
-          background: red;
-          li.archive-carousel-cell {
-            width: 200px;
-            margin-right: .5em;
-            height: 128px;
-            border: 1px solid blue;
-          }
+        li.archive-carousel-cell {
+          margin-right: .5em;
+          height: 120px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
         }
       }
     }
@@ -698,15 +696,19 @@ body#follow {
     display: none;
   }
   footer #archive ul.active { // ul.active = ul containing li.active
-    align-items: flex-end; // archive thumbnails at bottom
-    height: auto;
+    // height: auto;
   }
 
   footer #archive ul li img.archive-thumb { // thumbnails
-    height: 150px;
     transition: all 0.2s ease-in-out;
   }
-  footer #archive ul li.active img.archive-thumb { height: 180px; }
+  footer #archive ul.archive-carousel .flickity-viewport li.archive-carousel-cell.active {
+    // justify-content: flex-start;
+    img {
+      transform: translateY(-25px);
+    }
+  }
+  /* End Archive Thumb Carousel */
 
   /* Archive Project Descriptions {{{ */
   ul#archive-descriptions {

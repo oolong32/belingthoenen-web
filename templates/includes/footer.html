@@ -14,7 +14,13 @@
    <ul class="archive-carousel">
       {% for entry in archive %}
       <li class="archive-project archive-carousel-cell">
-        <img src="{{ entry.archiveImg[0].url }}" class="archive-thumb" alt="">
+        <img
+          src="{{ entry.archiveImg[0].getUrl('archiveThumb') }}"
+          class="archive-thumb"
+          alt="Beling Thoenen, {{ entry.title }}"
+          height="{{ entry.archiveImg[0].getHeight('archiveThumb') }}"
+          width="{{ entry.archiveImg[0].getWidth('archiveThumb') }}"
+        >
       </li>
       {% endfor %}
     </ul> 

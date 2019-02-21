@@ -37,6 +37,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var allArchiveThumbs = archiveThumbsUl.children; 
     var footer = document.querySelector('footer');
     var marquee = document.querySelector('.simple-marquee-container');
+
+    // check if the active thumb has been clicked
+    if (clickedThumb.classList.contains('active')) {
+      return; // don’t do anything
+    }
+
     // check what’s active and reset it
     for (var i = 0; i < allArchiveThumbs.length; i++) {
       if (allArchiveThumbs[i].classList.contains('active')) { // there was already an active archive project
@@ -64,10 +70,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // parent list shall shrink
     var archiveThumbsUl = document.querySelector('#archive ul');
-    var archiveThumbs = document.querySelector('#archive-project');
+    var archiveThumbs = document.querySelectorAll('.archive-project');
     var footer = document.querySelector('footer');
     var marquee = document.querySelector('.simple-marquee-container');
-    for (var i = 0; i < archiveThumbsUl.length; i++) {
+    for (var i = 0; i < archiveThumbs.length; i++) {
       archiveThumbs[i].classList.remove('active');
     }
     archiveThumbsUl.classList.remove('active');
