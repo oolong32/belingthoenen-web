@@ -185,7 +185,7 @@ ul#archive-descriptions {
     align-items: center;
     padding: 0 10px; }
     ul#archive-descriptions li.archive-project-description div.archive-project-description-text {
-      width: 345px;
+      width: 300px;
       text-align: center;
       order: 2; }
     ul#archive-descriptions li.archive-project-description img.archive-image {
@@ -377,6 +377,11 @@ body#follow footer {
   display: none; }
 
 /* End Carousel allgemein }}} */
+/* Archive Carousel {{{ */
+.archive-carousel:after {
+  content: ''; }
+
+/* End Archive Carousel }}} */
 /* Follow, Insta-Feed {{{*/
 #follow main {
   color: white; }
@@ -532,45 +537,14 @@ body#follow footer {
   /* Desktop Header }}} */
   /* Desktop Footer {{{ */
   footer {
-    padding-top: .5em;
-    bottom: -120px;
-    background: transparent; }
+    background: transparent;
+    transform: translateY(65px); }
   footer:hover, footer.active {
-    bottom: 0px; }
+    transform: translateY(25px); }
   footer nav {
     display: none; }
   body:not(#index) footer {
     display: none; }
-  /* Archive Projects */
-  footer #archive {
-    margin-bottom: 0; }
-  footer #archive ul {
-    overflow: visible;
-    justify-content: center; }
-  footer #archive ul.active {
-    align-items: flex-end;
-    height: auto; }
-  footer #archive ul li {
-    margin-right: .5em; }
-  footer #archive ul li > img {
-    height: 150px;
-    transition: all 0.2s ease-in-out; }
-  footer #archive ul li.active > img {
-    height: 180px; }
-  /* Archive Project Descriptions */
-  ul#archive-descriptions {
-    top: 18vh;
-    height: calc(100% - 140px);
-    z-index: 1; }
-    ul#archive-descriptions li.archive-project-description {
-      margin: 0 auto;
-      padding: 0;
-      width: 1165px; }
-      ul#archive-descriptions li.archive-project-description .close {
-        position: absolute;
-        top: -22px;
-        right: -22px; }
-  /* End Archive Projects */
   /* End Desktop Footer }}} */
   /* Desktop Carousels Global {{{ */
   .carousel {
@@ -618,12 +592,14 @@ body#follow footer {
     position: absolute;
     padding-bottom: 0; }
   /* Desktop Carousels Global }}} */
-  /* Desktop Carousel Exceptions {{{ */
+  /* Desktop Main Carousel Exceptions {{{ */
   .main-carousel .carousel-cell div.description p {
     font-size: 1em;
     letter-spacing: 0.0125em; }
     .main-carousel .carousel-cell div.description p em {
       letter-spacing: 0.025em; }
+  /* End Desktop Main Carousel Exeptions }}} */
+  /* Desktop About Carousel Exceptions {{{ */
   .about-carousel #about-intro {
     padding: 15px 30px 0; }
     .about-carousel #about-intro ul#team-list button.jump-button:hover {
@@ -638,7 +614,48 @@ body#follow footer {
     transform: translateY(0px); }
   .about-carousel .flickity-page-dots.hidden {
     display: block; }
-  /* End Desktop Carousel Exeptions }}} */
+  /* End Desktop About Carousel Exeptions }}} */
+  /* Archive Thumb Carousel {{{ */
+  footer #archive {
+    display: flex;
+    justify-content: center;
+    margin: 0; }
+    footer #archive ul.archive-carousel {
+      /* this is the same as #archive ul */
+      width: 964px;
+      height: 120px;
+      overflow: hidden;
+      display: block; }
+      footer #archive ul.archive-carousel .flickity-viewport {
+        position: static; }
+        footer #archive ul.archive-carousel .flickity-viewport li.archive-carousel-cell {
+          margin-right: .5em;
+          height: 120px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end; }
+  footer #archive ul.archive-carousel:after {
+    content: 'flickity';
+    display: none; }
+  footer #archive ul li img.archive-thumb {
+    transition: all 0.2s ease-in-out; }
+  footer #archive ul.archive-carousel .flickity-viewport li.archive-carousel-cell.active img {
+    transform: translateY(-25px); }
+  /* End Archive Thumb Carousel */
+  /* Archive Project Descriptions {{{ */
+  ul#archive-descriptions {
+    top: 18vh;
+    height: calc(100% - 140px);
+    z-index: 1; }
+    ul#archive-descriptions li.archive-project-description {
+      margin: 0 auto;
+      padding: 0;
+      width: 1165px; }
+      ul#archive-descriptions li.archive-project-description .close {
+        position: absolute;
+        top: -22px;
+        right: -22px; }
+  /* End Archive Project Descriptions }}} */
   /* Follow, Insta-Feed {{{ */
   #follow main {
     margin: auto auto 0; }

@@ -11,10 +11,16 @@
   <section id="archive">
     {% set archive = craft.entries().section('archive').all() %}
 
-   <ul>
+   <ul class="archive-carousel">
       {% for entry in archive %}
-      <li class="archive-project">
-        <img src="{{ entry.archiveImg[0].url }}" alt="">
+      <li class="archive-project archive-carousel-cell">
+        <img
+          src="{{ entry.archiveImg[0].getUrl('archiveThumb') }}"
+          class="archive-thumb"
+          alt="Beling Thoenen, {{ entry.title }}"
+          height="{{ entry.archiveImg[0].getHeight('archiveThumb') }}"
+          width="{{ entry.archiveImg[0].getWidth('archiveThumb') }}"
+        >
       </li>
       {% endfor %}
     </ul> 
