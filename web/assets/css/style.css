@@ -72,9 +72,6 @@ header {
     header #masthead h1, header #masthead p.byline {
       position: absolute;
       top: -1000px; }
-    header #masthead img#word-mark {
-      transition: transform 0.2s ease-in-out; }
-  header #masthead:hover p.byline,
   header #masthead:hover svg path {
     fill: #96aaff; }
   header p#home-link-container {
@@ -94,7 +91,10 @@ header {
     display: none; }
 
 body:not(#index) header {
-  height: 60px; }
+  height: 45px; }
+  body:not(#index) header #masthead svg {
+    width: 100px;
+    height: auto; }
 
 /* End Header }}} */
 /* Footer {{{ */
@@ -315,7 +315,7 @@ body#about {
     transform: translateY(100px); }
 
 .about-carousel #about-intro {
-  padding: 60px 30px 0; }
+  padding: 45px 30px 0; }
   .about-carousel #about-intro p {
     color: white;
     font-size: 18px;
@@ -445,7 +445,7 @@ body#follow footer {
       height: 375px;
       object-fit: cover;
       object-position: center top;
-      margin: 60px 0 15px; }
+      margin: 45px 0 15px; }
   #follow main .insta-post:first-of-type {
     display: block; }
 
@@ -459,7 +459,6 @@ body#follow footer {
 #contact {
   justify-content: flex-start; }
   #contact main .contact-data {
-    padding-top: 15px;
     background: black; }
     #contact main .contact-data img {
       margin: 45px 0 0;
@@ -481,14 +480,12 @@ body#follow footer {
     display: none; } }
 
 /* End Mobile-Landscape Styles }}} */
-/* Mobile Landscape {{{ */
+/* --- Desktop Styles --- */
 @media (min-width: 767px) {
   body,
   body#about {
     height: 100vh;
     background: #2c2c2c; }
-  /* End Mobile Landscape }}} */
-  /* --- Desktop Styles --- */
   /* Desktop Header {{{ */
   header {
     box-sizing: border-box;
@@ -501,18 +498,22 @@ body#follow footer {
     background: transparent;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto; }
+  body:not(#index) header #masthead,
   header #masthead {
     grid-column: 2/3;
     position: relative;
     top: 1px;
     margin: auto;
     padding: 0; }
+    body:not(#index) header #masthead svg,
     header #masthead svg {
       width: 199px;
       height: 42px; }
+    body:not(#index) header #masthead h1,
     header #masthead h1 {
       font-size: 1.75em;
       letter-spacing: 0.025em; }
+    body:not(#index) header #masthead p.byline,
     header #masthead p.byline {
       font-size: 12.25px;
       line-height: 0.9; }
