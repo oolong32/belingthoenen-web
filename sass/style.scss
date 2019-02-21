@@ -508,12 +508,12 @@ body#follow {
   header #masthead {
     grid-column: 2/3;
     position: relative;
-    top: 1px;
+    top: 4px;
     margin: auto;
     padding: 0;
     svg {
-      width: 199px;
-      height: 42px;
+      width: 173px;
+      height: auto;
     }
     h1 {
       font-size: 1.75em;

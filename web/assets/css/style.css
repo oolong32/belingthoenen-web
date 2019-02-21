@@ -475,14 +475,14 @@ body#follow footer {
   header #masthead {
     grid-column: 2/3;
     position: relative;
-    top: 1px;
+    top: 4px;
     margin: auto;
     padding: 0; }
     body:not(#index) header #masthead svg,
     header.shrink #masthead svg,
     header #masthead svg {
-      width: 199px;
-      height: 42px; }
+      width: 173px;
+      height: auto; }
     body:not(#index) header #masthead h1,
     header.shrink #masthead h1,
     header #masthead h1 {
