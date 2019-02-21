@@ -569,7 +569,7 @@ body#follow {
     }
     a#home-link:hover { color: $violet; } 
   }
-  #index header p#home-link-container { font-weight: bold; }
+  #index header p#home-link-container { display: none; }
   header nav {
     display: block; // einblenden
     grid-column: 3/-1;

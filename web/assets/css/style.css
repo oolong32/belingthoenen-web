@@ -531,7 +531,7 @@ body#follow footer {
     header p#home-link-container a#home-link:hover {
       color: #96aaff; }
   #index header p#home-link-container {
-    font-weight: bold; }
+    display: none; }
   header nav {
     display: block;
     grid-column: 3/-1;
