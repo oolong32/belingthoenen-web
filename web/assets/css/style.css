@@ -95,8 +95,10 @@ body:not(#index) header {
   height: 45px; }
   header.shrink #masthead svg,
   body:not(#index) header #masthead svg {
-    width: 100px;
-    height: auto; }
+    width: 126px;
+    height: auto;
+    position: relative;
+    top: -3px; }
 
 /* End Header }}} */
 /* Footer {{{ */

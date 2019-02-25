@@ -92,8 +92,10 @@ body:not(#index) header {
   height: 45px;
   #masthead {
     svg {
-      width: 100px;
+      width: 126px;
       height: auto;
+      position: relative;
+      top: -3px;
     }
   }
 }
