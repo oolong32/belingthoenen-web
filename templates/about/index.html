@@ -28,7 +28,7 @@
 
   {% for entry in aboutEntries %}
   <div class="carousel-cell team-member" style="background: url('{{ entry.teamImg[0].url }}') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
-      <p class="name">{{ entry.teamName }}{{ entry.teamRole|length ? "<br>#{entry.teamRole}" | raw : '' }}</p>
+      <p class="name"><strong>{{ entry.teamName }}{{ entry.teamRole|length ? "<br>#{entry.teamRole}" | raw : '' }}</strong></p>
       <div class="contact-data hidden">
 		<p>
 		      <a href=mailto:{{ entry.teamMail }}>{{ entry.teamMail }}</a><br>
