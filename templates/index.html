@@ -27,7 +27,8 @@
           </a>
         {% endif %}
         <img class="close" src="/assets/_pic/close.svg" width="44" height="44" alt="cute close button">
-        <p><em>{{ project.title }}</em> {{ project.description }}</p>
+        <p style="float: left"><em>{{ project.title }}</em></p>
+        {{ project.description }}
       </div>
     </div>
   {% endfor %}
