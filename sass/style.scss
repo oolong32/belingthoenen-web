@@ -142,13 +142,14 @@ footer nav ul li a:active { color: $violet; }
 /* Archive Projects Slider {{{ */
 footer #archive { margin-bottom: 1em; }
 footer #archive ul {
+  height: 100px;
   width: 100%;
   overflow-x: scroll;
   box-sizing: content-box;
   list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  // display: flex; // flex not needed on mobile for slider
+  // flex-direction: row;
+  // justify-content: center;
   white-space: nowrap;
   padding: 0 0.25em;
 }
@@ -685,10 +686,10 @@ body#follow {
     }
   }
 
-  footer #archive ul.archive-carousel:after { // actiate carousel
-    content: 'flickity'; // corresponds to the ‘watchCSS’ property
-    display: none;
-  }
+  // footer #archive ul.archive-carousel:after { // actiate carousel
+  //   content: 'flickity'; // corresponds to the ‘watchCSS’ property
+  //   display: none;
+  // }
   footer #archive ul.active { // ul.active = ul containing li.active
     // height: auto;
   }
