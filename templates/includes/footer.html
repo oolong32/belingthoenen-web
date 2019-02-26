@@ -18,8 +18,8 @@
           src="{{ entry.archiveImg[0].getUrl('archiveThumb') }}"
           class="archive-thumb"
           alt="Beling Thoenen, {{ entry.title }}"
-          height="{{ entry.archiveImg[0].getHeight('archiveThumb') }}"
-          width="{{ entry.archiveImg[0].getWidth('archiveThumb') }}"
+          height="{{ entry.archiveImg[0].getHeight('archiveThumb') // 2 }}"
+          width="{{ entry.archiveImg[0].getWidth('archiveThumb') // 2 }}"
         >
       </li>
       {% endfor %}
