@@ -152,8 +152,7 @@ footer #archive ul {
   overflow-x: scroll;
   box-sizing: content-box;
   list-style: none;
-  white-space: nowrap;
-  padding: 0 0.25em; }
+  white-space: nowrap; }
 
 footer #archive ul li {
   margin-right: 0.25em; }
@@ -235,8 +234,7 @@ body#about {
   body#about footer {
     position: fixed;
     bottom: 0px;
-    left: 0px;
-    height: 60px; }
+    left: 0px; }
 
 .about-carousel {
   width: 100%;
@@ -303,8 +301,7 @@ body#about {
 body#follow footer {
   position: fixed;
   bottom: 0px;
-  left: 0px;
-  height: 60px; }
+  left: 0px; }
 
 .follow-carousel {
   width: 100%;
