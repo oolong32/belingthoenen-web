@@ -10,15 +10,22 @@
 {% set marquee = entry.newsTicker.all() %}
 
 
-  {% if slug == "index" %}
+  {% if slug == "index" and marquee|length %}
+    {% set counter = 0  %}
+    {% set remainingItems = marquee|length  %}
     {# Marquee, speed set in attributes #}
     <div class="simple-marquee-container marquee3k" data-speed="1.25">
       <ul class="marquee-content-items">
         
-        <li><strong>Coming Soon</strong></li>
 
         {% for newsTickerItem in marquee %}
+          {# ‘coming soon’ in front of 3 items, 2 allowed at end #}
+          {% if ( counter % 3 == 0 ) and (remainingItems > 1) %}
+            <li><strong>Coming Soon {{ remainingItems }}</strong></li>
+          {% endif %}
           <li>{{ newsTickerItem.text }}</li>
+          {% set counter = counter + 1 %}
+          {% set remainingItems = remainingItems - 1 %}
         {% endfor %}
 
       </ul>
