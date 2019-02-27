@@ -15,7 +15,7 @@
       {% for entry in archive %}
       
       {# add a thumbnail, if there’s an image to show #}
-      {% if entry.archiveImg[0] | length %}
+      {% if entry.archiveImg | length %}
       <li class="archive-project archive-carousel-cell">
         <img
           src="{{ entry.archiveImg[0].getUrl('archiveThumb') }}"
@@ -43,7 +43,7 @@
     {% for entry in archive %}
       {# add a description, if there’s an image to show #}
       {# there’s only a test for images, because more important than text #}
-      {% if entry.archiveImg[0] | length %}
+      {% if entry.archiveImg | length %}
       <li class="archive-project-description hidden">
         <img class="archive-image" src="{{ entry.archiveImg[0].url }}" alt="">
         <div class="archive-project-description-text">
