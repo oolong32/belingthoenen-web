@@ -81,9 +81,9 @@ header {
   a { text-decoration: none; }
   a:link, a:visited { color: white; }
   a:hover, a:focus { color: $violet; }
-  .simple-marquee-container {
-    position: absolute;
-    bottom: 0;
+  .simple-marquee-container { // überflüssig?
+    // position: absolute;
+    // bottom: 0;
   }
   .simple-marquee-container.hidden { display: none; }
 }

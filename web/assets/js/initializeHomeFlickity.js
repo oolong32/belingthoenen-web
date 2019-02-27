@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // allVids[i].pause();
     }
     var selected_video = allVids[index];
-    selected_video.play();
+    // uncomment below in order to start active video
+    // selected_video.play();
     // start/continue selected video
   });
 });

@@ -11,25 +11,19 @@
 
 
   {% if slug == "index" %}
-  <div class="simple-marquee-container">
-    <div id="news" class="marquee">
+    {# Marquee, speed set in attributes #}
+    <div class="simple-marquee-container marquee3k" data-speed="1.25">
       <ul class="marquee-content-items">
         
         <li><strong>Coming Soon</strong></li>
 
-      {% for newsTickerItem in marquee %}
-        <li>{{ newsTickerItem.text }}</li>
-      {% endfor %}
+        {% for newsTickerItem in marquee %}
+          <li>{{ newsTickerItem.text }}</li>
+        {% endfor %}
 
       </ul>
     </div>
-  </div>
   {% endif %}
-
-  {# löschen, wenn das kommentieren keine negativen Effekte hat
-  <section id="logo-test" style="grid-column: 1/2; justify-self: center; align-self: center;">
-  </section>
-  #}
 
   <p id="home-link-container"><a id="home-link" href="/">Projects</a></p>
 

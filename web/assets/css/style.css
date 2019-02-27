@@ -84,9 +84,6 @@ header {
     color: white; }
   header a:hover, header a:focus {
     color: #96aaff; }
-  header .simple-marquee-container {
-    position: absolute;
-    bottom: 0; }
   header .simple-marquee-container.hidden {
     display: none; }
 

@@ -35,7 +35,8 @@
 </main>
 
 <script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/marquee.js"></script>
+{# seems not to work locally? #}
+<script src="https://cdn.jsdelivr.net/npm/marquee3000@1.0.8/marquee3k-noUMD.min.js"></script>
 <script src="/assets/js/flickity.js"></script>
 <script src="/assets/js/initializeHomeFlickity.js"></script>
 <script src="/assets/js/initializeArchiveFlickity.js?{{ random() }}"></script>
@@ -45,12 +46,15 @@
 {#<script src="/assets/js/lazy.js"></script>#} {# lazy load raus, wir starten & stoppen per carousel-event #}
 
 <script>
+  Marquee3k.init(); 
   // Initialize Marquee
+  {#
   $(function (){
     $('.simple-marquee-container').SimpleMarquee(
       {hover: false, duration: 40000}
     );
   });
+  #}
 
 </script>
 
