@@ -3,7 +3,7 @@ var flkty = new Flickity( elem, {
   // options
   on: {
     ready: function() {
-      console.log('Slider ready!');
+      // console.log('Slider ready!');
       // pause all videos but the one in the selected cell
     }
   },
