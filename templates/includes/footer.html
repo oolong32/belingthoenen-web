@@ -13,6 +13,9 @@
 
    <ul class="archive-carousel">
       {% for entry in archive %}
+      
+      {# add a thumbnail, if there’s an image to show #}
+      {% if entry.archiveImg[0] | length %}
       <li class="archive-project archive-carousel-cell">
         <img
           src="{{ entry.archiveImg[0].getUrl('archiveThumb') }}"
@@ -22,6 +25,8 @@
           width="{{ entry.archiveImg[0].getWidth('archiveThumb') // 2 }}"
         >
       </li>
+      {% endif %}
+      
       {% endfor %}
     </ul> 
 
@@ -36,6 +41,9 @@
   {% set archive = craft.entries().section('archive').all() %}
   <ul id="archive-descriptions" class="hidden">
     {% for entry in archive %}
+      {# add a description, if there’s an image to show #}
+      {# there’s only a test for images, because more important than text #}
+      {% if entry.archiveImg[0] | length %}
       <li class="archive-project-description hidden">
         <img class="archive-image" src="{{ entry.archiveImg[0].url }}" alt="">
         <div class="archive-project-description-text">
@@ -43,6 +51,7 @@
         </div>
         <img class="close" src="/assets/_pic/close.svg" alt="close icon">
       </li>
+      {% endif %}
     {% endfor %}
     {% endif %}
     
