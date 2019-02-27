@@ -21,7 +21,7 @@
         {% for newsTickerItem in marquee %}
           {# ‘coming soon’ in front of 3 items, 2 allowed at end #}
           {% if ( counter % 3 == 0 ) and (remainingItems > 1) %}
-            <li><strong>Coming Soon {{ remainingItems }}</strong></li>
+            <li><strong>Coming Soon</strong></li>
           {% endif %}
           <li>{{ newsTickerItem.text }}</li>
           {% set counter = counter + 1 %}
