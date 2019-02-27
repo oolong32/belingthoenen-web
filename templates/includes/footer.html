@@ -20,9 +20,9 @@
         <img
           src="{{ entry.archiveImg[0].getUrl('archiveThumb') }}"
           class="archive-thumb"
-          alt="Beling Thoenen, {{ entry.title }}"
-          height="{{ entry.archiveImg[0].getHeight('archiveThumb') // 2 }}"
+          alt="Beling Thoenen, {{ entry.title }}, small version"
           width="{{ entry.archiveImg[0].getWidth('archiveThumb') // 2 }}"
+          height="{{ entry.archiveImg[0].getHeight('archiveThumb') // 2 }}"
         >
       </li>
       {% endif %}
@@ -45,7 +45,13 @@
       {# there’s only a test for images, because more important than text #}
       {% if entry.archiveImg | length %}
       <li class="archive-project-description hidden">
-        <img class="archive-image" src="{{ entry.archiveImg[0].url }}" alt="">
+        <img
+          class="archive-image"
+          src="{{ entry.archiveImg[0].getUrl('width_600') }}"
+          alt="Beling Thoenen, {{ entry.title }}"
+          width="{{ entry.archiveImg[0].getWidth('width_600') // 2 }}"
+          height="{{ entry.archiveImg[0].getHeight('width_600') // 2 }}"
+          >
         <div class="archive-project-description-text">
           <p><strong>{{ entry.title }}</strong> {{ entry.description }}</p>
         </div>
