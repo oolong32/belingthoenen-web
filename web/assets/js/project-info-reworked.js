@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var closeButtons = document.querySelectorAll('.description .close');
   for (var i = 0; i < closeButtons.length; i++) {
     closeButtons[i].addEventListener('click' || 'touchend', hideDescription);
-    console.log(closeButtons[i]);
+    // console.log(closeButtons[i]);
   }
 
   function handleClick(e) {
