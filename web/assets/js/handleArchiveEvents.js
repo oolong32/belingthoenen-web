@@ -60,6 +60,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     footer.classList.add('active');  // ?
     marquee.classList.add('hidden'); // hide news ticker
     header.classList.add('shrink'); // header needs to get smaller
+
+    // move thumb to center
+    var index = parseInt(clickedThumb.archiveOrder);
+    console.log('moving to ' + index);
+    flktyArc.select(index, true, false);
   }
 
   function hideArchiveDescription(e) {

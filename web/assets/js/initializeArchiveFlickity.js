@@ -1,3 +1,4 @@
+var flktyArc;
 document.addEventListener("DOMContentLoaded", function(event) {
   console.log('initialize flickity, forsooth!');
 
@@ -5,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var cellCount = document.querySelectorAll('.archive-carousel-cell').length;
   var randomCellIndex = Math.floor(cellCount * Math.random());
 
-  var flkty = new Flickity( archive, {
+  flktyArc = new Flickity( archive, {
     // options
     pageDots: false,
     cellAlign: 'center',
@@ -20,6 +21,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   // jump to random cell
-  flkty.selectCell( randomCellIndex, true, true )
+  flktyArc.selectCell( randomCellIndex, true, true )
 });
 
