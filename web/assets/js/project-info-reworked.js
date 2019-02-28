@@ -37,6 +37,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // better test if this has effects on right click
     e.preventDefault();
 
+    // check if the click was on an active slide,
+    // i.e. the one visible on mobile or in the center on desktop
+    console.log(e.target.parentNode);
+    if (!e.target.parentNode.classList.contains('is-selected')) {
+      // nothing
+      // nice: put this cell into center
+      return;
+    }
+
+
     if (infosVisible) {
 
         // nothing

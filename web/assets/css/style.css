@@ -611,10 +611,6 @@ body#follow footer {
     padding: 15px 30px 0; }
     .about-carousel #about-intro ul#team-list button.jump-button:hover {
       color: #96aaff; }
-  .about-carousel .carousel-cell.team-member:hover .name {
-    color: #96aaff; }
-  .about-carousel .carousel-cell.team-member:hover .name.up {
-    color: white; }
   .about-carousel .carousel-cell.team-member .name {
     transform: translateY(65px); }
   .about-carousel .carousel-cell.team-member .name.up {

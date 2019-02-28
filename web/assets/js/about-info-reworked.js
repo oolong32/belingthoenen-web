@@ -39,11 +39,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // better test if this has effects on right click
     e.preventDefault();
 
-    if (contactDataVisible) {
+    // check if the click was on an active slide,
+    // i.e. the one visible on mobile or in the center on desktop
+    if (!e.target.classList.contains('is-selected')) {
+      // nothing
+      // nice: put this cell into center
+      return;
+    }
 
+
+    if (contactDataVisible) {
         // nothing
         return;
-
     } else {
 
       // switch controller on
@@ -56,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       // move name up
       for (var i = 0; i < names.length; i++) {
-        console.log(names[i]);
+        // console.log(names[i]);
         names[i].classList.add('up');
       }
 
@@ -70,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   function hideContactData(e) {
-    console.log('hello');
+    // console.log('hello');
     // set controller to false
     contactDataVisible = false;
 
