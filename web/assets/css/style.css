@@ -533,9 +533,9 @@ body#follow footer {
   /* Desktop Footer {{{ */
   footer {
     background: transparent;
-    transform: translateY(65px); }
+    transform: translateY(47px); }
   footer:hover, footer.active {
-    transform: translateY(25px); }
+    transform: translateY(30px); }
   footer nav {
     display: none; }
   body:not(#index) footer {

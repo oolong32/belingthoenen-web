@@ -571,13 +571,12 @@ body#follow {
 
   /* Desktop Footer {{{ */
   footer {
-    // padding-top: .5em;
     background: transparent;
-    transform: translateY(65px);
+    transform: translateY(47px);
   }
   footer:hover, footer.active {
     // hover or visible archive project
-    transform: translateY(25px);
+    transform: translateY(30px);
   }
   footer nav { display: none; }
   body:not(#index) footer { display: none; }
