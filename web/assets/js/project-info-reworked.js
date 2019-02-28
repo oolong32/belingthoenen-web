@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // attach event listener to all videos/slides
   for (var i = 0; i < videos.length; i++) {
     videos[i].addEventListener('click' || 'touchend', handleClick);
+
+    // pass number in order to select the cell on click when not active
+    videos[i].myPrivateNumber = i;
   }
 
   // attach event listener to all close buttons
@@ -39,13 +42,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // check if the click was on an active slide,
     // i.e. the one visible on mobile or in the center on desktop
-    console.log(e.target.parentNode);
     if (!e.target.parentNode.classList.contains('is-selected')) {
-      // nothing
-      // nice: put this cell into center
+      // jump to slide
+      var index = parseInt(e.target.myPrivateNumber);
+      // console.log(index);
+      flkty.select(index, false, false);
+
       return;
     }
-
 
     if (infosVisible) {
 

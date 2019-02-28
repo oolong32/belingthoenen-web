@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+// document.addEventListener("DOMContentLoaded", function(event) {
   var elem = document.querySelector('.carousel');
   var flkty = new Flickity( elem, {
     // options
@@ -33,4 +33,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // start/continue selected video
     selected_video.play();
   });
-});
+// });

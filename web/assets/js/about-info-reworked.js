@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // attach event listeners
   for (var i = 0; i < teamMembers.length; i++) {
     teamMembers[i].addEventListener('click' || 'touchend', handleClick);
+
+    // pass number in order to select the cell on click when not active
+    teamMembers[i].myPrivateNumber = i;
   }
 
   // attach event listener to all close buttons
@@ -42,8 +45,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // check if the click was on an active slide,
     // i.e. the one visible on mobile or in the center on desktop
     if (!e.target.classList.contains('is-selected')) {
-      // nothing
-      // nice: put this cell into center
+      // jump to slide
+      // add 1 to index, cause there is an additional slide (intro)
+      var index = parseInt(e.target.myPrivateNumber) + 1;
+      flkty.select(index, false, false);
       return;
     }
 
