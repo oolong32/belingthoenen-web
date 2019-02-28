@@ -484,6 +484,8 @@ body#follow {
   body#about {
     height: 100vh; // flex-column-layout
     background: rgb(44, 44, 44);
+    min-height: 780px;
+    overflow: hidden;
   }
 
 
@@ -705,16 +707,19 @@ body#follow {
     margin-top: 140px;
     top: 0;
     height: calc(100% - 140px);
+    min-height: 440px;
     z-index: 1; // in front of project slider, behind archive
     li.archive-project-description {
       // background: papayawhip;
       // border: 1px solid orange;
       margin: 0 auto;
       padding: 0;
+      padding-top: 20px;
       width: $desktop-width;
+      justify-content: space-around;
       img.archive-image {
         // urspr. gab es hierfür keine desktop-regeln
-        margin: 4vh 0 2vh;
+        margin: auto 0 2vh;
         height: auto;
         width: 40vh;
         min-width: 300px;
@@ -724,6 +729,7 @@ body#follow {
         width: 40vh;
         min-width: 300px;
         max-width: 480px;
+        margin-bottom: auto;
       }
       .close {
         position: absolute;
