@@ -697,17 +697,34 @@ body#follow {
       transform: translateY(-25px);
     }
   }
-  /* End Archive Thumb Carousel */
+  /* End Archive Thumb Carousel }}} */
 
   /* Archive Project Descriptions {{{ */
   ul#archive-descriptions {
-    top: 18vh;
+    // background: lightgray;
+    margin-top: 140px;
+    top: 0;
     height: calc(100% - 140px);
     z-index: 1; // in front of project slider, behind archive
     li.archive-project-description {
+      // background: papayawhip;
+      // border: 1px solid orange;
       margin: 0 auto;
       padding: 0;
       width: $desktop-width;
+      img.archive-image {
+        // urspr. gab es hierfür keine desktop-regeln
+        margin: 4vh 0 2vh;
+        height: auto;
+        width: 40vh;
+        min-width: 300px;
+        max-width: 480px;
+      }
+      div.archive-project-description-text {
+        width: 40vh;
+        min-width: 300px;
+        max-width: 480px;
+      }
       .close {
         position: absolute;
         top: -22px;
@@ -715,6 +732,7 @@ body#follow {
       }
     }
   }
+
   /* End Archive Project Descriptions }}} */
 
   /* Follow, Insta-Feed {{{ */
@@ -765,4 +783,8 @@ body#follow {
   }
   /* Contact Page }}}*/
 
+}
+
+@media (min-aspect-ratio: 2/1) {
+  footer { display: none; }
 }

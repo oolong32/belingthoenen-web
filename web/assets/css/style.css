@@ -636,16 +636,27 @@ body#follow footer {
     transition: all 0.2s ease-in-out; }
   footer #archive ul.archive-carousel .flickity-viewport li.archive-carousel-cell.active img {
     transform: translateY(-25px); }
-  /* End Archive Thumb Carousel */
+  /* End Archive Thumb Carousel }}} */
   /* Archive Project Descriptions {{{ */
   ul#archive-descriptions {
-    top: 18vh;
+    margin-top: 140px;
+    top: 0;
     height: calc(100% - 140px);
     z-index: 1; }
     ul#archive-descriptions li.archive-project-description {
       margin: 0 auto;
       padding: 0;
       width: 1165px; }
+      ul#archive-descriptions li.archive-project-description img.archive-image {
+        margin: 4vh 0 2vh;
+        height: auto;
+        width: 40vh;
+        min-width: 300px;
+        max-width: 480px; }
+      ul#archive-descriptions li.archive-project-description div.archive-project-description-text {
+        width: 40vh;
+        min-width: 300px;
+        max-width: 480px; }
       ul#archive-descriptions li.archive-project-description .close {
         position: absolute;
         top: -22px;
@@ -691,3 +702,7 @@ body#follow footer {
       #contact main .contact-data img {
         margin: 0; }
   /* Contact Page }}}*/ }
+
+@media (min-aspect-ratio: 2 / 1) {
+  footer {
+    display: none; } }

@@ -49,8 +49,8 @@
           class="archive-image"
           src="{{ entry.archiveImg[0].getUrl('width_600') }}"
           alt="Beling Thoenen, {{ entry.title }}"
-          width="{{ entry.archiveImg[0].getWidth('width_600') // 2 }}"
-          height="{{ entry.archiveImg[0].getHeight('width_600') // 2 }}"
+          width="{{ entry.archiveImg[0].getWidth('width_600') // 2 }}" // ev. muss das abgeschaltet werden?
+          height="{{ entry.archiveImg[0].getHeight('width_600') // 2 }}" // ev. muss das abgeschaltet werden?
           >
         <div class="archive-project-description-text">
           <p><strong>{{ entry.title }}</strong> {{ entry.description }}</p>
