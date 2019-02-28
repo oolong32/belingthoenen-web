@@ -296,6 +296,13 @@ body#about {
       font-size: 18px;
       color: white; }
 
+.about-carousel .carousel-cell.team-member:not(.is-selected) .name.up {
+  transform: translateY(65px); }
+
+.about-carousel .carousel-cell.team-member:not(.is-selected) div.contact-data {
+  transform: translateY(100px);
+  opacity: 0; }
+
 /* End About-Page: Layout & Slider }}} */
 /* Follow-Page: Slider {{{ */
 body#follow footer {

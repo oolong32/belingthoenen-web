@@ -300,6 +300,13 @@ body#about {
     }
  }
 }
+.about-carousel .carousel-cell.team-member:not(.is-selected) {
+  .name.up { transform: translateY(65px); }
+  div.contact-data {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
 /* End About-Page: Layout & Slider }}} */
 
 /* Follow-Page: Slider {{{ */
@@ -738,7 +745,6 @@ body#follow {
       }
     }
   }
-
   /* End Archive Project Descriptions }}} */
 
   /* Follow, Insta-Feed {{{ */
