@@ -17,20 +17,23 @@
   });
 
   // video on for selected, pause for deselected
+  // hier Konflikt: was passiert wenn es statt eines videos ein bild im slider hat?
   flkty.on( 'select', function( index ) {
-
-    var allVids = document.querySelectorAll('video');
-    for (var i = 0; i < allVids.length; i++) {
+    var allCells = document.querySelectorAll('.carousel-cell');
+    for (var i = 0; i < allCells.length; i++) {
       if (i != index) { // we don’t want to process the currently selected video
-        var video = allVids[i];
-        if (!video.paused) {
+        var video = allCells[i].querySelector('video');
+        if (video && !video.paused) { // nix tun wenn es kein Video gibt
           video.pause();
         }
       }
       // allVids[i].pause();
     }
-    var selected_video = allVids[index];
+    var selected_video = allCells[index].querySelector('video');
     // start/continue selected video
-    selected_video.play();
+    if (selected_video) {
+      console.log(selected_video);
+      selected_video.play();
+    }
   });
 // });
