@@ -826,26 +826,72 @@ body#follow {
 /* --- Tablet Styles --- */
 @media (min-width: 950px) {
 
+  main { transform: translateY(-40px); } // nicht so cool, aber quick fix optisch …
+
+  /* Tablet Header {{{ */
+  header.shrink,
+  header {
+    top: 5px;
+    width: $tablet-width;
+    #masthead {
+      top: 4px;
+    }
+  }
+  body:not(#index) header #masthead, // no exceptions on Desktop
+  header.shrink #masthead,
+  header #masthead {
+    svg {}
+    h1 {}
+    p.byline {}
+  }
+  header p#home-link-container {
+    display: block; // einblenden
+    grid-column: 1/2;
+    display: flex;
+    height: 100%;
+    align-items: center; 
+    justify-content: flex-start; // should be right, and header-width same as main
+    a#home-link {
+      color: white;
+      position: relative;
+      top: 8px;
+      margin-top: .5em;
+    }
+    a#home-link:hover { color: $violet; } 
+  }
+  #index header p#home-link-container { display: none; }
+  header nav {
+    top: 8px;
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center; 
+      justify-content: flex-end; // should be right, and header-width same as main
+      li {
+        margin-top: .5em;
+        margin-left: 2em;
+      }
+      li.active{}
+    }
+  }
+  header .simple-marquee-container {
+  }
+  body:not(#index) header {
+  }
+  /* Desktop Header }}} */
+
   /* Tablet Carousels Global {{{ */
   .carousel {
     width: $tablet-width;
-    border: 2px solid red;
     .flickity-viewport {}
     .carousel-cell {
-      width: 330px; // exception for tablets
-      margin-right: 17px;
-    }
-    .flickity-page-dots {}
-    .flickity-page-dots.hidden { // prevent jumping of flex-layout
+      width: $tabletcard-width;
+      height: $tabletcard-height;
+      margin-right: 15px;
     }
   } 
-  .flickity-prev-next-button.hidden {}
-  .flickity-prev-next-button {}
   .carousel-cell>img, 
-  .carousel-cell video { width: 330px; }
-  .carousel-cell video {}
-  .carousel-cell video.square {}
-  .flickity-button {}
+  .carousel-cell video { width: $tabletcard-width; }
   .flickity-button.previous {
     // ziel: aus dem karusell bewegen
     // problem: overflow hidden bei definierter breite
@@ -854,27 +900,13 @@ body#follow {
     // ziel: aus dem karusell bewegen
     // problem: overflow hidden bei definierter breite
   }
-  .flickity-viewport {}
-  .carousel-cell.is-selected .description {}
-
  /* Tablet Carousels Global }}} */
 
   /* Tablet Archive Thumb Carousel {{{ */
   footer #archive {
     ul.archive-carousel { /* this is the same as #archive ul */
       width: 900px; // gut?
-      .flickity-viewport {
-        li.archive-carousel-cell {}
-      }
     }
-  }
-
-  footer #archive ul.active {}
-
-  footer #archive ul li img.archive-thumb { // thumbnails
-  }
-  footer #archive ul.archive-carousel .flickity-viewport li.archive-carousel-cell.active {
-    img {}
   }
   /* End Tablet Archive Thumb Carousel }}} */
 
@@ -891,7 +923,10 @@ body#follow {
       width: $tabletcard-width;
       height: $tabletcard-height;
       margin-right: 15px;
-      p.text { display: block; }
+      p.text {
+        display: block;
+        font-size: 16px;
+      }
       p.mobile-follow-links { display: none; }
       img, video {
         margin: 0 0 15px;
@@ -900,7 +935,7 @@ body#follow {
   }
   #follow div.links {
     display: block;
-    width: $smallscreen-width;
+    width: $tablet-width;
     margin: 0 auto auto; // flex: stick to main above
     p.ext-links {
       margin: 0;
@@ -915,7 +950,11 @@ body#follow {
   /* Tablet Contact Page {{{ */
   #contact main {
     width: $tablet-width;
+    grid-template-columns: auto $tabletcard-width auto;
     .contact-data {
+      width: $tabletcard-width;
+      height: 560px;
+      address { font-size: 16px; }
       img {}
     }
   }
@@ -928,12 +967,67 @@ body#follow {
 
 @media (min-width: 1025px) {
 
+  main { transform: translateY(0); } // tablet quick-fix aushebeln
+
+  /* Desktop Header {{{ */
+  header.shrink,
+  header {
+    top: 5px;
+    width: $desktop-width;
+    #masthead {
+      top: 4px;
+    }
+  }
+  body:not(#index) header #masthead, // no exceptions on Desktop
+  header.shrink #masthead,
+  header #masthead {
+    svg {}
+    h1 {}
+    p.byline {}
+  }
+  header p#home-link-container {
+    display: block; // einblenden
+    grid-column: 1/2;
+    display: flex;
+    height: 100%;
+    align-items: center; 
+    justify-content: flex-start; // should be right, and header-width same as main
+    a#home-link {
+      color: white;
+      position: relative;
+      top: 8px;
+      margin-top: .5em;
+    }
+    a#home-link:hover { color: $violet; } 
+  }
+  #index header p#home-link-container { display: none; }
+  header nav {
+    top: 8px;
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center; 
+      justify-content: flex-end; // should be right, and header-width same as main
+      li {
+        margin-top: .5em;
+        margin-left: 2em;
+      }
+      li.active{}
+    }
+  }
+  header .simple-marquee-container {
+  }
+  body:not(#index) header {
+  }
+  /* Desktop Header }}} */
+
   /* Desktop Carousels Global {{{ */
   .carousel {
     width: $desktop-width;
     .flickity-viewport {}
     .carousel-cell {
       width: $card-width;
+      height: $card-height;
       margin-right: 20px;
     }
     .flickity-page-dots {}
@@ -990,11 +1084,42 @@ body#follow {
   }
   /* End Archive Project Descriptions }}} */
 
+  /* Small Screen Follow, Insta-Feed {{{ */
+  #follow main {
+    margin: auto auto 0; // flex: stick to div.links below
+    .insta-post {
+      width: $card-width;
+      height: $card-height;
+      margin-right: 20px;
+      p.text {
+        font-size: 0.8125em;
+        display: block;
+      }
+      p.mobile-follow-links { display: none; }
+      img, video {
+        margin: 0 0 15px;
+      }
+    }
+  }
+  #follow div.links {
+    display: block;
+    width: $desktop-width;
+  }
+  /* End Small Screen Follow, Insta-Feed }}} */
+
   /* Contact Page {{{ */
   #contact main {
     width: $desktop-width;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0 20px;
+    margin: auto;
     .contact-data {
-      img {}
+      width: $card-width;
+      height: $card-height;
+      address {
+        font-size: 1.125em;
+      }
     }
   }
   /* Contact Page }}}*/
