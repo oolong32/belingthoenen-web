@@ -281,7 +281,7 @@ body#about {
   }
 }
 .about-carousel #about-intro {
-  padding: 45px 30px 0;
+  padding: 60px 30px 0;
   p {
     color: white;
     font-size: 18px;
@@ -616,7 +616,7 @@ body#follow {
     }
     .flickity-page-dots.hidden { // prevent jumping of flex-layout
       display: block;
-      opacity: 0;
+      opacity: 1;
     }
   } 
   .flickity-prev-next-button.hidden { opacity: 0; }
@@ -636,11 +636,20 @@ body#follow {
   }
   .carousel-cell video.square { object-position: center center; }
   .flickity-button { display: block; }
+  .flickity-button.previous {
+    // ziel: aus dem karusell bewegen
+    // problem: overflow hidden bei definierter breite
+  }
+  .flickity-button.next {
+    // ziel: aus dem karusell bewegen
+    // problem: overflow hidden bei definierter breite
+  }
   .flickity-viewport { position: static; }
   .carousel-cell.is-selected .description {
     position: absolute;
     padding-bottom: 0;
   }
+
  /* Desktop Carousels Global }}} */
 
   /* Desktop Main Carousel Exceptions {{{ */
@@ -653,7 +662,7 @@ body#follow {
 
   /* Desktop About Carousel Exceptions {{{ */
   .about-carousel #about-intro {
-    padding: 15px 30px 0;
+    padding: 20px 30px 0;
     ul#team-list {
       button.jump-button:hover { color: $violet; }
     }
@@ -797,6 +806,8 @@ body#follow {
 
 }
 
+/* Hide footer when viewport height to low {{{ */
 @media (min-aspect-ratio: 2/1) {
   footer { display: none; }
 }
+/* End Hide footer when viewport height to low }}} */
