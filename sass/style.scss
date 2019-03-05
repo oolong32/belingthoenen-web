@@ -4,6 +4,7 @@ $card-width: 375px;
 $card-height: 600px;
 $violet: rgb(150, 170, 255); 
 
+/* Basic Settings {{{ */
 html, * {
   font-family: 'Work Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +29,7 @@ body {
 }
 
 main.hidden { display: none; } // needed for archive modal
+/* End Basic Settings }}} */
 
 /* Text Styles {{{ */
 h1, h2, h3, h4, h5, h6, bold, em { font-weight: 700; }
@@ -487,6 +489,8 @@ body#follow {
 /* --- Desktop Styles --- */
 
 @media (min-width: 767px) {
+
+/* Desktop Body {{{ */
   body,
   body#about {
     height: 100vh; // flex-column-layout
@@ -494,7 +498,7 @@ body#follow {
     min-height: 780px;
     overflow: hidden;
   }
-
+/* End Desktop Body }}} */
 
   /* Desktop Header {{{ */
   header.shrink,
