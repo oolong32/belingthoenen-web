@@ -1,7 +1,11 @@
 // Variables
 $desktop-width: 1165px;
+$tablet-width: 960px;
+$smallscreen-width: 700px; // nicht klar in design-file, eher 710px
 $card-width: 375px;
+$tabletcard-width: 310px;
 $card-height: 600px;
+$tabletcard-height: 496px;
 $violet: rgb(150, 170, 255); 
 
 /* Basic Settings {{{ */
@@ -478,19 +482,19 @@ body#follow {
 }
 /* Contact Page }}}*/
 
+/* --- Mobile Landscape Screen Styles --- */
 /* Mobile-Landscape Styles {{{ */
 // should be combined with aspect-ratio!
-@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+@media screen and (min-width: 320px) and (max-width: 700px) and (orientation: landscape) {
   /* Kurzer Prozess, aka. Trick 77 */
   header, footer, div.description { display: none; }
 }
 /* End Mobile-Landscape Styles }}} */
 
-/* --- Desktop Styles --- */
+/* --- Small Screen Styles --- */
+@media (min-width: 700px) {
 
-@media (min-width: 767px) {
-
-/* Desktop Body {{{ */
+  /* Small Screen Body {{{ */
   body,
   body#about {
     height: 100vh; // flex-column-layout
@@ -498,14 +502,14 @@ body#follow {
     min-height: 780px;
     overflow: hidden;
   }
-/* End Desktop Body }}} */
+  /* End Small Screen Body }}} */
 
-  /* Desktop Header {{{ */
+  /* Small Screen Header {{{ */
   header.shrink,
   header {
     box-sizing: border-box;
     position: static;
-    width: $desktop-width;
+    width: $smallscreen-width;
     margin: 0 auto;
     padding-top: 28px; // marquee
     height: 140px;
@@ -515,12 +519,12 @@ body#follow {
     grid-template-rows: auto;
     // background: url('/assets/_pic/header_guides.png');
   }
-  body:not(#index) header #masthead, // no exceptions on Desktop
+  body:not(#index) header #masthead, // no exceptions on Small Screen
   header.shrink #masthead,
   header #masthead {
     grid-column: 2/3;
     position: relative;
-    top: 4px;
+    top: 7px;
     margin: auto;
     padding: 0;
     svg {
@@ -556,16 +560,18 @@ body#follow {
     display: block; // einblenden
     grid-column: 3/-1;
     position: relative;
-    top: 8px;
+    top: -6px;
     ul {
       display: flex;
+      flex-direction: column;
       height: 100%;
-      align-items: center; 
-      justify-content: flex-end; // should be right, and header-width same as main
+      align-items: right; 
+      justify-content: center; // should be right, and header-width same as main
       li {
-        margin-top: .5em;
-        margin-left: 2em;
+        // margin-top: .5em;
+        // margin-left: 2em;
         font-size: 0.8125em;
+        text-align: right;
       }
       li.active { font-weight: bold; }
     }
@@ -581,9 +587,9 @@ body#follow {
     padding-top: 28px; // fehlenden marquee auffangen
     height: 140px;
   }
-  /* Desktop Header }}} */
+  /* Small Screen Header }}} */
 
-  /* Desktop Footer {{{ */
+  /* Small Screen Footer {{{ */
   footer {
     background: transparent;
     transform: translateY(47px);
@@ -595,16 +601,16 @@ body#follow {
   footer nav { display: none; }
   body:not(#index) footer { display: none; }
 
-  /* End Desktop Footer }}} */
+  /* End Small Screen Footer }}} */
 
-  /* Desktop Carousels Global {{{ */
+  /* Small Screen Carousels Global {{{ */
   .carousel {
     margin: auto; // centered in flex-column
     box-style: border-box;
     overflow: hidden;
     display: block;
     position: relative;
-    width: $desktop-width;
+    width: $card-width;
     height: auto;
     .flickity-viewport { position: static; }
     .carousel-cell {
@@ -632,7 +638,8 @@ body#follow {
   .carousel-cell video {
     position: static;
     object-fit: cover;
-    width: auto;
+    width: 100%;
+    height: 100%;
   }
   .carousel-cell video {
     height: $card-height;
@@ -654,9 +661,9 @@ body#follow {
     padding-bottom: 0;
   }
 
- /* Desktop Carousels Global }}} */
+ /* Small Screen Carousels Global }}} */
 
-  /* Desktop Main Carousel Exceptions {{{ */
+  /* Small Screen Main Carousel Exceptions {{{ */
   .main-carousel .carousel-cell div.description p {
     font-size: 1em;
     letter-spacing: 0.0125em;
@@ -667,9 +674,9 @@ body#follow {
     height: 100%;
     object-fit: cover;
   }
-  /* End Desktop Main Carousel Exeptions }}} */
+  /* End Small Screen Main Carousel Exeptions }}} */
 
-  /* Desktop About Carousel Exceptions {{{ */
+  /* Small Screen About Carousel Exceptions {{{ */
   .about-carousel #about-intro {
     padding: 20px 30px 0;
     ul#team-list {
@@ -681,16 +688,16 @@ body#follow {
   .about-carousel .carousel-cell.team-member .name { transform: translateY(65px); }
   .about-carousel .carousel-cell.team-member .name.up { transform: translateY(0px); }
   .about-carousel .flickity-page-dots.hidden { display: block; } // no need to hide
-  /* End Desktop About Carousel Exeptions }}} */
+  /* End Small Screen About Carousel Exeptions }}} */
 
-  /* Archive Thumb Carousel {{{ */
+  /* Small Screen Archive Thumb Carousel {{{ */
   footer #archive {
     display: flex;
     justify-content: center; // Center carousel
     margin: 0;
     ul.archive-carousel { /* this is the same as #archive ul */
       // border: solid 1px red;
-      width: 964px;
+      width: $smallscreen-width;
       height: 120px;
       overflow: hidden; // cells overlapping left and right should be cut off
       display: block; // disable flex (as on mobile)
@@ -724,9 +731,9 @@ body#follow {
       transform: translateY(-25px);
     }
   }
-  /* End Archive Thumb Carousel }}} */
+  /* End Small Screen Archive Thumb Carousel }}} */
 
-  /* Archive Project Descriptions {{{ */
+  /* Small Screen Archive Project Descriptions {{{ */
   ul#archive-descriptions {
     // background: lightgray;
     margin-top: 140px;
@@ -740,7 +747,7 @@ body#follow {
       margin: 0 auto;
       padding: 0;
       padding-top: 20px;
-      width: $desktop-width;
+      width: $smallscreen-width;
       justify-content: space-around;
       img.archive-image {
         // urspr. gab es hierfür keine desktop-regeln
@@ -763,9 +770,9 @@ body#follow {
       }
     }
   }
-  /* End Archive Project Descriptions }}} */
+  /* End Small Screen Archive Project Descriptions }}} */
 
-  /* Follow, Insta-Feed {{{ */
+  /* Small Screen Follow, Insta-Feed {{{ */
   #follow main {
     margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
@@ -780,7 +787,7 @@ body#follow {
   }
   #follow div.links {
     display: block;
-    width: $desktop-width;
+    width: $smallscreen-width;
     margin: 0 auto auto; // flex: stick to main above
     p.ext-links {
       margin: 0;
@@ -790,11 +797,11 @@ body#follow {
       a { font-weight: bold; }
     }
   }
-  /* End Follow, Insta-Feed }}} */
+  /* End Small Screen Follow, Insta-Feed }}} */
 
-  /* Contact Page {{{ */
+  /* Small Screen Contact Page {{{ */
   #contact main {
-    width: $desktop-width;
+    width: $smallscreen-width;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 0 20px;
@@ -809,6 +816,185 @@ body#follow {
       img {
         margin: 0;
       }
+    }
+  }
+  /* Small Screen Contact Page }}}*/
+
+}
+
+
+/* --- Tablet Styles --- */
+@media (min-width: 950px) {
+
+  /* Tablet Carousels Global {{{ */
+  .carousel {
+    width: $tablet-width;
+    border: 2px solid red;
+    .flickity-viewport {}
+    .carousel-cell {
+      width: 330px; // exception for tablets
+      margin-right: 17px;
+    }
+    .flickity-page-dots {}
+    .flickity-page-dots.hidden { // prevent jumping of flex-layout
+    }
+  } 
+  .flickity-prev-next-button.hidden {}
+  .flickity-prev-next-button {}
+  .carousel-cell>img, 
+  .carousel-cell video { width: 330px; }
+  .carousel-cell video {}
+  .carousel-cell video.square {}
+  .flickity-button {}
+  .flickity-button.previous {
+    // ziel: aus dem karusell bewegen
+    // problem: overflow hidden bei definierter breite
+  }
+  .flickity-button.next {
+    // ziel: aus dem karusell bewegen
+    // problem: overflow hidden bei definierter breite
+  }
+  .flickity-viewport {}
+  .carousel-cell.is-selected .description {}
+
+ /* Tablet Carousels Global }}} */
+
+  /* Tablet Archive Thumb Carousel {{{ */
+  footer #archive {
+    ul.archive-carousel { /* this is the same as #archive ul */
+      width: 900px; // gut?
+      .flickity-viewport {
+        li.archive-carousel-cell {}
+      }
+    }
+  }
+
+  footer #archive ul.active {}
+
+  footer #archive ul li img.archive-thumb { // thumbnails
+  }
+  footer #archive ul.archive-carousel .flickity-viewport li.archive-carousel-cell.active {
+    img {}
+  }
+  /* End Tablet Archive Thumb Carousel }}} */
+
+  /* Tablet Archive Project Descriptions {{{ */
+  ul#archive-descriptions {
+    li.archive-project-description { width: $tablet-width; }
+  }
+  /* End Tablet Archive Project Descriptions }}} */
+
+  /* Small Screen Follow, Insta-Feed {{{ */
+  #follow main {
+    margin: auto auto 0; // flex: stick to div.links below
+    .insta-post {
+      width: $tabletcard-width;
+      height: $tabletcard-height;
+      margin-right: 15px;
+      p.text { display: block; }
+      p.mobile-follow-links { display: none; }
+      img, video {
+        margin: 0 0 15px;
+      }
+    }
+  }
+  #follow div.links {
+    display: block;
+    width: $smallscreen-width;
+    margin: 0 auto auto; // flex: stick to main above
+    p.ext-links {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      color: white;
+      a { font-weight: bold; }
+    }
+  }
+  /* End Small Screen Follow, Insta-Feed }}} */
+
+  /* Tablet Contact Page {{{ */
+  #contact main {
+    width: $tablet-width;
+    .contact-data {
+      img {}
+    }
+  }
+  /* Contact Page }}}*/
+
+}
+/* --- End Tablet Styles --- */
+
+/* --- Desktop Styles --- */
+
+@media (min-width: 1025px) {
+
+  /* Desktop Carousels Global {{{ */
+  .carousel {
+    width: $desktop-width;
+    .flickity-viewport {}
+    .carousel-cell {
+      width: $card-width;
+      margin-right: 20px;
+    }
+    .flickity-page-dots {}
+    .flickity-page-dots.hidden { // prevent jumping of flex-layout
+    }
+  } 
+  .flickity-prev-next-button.hidden {}
+  .flickity-prev-next-button {}
+  .carousel-cell>img, 
+  .carousel-cell video { width: $card-height; }
+  .carousel-cell video {}
+  .carousel-cell video.square {}
+  .flickity-button {}
+  .flickity-button.previous {
+    // ziel: aus dem karusell bewegen
+    // problem: overflow hidden bei definierter breite
+  }
+  .flickity-button.next {
+    // ziel: aus dem karusell bewegen
+    // problem: overflow hidden bei definierter breite
+  }
+  .flickity-viewport {}
+  .carousel-cell.is-selected .description {}
+
+ /* Desktop Carousels Global }}} */
+
+  /* Archive Thumb Carousel {{{ */
+  footer #archive {
+    ul.archive-carousel { /* this is the same as #archive ul */
+      width: 964px;
+      .flickity-viewport {
+        li.archive-carousel-cell {}
+      }
+    }
+  }
+
+  footer #archive ul.active {}
+
+  footer #archive ul li img.archive-thumb { // thumbnails
+  }
+  footer #archive ul.archive-carousel .flickity-viewport li.archive-carousel-cell.active {
+    img {}
+  }
+  /* End Archive Thumb Carousel }}} */
+
+  /* Archive Project Descriptions {{{ */
+  ul#archive-descriptions {
+    li.archive-project-description {
+      width: $desktop-width;
+      img.archive-image {}
+      div.archive-project-description-text {}
+      .close {}
+    }
+  }
+  /* End Archive Project Descriptions }}} */
+
+  /* Contact Page {{{ */
+  #contact main {
+    width: $desktop-width;
+    .contact-data {
+      img {}
     }
   }
   /* Contact Page }}}*/
