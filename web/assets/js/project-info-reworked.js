@@ -10,8 +10,8 @@ var infosVisible = false;
 document.addEventListener("DOMContentLoaded", function(event) {
 
   // list of elements that need an event listener
-  // i.e. all slides (containing a project video)
-  var videos = document.querySelectorAll('video');
+  // i.e. all slides (containing a project video or image)
+  var projectDisplay = document.querySelectorAll('.project-display');
 
   // all descriptions (hidden by default)
   var descriptions = document.querySelectorAll('.description');
@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var footer = document.querySelector('footer');
   var dots = document.querySelector('.flickity-page-dots');
 
-  // attach event listener to all videos/slides
-  for (var i = 0; i < videos.length; i++) {
-    videos[i].addEventListener('click' || 'touchend', handleClick);
+  // attach event listener to all slides
+  for (var i = 0; i < projectDisplay.length; i++) {
+    projectDisplay[i].addEventListener('click' || 'touchend', handleClick);
 
     // pass number in order to select the cell on click when not active
-    videos[i].myPrivateNumber = i;
+    projectDisplay[i].myPrivateNumber = i;
   }
 
   // attach event listener to all close buttons
