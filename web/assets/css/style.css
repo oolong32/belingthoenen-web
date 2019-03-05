@@ -605,6 +605,10 @@ body#follow footer {
     letter-spacing: 0.0125em; }
     .main-carousel .carousel-cell div.description p em {
       letter-spacing: 0.025em; }
+  .main-carousel .carousel-cell .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
   /* End Desktop Main Carousel Exeptions }}} */
   /* Desktop About Carousel Exceptions {{{ */
   .about-carousel #about-intro {
