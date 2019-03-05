@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // move thumb to center
     var index = parseInt(clickedThumb.archiveOrder);
-    console.log('moving to ' + index);
+    // console.log('moving to ' + index);
     flktyArc.select(index, true, false);
   }
 
