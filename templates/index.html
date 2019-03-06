@@ -10,16 +10,17 @@
   {% for project in projects %}
       <div class="carousel-cell">
         {#
-        <p style="position: absolute; background: red; transform-origin: top right; transform: rotate(-10deg); top: 10px; left: 10px; border-radius: 8px; padding: 1px 5px; color: white;">
+        <p style="z-index: 1000; position: absolute; background: red; transform-origin: top right; transform: rotate(-10deg); top: 100px; left: 10px; border-radius: 8px; padding: 1px 5px; color: white;">
           {{ project.type }}
         </p>
         #}
         {% if project.type == 'videoProject' %}
           {% set aspectRatio = project.aspectRatio.options[0].selected %} {# ob das für bilder auch nötig sein wird? #}
+
           {% if loop.first %} {# erstes Video abspielen #}
-            <video class="project-display" src="{{ project.video[0].url }}" autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }}">
+            <video src="{{ project.video[0].url }}" autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
           {% else %} {# erstes Video abspielen #}
-            <video class="project-display" src="{{ project.video[0].url }}" paused playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }}">
+            <video src="{{ project.video[0].url }}" paused playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
           {% endif %}
             Sorry, your browser doesn't support embedded videos, 
             but don't worry, you can <a href="{{ project.video[0].url }}">download it</a>

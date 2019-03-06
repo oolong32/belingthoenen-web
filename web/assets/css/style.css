@@ -151,7 +151,7 @@ footer #archive {
 footer #archive ul {
   height: 100px;
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: hidden;
   box-sizing: content-box;
   list-style: none;
   white-space: nowrap; }
@@ -161,6 +161,9 @@ footer #archive ul li {
 
 footer #archive ul li > img {
   height: 95px; }
+
+.archive-carousel:after {
+  content: ''; }
 
 /* End Archive Projects Slider }}} */
 /* Archive Project Descriptions {{{ */
@@ -343,6 +346,7 @@ body#follow footer {
   object-fit: cover; }
 
 .carousel-cell video.square {
+  width: 100%;
   object-fit: contain;
   object-position: center 85px; }
 
@@ -384,11 +388,6 @@ body#follow footer {
   display: none; }
 
 /* End Carousel allgemein }}} */
-/* Archive Carousel {{{ */
-.archive-carousel:after {
-  content: ''; }
-
-/* End Archive Carousel }}} */
 /* Follow, Insta-Feed {{{*/
 #follow main {
   color: white; }
@@ -867,7 +866,7 @@ body#follow footer {
       margin-right: 20px; }
   .carousel-cell > img,
   .carousel-cell video {
-    width: 600px; }
+    width: 375px; }
   /* Desktop Carousels Global }}} */
   /* Archive Thumb Carousel {{{ */
   footer #archive ul.archive-carousel {

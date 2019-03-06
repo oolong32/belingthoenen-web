@@ -147,10 +147,11 @@ footer #archive { margin-bottom: 1em; }
 footer #archive ul {
   height: 100px;
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: hidden;
   box-sizing: content-box;
   list-style: none;
   white-space: nowrap;
+
   // display: flex; // flex not needed on mobile for slider
   // flex-direction: row;
   // justify-content: center;
@@ -158,6 +159,9 @@ footer #archive ul {
 }
 footer #archive ul li { margin-right: 0.25em; }
 footer #archive ul li>img { height: 95px; } // thumbnails
+
+// deactivate archive slider by default
+.archive-carousel:after { content: ''; }
 /* End Archive Projects Slider }}} */
 
 /* Archive Project Descriptions {{{ */
@@ -358,6 +362,7 @@ body#follow {
 
 .carousel-cell {
   video.square {
+    width: 100%;
     object-fit: contain;
     object-position: center 85px; // no support in ios :-(
   }
@@ -399,11 +404,6 @@ body#follow {
 .carousel-cell:not(.is-selected) div.description { display: none; }
 .flickity-button { display: none; } // hide Arrows
 /* End Carousel allgemein }}} */
-
-/* Archive Carousel {{{ */
-// deactivate archive carousel by default
-.archive-carousel:after { content: ''; }
-/* End Archive Carousel }}} */
 
 /* Follow, Insta-Feed {{{*/
 #follow {
@@ -1037,7 +1037,7 @@ body#follow {
   .flickity-prev-next-button.hidden {}
   .flickity-prev-next-button {}
   .carousel-cell>img, 
-  .carousel-cell video { width: $card-height; }
+  .carousel-cell video { width: $card-width; }
   .carousel-cell video {}
   .carousel-cell video.square {}
   .flickity-button {}
