@@ -5,47 +5,49 @@
 
 {% set projects = craft.entries().section('projects').all() %}
 
-<main class="main-carousel carousel">
+<main>
+  <div class="main-carousel carousel">
+    {% for project in projects %}
+        <div class="carousel-cell">
+          {#
+          <p style="z-index: 1000; position: absolute; background: red; transform-origin: top right; transform: rotate(-10deg); top: 100px; left: 10px; border-radius: 8px; padding: 1px 5px; color: white;">
+            {{ project.type }}
+          </p>
+          #}
+          {% if project.type == 'videoProject' %}
+            {% set aspectRatio = project.aspectRatio.options[0].selected %} {# ob das für bilder auch nötig sein wird? #}
 
-  {% for project in projects %}
-      <div class="carousel-cell">
-        {#
-        <p style="z-index: 1000; position: absolute; background: red; transform-origin: top right; transform: rotate(-10deg); top: 100px; left: 10px; border-radius: 8px; padding: 1px 5px; color: white;">
-          {{ project.type }}
-        </p>
-        #}
-        {% if project.type == 'videoProject' %}
-          {% set aspectRatio = project.aspectRatio.options[0].selected %} {# ob das für bilder auch nötig sein wird? #}
-
-          {% if loop.first %} {# erstes Video abspielen #}
-            <video src="{{ project.video[0].url }}" autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
-          {% else %} {# erstes Video abspielen #}
-            <video src="{{ project.video[0].url }}" paused playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
-          {% endif %}
-            Sorry, your browser doesn't support embedded videos, 
-            but don't worry, you can <a href="{{ project.video[0].url }}">download it</a>
-            and watch it with your favorite video player!
-          </video>
-
-          {% else %}
-            {% if project.projectImg|length %} {# sollte gegeben sein, aber better safe than sorry #}
-              <img class="project-display" class="project-image" src="{{ project.projectImg[0].getUrl() }}" alt"Beling Thoenen, {{ project.title }}">
+            {% if loop.first %} {# erstes Video abspielen #}
+              <video src="{{ project.video[0].url }}" autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
+            {% else %} {# erstes Video abspielen #}
+              <video src="{{ project.video[0].url }}" paused playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
             {% endif %}
-          {% endif %}
+              Sorry, your browser doesn't support embedded videos, 
+              but don't worry, you can <a href="{{ project.video[0].url }}">download it</a>
+              and watch it with your favorite video player!
+            </video>
 
-        <div class="description hidden">
-          {% if project.extLink|length %}
-            <a href="{{ project.extLink }}" target="_blank">
-              <img class="link" src="/assets/_pic/link.svg" width="44" height="44" alt="cute link button">
-            </a>
-          {% endif %}
-          <img class="close" src="/assets/_pic/close.svg" width="44" height="44" alt="cute close button">
-          <p style="float: left"><em>{{ project.title }}</em> {{ project.description }}</p>
+            {% else %}
+              {% if project.projectImg|length %} {# sollte gegeben sein, aber better safe than sorry #}
+                <img class="project-display" class="project-image" src="{{ project.projectImg[0].getUrl() }}" alt"Beling Thoenen, {{ project.title }}">
+              {% endif %}
+            {% endif %}
+
+          <div class="description hidden">
+            {% if project.extLink|length %}
+              <a href="{{ project.extLink }}" target="_blank">
+                <img class="link" src="/assets/_pic/link.svg" width="44" height="44" alt="cute link button">
+              </a>
+            {% endif %}
+            <img class="close" src="/assets/_pic/close.svg" width="44" height="44" alt="cute close button">
+            <p style="float: left"><em>{{ project.title }}</em> {{ project.description }}</p>
+          </div>
         </div>
-      </div>
-  {% endfor %}
-
+    {% endfor %}
+  </div>
+  {% include "includes/sliderButtons.html" %}
 </main>
+
 
 <script src="/assets/js/jquery.js"></script>
 {# seems not to work locally? #}

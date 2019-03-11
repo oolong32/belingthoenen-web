@@ -211,6 +211,10 @@ ul#archive-descriptions.hidden {
 
 /* End Archive Project Descriptions }}} */
 /* Home Carousel {{{ */
+#customButtonLeft,
+#customButtonRight {
+  display: none; }
+
 .carousel {
   position: absolute;
   top: 0;
@@ -468,6 +472,15 @@ body#follow footer {
     min-height: 780px;
     overflow: hidden; }
   /* End Small Screen Body }}} */
+  /* Small Screen Main {{{level */
+  main {
+    margin: auto;
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center; }
+  /* End Small Screen Main }}}level */
   /* Small Screen Header {{{ */
   header.shrink,
   header {
@@ -604,6 +617,36 @@ body#follow footer {
     position: absolute;
     padding-bottom: 0; }
   /* Small Screen Carousels Global }}} */
+  /* Custom Slider Arrows {{{2 */
+  #customButtonLeft,
+  #customButtonRight {
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin: auto;
+    border-radius: 22px;
+    display: flex;
+    background: black;
+    outline: none;
+    border: none; }
+    #customButtonLeft svg,
+    #customButtonRight svg {
+      margin: auto; }
+      #customButtonLeft svg polyline, #customButtonLeft svg path,
+      #customButtonRight svg polyline,
+      #customButtonRight svg path {
+        stroke: white; }
+  #customButtonLeft:hover,
+  #customButtonRight:hover {
+    background: #96aaff; }
+  #customButtonLeft {
+    order: -1; }
+    #customButtonLeft svg {
+      transform: translateX(-1px); }
+  .carousel-cell > img,
+  .carousel-cell video {
+    width: 375px; }
+  /* End Custom Slider Arrows }}}2 */
   /* Small Screen Main Carousel Exceptions {{{ */
   .main-carousel .carousel-cell div.description p {
     font-size: 1em;
@@ -722,9 +765,7 @@ body#follow footer {
   /* Small Screen Contact Page }}}*/ }
 
 /* --- Tablet Styles --- */
-@media (min-width: 950px) {
-  main {
-    transform: translateY(-40px); }
+@media (min-width: 1000px) {
   /* Tablet Header {{{ */
   header.shrink,
   header {
@@ -762,6 +803,7 @@ body#follow footer {
   /* Desktop Header }}} */
   /* Tablet Carousels Global {{{ */
   .carousel {
+    margin: 0 auto;
     width: 960px; }
     .carousel .carousel-cell {
       width: 310px;
@@ -770,7 +812,7 @@ body#follow footer {
   .carousel-cell > img,
   .carousel-cell video {
     width: 310px; }
-  /* Tablet Carousels Global }}} */
+  /* End Tablet Carousels Global }}} */
   /* Tablet Archive Thumb Carousel {{{ */
   footer #archive ul.archive-carousel {
     /* this is the same as #archive ul */
@@ -819,9 +861,7 @@ body#follow footer {
 
 /* --- End Tablet Styles --- */
 /* --- Desktop Styles --- */
-@media (min-width: 1025px) {
-  main {
-    transform: translateY(0); }
+@media (min-width: 1240px) {
   /* Desktop Header {{{ */
   header.shrink,
   header {
@@ -864,9 +904,6 @@ body#follow footer {
       width: 375px;
       height: 600px;
       margin-right: 20px; }
-  .carousel-cell > img,
-  .carousel-cell video {
-    width: 375px; }
   /* Desktop Carousels Global }}} */
   /* Archive Thumb Carousel {{{ */
   footer #archive ul.archive-carousel {

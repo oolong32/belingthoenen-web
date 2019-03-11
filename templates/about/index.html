@@ -7,38 +7,41 @@
 {% set aboutIntro = aboutSingle.aboutIntro %}
 {% set aboutEntries = craft.entries().section('aboutEntries').all() %}
 
-<main class="about-carousel carousel">
+<main>
+  <div class="about-carousel carousel">
 
-  <div class="carousel-cell">
-    <section id="about-intro">
-      {{ aboutIntro}}
-      
-      <h2 style="color: white; font-size: 18px; margin-bottom: 16px;">{{ aboutSingle.teamListTitle }}</h2>
+    <div class="carousel-cell">
+      <section id="about-intro">
+        {{ aboutIntro}}
+        
+        <h2 style="color: white; font-size: 18px; margin-bottom: 16px;">{{ aboutSingle.teamListTitle }}</h2>
 
-      <ul id="team-list">
-      {% for entry in aboutEntries %}
-        <li>
-          <button class="jump-button" onclick="flkty.select({{ loop.index }}, true, false)">{{ entry.teamName }}</button>
-        </li>
-      {% endfor %}
-      </ul>
-    </section>
+        <ul id="team-list">
+        {% for entry in aboutEntries %}
+          <li>
+            <button class="jump-button" onclick="flkty.select({{ loop.index }}, true, false)">{{ entry.teamName }}</button>
+          </li>
+        {% endfor %}
+        </ul>
+      </section>
+
+    </div>
+
+    {% for entry in aboutEntries %}
+    <div class="carousel-cell team-member" style="background: url('{{ entry.teamImg[0].getUrl('width_700') }}') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
+        <p class="name"><strong>{{ entry.teamName }}</strong>{{ entry.teamRole|length ? "<br>#{entry.teamRole}" | raw : '' }}</p>
+        <div class="contact-data hidden">
+      <p>
+            <a href=mailto:{{ entry.teamMail }}>{{ entry.teamMail }}</a><br>
+            <a href="tel:{{ entry.teamTel|split(' ')|join }}">{{ entry.teamTel }}</a>
+      </p>
+      <img class="close" height="44" width="44" src="/assets/_pic/close.svg" alt="cute close button">
+        </div>
+    </div>
+    {% endfor %}
 
   </div>
-
-  {% for entry in aboutEntries %}
-  <div class="carousel-cell team-member" style="background: url('{{ entry.teamImg[0].getUrl('width_700') }}') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
-      <p class="name"><strong>{{ entry.teamName }}</strong>{{ entry.teamRole|length ? "<br>#{entry.teamRole}" | raw : '' }}</p>
-      <div class="contact-data hidden">
-		<p>
-		      <a href=mailto:{{ entry.teamMail }}>{{ entry.teamMail }}</a><br>
-		      <a href="tel:{{ entry.teamTel|split(' ')|join }}">{{ entry.teamTel }}</a>
-		</p>
-		<img class="close" height="44" width="44" src="/assets/_pic/close.svg" alt="cute close button">
-      </div>
-  </div>
-  {% endfor %}
-
+  {% include "includes/sliderButtons.html" %}
 </main>
   
 <script src="/assets/js/jquery.js"></script>

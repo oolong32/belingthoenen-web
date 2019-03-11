@@ -213,6 +213,11 @@ ul#archive-descriptions.hidden {display: none;}
 /* End Archive Project Descriptions }}} */
 
 /* Home Carousel {{{ */
+
+// new buttons outside the slider
+#customButtonLeft,
+#customButtonRight { display: none; }
+
 .carousel {
   position: absolute;
   top: 0;
@@ -502,7 +507,21 @@ body#follow {
     min-height: 780px;
     overflow: hidden;
   }
+
   /* End Small Screen Body }}} */
+
+  /* Small Screen Main {{{level */
+  
+  main {
+    margin: auto;
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  
+  /* End Small Screen Main }}}level */
 
   /* Small Screen Header {{{ */
   header.shrink,
@@ -647,6 +666,47 @@ body#follow {
   }
   .carousel-cell video.square { object-position: center center; }
   .flickity-button { display: block; }
+
+  .flickity-viewport { position: static; }
+  .carousel-cell.is-selected .description {
+    position: absolute;
+    padding-bottom: 0;
+  }
+
+ /* Small Screen Carousels Global }}} */
+
+  /* Custom Slider Arrows {{{2 */
+  #customButtonLeft, 
+  #customButtonRight {
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin: auto;
+    border-radius: 22px;
+    display: flex;
+    background: black;
+    outline: none;
+    border: none;
+    svg {
+      margin: auto;
+      polyline, path { stroke: white; }
+    }
+  }
+  #customButtonLeft:hover, 
+  #customButtonRight:hover { background: $violet; }
+
+  #customButtonLeft {
+    order: -1;
+    svg { transform: translateX(-1px); }
+  }
+
+  .flickity-prev-next-button.hidden {}
+  .flickity-prev-next-button {}
+  .carousel-cell>img, 
+  .carousel-cell video { width: $card-width; }
+  .carousel-cell video {}
+  .carousel-cell video.square {}
+  .flickity-button {}
   .flickity-button.previous {
     // ziel: aus dem karusell bewegen
     // problem: overflow hidden bei definierter breite
@@ -655,13 +715,10 @@ body#follow {
     // ziel: aus dem karusell bewegen
     // problem: overflow hidden bei definierter breite
   }
-  .flickity-viewport { position: static; }
-  .carousel-cell.is-selected .description {
-    position: absolute;
-    padding-bottom: 0;
-  }
-
- /* Small Screen Carousels Global }}} */
+  .flickity-viewport {}
+  .carousel-cell.is-selected .description {}
+  
+  /* End Custom Slider Arrows }}}2 */
 
   /* Small Screen Main Carousel Exceptions {{{ */
   .main-carousel .carousel-cell div.description p {
@@ -824,9 +881,7 @@ body#follow {
 
 
 /* --- Tablet Styles --- */
-@media (min-width: 950px) {
-
-  main { transform: translateY(-40px); } // nicht so cool, aber quick fix optisch …
+@media (min-width: 1000px) {
 
   /* Tablet Header {{{ */
   header.shrink,
@@ -882,6 +937,7 @@ body#follow {
 
   /* Tablet Carousels Global {{{ */
   .carousel {
+    margin: 0 auto;
     width: $tablet-width;
     .flickity-viewport {}
     .carousel-cell {
@@ -892,15 +948,7 @@ body#follow {
   } 
   .carousel-cell>img, 
   .carousel-cell video { width: $tabletcard-width; }
-  .flickity-button.previous {
-    // ziel: aus dem karusell bewegen
-    // problem: overflow hidden bei definierter breite
-  }
-  .flickity-button.next {
-    // ziel: aus dem karusell bewegen
-    // problem: overflow hidden bei definierter breite
-  }
- /* Tablet Carousels Global }}} */
+ /* End Tablet Carousels Global }}} */
 
   /* Tablet Archive Thumb Carousel {{{ */
   footer #archive {
@@ -965,9 +1013,7 @@ body#follow {
 
 /* --- Desktop Styles --- */
 
-@media (min-width: 1025px) {
-
-  main { transform: translateY(0); } // tablet quick-fix aushebeln
+@media (min-width: 1240px) {
 
   /* Desktop Header {{{ */
   header.shrink,
@@ -1034,23 +1080,6 @@ body#follow {
     .flickity-page-dots.hidden { // prevent jumping of flex-layout
     }
   } 
-  .flickity-prev-next-button.hidden {}
-  .flickity-prev-next-button {}
-  .carousel-cell>img, 
-  .carousel-cell video { width: $card-width; }
-  .carousel-cell video {}
-  .carousel-cell video.square {}
-  .flickity-button {}
-  .flickity-button.previous {
-    // ziel: aus dem karusell bewegen
-    // problem: overflow hidden bei definierter breite
-  }
-  .flickity-button.next {
-    // ziel: aus dem karusell bewegen
-    // problem: overflow hidden bei definierter breite
-  }
-  .flickity-viewport {}
-  .carousel-cell.is-selected .description {}
 
  /* Desktop Carousels Global }}} */
 

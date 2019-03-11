@@ -2,38 +2,43 @@
 {% extends "_layout.html" %}
 
 {% block content %}
-<main class="follow-carousel carousel">
+<main>
 
-  {% for instagramdata in craft.picPuller.media_recent({'user_id' : 1,  'use_stale_cache' : true, 'limit': 6}) %}
-  <section class="insta-post carousel-cell">
+  <div class="follow-carousel carousel">
 
-    {% if instagramdata.status == "true" %}
-      
-      {# <p class="date">{{ instagramdata.created_time|date('d. F Y') }}</p> #}
+    {% for instagramdata in craft.picPuller.media_recent({'user_id' : 1,  'use_stale_cache' : true, 'limit': 6}) %}
+    <section class="insta-post carousel-cell">
 
-      {% if instagramdata.video_standard_resolution != "" %}
-        <a href="{{ instagramdata.link }}" target="_blank">
-          <video poster="{{ instagramdata.standard_resolution }}" autoplay playsinline preload="auto" loop muted>
-            <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </a>
+      {% if instagramdata.status == "true" %}
+        
+        {# <p class="date">{{ instagramdata.created_time|date('d. F Y') }}</p> #}
+
+        {% if instagramdata.video_standard_resolution != "" %}
+          <a href="{{ instagramdata.link }}" target="_blank">
+            <video poster="{{ instagramdata.standard_resolution }}" autoplay playsinline preload="auto" loop muted>
+              <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </a>
+        {% else %}
+          <a href="{{ instagramdata.link }}" target="_blank">
+            <img src="{{instagramdata.standard_resolution}}">
+          </a>
+        {% endif %}
+
+        <p class="text">{{ instagramdata.caption|split('#')[0]  }}</p>
+        
+        <p class="mobile-follow-links">Follow us on <a target="_blank" href="https://www.instagram.com/belingthoenen/">Instagram</a> or on <a target="_blank" href="https://www.facebook.com/Beling-Thoenen-Design-119797938071895/">Facebook</a><p>
       {% else %}
-        <a href="{{ instagramdata.link }}" target="_blank">
-          <img src="{{instagramdata.standard_resolution}}">
-        </a>
+        <p class="text error-type"><strong>{{ instagramdata.error_type }}</strong></p>
+        <p class="text error">{{ instagramdata.error_message }}</p>
       {% endif %}
 
-      <p class="text">{{ instagramdata.caption|split('#')[0]  }}</p>
-      
-      <p class="mobile-follow-links">Follow us on <a target="_blank" href="https://www.instagram.com/belingthoenen/">Instagram</a> or on <a target="_blank" href="https://www.facebook.com/Beling-Thoenen-Design-119797938071895/">Facebook</a><p>
-    {% else %}
-      <p class="text error-type"><strong>{{ instagramdata.error_type }}</strong></p>
-      <p class="text error">{{ instagramdata.error_message }}</p>
-    {% endif %}
+    </section>
+    {% endfor %}
 
-  </section>
-  {% endfor %}
+  </div>
+  {% include "includes/sliderButtons.html" %}
 
 </main>
 
