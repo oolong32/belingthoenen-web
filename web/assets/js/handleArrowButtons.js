@@ -43,5 +43,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     }
   }
+
+  // Custom Arrow Buttons
+  $('#customButtonLeft').on( 'click', function() {
+    flkty.previous(true);
+  });
+
+  $('#customButtonRight').on( 'click', function() {
+    flkty.next(true);
+  });
+
 });
 
