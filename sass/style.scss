@@ -367,7 +367,8 @@ body#follow {
 
 .carousel-cell>img.project-image { // projekt mit bild statt video
   object-fit: cover;
-  object-position: top center;
+  height: $card-height;
+  object-position: center center;
 }
 .carousel-cell {
   video.square {
@@ -956,6 +957,10 @@ body#follow {
     width: $tabletcard-width; 
     height: $tabletcard-height;
   }
+
+  .carousel-cell>img.project-image {
+    height:tabletcard-height;
+  }
  /* End Tablet Carousels Global }}} */
 
   /* Tablet Archive Thumb Carousel {{{ */
@@ -1091,6 +1096,9 @@ body#follow {
       height: auto;
     }
     .carousel-cell video.square {
+      height: $card-height;
+    }
+    .carousel-cell > img.project-image {
       height: $card-height;
     }
   } 

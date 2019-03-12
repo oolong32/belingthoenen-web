@@ -351,7 +351,8 @@ body#follow footer {
 
 .carousel-cell > img.project-image {
   object-fit: cover;
-  object-position: top center; }
+  height: 600px;
+  object-position: center center; }
 
 .carousel-cell video.square {
   width: 100%;
@@ -818,6 +819,8 @@ body#follow footer {
   .carousel-cell video {
     width: 310px;
     height: 496px; }
+  .carousel-cell > img.project-image {
+    height: tabletcard-height; }
   /* End Tablet Carousels Global }}} */
   /* Tablet Archive Thumb Carousel {{{ */
   footer #archive ul.archive-carousel {
@@ -916,6 +919,8 @@ body#follow footer {
       height: 600px;
       height: auto; }
     .carousel .carousel-cell video.square {
+      height: 600px; }
+    .carousel .carousel-cell > img.project-image {
       height: 600px; }
   /* Desktop Carousels Global }}} */
   /* Archive Thumb Carousel {{{ */
