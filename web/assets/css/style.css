@@ -816,7 +816,7 @@ body#follow footer {
     width: 310px;
     height: 496px; }
   .carousel-cell > img.project-image {
-    height: tabletcard-height; }
+    height: 496px; }
   /* End Tablet Carousels Global }}} */
   /* Tablet Archive Thumb Carousel {{{ */
   footer #archive ul.archive-carousel {
