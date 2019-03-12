@@ -366,7 +366,7 @@ body#follow {
 }
 
 .carousel-cell>img.project-image { // projekt mit bild statt video
-  object-fit: cover;
+  object-fit: contain;
   height: $card-height;
   object-position: center center;
 }
