@@ -733,9 +733,9 @@ body#follow {
     em { letter-spacing: 0.025em; }
   }
   .main-carousel .carousel-cell .project-image { // projekt nur mit bild statt video
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    // width: 100%;
+    // height: 100%;
+    // object-fit: contain;
   }
   /* End Small Screen Main Carousel Exeptions }}} */
 
