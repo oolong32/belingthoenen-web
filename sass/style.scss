@@ -505,7 +505,7 @@ body#follow {
 /* --- Small Screen Styles --- */
 @media (min-width: 700px) {
 
-  /* Small Screen Body {{{ */
+  /* Small Screen Body {{{1 */
   body,
   body#about {
     height: 100vh; // flex-column-layout
@@ -514,9 +514,9 @@ body#follow {
     overflow: hidden;
   }
 
-  /* End Small Screen Body }}} */
+  /* End Small Screen Body }}}1 */
 
-  /* Small Screen Main {{{level */
+  /* Small Screen Main {{{1 */
   
   main {
     margin: auto;
@@ -527,9 +527,9 @@ body#follow {
     align-items: center;
   }
   
-  /* End Small Screen Main }}}level */
+  /* End Small Screen Main }}}1 */
 
-  /* Small Screen Header {{{ */
+  /* Small Screen Header {{{1 */
   header.shrink,
   header {
     box-sizing: border-box;
@@ -612,9 +612,9 @@ body#follow {
     padding-top: 28px; // fehlenden marquee auffangen
     height: 140px;
   }
-  /* Small Screen Header }}} */
+  /* Small Screen Header }}}1 */
 
-  /* Small Screen Footer {{{ */
+  /* Small Screen Footer {{{1 */
   footer {
     background: transparent;
     transform: translateY(47px);
@@ -626,9 +626,9 @@ body#follow {
   footer nav { display: none; }
   body:not(#index) footer { display: none; }
 
-  /* End Small Screen Footer }}} */
+  /* End Small Screen Footer }}}1 */
 
-  /* Small Screen Carousels Global {{{ */
+  /* Small Screen Carousels Global {{{1 */
   .carousel {
     margin: auto; // centered in flex-column
     box-style: border-box;
@@ -679,9 +679,9 @@ body#follow {
     padding-bottom: 0;
   }
 
- /* Small Screen Carousels Global }}} */
+ /* Small Screen Carousels Global }}}1 */
 
-  /* Custom Slider Arrows {{{2 */
+  /* Custom Slider Arrows {{{1 */
   #customButtonLeft, 
   #customButtonRight {
     display: block;
@@ -724,9 +724,9 @@ body#follow {
   .flickity-viewport {}
   .carousel-cell.is-selected .description {}
   
-  /* End Custom Slider Arrows }}}2 */
+  /* End Custom Slider Arrows }}}1 */
 
-  /* Small Screen Main Carousel Exceptions {{{ */
+  /* Small Screen Main Carousel Exceptions {{{1 */
   .main-carousel .carousel-cell div.description p {
     font-size: 1em;
     letter-spacing: 0.0125em;
@@ -737,9 +737,9 @@ body#follow {
     // height: 100%;
     // object-fit: contain;
   }
-  /* End Small Screen Main Carousel Exeptions }}} */
+  /* End Small Screen Main Carousel Exeptions }}}1 */
 
-  /* Small Screen About Carousel Exceptions {{{ */
+  /* Small Screen About Carousel Exceptions {{{1 */
   .about-carousel #about-intro {
     padding: 20px 30px 0;
     ul#team-list {
@@ -751,9 +751,10 @@ body#follow {
   .about-carousel .carousel-cell.team-member .name { transform: translateY(65px); }
   .about-carousel .carousel-cell.team-member .name.up { transform: translateY(0px); }
   .about-carousel .flickity-page-dots.hidden { display: block; } // no need to hide
-  /* End Small Screen About Carousel Exeptions }}} */
 
-  /* Small Screen Archive Thumb Carousel {{{ */
+  /* End Small Screen About Carousel Exeptions }}}1 */
+
+  /* Small Screen Archive Thumb Carousel {{{1 */
   footer #archive {
     display: flex;
     justify-content: center; // Center carousel
@@ -794,9 +795,9 @@ body#follow {
       transform: translateY(-25px);
     }
   }
-  /* End Small Screen Archive Thumb Carousel }}} */
+  /* End Small Screen Archive Thumb Carousel }}}1 */
 
-  /* Small Screen Archive Project Descriptions {{{ */
+  /* Small Screen Archive Project Descriptions {{{1 */
   ul#archive-descriptions {
     // background: lightgray;
     margin-top: 140px;
@@ -833,9 +834,9 @@ body#follow {
       }
     }
   }
-  /* End Small Screen Archive Project Descriptions }}} */
+  /* End Small Screen Archive Project Descriptions }}}1 */
 
-  /* Small Screen Follow, Insta-Feed {{{ */
+  /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
     margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
@@ -860,9 +861,9 @@ body#follow {
       a { font-weight: bold; }
     }
   }
-  /* End Small Screen Follow, Insta-Feed }}} */
+  /* End Small Screen Follow, Insta-Feed }}}1 */
 
-  /* Small Screen Contact Page {{{ */
+  /* Small Screen Contact Page {{{1 */
   #contact main {
     width: $smallscreen-width;
     display: grid;
@@ -881,7 +882,7 @@ body#follow {
       }
     }
   }
-  /* Small Screen Contact Page }}}*/
+  /* Small Screen Contact Page }}}1 */
 
 }
 
@@ -941,7 +942,7 @@ body#follow {
   }
   /* Desktop Header }}} */
 
-  /* Tablet Carousels Global {{{ */
+  /* Tablet Carousels Global {{{1 */
   .carousel {
     margin: 0 auto;
     width: $tablet-width;
@@ -961,23 +962,23 @@ body#follow {
   .carousel-cell>img.project-image {
     height: $tabletcard-height;
   }
- /* End Tablet Carousels Global }}} */
+ /* End Tablet Carousels Global }}}1 */
 
-  /* Tablet Archive Thumb Carousel {{{ */
+  /* Tablet Archive Thumb Carousel {{{1 */
   footer #archive {
     ul.archive-carousel { /* this is the same as #archive ul */
       width: 900px; // gut?
     }
   }
-  /* End Tablet Archive Thumb Carousel }}} */
+  /* End Tablet Archive Thumb Carousel }}}1 */
 
-  /* Tablet Archive Project Descriptions {{{ */
+  /* Tablet Archive Project Descriptions {{{1 */
   ul#archive-descriptions {
     li.archive-project-description { width: $tablet-width; }
   }
-  /* End Tablet Archive Project Descriptions }}} */
+  /* End Tablet Archive Project Descriptions }}}1 */
 
-  /* Small Screen Follow, Insta-Feed {{{ */
+  /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
     margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
@@ -1006,9 +1007,9 @@ body#follow {
       a { font-weight: bold; }
     }
   }
-  /* End Small Screen Follow, Insta-Feed }}} */
+  /* End Small Screen Follow, Insta-Feed }}}1 */
 
-  /* Tablet Contact Page {{{ */
+  /* Tablet Contact Page {{{1 */
   #contact main {
     width: $tablet-width;
     grid-template-columns: auto $tabletcard-width auto;
@@ -1019,7 +1020,7 @@ body#follow {
       img {}
     }
   }
-  /* Contact Page }}}*/
+  /* End Tablet Contact Page }}}1 */
 
 }
 /* --- End Tablet Styles --- */
@@ -1028,7 +1029,7 @@ body#follow {
 
 @media (min-width: 1240px) {
 
-  /* Desktop Header {{{ */
+  /* Desktop Header {{{1 */
   header.shrink,
   header {
     top: 5px;
@@ -1078,9 +1079,9 @@ body#follow {
   }
   body:not(#index) header {
   }
-  /* Desktop Header }}} */
+  /* End Desktop Header }}}1 */
 
-  /* Desktop Carousels Global {{{ */
+  /* Desktop Carousels Global {{{1 */
   .carousel {
     width: $desktop-width;
     .flickity-viewport {}
@@ -1102,9 +1103,9 @@ body#follow {
     }
   } 
 
- /* Desktop Carousels Global }}} */
+ /* End Desktop Carousels Global }}}1 */
 
-  /* Archive Thumb Carousel {{{ */
+  /* Archive Thumb Carousel {{{1 */
   footer #archive {
     ul.archive-carousel { /* this is the same as #archive ul */
       width: 964px;
@@ -1121,9 +1122,9 @@ body#follow {
   footer #archive ul.archive-carousel .flickity-viewport li.archive-carousel-cell.active {
     img {}
   }
-  /* End Archive Thumb Carousel }}} */
+  /* End Archive Thumb Carousel }}}1 */
 
-  /* Archive Project Descriptions {{{ */
+  /* Archive Project Descriptions {{{1 */
   ul#archive-descriptions {
     li.archive-project-description {
       width: $desktop-width;
@@ -1132,9 +1133,9 @@ body#follow {
       .close {}
     }
   }
-  /* End Archive Project Descriptions }}} */
+  /* End Archive Project Descriptions }}}1 */
 
-  /* Small Screen Follow, Insta-Feed {{{ */
+  /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
     margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
@@ -1155,9 +1156,9 @@ body#follow {
     display: block;
     width: $desktop-width;
   }
-  /* End Small Screen Follow, Insta-Feed }}} */
+  /* End Small Screen Follow, Insta-Feed }}}1 */
 
-  /* Contact Page {{{ */
+  /* Contact Page {{{1 */
   #contact main {
     width: $desktop-width;
     display: grid;
@@ -1172,12 +1173,12 @@ body#follow {
       }
     }
   }
-  /* Contact Page }}}*/
+  /* End Contact Page }}}1 */
 
 }
 
-/* Hide footer when viewport height to low {{{ */
+/* Hide footer when viewport height to low {{{1 */
 @media (min-aspect-ratio: 2/1) {
   footer { display: none; }
 }
-/* End Hide footer when viewport height to low }}} */
+/* End Hide footer when viewport height to low }}}1 */
