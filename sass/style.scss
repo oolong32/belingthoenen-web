@@ -361,13 +361,14 @@ body#follow {
   position: -webkit-sticky;
   bottom: 0;
   height: 100%;
-  width: 100%;
+  width: $card-width;
   object-fit: cover;
 }
 
 .carousel-cell {
   video.square {
     width: 100%;
+    height: 100%;
     object-fit: contain;
     object-position: center 85px; // no support in ios :-(
   }
@@ -947,7 +948,10 @@ body#follow {
     }
   } 
   .carousel-cell>img, 
-  .carousel-cell video { width: $tabletcard-width; }
+  .carousel-cell video {
+    width: $tabletcard-width; 
+    height: $tabletcard-height;
+  }
  /* End Tablet Carousels Global }}} */
 
   /* Tablet Archive Thumb Carousel {{{ */
@@ -1076,8 +1080,14 @@ body#follow {
       height: $card-height;
       margin-right: 20px;
     }
-    .flickity-page-dots {}
-    .flickity-page-dots.hidden { // prevent jumping of flex-layout
+    .carousel-cell > img,
+    .carousel-cell > video {
+      width: 100%;
+      height: $card-height;
+      height: auto;
+    }
+    .carousel-cell video.square {
+      height: $card-height;
     }
   } 
 
