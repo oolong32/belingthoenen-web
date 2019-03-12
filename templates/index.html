@@ -29,7 +29,7 @@
 
             {% else %}
               {% if project.projectImg|length %} {# sollte gegeben sein, aber better safe than sorry #}
-                <img class="project-display" class="project-image" src="{{ project.projectImg[0].getUrl() }}" alt"Beling Thoenen, {{ project.title }}">
+                <img class="project-display project-image" src="{{ project.projectImg[0].getUrl() }}" alt"Beling Thoenen, {{ project.title }}">
               {% endif %}
             {% endif %}
 
