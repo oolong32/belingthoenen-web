@@ -365,6 +365,10 @@ body#follow {
   object-fit: cover;
 }
 
+.carousel-cell>img.project-image { // projekt mit bild statt video
+  object-fit: cover;
+  object-position: top center;
+}
 .carousel-cell {
   video.square {
     width: 100%;
