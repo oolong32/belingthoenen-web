@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var archive = document.querySelectorAll('.archive-project');
   var descriptions = document.querySelectorAll('.archive-project-description');
   var header = document.querySelector('header');
+  var projectSliderArrowLeft = document.querySelector('#customButtonLeft');
+  var projectSliderArrowRight = document.querySelector('#customButtonRight');
 
   for (var i = 0; i < archive.length; i++ ) {
     archive[i].addEventListener('click' || 'touchend', handleArchiveClick);
@@ -28,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var close = archiveDescription.querySelector('.close');
     close.addEventListener('click' || 'touchend', hideArchiveDescription, {once: true})
 
-
     // display all the wonderful content
     var clickedThumb = e.target.parentElement; 
     var archiveThumbsUl = clickedThumb.parentElement; 
@@ -36,6 +37,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var allArchiveThumbs = archiveThumbsUl.children; 
     var footer = document.querySelector('footer');
     var marquee = document.querySelector('.simple-marquee-container');
+
+    // hide arrows of project slider
+    projectSliderArrowLeft.style.opacity = '0';
+    projectSliderArrowRight.style.opacity = '0';
 
     // check if the active thumb has been clicked
     if (clickedThumb.classList.contains('active')) {
@@ -85,6 +90,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     footer.classList.remove('active');
     marquee.classList.remove('hidden');
     header.classList.remove('shrink'); // header needs to grow
+
+    // show project slider arrows
+    projectSliderArrowLeft.style.opacity = '1';
+    projectSliderArrowRight.style.opacity = '1';
   }
 
 });
