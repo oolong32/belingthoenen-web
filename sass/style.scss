@@ -197,10 +197,20 @@ ul#archive-descriptions {
       width: 300px;
       height: auto;
     }
-    .close {
+    .close-handler { // registers the click
+      cursor: pointer; 
+      // background: red;
+      height: 44px;
+      width: 44px;
+    }
+    .close-handler > * {
+      pointer-events: none;
+    }
+    .close { // the actual SVG
       order: 1;
       z-index: 200;
       align-self: flex-end;
+      // pointer-events: none; // prevent stupid stuff happening
     }
   }
   li.archive-project-description.hidden {
@@ -532,6 +542,7 @@ body#follow {
   /* Small Screen Header {{{1 */
   header.shrink,
   header {
+    z-index: 0; // no overlap with archive close button
     box-sizing: border-box;
     position: static;
     width: $smallscreen-width;
@@ -827,7 +838,7 @@ body#follow {
         max-width: 480px;
         margin-bottom: auto;
       }
-      .close {
+      .close-handler {
         position: absolute;
         top: -22px;
         right: -22px;
@@ -886,7 +897,6 @@ body#follow {
 
 }
 
-
 /* --- Tablet Styles --- */
 @media (min-width: 1000px) {
 
@@ -943,6 +953,11 @@ body#follow {
   /* Desktop Header }}} */
 
   /* Tablet Carousels Global {{{1 */
+  #customButtonLeft, #customButtonRight {
+    width: 32px;
+    height: 32px;
+    svg { transform: scale(0.8); }
+  }
   .carousel {
     margin: 0 auto;
     width: $tablet-width;
@@ -1102,6 +1117,12 @@ body#follow {
       height: $card-height;
     }
   } 
+  #customButtonLeft, #customButtonRight {
+    // reset dimensions after tablet-owed mini size
+    width: 44px;
+    height: 44px;
+    svg { transform: scale(1); }
+  }
 
  /* End Desktop Carousels Global }}}1 */
 

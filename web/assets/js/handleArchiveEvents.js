@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var archiveDescription = descriptions[e.target.parentElement.archiveOrder];
 
     archiveDescription.classList.remove('hidden');
-    var close = archiveDescription.querySelector('.close');
+    var close = archiveDescription.querySelector('.close-handler');
     close.addEventListener('click' || 'touchend', hideArchiveDescription, {once: true})
 
     // display all the wonderful content
@@ -74,9 +74,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // hide archive poject description container
     var archiveProjectDescriptionContainer = document.querySelector('#archive-descriptions');
     archiveProjectDescriptionContainer.classList.add('hidden');
+
     // hide archive project description
-    var description = e.target.parentElement;
-    description.classList.add('hidden');
+      // probably a mistake
+      // var description = e.target.parentElement;
+    for (var i = 0; i < descriptions.length; i++) {
+      var description = descriptions[i];
+      if (!description.classList.contains('hidden')) {
+        description.classList.add('hidden');
+      }
+    }
 
     // parent list shall shrink
     var archiveThumbsUl = document.querySelector('#archive ul');

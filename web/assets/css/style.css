@@ -197,6 +197,12 @@ ul#archive-descriptions {
       margin: 20px 0;
       width: 300px;
       height: auto; }
+    ul#archive-descriptions li.archive-project-description .close-handler {
+      cursor: pointer;
+      height: 44px;
+      width: 44px; }
+    ul#archive-descriptions li.archive-project-description .close-handler > * {
+      pointer-events: none; }
     ul#archive-descriptions li.archive-project-description .close {
       order: 1;
       z-index: 200;
@@ -470,15 +476,15 @@ body#follow footer {
 /* End Mobile-Landscape Styles }}} */
 /* --- Small Screen Styles --- */
 @media (min-width: 700px) {
-  /* Small Screen Body {{{ */
+  /* Small Screen Body {{{1 */
   body,
   body#about {
     height: 100vh;
     background: #2c2c2c;
     min-height: 780px;
     overflow: hidden; }
-  /* End Small Screen Body }}} */
-  /* Small Screen Main {{{level */
+  /* End Small Screen Body }}}1 */
+  /* Small Screen Main {{{1 */
   main {
     margin: auto;
     height: auto;
@@ -486,10 +492,11 @@ body#follow footer {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center; }
-  /* End Small Screen Main }}}level */
-  /* Small Screen Header {{{ */
+  /* End Small Screen Main }}}1 */
+  /* Small Screen Header {{{1 */
   header.shrink,
   header {
+    z-index: 0;
     box-sizing: border-box;
     position: static;
     width: 700px;
@@ -564,8 +571,8 @@ body#follow footer {
   body:not(#index) header {
     padding-top: 28px;
     height: 140px; }
-  /* Small Screen Header }}} */
-  /* Small Screen Footer {{{ */
+  /* Small Screen Header }}}1 */
+  /* Small Screen Footer {{{1 */
   footer {
     background: transparent;
     transform: translateY(47px); }
@@ -575,8 +582,8 @@ body#follow footer {
     display: none; }
   body:not(#index) footer {
     display: none; }
-  /* End Small Screen Footer }}} */
-  /* Small Screen Carousels Global {{{ */
+  /* End Small Screen Footer }}}1 */
+  /* Small Screen Carousels Global {{{1 */
   .carousel {
     margin: auto;
     box-style: border-box;
@@ -622,8 +629,8 @@ body#follow footer {
   .carousel-cell.is-selected .description {
     position: absolute;
     padding-bottom: 0; }
-  /* Small Screen Carousels Global }}} */
-  /* Custom Slider Arrows {{{2 */
+  /* Small Screen Carousels Global }}}1 */
+  /* Custom Slider Arrows {{{1 */
   #customButtonLeft,
   #customButtonRight {
     display: block;
@@ -652,15 +659,15 @@ body#follow footer {
   .carousel-cell > img,
   .carousel-cell video {
     width: 375px; }
-  /* End Custom Slider Arrows }}}2 */
-  /* Small Screen Main Carousel Exceptions {{{ */
+  /* End Custom Slider Arrows }}}1 */
+  /* Small Screen Main Carousel Exceptions {{{1 */
   .main-carousel .carousel-cell div.description p {
     font-size: 1em;
     letter-spacing: 0.0125em; }
     .main-carousel .carousel-cell div.description p em {
       letter-spacing: 0.025em; }
-  /* End Small Screen Main Carousel Exeptions }}} */
-  /* Small Screen About Carousel Exceptions {{{ */
+  /* End Small Screen Main Carousel Exeptions }}}1 */
+  /* Small Screen About Carousel Exceptions {{{1 */
   .about-carousel #about-intro {
     padding: 20px 30px 0; }
     .about-carousel #about-intro ul#team-list button.jump-button:hover {
@@ -671,8 +678,8 @@ body#follow footer {
     transform: translateY(0px); }
   .about-carousel .flickity-page-dots.hidden {
     display: block; }
-  /* End Small Screen About Carousel Exeptions }}} */
-  /* Small Screen Archive Thumb Carousel {{{ */
+  /* End Small Screen About Carousel Exeptions }}}1 */
+  /* Small Screen Archive Thumb Carousel {{{1 */
   footer #archive {
     display: flex;
     justify-content: center;
@@ -695,8 +702,8 @@ body#follow footer {
     transition: all 0.2s ease-in-out; }
   footer #archive ul.archive-carousel .flickity-viewport li.archive-carousel-cell.active img {
     transform: translateY(-25px); }
-  /* End Small Screen Archive Thumb Carousel }}} */
-  /* Small Screen Archive Project Descriptions {{{ */
+  /* End Small Screen Archive Thumb Carousel }}}1 */
+  /* Small Screen Archive Project Descriptions {{{1 */
   ul#archive-descriptions {
     margin-top: 140px;
     top: 0;
@@ -720,12 +727,12 @@ body#follow footer {
         min-width: 300px;
         max-width: 480px;
         margin-bottom: auto; }
-      ul#archive-descriptions li.archive-project-description .close {
+      ul#archive-descriptions li.archive-project-description .close-handler {
         position: absolute;
         top: -22px;
         right: -22px; }
-  /* End Small Screen Archive Project Descriptions }}} */
-  /* Small Screen Follow, Insta-Feed {{{ */
+  /* End Small Screen Archive Project Descriptions }}}1 */
+  /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
     margin: auto auto 0; }
     #follow main .insta-post {
@@ -748,8 +755,8 @@ body#follow footer {
       color: white; }
       #follow div.links p.ext-links a {
         font-weight: bold; }
-  /* End Small Screen Follow, Insta-Feed }}} */
-  /* Small Screen Contact Page {{{ */
+  /* End Small Screen Follow, Insta-Feed }}}1 */
+  /* Small Screen Contact Page {{{1 */
   #contact main {
     width: 700px;
     display: grid;
@@ -764,7 +771,7 @@ body#follow footer {
       height: 600px; }
       #contact main .contact-data img {
         margin: 0; }
-  /* Small Screen Contact Page }}}*/ }
+  /* Small Screen Contact Page }}}1 */ }
 
 /* --- Tablet Styles --- */
 @media (min-width: 1000px) {
@@ -803,7 +810,12 @@ body#follow footer {
         margin-top: .5em;
         margin-left: 2em; }
   /* Desktop Header }}} */
-  /* Tablet Carousels Global {{{ */
+  /* Tablet Carousels Global {{{1 */
+  #customButtonLeft, #customButtonRight {
+    width: 32px;
+    height: 32px; }
+    #customButtonLeft svg, #customButtonRight svg {
+      transform: scale(0.8); }
   .carousel {
     margin: 0 auto;
     width: 960px; }
@@ -817,17 +829,17 @@ body#follow footer {
     height: 496px; }
   .carousel-cell > img.project-image {
     height: 496px; }
-  /* End Tablet Carousels Global }}} */
-  /* Tablet Archive Thumb Carousel {{{ */
+  /* End Tablet Carousels Global }}}1 */
+  /* Tablet Archive Thumb Carousel {{{1 */
   footer #archive ul.archive-carousel {
     /* this is the same as #archive ul */
     width: 900px; }
-  /* End Tablet Archive Thumb Carousel }}} */
-  /* Tablet Archive Project Descriptions {{{ */
+  /* End Tablet Archive Thumb Carousel }}}1 */
+  /* Tablet Archive Project Descriptions {{{1 */
   ul#archive-descriptions li.archive-project-description {
     width: 960px; }
-  /* End Tablet Archive Project Descriptions }}} */
-  /* Small Screen Follow, Insta-Feed {{{ */
+  /* End Tablet Archive Project Descriptions }}}1 */
+  /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
     margin: auto auto 0; }
     #follow main .insta-post {
@@ -852,8 +864,8 @@ body#follow footer {
       color: white; }
       #follow div.links p.ext-links a {
         font-weight: bold; }
-  /* End Small Screen Follow, Insta-Feed }}} */
-  /* Tablet Contact Page {{{ */
+  /* End Small Screen Follow, Insta-Feed }}}1 */
+  /* Tablet Contact Page {{{1 */
   #contact main {
     width: 960px;
     grid-template-columns: auto 310px auto; }
@@ -862,12 +874,12 @@ body#follow footer {
       height: 560px; }
       #contact main .contact-data address {
         font-size: 16px; }
-  /* Contact Page }}}*/ }
+  /* End Tablet Contact Page }}}1 */ }
 
 /* --- End Tablet Styles --- */
 /* --- Desktop Styles --- */
 @media (min-width: 1240px) {
-  /* Desktop Header {{{ */
+  /* Desktop Header {{{1 */
   header.shrink,
   header {
     top: 5px;
@@ -901,8 +913,8 @@ body#follow footer {
       header nav ul li {
         margin-top: .5em;
         margin-left: 2em; }
-  /* Desktop Header }}} */
-  /* Desktop Carousels Global {{{ */
+  /* End Desktop Header }}}1 */
+  /* Desktop Carousels Global {{{1 */
   .carousel {
     width: 1165px; }
     .carousel .carousel-cell {
@@ -917,17 +929,22 @@ body#follow footer {
       height: 600px; }
     .carousel .carousel-cell > img.project-image {
       height: 600px; }
-  /* Desktop Carousels Global }}} */
-  /* Archive Thumb Carousel {{{ */
+  #customButtonLeft, #customButtonRight {
+    width: 44px;
+    height: 44px; }
+    #customButtonLeft svg, #customButtonRight svg {
+      transform: scale(1); }
+  /* End Desktop Carousels Global }}}1 */
+  /* Archive Thumb Carousel {{{1 */
   footer #archive ul.archive-carousel {
     /* this is the same as #archive ul */
     width: 964px; }
-  /* End Archive Thumb Carousel }}} */
-  /* Archive Project Descriptions {{{ */
+  /* End Archive Thumb Carousel }}}1 */
+  /* Archive Project Descriptions {{{1 */
   ul#archive-descriptions li.archive-project-description {
     width: 1165px; }
-  /* End Archive Project Descriptions }}} */
-  /* Small Screen Follow, Insta-Feed {{{ */
+  /* End Archive Project Descriptions }}}1 */
+  /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
     margin: auto auto 0; }
     #follow main .insta-post {
@@ -944,8 +961,8 @@ body#follow footer {
   #follow div.links {
     display: block;
     width: 1165px; }
-  /* End Small Screen Follow, Insta-Feed }}} */
-  /* Contact Page {{{ */
+  /* End Small Screen Follow, Insta-Feed }}}1 */
+  /* Contact Page {{{1 */
   #contact main {
     width: 1165px;
     display: grid;
@@ -957,11 +974,11 @@ body#follow footer {
       height: 600px; }
       #contact main .contact-data address {
         font-size: 1.125em; }
-  /* Contact Page }}}*/ }
+  /* End Contact Page }}}1 */ }
 
-/* Hide footer when viewport height to low {{{ */
+/* Hide footer when viewport height to low {{{1 */
 @media (min-aspect-ratio: 2 / 1) {
   footer {
     display: none; } }
 
-/* End Hide footer when viewport height to low }}} */
+/* End Hide footer when viewport height to low }}}1 */
