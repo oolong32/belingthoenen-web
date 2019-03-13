@@ -23,7 +23,7 @@
                 <source src="{{ project.video[0].url }}" type="video/mp4"></source>
             {% else %} {# erstes Video abspielen #}
 
-              <video poster="{{ project.standbild[0].getUrl() }}" {# src="{{ project.video[0].url }}" #} paused playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
+              <video poster="{{  project.standbild|length ? project.standbild[0].getUrl() : '' }}" {# src="{{ project.video[0].url }}" #} paused playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
                 <source src="{{ project.video[0].url }}" type="video/mp4"></source>
             {% endif %}
               Sorry, your browser doesn't support embedded videos, 
