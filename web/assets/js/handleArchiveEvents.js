@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // such click should not close the modal
       return true;
     }
-    // console.log(e.target);
 
     //var archiveDescription = e.target.parentElement.children[1];
     var archiveDescription = descriptions[e.target.parentElement.archiveOrder];
@@ -63,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // move thumb to center
     var index = parseInt(clickedThumb.archiveOrder);
-    // console.log('moving to ' + index);
     flktyArc.select(index, true, false);
   }
 
