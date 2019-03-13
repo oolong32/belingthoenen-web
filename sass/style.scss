@@ -478,7 +478,8 @@ body#follow {
 }
 /* End Follow, Insta-Feed }}}*/
 
-/* Contact Page {{{ */
+/* Contact Page {{{1 */
+
 #contact {
   justify-content: flex-start;
   main {
@@ -501,7 +502,28 @@ body#follow {
     }
   }
 }
-/* Contact Page }}}*/
+
+/* End Contact Page }}}1 */
+
+/* 404 Page {{{1 */
+
+#err {
+  justify-content: flex-start;
+  main {
+    margin: 20% auto auto;
+    .error404 {
+      background: black;
+      padding: 20px;
+      h2, p {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 18px;
+      }
+    }
+  }
+}
+
+/* End 404 Page }}}1 */
 
 /* --- Mobile Landscape Screen Styles --- */
 /* Mobile-Landscape Styles {{{ */

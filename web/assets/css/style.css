@@ -448,7 +448,7 @@ body#follow footer {
     font-weight: bold; }
 
 /* End Follow, Insta-Feed }}}*/
-/* Contact Page {{{ */
+/* Contact Page {{{1 */
 #contact {
   justify-content: flex-start; }
   #contact main .contact-data {
@@ -465,7 +465,21 @@ body#follow footer {
       color: white;
       margin: 15px 30px 0; }
 
-/* Contact Page }}}*/
+/* End Contact Page }}}1 */
+/* 404 Page {{{1 */
+#err {
+  justify-content: flex-start; }
+  #err main {
+    margin: 20% auto auto; }
+    #err main .error404 {
+      background: black;
+      padding: 20px; }
+      #err main .error404 h2, #err main .error404 p {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 18px; }
+
+/* End 404 Page }}}1 */
 /* --- Mobile Landscape Screen Styles --- */
 /* Mobile-Landscape Styles {{{ */
 @media screen and (min-width: 320px) and (max-width: 700px) and (orientation: landscape) {
