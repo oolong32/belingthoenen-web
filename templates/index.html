@@ -18,9 +18,13 @@
             {% set aspectRatio = project.aspectRatio.options[0].selected %} {# ob das für bilder auch nötig sein wird? #}
 
             {% if loop.first %} {# erstes Video abspielen #}
-              <video src="{{ project.video[0].url }}" autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
+              {# <video src="{{ project.video[0].url }}" autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display"> #}
+              <video poster="project.standbild[0].url" {# src="{{ project.video[0].url }}" #} autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
+                <source src="{{ project.video[0].url }}" type="video/mp4"></source>
             {% else %} {# erstes Video abspielen #}
-              <video src="{{ project.video[0].url }}" paused playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
+
+              <video poster="project.standbild[0].url" {# src="{{ project.video[0].url }}" #} paused playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
+                <source src="{{ project.video[0].url }}" type="video/mp4"></source>
             {% endif %}
               Sorry, your browser doesn't support embedded videos, 
               but don't worry, you can <a href="{{ project.video[0].url }}">download it</a>
