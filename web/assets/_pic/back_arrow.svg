@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>back_arrow</title>
+    <desc>Created with Sketch.</desc>
+    <g id="back_arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <path d="M12,2 L1,13" id="Path-10" stroke="#FFFFFF" stroke-width="2"></path>
+        <polyline id="Path-9" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" transform="translate(10.302434, 3.436186) rotate(-45.000000) translate(-10.302434, -3.436186) " points="7.03066036 -1.30815344 13.5742073 3.42068511 7.81106724 8.18052546"></polyline>
+    </g>
+</svg>

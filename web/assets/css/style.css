@@ -478,6 +478,12 @@ body#follow footer {
         color: white;
         font-size: 18px;
         margin-bottom: 18px; }
+      #err main .error404 .back-home:after {
+        display: inline-block;
+        content: "";
+        background: url("/assets/_pic/back_arrow.svg") no-repeat 7px 4px;
+        width: 24px;
+        height: 18px; }
 
 /* End 404 Page }}}1 */
 /* --- Mobile Landscape Screen Styles --- */
@@ -774,7 +780,7 @@ body#follow footer {
   #contact main {
     width: 700px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 375px 1fr;
     grid-gap: 0 20px;
     margin: auto; }
     #contact main .contact-data {
@@ -785,7 +791,19 @@ body#follow footer {
       height: 600px; }
       #contact main .contact-data img {
         margin: 0; }
-  /* Small Screen Contact Page }}}1 */ }
+  /* Small Screen Contact Page }}}1 */
+  /* Small Screen 404 Page {{{2 */
+  #err main {
+    width: 700px;
+    display: grid;
+    grid-template-columns: 1fr 375px 1fr;
+    grid-gap: 0 20px;
+    margin: auto; }
+    #err main .error404 {
+      grid-column: 2/3;
+      width: 375px;
+      height: 600px; }
+  /* End Small Screen 404 Page }}}2 */ }
 
 /* --- Tablet Styles --- */
 @media (min-width: 1000px) {
@@ -888,7 +906,21 @@ body#follow footer {
       height: 560px; }
       #contact main .contact-data address {
         font-size: 16px; }
-  /* End Tablet Contact Page }}}1 */ }
+  /* End Tablet Contact Page }}}1 */
+  /* Tablet 404 Page {{{1 */
+  #err main {
+    width: 960px;
+    grid-template-columns: auto 310px auto; }
+    #err main .error404 {
+      width: 310px;
+      height: 560px; }
+      #err main .error404 h2, #err main .error404 p {
+        font-size: 16px;
+        margin-bottom: 16px; }
+      #err main .error404 .back-home:after {
+        background-size: 12px 12px;
+        background-position: 6px 6px; }
+  /* End Tablet 404 Page }}}1 */ }
 
 /* --- End Tablet Styles --- */
 /* --- Desktop Styles --- */
@@ -988,7 +1020,28 @@ body#follow footer {
       height: 600px; }
       #contact main .contact-data address {
         font-size: 1.125em; }
-  /* End Contact Page }}}1 */ }
+  /* End Contact Page }}}1 */
+  /* Desktop 404 Page {{{1 */
+  #err main {
+    width: 1165px;
+    display: grid;
+    grid-template-columns: 1fr 375px 1fr;
+    grid-gap: 0 20px;
+    margin: auto; }
+    #err main .error404 {
+      grid-column: 2/3;
+      width: 375px;
+      height: 600px; }
+      #err main .error404 h2, #err main .error404 p {
+        font-size: 18px;
+        margin-bottom: 18px; }
+      #err main .error404 .back-home:after {
+        background-size: auto auto;
+        background-position: 7px 4px;
+        width: 24px;
+        height: 18px; }
+  /* End Small Screen 404 Page }}}2 */
+  /* End Desktop 404 Page }}}1 */ }
 
 /* Hide footer when viewport height to low {{{1 */
 @media (min-aspect-ratio: 2 / 1) {

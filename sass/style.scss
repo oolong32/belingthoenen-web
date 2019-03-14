@@ -519,6 +519,13 @@ body#follow {
         font-size: 18px;
         margin-bottom: 18px;
       }
+      .back-home:after {
+        display: inline-block;
+        content: "";
+        background: url('/assets/_pic/back_arrow.svg') no-repeat 7px 4px;
+        width: 24px;
+        height: 18px;
+      }
     }
   }
 }
@@ -900,7 +907,7 @@ body#follow {
   #contact main {
     width: $smallscreen-width;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr $card-width 1fr;
     grid-gap: 0 20px;
     margin: auto;
 
@@ -916,6 +923,23 @@ body#follow {
     }
   }
   /* Small Screen Contact Page }}}1 */
+
+  /* Small Screen 404 Page {{{2 */
+  
+  #err main {
+    width: $smallscreen-width;
+    display: grid;
+    grid-template-columns: 1fr $card-width 1fr;
+    grid-gap: 0 20px;
+    margin: auto;
+    .error404 {
+      grid-column: 2/3;
+      width: $card-width;
+      height: $card-height;
+    }
+  }
+  
+  /* End Small Screen 404 Page }}}2 */
 
 }
 
@@ -1058,6 +1082,27 @@ body#follow {
     }
   }
   /* End Tablet Contact Page }}}1 */
+
+  /* Tablet 404 Page {{{1 */
+  
+  #err main {
+    width: $tablet-width;
+    grid-template-columns: auto $tabletcard-width auto;
+    .error404 {
+      width: $tabletcard-width;
+      height: 560px;
+      h2, p {
+        font-size: 16px;
+        margin-bottom: 16px
+      }
+      .back-home:after {
+        background-size: 12px 12px;
+        background-position: 6px 6px;
+      }
+    }
+  } 
+  
+  /* End Tablet 404 Page }}}1 */
 
 }
 /* --- End Tablet Styles --- */
@@ -1217,6 +1262,35 @@ body#follow {
     }
   }
   /* End Contact Page }}}1 */
+
+  /* Desktop 404 Page {{{1 */
+  
+  #err main {
+    width: $desktop-width;
+    display: grid;
+    grid-template-columns: 1fr $card-width 1fr;
+    grid-gap: 0 20px;
+    margin: auto;
+    .error404 {
+      grid-column: 2/3;
+      width: $card-width;
+      height: $card-height;
+      h2, p {
+        font-size: 18px;
+        margin-bottom: 18px;
+      }
+      .back-home:after {
+        background-size: auto auto;
+        background-position: 7px 4px;
+        width: 24px;
+        height: 18px;
+      }
+    }
+  }
+  
+  /* End Small Screen 404 Page }}}2 */
+  
+  /* End Desktop 404 Page }}}1 */
 
 }
 
