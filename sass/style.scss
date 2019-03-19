@@ -534,7 +534,6 @@ body#follow {
 
 /* End 404 Page }}}1 */
 
-/* --- Mobile Landscape Screen Styles --- */
 /* Mobile-Landscape Styles {{{ */
 // should be combined with aspect-ratio!
 @media screen and (min-width: 320px) and (max-width: 700px) and (orientation: landscape) {
@@ -927,7 +926,7 @@ body#follow {
   }
   /* Small Screen Contact Page }}}1 */
 
-  /* Small Screen 404 Page {{{2 */
+  /* Small Screen 404 Page {{{1 */
   
   #err main {
     width: $smallscreen-width;
@@ -942,7 +941,7 @@ body#follow {
     }
   }
   
-  /* End Small Screen 404 Page }}}2 */
+  /* End Small Screen 404 Page }}}1 */
 
 }
 
@@ -953,7 +952,8 @@ body#follow {
   header.shrink,
   header {
     top: 5px;
-    width: $tablet-width;
+    // width: $tablet-width;
+    width: 900px; // 19.3. Gleich wie Archive Slider
     #masthead {
       top: 4px;
     }
@@ -1031,7 +1031,7 @@ body#follow {
   /* Tablet Archive Thumb Carousel {{{1 */
   footer #archive {
     ul.archive-carousel { /* this is the same as #archive ul */
-      width: 900px; // gut?
+      width: 900px; // gut? Muss gleich sein wie Header …
     }
   }
   /* End Tablet Archive Thumb Carousel }}}1 */
@@ -1118,7 +1118,8 @@ body#follow {
   header.shrink,
   header {
     top: 5px;
-    width: $desktop-width;
+    // width: $desktop-width;
+    width: 964px; // 19.3. gleich wie Archive Slider …
     #masthead {
       top: 4px;
     }

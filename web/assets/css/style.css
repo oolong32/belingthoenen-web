@@ -488,7 +488,6 @@ body#follow footer {
         height: 18px; }
 
 /* End 404 Page }}}1 */
-/* --- Mobile Landscape Screen Styles --- */
 /* Mobile-Landscape Styles {{{ */
 @media screen and (min-width: 320px) and (max-width: 700px) and (orientation: landscape) {
   /* Kurzer Prozess, aka. Trick 77 */
@@ -795,7 +794,7 @@ body#follow footer {
       #contact main .contact-data img {
         margin: 0; }
   /* Small Screen Contact Page }}}1 */
-  /* Small Screen 404 Page {{{2 */
+  /* Small Screen 404 Page {{{1 */
   #err main {
     width: 700px;
     display: grid;
@@ -806,7 +805,7 @@ body#follow footer {
       grid-column: 2/3;
       width: 375px;
       height: 600px; }
-  /* End Small Screen 404 Page }}}2 */ }
+  /* End Small Screen 404 Page }}}1 */ }
 
 /* --- Tablet Styles --- */
 @media (min-width: 1000px) {
@@ -814,7 +813,7 @@ body#follow footer {
   header.shrink,
   header {
     top: 5px;
-    width: 960px; }
+    width: 900px; }
     header.shrink #masthead,
     header #masthead {
       top: 4px; }
@@ -932,7 +931,7 @@ body#follow footer {
   header.shrink,
   header {
     top: 5px;
-    width: 1165px; }
+    width: 964px; }
     header.shrink #masthead,
     header #masthead {
       top: 4px; }

@@ -19,11 +19,16 @@
 
             {% if loop.first %} {# erstes Video abspielen #}
               {# <video src="{{ project.video[0].url }}" autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display"> #}
-              <video poster="{{ project.standbild|length ? project.standbild[0].getUrl() : '' }}" {# src="{{ project.video[0].url }}" #} autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
+              <video poster="{{ project.standbild|length ? project.standbild[0].getUrl('width_750') : '' }}" {# src="{{ project.video[0].url }}" #} autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
+
+          {# nur zum abschreiben … #}
+          {# src="{{ entry.archiveImg[0].getUrl('width_960') }}" #}
+          {# nur zum abschreiben … #}
+
                 <source src="{{ project.video[0].url }}" type="video/mp4"></source>
             {% else %} {# erstes Video abspielen #}
 
-              <video poster="{{  project.standbild|length ? project.standbild[0].getUrl() : '' }}" {# src="{{ project.video[0].url }}" #} paused playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
+              <video poster="{{  project.standbild|length ? project.standbild[0].getUrl('width_750') : '' }}" {# src="{{ project.video[0].url }}" #} paused playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
                 <source src="{{ project.video[0].url }}" type="video/mp4"></source>
             {% endif %}
               Sorry, your browser doesn't support embedded videos, 
@@ -33,7 +38,7 @@
 
             {% else %}
               {% if project.projectImg|length %} {# sollte gegeben sein, aber better safe than sorry #}
-                <img class="project-display project-image" src="{{ project.projectImg[0].getUrl() }}" alt"Beling Thoenen, {{ project.title }}">
+                <img class="project-display project-image" src="{{ project.projectImg[0].getUrl('width_750') }}" alt"Beling Thoenen, {{ project.title }}">
               {% endif %}
             {% endif %}
 
