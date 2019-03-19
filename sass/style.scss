@@ -199,6 +199,8 @@ ul#archive-descriptions {
     }
     .close-handler { // registers the click
       cursor: pointer; 
+      position: relative;
+      left: 150px;
       // background: red;
       height: 44px;
       width: 44px;
@@ -871,6 +873,7 @@ body#follow {
         position: absolute;
         top: -22px;
         right: -22px;
+        left: auto;
       }
     }
   }

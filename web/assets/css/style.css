@@ -199,6 +199,8 @@ ul#archive-descriptions {
       height: auto; }
     ul#archive-descriptions li.archive-project-description .close-handler {
       cursor: pointer;
+      position: relative;
+      left: 150px;
       height: 44px;
       width: 44px; }
     ul#archive-descriptions li.archive-project-description .close-handler > * {
@@ -750,7 +752,8 @@ body#follow footer {
       ul#archive-descriptions li.archive-project-description .close-handler {
         position: absolute;
         top: -22px;
-        right: -22px; }
+        right: -22px;
+        left: auto; }
   /* End Small Screen Archive Project Descriptions }}}1 */
   /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
