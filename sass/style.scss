@@ -561,10 +561,11 @@ body#follow {
   main {
     margin: auto;
     height: auto;
+    min-height: 667px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    align-items: center;
+    align-items: start;
   }
   
   /* End Small Screen Main }}}1 */
@@ -880,7 +881,7 @@ body#follow {
 
   /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
-    margin: auto auto 0; // flex: stick to div.links below
+    // margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
       width: $card-width;
       height: $card-height;
@@ -947,6 +948,8 @@ body#follow {
 
 /* --- Tablet Styles --- */
 @media (min-width: 1000px) {
+
+  main { min-height: 560px;}
 
   /* Tablet Header {{{ */
   header.shrink,
@@ -1044,7 +1047,7 @@ body#follow {
 
   /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
-    margin: auto auto 0; // flex: stick to div.links below
+    // margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
       width: $tabletcard-width;
       height: $tabletcard-height;
@@ -1167,6 +1170,14 @@ body#follow {
   }
   /* End Desktop Header }}}1 */
 
+  /* Desktop Main {{{1 */
+  
+  main {
+    min-height: 667px;
+  }
+  
+  /* End Desktop Main }}}1 */
+
   /* Desktop Carousels Global {{{1 */
   .carousel {
     width: $desktop-width;
@@ -1229,7 +1240,7 @@ body#follow {
 
   /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
-    margin: auto auto 0; // flex: stick to div.links below
+    // margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
       width: $card-width;
       height: $card-height;
