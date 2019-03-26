@@ -464,7 +464,7 @@ body#follow footer {
       object-fit: cover;
       object-position: center bottom; }
     #contact main .contact-data address {
-      font-size: 1.125em;
+      font-size: 1rem;
       font-style: normal;
       color: white;
       margin: 15px 30px 0; }
@@ -796,6 +796,8 @@ body#follow footer {
       height: 600px; }
       #contact main .contact-data img {
         margin: 0; }
+      #contact main .contact-data address {
+        font-size: 1.125rem; }
   /* Small Screen Contact Page }}}1 */
   /* Small Screen 404 Page {{{1 */
   #err main {
@@ -902,15 +904,23 @@ body#follow footer {
       #follow div.links p.ext-links a {
         font-weight: bold; }
   /* End Small Screen Follow, Insta-Feed }}}1 */
+  /* Tablet Follow {{{1 */
+  #follow main .insta-post video, #follow main .insta-post img {
+    margin-bottom: 10px; }
+  #follow main .insta-post p.text {
+    font-size: 14px;
+    margin: 0 25px; }
+  /* End Tablet Follow }}}1 */
   /* Tablet Contact Page {{{1 */
   #contact main {
     width: 960px;
     grid-template-columns: auto 310px auto; }
     #contact main .contact-data {
       width: 310px;
-      height: 560px; }
+      height: 496px; }
       #contact main .contact-data address {
-        font-size: 16px; }
+        font-size: 14px;
+        margin: 15px 25px 0; }
   /* End Tablet Contact Page }}}1 */
   /* Tablet About Page {{{1 */
   .about-carousel #about-intro {
@@ -1017,8 +1027,9 @@ body#follow footer {
     height: 600px;
     margin-right: 20px; }
     #follow main .insta-post p.text {
-      font-size: 0.8125em;
-      display: block; }
+      font-size: 16px;
+      display: block;
+      margin: 0 30px; }
     #follow main .insta-post p.mobile-follow-links {
       display: none; }
     #follow main .insta-post img, #follow main .insta-post video {

@@ -497,7 +497,7 @@ body#follow {
         object-position: center bottom;
       }
       address {
-        font-size: 1.125em;
+        font-size: 1rem;
         font-style: normal;
         color: white;
         margin: 15px 30px 0;
@@ -925,6 +925,7 @@ body#follow {
       img {
         margin: 0;
       }
+      address { font-size: 1.125rem; }
     }
   }
   /* Small Screen Contact Page }}}1 */
@@ -1078,14 +1079,29 @@ body#follow {
   }
   /* End Small Screen Follow, Insta-Feed }}}1 */
 
+  /* Tablet Follow {{{1 */
+  
+  #follow main .insta-post {
+    video, img { margin-bottom: 10px; }
+    p.text {
+      font-size: 14px;
+      margin: 0 25px;
+    }
+  }
+  
+  /* End Tablet Follow }}}1 */
+
   /* Tablet Contact Page {{{1 */
   #contact main {
     width: $tablet-width;
     grid-template-columns: auto $tabletcard-width auto;
     .contact-data {
       width: $tabletcard-width;
-      height: 560px;
-      address { font-size: 16px; }
+      height: 496px;
+      address { 
+        font-size: 14px;
+        margin: 15px 25px 0;
+      }
       img {}
     }
   }
@@ -1267,8 +1283,9 @@ body#follow {
       height: $card-height;
       margin-right: 20px;
       p.text {
-        font-size: 0.8125em;
+        font-size: 16px;
         display: block;
+        margin: 0 30px;
       }
       p.mobile-follow-links { display: none; }
       img, video {
