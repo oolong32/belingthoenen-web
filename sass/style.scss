@@ -6,7 +6,7 @@ $card-width: 375px;
 $tabletcard-width: 310px;
 $card-height: 600px;
 $tabletcard-height: 496px;
-$violet: rgb(255, 175, 60); 
+$violet: rgb(255, 200, 80); 
 
 /* Basic Settings {{{ */
 html, * {
@@ -70,6 +70,7 @@ header {
     z-index: 100;
     text-align: center;
     padding: 0.5em 0 0.1em;
+    min-height: 22px;
     svg {
       width: 158px;
       height: 33px;
