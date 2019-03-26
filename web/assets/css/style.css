@@ -49,7 +49,7 @@ a:visited {
 
 a:focus,
 a:hover {
-  color: #96aaff; }
+  color: #ffaf3c; }
 
 /* End Links }}} */
 /* Header {{{ */
@@ -75,7 +75,7 @@ header {
       position: absolute;
       top: -1000px; }
   header #masthead:hover svg path {
-    fill: #96aaff; }
+    fill: #ffaf3c; }
   header p#home-link-container {
     display: none; }
   header nav {
@@ -85,7 +85,7 @@ header {
   header a:link, header a:visited {
     color: white; }
   header a:hover, header a:focus {
-    color: #96aaff; }
+    color: #ffaf3c; }
   header .simple-marquee-container.hidden {
     display: none; }
 
@@ -141,7 +141,7 @@ footer nav ul li a:link {
 footer nav ul li a:hover,
 footer nav ul li a:focus,
 footer nav ul li a:active {
-  color: #96aaff; }
+  color: #ffaf3c; }
 
 /* End Footer }}} */
 /* Archive Projects Slider {{{ */
@@ -298,10 +298,13 @@ body#about {
 
 .about-carousel #about-intro {
   padding: 60px 30px 0; }
-  .about-carousel #about-intro p {
+  .about-carousel #about-intro p, .about-carousel #about-intro li, .about-carousel #about-intro h2, .about-carousel #about-intro h3, .about-carousel #about-intro li > button {
     color: white;
-    font-size: 18px;
-    margin-bottom: 14px; }
+    font-size: 16px; }
+  .about-carousel #about-intro p, .about-carousel #about-intro h2 {
+    margin-bottom: 1rem; }
+  .about-carousel #about-intro h2 {
+    margin-top: 2rem; }
   .about-carousel #about-intro ul#team-list {
     font-size: 18px;
     line-height: 1.4; }
@@ -310,7 +313,6 @@ body#about {
       border: none;
       padding: 0;
       background: black;
-      font-size: 18px;
       color: white; }
 
 .about-carousel .carousel-cell.team-member:not(.is-selected) .name.up {
@@ -565,7 +567,7 @@ body#follow footer {
       top: 8px;
       margin-top: .5em; }
     header p#home-link-container a#home-link:hover {
-      color: #96aaff; }
+      color: #ffaf3c; }
   #index header p#home-link-container {
     display: none; }
   header nav {
@@ -673,7 +675,7 @@ body#follow footer {
         stroke: white; }
   #customButtonLeft:hover,
   #customButtonRight:hover {
-    background: #96aaff; }
+    background: #ffaf3c; }
   #customButtonLeft {
     order: -1; }
     #customButtonLeft svg {
@@ -691,9 +693,11 @@ body#follow footer {
   /* End Small Screen Main Carousel Exeptions }}}1 */
   /* Small Screen About Carousel Exceptions {{{1 */
   .about-carousel #about-intro {
-    padding: 20px 30px 0; }
+    padding: 30px 30px 0; }
     .about-carousel #about-intro ul#team-list button.jump-button:hover {
-      color: #96aaff; }
+      color: #ffaf3c; }
+    .about-carousel #about-intro p, .about-carousel #about-intro li, .about-carousel #about-intro h2, .about-carousel #about-intro h3, .about-carousel #about-intro li button {
+      font-size: 18px; }
   .about-carousel .carousel-cell.team-member .name {
     transform: translateY(65px); }
   .about-carousel .carousel-cell.team-member .name.up {
@@ -831,7 +835,7 @@ body#follow footer {
       top: 8px;
       margin-top: .5em; }
     header p#home-link-container a#home-link:hover {
-      color: #96aaff; }
+      color: #ffaf3c; }
   #index header p#home-link-container {
     display: none; }
   header nav {
@@ -908,6 +912,12 @@ body#follow footer {
       #contact main .contact-data address {
         font-size: 16px; }
   /* End Tablet Contact Page }}}1 */
+  /* Tablet About Page {{{1 */
+  .about-carousel #about-intro {
+    padding: 25px 25px 0; }
+    .about-carousel #about-intro p, .about-carousel #about-intro h2, .about-carousel #about-intro h3, .about-carousel #about-intro li, .about-carousel #about-intro li > button {
+      font-size: 15px; }
+  /* End Tablet About Page }}}1 */
   /* Tablet 404 Page {{{1 */
   #err main {
     width: 960px;
@@ -947,7 +957,7 @@ body#follow footer {
       top: 8px;
       margin-top: .5em; }
     header p#home-link-container a#home-link:hover {
-      color: #96aaff; }
+      color: #ffaf3c; }
   #index header p#home-link-container {
     display: none; }
   header nav {
@@ -995,7 +1005,13 @@ body#follow footer {
   ul#archive-descriptions li.archive-project-description {
     width: 1165px; }
   /* End Archive Project Descriptions }}}1 */
-  /* Small Screen Follow, Insta-Feed {{{1 */
+  /* Desktop About {{{1 */
+  .about-carousel #about-intro {
+    padding: 30px 30px 0; }
+    .about-carousel #about-intro p, .about-carousel #about-intro li, .about-carousel #about-intro h2, .about-carousel #about-intro h3, .about-carousel #about-intro li > button {
+      font-size: 18px; }
+  /* End Desktop About }}}1 */
+  /* Desktop Follow, Insta-Feed {{{1 */
   #follow main .insta-post {
     width: 375px;
     height: 600px;
@@ -1010,7 +1026,7 @@ body#follow footer {
   #follow div.links {
     display: block;
     width: 1165px; }
-  /* End Small Screen Follow, Insta-Feed }}}1 */
+  /* End Desktop Follow, Insta-Feed }}}1 */
   /* Contact Page {{{1 */
   #contact main {
     width: 1165px;

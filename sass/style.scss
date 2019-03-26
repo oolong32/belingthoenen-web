@@ -6,7 +6,7 @@ $card-width: 375px;
 $tabletcard-width: 310px;
 $card-height: 600px;
 $tabletcard-height: 496px;
-$violet: rgb(150, 170, 255); 
+$violet: rgb(255, 175, 60); 
 
 /* Basic Settings {{{ */
 html, * {
@@ -309,11 +309,12 @@ body#about {
 }
 .about-carousel #about-intro {
   padding: 60px 30px 0;
-  p {
+  p, li, h2, h3, li > button {
     color: white;
-    font-size: 18px;
-    margin-bottom: 14px ;
+    font-size: 16px;
   }
+  p, h2 { margin-bottom: 1rem; }
+  h2 { margin-top: 2rem;}
   ul#team-list {
     font-size: 18px;
     line-height: 1.4;
@@ -322,7 +323,7 @@ body#about {
       border: none;
       padding: 0;
       background: black;
-      font-size: 18px;
+      // font-size: 18px;
       color: white;
     }
  }
@@ -783,10 +784,11 @@ body#follow {
 
   /* Small Screen About Carousel Exceptions {{{1 */
   .about-carousel #about-intro {
-    padding: 20px 30px 0;
+    padding: 30px 30px 0;
     ul#team-list {
       button.jump-button:hover { color: $violet; }
     }
+    p, li, h2, h3, li button { font-size: 18px; }
   }
   // .about-carousel .carousel-cell.team-member:hover .name { color: $violet; }
   // .about-carousel .carousel-cell.team-member:hover .name.up { color: white; }
@@ -1089,6 +1091,14 @@ body#follow {
   }
   /* End Tablet Contact Page }}}1 */
 
+  /* Tablet About Page {{{1 */
+  
+  .about-carousel #about-intro {
+    padding: 25px 25px 0;
+    p, h2, h3, li, li > button { font-size: 15px; }
+  } 
+  /* End Tablet About Page }}}1 */
+
   /* Tablet 404 Page {{{1 */
   
   #err main {
@@ -1238,7 +1248,18 @@ body#follow {
   }
   /* End Archive Project Descriptions }}}1 */
 
-  /* Small Screen Follow, Insta-Feed {{{1 */
+  /* Desktop About {{{1 */
+  
+  .about-carousel #about-intro {
+    padding: 30px 30px 0;
+    p, li, h2, h3, li > button {
+      font-size: 18px;
+    }
+  } 
+  
+  /* End Desktop About }}}1 */
+
+  /* Desktop Follow, Insta-Feed {{{1 */
   #follow main {
     // margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
@@ -1259,7 +1280,7 @@ body#follow {
     display: block;
     width: $desktop-width;
   }
-  /* End Small Screen Follow, Insta-Feed }}}1 */
+  /* End Desktop Follow, Insta-Feed }}}1 */
 
   /* Contact Page {{{1 */
   #contact main {
