@@ -65,6 +65,12 @@ header {
   height: 85px;
   background: black;
   #masthead {
+    // fix: header jumping at reload
+    position: fixed;
+    top: 30px;
+    width: 100%;
+    // end fix
+
     align-self: center;
     color: white;
     z-index: 100;
@@ -72,6 +78,7 @@ header {
     padding: 0.5em 0 0.1em;
     min-height: 22px;
     svg {
+      margin: 0 auto;
       width: 158px;
       height: 33px;
     }
@@ -88,12 +95,15 @@ header {
   a { text-decoration: none; }
   a:link, a:visited { color: white; }
   a:hover, a:focus { color: $violet; }
+  .simple-marquee-container { height: 25px; }
   .simple-marquee-container.hidden { display: none; }
 }
 header.shrink,
 body:not(#index) header {
   height: 45px;
   #masthead {
+    position: relative;
+    top: auto;
     padding: 0.9em 0 0.1em;
     svg {
       width: 126px;
@@ -286,6 +296,7 @@ body#about {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  background-color: rgb(44, 44, 44); // prevent the blitz!
   .name {
     padding: 30px 30px 10px;
     font-size: 13px;
@@ -651,6 +662,7 @@ body#follow {
     left: 0;
     display: block;
     width: 100vw;
+    height: 25px;
   }
   body:not(#index) header {
     padding-top: 28px; // fehlenden marquee auffangen

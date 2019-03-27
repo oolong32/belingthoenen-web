@@ -63,6 +63,9 @@ header {
   height: 85px;
   background: black; }
   header #masthead {
+    position: fixed;
+    top: 30px;
+    width: 100%;
     align-self: center;
     color: white;
     z-index: 100;
@@ -70,6 +73,7 @@ header {
     padding: 0.5em 0 0.1em;
     min-height: 22px; }
     header #masthead svg {
+      margin: 0 auto;
       width: 158px;
       height: 33px; }
     header #masthead h1, header #masthead p.byline {
@@ -87,6 +91,8 @@ header {
     color: white; }
   header a:hover, header a:focus {
     color: #ffc850; }
+  header .simple-marquee-container {
+    height: 25px; }
   header .simple-marquee-container.hidden {
     display: none; }
 
@@ -95,6 +101,8 @@ body:not(#index) header {
   height: 45px; }
   header.shrink #masthead,
   body:not(#index) header #masthead {
+    position: relative;
+    top: auto;
     padding: 0.9em 0 0.1em; }
     header.shrink #masthead svg,
     body:not(#index) header #masthead svg {
@@ -276,7 +284,8 @@ body#about {
 .about-carousel .carousel-cell.team-member {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  background-color: #2c2c2c; }
   .about-carousel .carousel-cell.team-member .name {
     padding: 30px 30px 10px;
     font-size: 13px;
@@ -592,7 +601,8 @@ body#follow footer {
     top: 0;
     left: 0;
     display: block;
-    width: 100vw; }
+    width: 100vw;
+    height: 25px; }
   body:not(#index) header {
     padding-top: 28px;
     height: 140px; }
