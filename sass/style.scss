@@ -388,6 +388,7 @@ body#follow {
   height: 100%;
   width: $card-width;
   object-fit: cover;
+  object-position: top;
 }
 
 .carousel-cell>img.project-image { // projekt mit bild statt video
