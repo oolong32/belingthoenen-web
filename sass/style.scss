@@ -81,6 +81,7 @@ header {
       margin: 0 auto;
       width: 158px;
       height: 33px;
+      transform: translateY(1px);
     }
     h1, p.byline {
       position: absolute;
@@ -611,6 +612,7 @@ body#follow {
     svg {
       width: 173px;
       height: auto;
+      transform: translateY(0);
     }
     h1 {
       font-size: 1.75em;

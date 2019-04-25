@@ -75,7 +75,8 @@ header {
     header #masthead svg {
       margin: 0 auto;
       width: 158px;
-      height: 33px; }
+      height: 33px;
+      transform: translateY(1px); }
     header #masthead h1, header #masthead p.byline {
       position: absolute;
       top: -1000px; }
@@ -554,7 +555,8 @@ body#follow footer {
     header.shrink #masthead svg,
     header #masthead svg {
       width: 173px;
-      height: auto; }
+      height: auto;
+      transform: translateY(0); }
     body:not(#index) header #masthead h1,
     header.shrink #masthead h1,
     header #masthead h1 {
