@@ -67,11 +67,19 @@
 <script src="/assets/js/handleArrowButtons.js"></script>
 <script src="/assets/js/project-info-reworked.js"></script>
 <script src="/assets/js/handleArchiveEvents.js"></script>
+<script src="/assets/js/bodyscrolllock.js"></script>
 {#<script src="/assets/js/lazy.js"></script>#} {# lazy load raus, wir starten & stoppen per carousel-event #}
 
 <script>
   // Initialize Marquee
   Marquee3k.init(); 
+  console.clear();
+  window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    const targetElement = document.querySelector(".flickity-slider");
+    bodyScrollLock.disableBodyScroll(targetElement);
+  }); 
+
 </script>
 
 {% endblock %}

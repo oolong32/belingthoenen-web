@@ -49,5 +49,13 @@
 <script src="/assets/js/initializeAboutFlickity.js"></script>
 <script src="/assets/js/handleArrowButtons.js"></script>
 <script src="/assets/js/about-info-reworked.js"></script>
+<script src="/assets/js/bodyscrolllock.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    const targetElement = document.querySelector(".flickity-slider");
+    bodyScrollLock.disableBodyScroll(targetElement);
+  }); 
+</script>
 
 {% endblock %}
