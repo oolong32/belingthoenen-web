@@ -8,8 +8,6 @@ html, * {
 body {
   background: black;
   width: 100vw;
-  height: 100vh;
-  /* Arbeitshypothese: beginnt nach Address-Bar und reicht bis unter Menu-Bar */
   font-weight: 400;
   font-family: 'Work Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
   font-size: 16px;
@@ -238,7 +236,8 @@ ul#archive-descriptions.hidden {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow-y: hidden; }
 
 .carousel-cell {
   width: 100%;
@@ -488,8 +487,9 @@ body#follow footer {
   #err main {
     margin: 20% auto auto; }
     #err main .error404 {
+      padding: 20px;
       background: black;
-      padding: 20px; }
+      height: 100%; }
       #err main .error404 h2, #err main .error404 p {
         color: white;
         font-size: 18px;
