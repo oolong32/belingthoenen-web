@@ -162,11 +162,6 @@ footer #archive ul {
   box-sizing: content-box;
   list-style: none;
   white-space: nowrap;
-
-  // display: flex; // flex not needed on mobile for slider
-  // flex-direction: row;
-  // justify-content: center;
-  // padding: 0 0.25em;
 }
 footer #archive ul li { margin-right: 0.25em; }
 footer #archive ul li>img { height: 95px; } // thumbnails
@@ -212,7 +207,6 @@ ul#archive-descriptions {
       cursor: pointer; 
       position: relative;
       left: 150px;
-      // background: red;
       height: 44px;
       width: 44px;
     }
@@ -265,7 +259,6 @@ ul#archive-descriptions.hidden {display: none;}
 
 /* About-Page: Layout & Slider {{{ */
 body#about {
-  //height: calc(100vh - 145px); // browser-chrome + footer
   height: auto;
   footer {
     position:fixed;
@@ -276,14 +269,12 @@ body#about {
 
 .about-carousel {
   width: 100%;
-  //height: calc(100vh - 170px); // 60px footer, 85px header, 25px slider-dots
   height: 100%;
   overflow: hidden;
   display: flex;
   align-items: stretch;
 }
 .about-carousel .flickity-viewport { width: 100%; }
-//.about-carousel .flickity-viewport { position: static; }
 .about-carousel .flickity-page-dots {
   bottom: 60px;
   left: 0;
@@ -336,7 +327,6 @@ body#about {
       border: none;
       padding: 0;
       background: black;
-      // font-size: 18px;
       color: white;
     }
  }
@@ -352,8 +342,6 @@ body#about {
 
 /* Follow-Page: Slider {{{ */
 body#follow {
-  //height: calc(100vh - 145px); // browser-chrome + footer
-  // height: auto;
   footer {
     position:fixed;
     bottom: 0px;
@@ -411,7 +399,6 @@ body#follow {
     background: black;
     padding-bottom: 130px; // etwas hoch für iPhone 8, weil iPhone X höheren Menu-Bar hat.
     z-index: 300;
-    // padding: 1em 5em 4em 1em;
     // animate
     transition: all 0.3s;
     img { transition: transform 0.2s ease-in-out; }
@@ -459,9 +446,7 @@ body#follow {
         margin-bottom: 12px;
         font-size: 1em;
       }
-      p.mobile-follow-links {
-        a { font-weight: bold; }
-      }
+      p.mobile-follow-links a { font-weight: bold; }
       .error-type {
         color: lawngreen;
         letter-spacing: 0.025em;
@@ -501,7 +486,6 @@ body#follow {
   justify-content: flex-start;
   main {
     .contact-data {
-      // padding-top: 15px;
       background: black;
       img {
         margin: 45px 0 0;
@@ -634,7 +618,7 @@ body#follow {
     a#home-link {
       color: white;
       position: relative;
-      top: 8px;
+      top: 11px;
       margin-top: .5em;
     }
     a#home-link:hover { color: $violet; } 
@@ -644,7 +628,7 @@ body#follow {
     display: block; // einblenden
     grid-column: 3/-1;
     position: relative;
-    top: -6px;
+    top: -3px;
     ul {
       display: flex;
       flex-direction: column;
@@ -652,8 +636,6 @@ body#follow {
       align-items: right; 
       justify-content: center; // should be right, and header-width same as main
       li {
-        // margin-top: .5em;
-        // margin-left: 2em;
         font-size: 0.8125em;
         text-align: right;
       }
@@ -807,8 +789,6 @@ body#follow {
     }
     p, li, h2, h3, li button { font-size: 18px; }
   }
-  // .about-carousel .carousel-cell.team-member:hover .name { color: $violet; }
-  // .about-carousel .carousel-cell.team-member:hover .name.up { color: white; }
   .about-carousel .carousel-cell.team-member .name { transform: translateY(65px); }
   .about-carousel .carousel-cell.team-member .name.up { transform: translateY(0px); }
   .about-carousel .flickity-page-dots.hidden { display: block; } // no need to hide
@@ -839,14 +819,6 @@ body#follow {
     }
   }
 
-  // footer #archive ul.archive-carousel:after { // actiate carousel
-  //   content: 'flickity'; // corresponds to the ‘watchCSS’ property
-  //   display: none;
-  // }
-  footer #archive ul.active { // ul.active = ul containing li.active
-    // height: auto;
-  }
-
   footer #archive ul li img.archive-thumb { // thumbnails
     transition: all 0.2s ease-in-out;
   }
@@ -860,15 +832,12 @@ body#follow {
 
   /* Small Screen Archive Project Descriptions {{{1 */
   ul#archive-descriptions {
-    // background: lightgray;
     margin-top: 140px;
     top: 0;
     height: calc(100% - 140px);
     min-height: 440px;
     z-index: 1; // in front of project slider, behind archive
     li.archive-project-description {
-      // background: papayawhip;
-      // border: 1px solid orange;
       margin: 0 auto;
       padding: 0;
       padding-top: 20px;
@@ -900,7 +869,6 @@ body#follow {
 
   /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
-    // margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
       width: $card-width;
       height: $card-height;
@@ -975,7 +943,6 @@ body#follow {
   header.shrink,
   header {
     top: 5px;
-    // width: $tablet-width;
     width: 900px; // 19.3. Gleich wie Archive Slider
     #masthead {
       top: 4px;
@@ -998,14 +965,14 @@ body#follow {
     a#home-link {
       color: white;
       position: relative;
-      top: 8px;
+      top: 10px;
       margin-top: .5em;
     }
     a#home-link:hover { color: $violet; } 
   }
   #index header p#home-link-container { display: none; }
   header nav {
-    top: 8px;
+    top: 10px;
     ul {
       display: flex;
       flex-direction: row;
@@ -1067,7 +1034,6 @@ body#follow {
 
   /* Small Screen Follow, Insta-Feed {{{1 */
   #follow main {
-    // margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
       width: $tabletcard-width;
       height: $tabletcard-height;
@@ -1119,7 +1085,6 @@ body#follow {
         font-size: 14px;
         margin: 15px 25px 0;
       }
-      img {}
     }
   }
   /* End Tablet Contact Page }}}1 */
@@ -1187,14 +1152,14 @@ body#follow {
     a#home-link {
       color: white;
       position: relative;
-      top: 8px;
+      top: 11px;
       margin-top: .5em;
     }
     a#home-link:hover { color: $violet; } 
   }
   #index header p#home-link-container { display: none; }
   header nav {
-    top: 8px;
+    top: 11px;
     ul {
       display: flex;
       flex-direction: row;
@@ -1215,9 +1180,7 @@ body#follow {
 
   /* Desktop Main {{{1 */
   
-  main {
-    min-height: 667px;
-  }
+  main { min-height: 667px; }
   
   /* End Desktop Main }}}1 */
 
@@ -1285,16 +1248,13 @@ body#follow {
   
   .about-carousel #about-intro {
     padding: 30px 30px 0;
-    p, li, h2, h3, li > button {
-      font-size: 18px;
-    }
+    p, li, h2, h3, li > button { font-size: 18px; }
   } 
   
   /* End Desktop About }}}1 */
 
   /* Desktop Follow, Insta-Feed {{{1 */
   #follow main {
-    // margin: auto auto 0; // flex: stick to div.links below
     .insta-post {
       width: $card-width;
       height: $card-height;
@@ -1357,8 +1317,6 @@ body#follow {
       }
     }
   }
-  
-  /* End Small Screen 404 Page }}}2 */
   
   /* End Desktop 404 Page }}}1 */
 

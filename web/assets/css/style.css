@@ -576,7 +576,7 @@ body#follow footer {
     header p#home-link-container a#home-link {
       color: white;
       position: relative;
-      top: 8px;
+      top: 11px;
       margin-top: .5em; }
     header p#home-link-container a#home-link:hover {
       color: #ffc850; }
@@ -586,7 +586,7 @@ body#follow footer {
     display: block;
     grid-column: 3/-1;
     position: relative;
-    top: -6px; }
+    top: -3px; }
     header nav ul {
       display: flex;
       flex-direction: column;
@@ -847,14 +847,14 @@ body#follow footer {
     header p#home-link-container a#home-link {
       color: white;
       position: relative;
-      top: 8px;
+      top: 10px;
       margin-top: .5em; }
     header p#home-link-container a#home-link:hover {
       color: #ffc850; }
   #index header p#home-link-container {
     display: none; }
   header nav {
-    top: 8px; }
+    top: 10px; }
     header nav ul {
       display: flex;
       flex-direction: row;
@@ -977,14 +977,14 @@ body#follow footer {
     header p#home-link-container a#home-link {
       color: white;
       position: relative;
-      top: 8px;
+      top: 11px;
       margin-top: .5em; }
     header p#home-link-container a#home-link:hover {
       color: #ffc850; }
   #index header p#home-link-container {
     display: none; }
   header nav {
-    top: 8px; }
+    top: 11px; }
     header nav ul {
       display: flex;
       flex-direction: row;
@@ -1083,7 +1083,6 @@ body#follow footer {
         background-position: 7px 4px;
         width: 24px;
         height: 18px; }
-  /* End Small Screen 404 Page }}}2 */
   /* End Desktop 404 Page }}}1 */ }
 
 /* Hide footer when viewport height to low {{{1 */
