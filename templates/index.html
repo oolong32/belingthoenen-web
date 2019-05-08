@@ -21,10 +21,6 @@
               {# <video src="{{ project.video[0].url }}" autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display"> #}
               <video poster="{{ project.standbild|length ? project.standbild[0].getUrl('width_750') : '' }}" {# src="{{ project.video[0].url }}" #} autoplay playsinline loop muted class="{{ aspectRatio ? 'square' : 'rect' }} project-display">
 
-          {# nur zum abschreiben … #}
-          {# src="{{ entry.archiveImg[0].getUrl('width_960') }}" #}
-          {# nur zum abschreiben … #}
-
                 <source src="{{ project.video[0].url }}" type="video/mp4"></source>
             {% else %} {# erstes Video abspielen #}
 
@@ -57,9 +53,7 @@
   {% include "includes/sliderButtons.html" %}
 </main>
 
-
 <script src="/assets/js/jquery.js"></script>
-{# seems not to work locally? #}
 <script src="https://cdn.jsdelivr.net/npm/marquee3000@1.0.8/marquee3k-noUMD.min.js"></script>
 <script src="/assets/js/flickity.js"></script>
 <script src="/assets/js/initializeHomeFlickity.js"></script>
