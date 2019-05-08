@@ -366,8 +366,7 @@ body#follow footer {
   bottom: 0;
   height: 100%;
   width: 375px;
-  object-fit: cover;
-  object-position: top; }
+  object-fit: cover; }
 
 .carousel-cell > img.project-image {
   object-fit: contain;

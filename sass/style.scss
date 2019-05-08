@@ -377,7 +377,7 @@ body#follow {
   height: 100%;
   width: $card-width;
   object-fit: cover;
-  object-position: top;
+  // object-position: top; 8.5.19. alles hängt zu tief!
 }
 
 .carousel-cell>img.project-image { // projekt mit bild statt video
