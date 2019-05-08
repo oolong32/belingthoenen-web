@@ -109,8 +109,7 @@ body:not(#index) header {
     svg {
       width: 126px;
       height: auto;
-      position: relative;
-      top: -3px;
+      transform: translateY(-3px);
     }
   }
 }
