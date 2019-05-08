@@ -50,7 +50,8 @@
 <script src="/assets/js/flickity.js"></script>
 <script src="/assets/js/initializeFollowFlickity.js"></script>
 <script src="/assets/js/handleArrowButtons.js"></script>
-<script src="/assets/js/bodyscrolllock.js"></script>
+{# <script src="/assets/js/bodyscrolllock.js"></script> not readable on iPhone 6 ff #}
+{#
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
@@ -58,6 +59,7 @@
     bodyScrollLock.disableBodyScroll(targetElement);
   }); 
 </script>
+#}
 {% endblock %}
 
 {# 
