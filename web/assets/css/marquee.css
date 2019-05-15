@@ -32,13 +32,13 @@
 
 .simple-marquee-container .marquee-content-items li {
   display: inline-block;
-  color: rgb(196, 207, 255); /* neu 15.5.19 */
+  color: rgb(184, 198, 255); /* neu 15.5.19 */
   /* color: rgb(150, 170, 255); bisher */
   font-size: 0.75em;
   line-height: 1.1;
   margin-right: 20px;
   padding-right: 25px;
-  border-right: 1px solid rgb(196, 207, 255); /* neu 15.5.19 */
+  border-right: 1px solid rgb(184, 198, 255); /* neu 15.5.19 */
 }
 .simple-marquee-container .marquee-content-items li:last-child {
   margin-right: 0;
