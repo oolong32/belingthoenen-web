@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   // attach event listeners
   for (var i = 0; i < teamMembers.length; i++) {
-    teamMembers[i].addEventListener('click' || 'touchend', handleClick, true);
+    teamMembers[i].addEventListener('click' || 'touchend', handleClick);
     touchclick_cta[i].querySelector('img').addEventListener('click' || 'touchend', handleClick);
 
     // pass number in order to select the cell on click when not active
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   function handleClick(e) {
 
     // better test if this has effects on right click
-    e.preventDefault();
+    //e.preventDefault();
 
     // check if the click was on an active slide,
     // i.e. the one visible on mobile or in the center on desktop

@@ -38,7 +38,7 @@
             <a href=mailto:{{ entry.teamMail }}>{{ entry.teamMail }}</a><br>
             <a href="tel:{{ entry.teamTel|split(' ')|join }}">{{ entry.teamTel }}</a>
              <br> {% if entry.linkedinLink|length %}
-            <a class="linkedin-link" href="entry.linkedinLink" target="_blank">LinkedIn</a>
+            <a class="linkedin-link" href="{{ entry.linkedinLink }}" target="_blank">LinkedIn</a>
               {% endif %} <span>&nbsp;</span>
       </p>
       <img class="close" width="44" height="44" src="/assets/_pic/close.svg" alt="cute close button">
