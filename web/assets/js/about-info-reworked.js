@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // i.e. all slides containing an image of a team member
   var teamMembers = document.querySelectorAll('.team-member');
 
+  var touchclick_cta = document.querySelectorAll('.touchclick-cta');
+
   // all contact data (hidden by default)
   var contactData = document.querySelectorAll('.contact-data');
 
@@ -25,7 +27,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   // attach event listeners
   for (var i = 0; i < teamMembers.length; i++) {
-    teamMembers[i].addEventListener('click' || 'touchend', handleClick);
+    teamMembers[i].addEventListener('click' || 'touchend', handleClick, true);
+    touchclick_cta[i].querySelector('img').addEventListener('click' || 'touchend', handleClick);
 
     // pass number in order to select the cell on click when not active
     teamMembers[i].myPrivateNumber = i;
@@ -44,14 +47,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // check if the click was on an active slide,
     // i.e. the one visible on mobile or in the center on desktop
-    if (!e.target.classList.contains('is-selected')) {
+    if (!e.target.classList.contains('is-selected') && !e.target.classList.contains('touchclick-cta-icon')) {
       // jump to slide
       // add 1 to index, cause there is an additional slide (intro)
       var index = parseInt(e.target.myPrivateNumber) + 1;
       flkty.select(index, false, false);
+      // console.log(e.target.classList);
       return;
     }
 
+    /*
+    if (e.target.classList.contains('touchclick-cta-icon')) {
+      console.log(`${e.target.classList[0]} clicked!`);
+    }
+    */
 
     if (contactDataVisible) {
         // nothing
@@ -78,6 +87,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // hide dots
       dots.classList.add('hidden');
 
+      // hide touchclick cta
+      for (var i = 0; i < touchclick_cta.length; i++) {
+        touchclick_cta[i].classList.add('hidden');
+      }
+
     }
   }
 
@@ -94,16 +108,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
       contactData[i].classList.add('hidden');
     }
 
-      // move name down
-      for (var i = 0; i < names.length; i++) {
-        names[i].classList.remove('up');
-      }
+    // move name down
+    for (var i = 0; i < names.length; i++) {
+      names[i].classList.remove('up');
+    }
 
     // show footer
     footer.classList.remove('hidden');
 
     // show dots
     dots.classList.remove('hidden');
+
+    // show touchclick cta
+    for (var i = 0; i < touchclick_cta.length; i++) {
+      touchclick_cta[i].classList.remove('hidden');
+    }
 
   }
 

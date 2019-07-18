@@ -298,17 +298,37 @@ body#about {
     transform: translateY(-25px);
     transition: all 0.2s ease-in-out;
   }
-  .name.up { transform: translateY(-10px); }
+  .touchclick-cta {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    transform-origin: 50% 50%;
+    transform: translateY(-110px) translateX(0px);
+    opacity: 1;
+    transition: all 0.05s;
+    img {
+      transform-origin: 50% 50%;
+      transform: rotate(-45deg)
+    }
+  }
+  .touchclick-cta.hidden {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+  .name.up { transform: translateY(120px) /*translateX(80px)*/; }
   .contact-data {
     position: relative;
     padding: 10px 30px 30px;
     background: black;
     color: white;
     transition: all 0.3s ease-in-out;
+    .linkedin-link { height: 0;}
   }
   .contact-data.hidden {
     opacity: 0;
     transform: translateY(100px);
+    .linkedin-link { height: auto;}
   }
 }
 .about-carousel #about-intro {
@@ -336,6 +356,10 @@ body#about {
   div.contact-data {
     transform: translateY(100px);
     opacity: 0;
+  }
+  .touchclick-cta {
+    opacity: 0;
+    transform: translateY(120px);
   }
 }
 /* End About-Page: Layout & Slider }}} */
@@ -789,6 +813,7 @@ body#follow {
     }
     p, li, h2, h3, li button { font-size: 18px; }
   }
+  .about-carousel .carousel-cell.team-member .touchclick-cta { transform: translateY(-30px); }
   .about-carousel .carousel-cell.team-member .name { transform: translateY(65px); }
   .about-carousel .carousel-cell.team-member .name.up { transform: translateY(0px); }
   .about-carousel .flickity-page-dots.hidden { display: block; } // no need to hide

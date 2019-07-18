@@ -30,12 +30,18 @@
     {% for entry in aboutEntries %}
     <div class="carousel-cell team-member" style="background: url('{{ entry.teamImg[0].getUrl('width_700') }}') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ">
         <p class="name"><strong>{{ entry.teamName }}</strong>{{ entry.teamRole|length ? "<br>#{entry.teamRole}" | raw : '' }}</p>
+        <div class="touchclick-cta">
+          <img class="touchclick-cta-icon" src="/assets/_pic/close.svg" width="44" height="44" alt="call to action: please click or touch this surface!">
+        </div>
         <div class="contact-data hidden">
       <p>
             <a href=mailto:{{ entry.teamMail }}>{{ entry.teamMail }}</a><br>
             <a href="tel:{{ entry.teamTel|split(' ')|join }}">{{ entry.teamTel }}</a>
+             <br> {% if entry.linkedinLink|length %}
+            <a class="linkedin-link" href="entry.linkedinLink" target="_blank">LinkedIn</a>
+              {% endif %} <span>&nbsp;</span>
       </p>
-      <img class="close" height="44" width="44" src="/assets/_pic/close.svg" alt="cute close button">
+      <img class="close" width="44" height="44" src="/assets/_pic/close.svg" alt="cute close button">
         </div>
     </div>
     {% endfor %}

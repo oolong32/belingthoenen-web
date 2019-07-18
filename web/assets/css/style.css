@@ -293,17 +293,36 @@ body#about {
     background: transparent;
     transform: translateY(-25px);
     transition: all 0.2s ease-in-out; }
+  .about-carousel .carousel-cell.team-member .touchclick-cta {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    transform-origin: 50% 50%;
+    transform: translateY(-110px) translateX(0px);
+    opacity: 1;
+    transition: all 0.05s; }
+    .about-carousel .carousel-cell.team-member .touchclick-cta img {
+      transform-origin: 50% 50%;
+      transform: rotate(-45deg); }
+  .about-carousel .carousel-cell.team-member .touchclick-cta.hidden {
+    opacity: 0;
+    transform: translateY(120px); }
   .about-carousel .carousel-cell.team-member .name.up {
-    transform: translateY(-10px); }
+    transform: translateY(120px); }
   .about-carousel .carousel-cell.team-member .contact-data {
     position: relative;
     padding: 10px 30px 30px;
     background: black;
     color: white;
     transition: all 0.3s ease-in-out; }
+    .about-carousel .carousel-cell.team-member .contact-data .linkedin-link {
+      height: 0; }
   .about-carousel .carousel-cell.team-member .contact-data.hidden {
     opacity: 0;
     transform: translateY(100px); }
+    .about-carousel .carousel-cell.team-member .contact-data.hidden .linkedin-link {
+      height: auto; }
 
 .about-carousel #about-intro {
   padding: 60px 30px 0; }
@@ -330,6 +349,10 @@ body#about {
 .about-carousel .carousel-cell.team-member:not(.is-selected) div.contact-data {
   transform: translateY(100px);
   opacity: 0; }
+
+.about-carousel .carousel-cell.team-member:not(.is-selected) .touchclick-cta {
+  opacity: 0;
+  transform: translateY(120px); }
 
 /* End About-Page: Layout & Slider }}} */
 /* Follow-Page: Slider {{{ */
@@ -710,6 +733,8 @@ body#follow footer {
       color: #ffc850; }
     .about-carousel #about-intro p, .about-carousel #about-intro li, .about-carousel #about-intro h2, .about-carousel #about-intro h3, .about-carousel #about-intro li button {
       font-size: 18px; }
+  .about-carousel .carousel-cell.team-member .touchclick-cta {
+    transform: translateY(-30px); }
   .about-carousel .carousel-cell.team-member .name {
     transform: translateY(65px); }
   .about-carousel .carousel-cell.team-member .name.up {
