@@ -210,6 +210,7 @@ ul#archive-descriptions {
       width: 300px;
       text-align: center;
       order: 2; }
+    ul#archive-descriptions li.archive-project-description video.archive-video,
     ul#archive-descriptions li.archive-project-description img.archive-image {
       margin: 20px 0;
       width: 300px;
@@ -789,6 +790,7 @@ body#follow footer {
       padding-top: 20px;
       width: 700px;
       justify-content: space-around; }
+      ul#archive-descriptions li.archive-project-description video.archive-video,
       ul#archive-descriptions li.archive-project-description img.archive-image {
         margin: auto 0 2vh;
         height: auto;

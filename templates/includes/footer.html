@@ -38,13 +38,34 @@
 </footer>
 
   {% if slug == "index" %} {# Archiv nur sichtbar auf Index/Home #}
+
   {% set archive = craft.entries().section('archive').all() %}
+
   <ul id="archive-descriptions" class="hidden">
+
     {% for entry in archive %}
-      {# add a description, if there’s an image to show #}
-      {# there’s only a test for images, because more important than text #}
-      {% if entry.archiveImg | length %}
-      <li class="archive-project-description hidden">
+
+      <li class="archive-project-description hidden"> <!-- Start Single Archive Project -->
+
+      {% if entry.video|length %} {# video or text? #}
+
+        {# Video Markup {{{#}
+
+        {% set video_url = entry.video[0].url %}
+        
+        <video controls paused playsinline loop muted class="archive-video">
+          <source src="{{ video_url }}" type="video/mp4"></source>
+          Sorry, your browser doesn't support embedded videos, 
+          but don't worry, you can <a href="{{ video_url }}">download it</a>
+          and watch it with your favorite video player!
+        </video>
+
+        {# Video Markup }}}#}
+
+      {% else %}
+
+        {# Image Markup {{{#}
+
         <img
           class="archive-image"
           src="{{ entry.archiveImg[0].getUrl('width_960') }}"
@@ -52,32 +73,42 @@
           width="{{ entry.archiveImg[0].getWidth('width_960') // 2 }}" {# ev. muss das abgeschaltet werden? #}
           height="{{ entry.archiveImg[0].getHeight('width_960') // 2 }}" {# ev. muss das abgeschaltet werden? #}
           >
-        <div class="archive-project-description-text">
-          <p><strong>{{ entry.title }}</strong> {{ entry.description }}</p>
-          {% if entry.extLink|length %}
-          {% set extLinkUrl = entry.extLink %}
-          {% set extLinkAddress = extLinkUrl|split('/')[2] %}
-          <p class="archive-link-external">
-            <a href="{{ extLinkUrl }}" title="{{ extLinkAddress }}" target="_blank">{{ extLinkAddress }}</a>
-          </p>
-          {% endif %}
-        </div>
-        
-        <div class="close-handler"> <!-- handles click events -->
-        <!-- StartClose Button SVG, doesn’t register pointer-events (CSS) --> 
-          <svg class="close" width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <circle id="Oval" class="close-handler" fill="#000000" cx="22" cy="22" r="22"></circle>
-            <g id="Group-2" transform="translate(13.000000, 14.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2">
-              <path d="M0,1 C5.33333333,5.66666667 10.6666667,10.3333333 16,15" id="Path-9"></path>
-              <path d="M15,0 C11.6666667,5 8.33333333,10 5,15" id="Path-10"></path>
-            </g>
-          </svg>
-        </div>
-        <!-- End Close Button SVG -->
 
-      </li>
-      {% endif %}
-    {% endfor %}
-    {% endif %}
+        {# Image Markup }}}#}
+
+      {% endif %} {# ? #}
+
+      {# Description and Link {{{#}
+      <div class="archive-project-description-text">
+        <p><strong>{{ entry.title }}</strong> {{ entry.description }}</p>
+        {% if entry.extLink|length %}
+        {% set extLinkUrl = entry.extLink %}
+        {% set extLinkAddress = extLinkUrl|split('/')[2] %}
+        <p class="archive-link-external">
+          <a href="{{ extLinkUrl }}" title="{{ extLinkAddress }}" target="_blank">{{ extLinkAddress }}</a>
+        </p>
+        {% endif %} {# is there an external link? #}
+      </div>
+      {# Description and Link }}}#}
+      
+      {# Close Button {{{#}
+      <div class="close-handler"> <!-- handles click events -->
+      <!-- StartClose Button SVG, doesn’t register pointer-events (CSS) --> 
+        <svg class="close" width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <circle id="Oval" class="close-handler" fill="#000000" cx="22" cy="22" r="22"></circle>
+          <g id="Group-2" transform="translate(13.000000, 14.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2">
+            <path d="M0,1 C5.33333333,5.66666667 10.6666667,10.3333333 16,15" id="Path-9"></path>
+            <path d="M15,0 C11.6666667,5 8.33333333,10 5,15" id="Path-10"></path>
+          </g>
+        </svg>
+      </div>
+      <!-- End Close Button SVG -->
+      {# Close Button }}}#}
+
+    </li> <!-- End Single Archive Project -->
+
+      {% endfor %} {# iterate over archive projects #}
+
+    {% endif %} {# is slug = index? #}
     
   </ul>

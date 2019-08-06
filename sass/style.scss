@@ -210,6 +210,7 @@ ul#archive-descriptions {
       text-align: center;
       order: 2;
     }
+    video.archive-video,
     img.archive-image {
       margin: 20px 0;
       width: 300px;
@@ -880,6 +881,7 @@ body#follow {
       padding-top: 20px;
       width: $smallscreen-width;
       justify-content: space-around;
+      video.archive-video,
       img.archive-image {
         // urspr. gab es hierfür keine desktop-regeln
         margin: auto 0 2vh;
@@ -1274,6 +1276,7 @@ body#follow {
   ul#archive-descriptions {
     li.archive-project-description {
       width: $desktop-width;
+      video.archive-video,
       img.archive-image {}
       div.archive-project-description-text {}
       .close {}
