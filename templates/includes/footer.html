@@ -49,22 +49,24 @@
           class="archive-image"
           src="{{ entry.archiveImg[0].getUrl('width_960') }}"
           alt="Beling Thoenen, {{ entry.title }}"
-          width="{{ entry.archiveImg[0].getWidth('width_960') // 2 }}" // ev. muss das abgeschaltet werden?
-          height="{{ entry.archiveImg[0].getHeight('width_960') // 2 }}" // ev. muss das abgeschaltet werden?
+          width="{{ entry.archiveImg[0].getWidth('width_960') // 2 }}" {# ev. muss das abgeschaltet werden? #}
+          height="{{ entry.archiveImg[0].getHeight('width_960') // 2 }}" {# ev. muss das abgeschaltet werden? #}
           >
         <div class="archive-project-description-text">
           <p><strong>{{ entry.title }}</strong> {{ entry.description }}</p>
           {% if entry.extLink|length %}
           {% set extLinkUrl = entry.extLink %}
           {% set extLinkAddress = extLinkUrl|split('/')[2] %}
-          <p class="archive-link-external"><a href="{{ extLinkUrl }}" title="{{ extLinkAddress }}" target="_blank">{{ extLinkAddress }}</p>
+          <p class="archive-link-external">
+            <a href="{{ extLinkUrl }}" title="{{ extLinkAddress }}" target="_blank">{{ extLinkAddress }}</a>
+          </p>
           {% endif %}
         </div>
         
         <div class="close-handler"> <!-- handles click events -->
         <!-- StartClose Button SVG, doesn’t register pointer-events (CSS) --> 
           <svg class="close" width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <circle id="Oval" class="close-handler fill="#000000" cx="22" cy="22" r="22"></circle>
+            <circle id="Oval" class="close-handler" fill="#000000" cx="22" cy="22" r="22"></circle>
             <g id="Group-2" transform="translate(13.000000, 14.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2">
               <path d="M0,1 C5.33333333,5.66666667 10.6666667,10.3333333 16,15" id="Path-9"></path>
               <path d="M15,0 C11.6666667,5 8.33333333,10 5,15" id="Path-10"></path>
