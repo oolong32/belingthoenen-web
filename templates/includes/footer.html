@@ -54,6 +54,11 @@
           >
         <div class="archive-project-description-text">
           <p><strong>{{ entry.title }}</strong> {{ entry.description }}</p>
+          {% if entry.extLink|length %}
+          {% set extLinkUrl = entry.extLink %}
+          {% set extLinkAddress = extLinkUrl|split('/')[2] %}
+          <p class="archive-link-external"><a href="{{ extLinkUrl }}" title="{{ extLinkAddress }}" target="_blank">{{ extLinkAddress }}</p>
+          {% endif %}
         </div>
         
         <div class="close-handler"> <!-- handles click events -->

@@ -49,6 +49,16 @@ a:focus,
 a:hover {
   color: #ffc850; }
 
+p.archive-link-external a,
+p.archive-link-external a:link,
+p.archive-link-external a:active,
+p.archive-link-external a:visited {
+  color: palegreen; }
+
+p.archive-link-external a:focus,
+p.archive-link-external a:hover {
+  color: #ffc850; }
+
 /* End Links }}} */
 /* Header {{{ */
 header {

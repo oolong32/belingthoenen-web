@@ -52,6 +52,18 @@ a:visited {
 }
 a:focus,
 a:hover { color: $violet; }
+
+p.archive-link-external {
+a,
+a:link,
+a:active,
+a:visited {
+  color: palegreen;
+}
+a:focus,
+a:hover { color: $violet; }
+}
+
 /* End Links }}} */
 
 /* Header {{{ */
