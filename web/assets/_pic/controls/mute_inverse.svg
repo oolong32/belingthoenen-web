@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Control/mute_inverse</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Control/mute_inverse" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#FFFFFF" cx="22" cy="22" r="22"></circle>
+        <polygon id="Path" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="12.8038433 19.6092729 14.3723048 28.3440376 20.4860728 27.3380348 29.2446784 33.4394531 26.8227212 10.6926985 19.396121 19.6092729"></polygon>
+        <path d="M8,10 C17,17.6666667 26,25.3333333 35,33" id="Path-9" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M34,8 C28.3333333,16.3333333 22.6666667,24.6666667 17,33" id="Path-10" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round"></path>
+    </g>
+</svg>

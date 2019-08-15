@@ -53,12 +53,21 @@
 
         {% set video_url = entry.video[0].url %}
         
-        <video controls paused playsinline loop muted class="archive-video">
-          <source src="{{ video_url }}" type="video/mp4"></source>
-          Sorry, your browser doesn't support embedded videos, 
-          but don't worry, you can <a href="{{ video_url }}">download it</a>
-          and watch it with your favorite video player!
-        </video>
+        <div class="video-container">
+          <video paused playsinline loop controls muted class="archive-video">
+            <source src="{{ video_url }}" type="video/mp4"></source>
+            Sorry, your browser doesn't support embedded videos, 
+            but don't worry, you can <a href="{{ video_url }}">download it</a>
+            and watch it with your favorite video player!
+          </video>
+
+          {#
+          Oh shit: die netten buttons hier funktionieren natürlich auf mobile nie und nimmer :-(
+          <button class="play-pause"></button>
+          <button class="mute"></button>
+          <button class="full-screen"></button>
+          #}
+        </div>
 
         {# Video Markup }}}#}
 

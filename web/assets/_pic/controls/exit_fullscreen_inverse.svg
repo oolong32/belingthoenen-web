@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Control/exit_fullscreen_inverse" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#FFFFFF" cx="22" cy="22" r="22"></circle>
+        <polyline id="Path-2" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="26 9 25 20 34 21"></polyline>
+        <polyline id="Path-8" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="9 23 21 23 19 37"></polyline>
+    </g>
+</svg>

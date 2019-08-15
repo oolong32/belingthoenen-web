@@ -16,10 +16,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     archive[i].archiveOrder = i;
   }
 
+  /* Event Handler: Show/Hide Description {{{*/
   function handleArchiveClick(e) {
     if (e.target.classList.contains('archive-project-description')) {
-      // clicked on the description
-      // such click should not close the modal
+      // clicked on the description such click should not close the modal
+      
       return true;
     }
 
@@ -68,6 +69,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // move thumb to center
     var index = parseInt(clickedThumb.archiveOrder);
     flktyArc.select(index, true, false);
+
+    // is there a video running?
+    var allArchiveVideos = document.querySelectorAll('.archive-video');
+    stopVideos(allArchiveVideos);
   }
 
   function hideArchiveDescription(e) {
@@ -101,6 +106,68 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // show project slider arrows
     projectSliderArrowLeft.style.opacity = '1';
     projectSliderArrowRight.style.opacity = '1';
-  }
 
+    // is there a video running?
+    var allArchiveVideos = document.querySelectorAll('.archive-video');
+    stopVideos(allArchiveVideos);
+  }
+  /* Event Handler: Show/Hide Description }}}*/
+
+  // find all videos in archive entries
+  descriptions.forEach(project => {
+    let videoContainer = project.querySelector('.video-container');
+    if (videoContainer) {
+      let video = videoContainer.querySelector('video');
+
+      // reset dimensions of container to position custom buttons
+      video.addEventListener('loadedmetadata', function(e) {
+        let width = this.videoWidth;
+        let height = this.videoHeight;
+        console.log(`Video width: ${width}, height: ${height}`);
+        if (width > height) {
+          // 16:9
+          
+          // videoContainer.style.paddingBottom = '56.25%';
+        } else {
+          // 9:16
+          // videoContainer.style.width = '50%';
+          // videoContainer.style.paddingBottom = '89%';
+          // unbefriedigend
+          // muss auch hier mit fixen Werten gearbeitet werden?
+        }
+      }, false);
+
+      // hook up buttons
+      // or better not, because zomg – it won’t work on mobile
+      /*
+      let playButton = videoContainer.querySelector('.play-pause');
+      let muteButton = videoContainer.querySelector('.mute')
+      let fullscreenButton = videoContainer.querySelector('.full-screen')
+
+      playButton.addEventListener('click' || 'touchend', function() {
+        if (video.paused == true) {
+          video.play();
+          playButton.classList.add('active')
+        } else {
+          video.pause();
+          playButton.classList.remove('active')
+        }
+      });
+
+      muteButton.addEventListener('click' || 'touchend', function() {
+      });
+
+      fullscreenButton.addEventListener('click' || 'touchend', function() {
+      });
+      */
+    }
+  });
+  
+  function stopVideos(arrOfVids) {
+    arrOfVids.forEach(function(vid) {
+      if (vid.paused == false) {
+        vid.pause();
+      }
+    });
+  }
 });

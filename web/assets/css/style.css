@@ -49,16 +49,6 @@ a:focus,
 a:hover {
   color: #ffc850; }
 
-p.archive-link-external a,
-p.archive-link-external a:link,
-p.archive-link-external a:active,
-p.archive-link-external a:visited {
-  color: palegreen; }
-
-p.archive-link-external a:focus,
-p.archive-link-external a:hover {
-  color: #ffc850; }
-
 /* End Links }}} */
 /* Header {{{ */
 header {
@@ -210,7 +200,16 @@ ul#archive-descriptions {
       width: 300px;
       text-align: center;
       order: 2; }
-    ul#archive-descriptions li.archive-project-description video.archive-video,
+    ul#archive-descriptions li.archive-project-description .video-container {
+      margin: 20px auto 20px;
+      width: 100%;
+      max-width: 90%;
+      max-height: 630px;
+      display: flex;
+      justify-content: center; }
+      ul#archive-descriptions li.archive-project-description .video-container video {
+        max-width: 100%;
+        max-height: 100%; }
     ul#archive-descriptions li.archive-project-description img.archive-image {
       margin: 20px 0;
       width: 300px;
@@ -227,6 +226,8 @@ ul#archive-descriptions {
       order: 1;
       z-index: 200;
       align-self: flex-end; }
+  ul#archive-descriptions .video-container:hover button {
+    opacity: 1; }
   ul#archive-descriptions li.archive-project-description.hidden {
     display: none;
     height: 0;
@@ -784,13 +785,14 @@ body#follow footer {
     height: calc(100% - 140px);
     min-height: 440px;
     z-index: 1; }
+    ul#archive-descriptions .video-container {
+      margin: auto auto 20px; }
     ul#archive-descriptions li.archive-project-description {
       margin: 0 auto;
       padding: 0;
       padding-top: 20px;
       width: 700px;
       justify-content: space-around; }
-      ul#archive-descriptions li.archive-project-description video.archive-video,
       ul#archive-descriptions li.archive-project-description img.archive-image {
         margin: auto 0 2vh;
         height: auto;
@@ -1063,6 +1065,8 @@ body#follow footer {
   /* Archive Project Descriptions {{{1 */
   ul#archive-descriptions li.archive-project-description {
     width: 1165px; }
+    ul#archive-descriptions li.archive-project-description .video-container {
+      margin: auto auto 20px; }
   /* End Archive Project Descriptions }}}1 */
   /* Desktop About {{{1 */
   .about-carousel #about-intro {

@@ -53,16 +53,17 @@ a:visited {
 a:focus,
 a:hover { color: $violet; }
 
-p.archive-link-external {
-a,
-a:link,
-a:active,
-a:visited {
-  color: palegreen;
-}
-a:focus,
-a:hover { color: $violet; }
-}
+// wahrsch. unnötig …
+// p.archive-link-external {
+// a,
+// a:link,
+// a:active,
+// a:visited {
+//   color: palegreen;
+// }
+// a:focus,
+// a:hover { color: $violet; }
+// }
 
 /* End Links }}} */
 
@@ -197,6 +198,7 @@ ul#archive-descriptions {
   flex-direction: column;
   justify-content: stretch;
   li.archive-project-description {
+    // min-height: 700px;
     height: 100%;
     background: black;
     color: white;
@@ -210,7 +212,55 @@ ul#archive-descriptions {
       text-align: center;
       order: 2;
     }
-    video.archive-video,
+    // new August
+    .video-container {
+      margin: 20px auto 20px; // on mobile
+      width: 100%;
+      max-width: 90%;
+      max-height: 630px;
+      display: flex;
+      justify-content: center;
+      video {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      // button.play-pause,
+      // button.mute,
+      // button.full-screen {
+      //   outline: none;
+      //   border: none;
+      //   width: 44px;
+      //   height: 44px;
+      //   background: transparent;
+      //   z-index: 100;
+      //   position:absolute;
+      // }
+
+      // button.play-pause {  background-image: url('/assets/_pic/controls/play.svg'); }
+      // button.play-pause.active {  background-image: url('/assets/_pic/controls/pause.svg'); }
+      // button.mute {        background-image: url('/assets/_pic/controls/unmute.svg'); }
+      // button.full-screen { background-image: url('/assets/_pic/controls/fullscreen.svg'); }
+      // button.play-pause:hover {  background-image: url('/assets/_pic/controls/play_inverse.svg'); }
+      // button.play-pause.active:hover {  background-image: url('/assets/_pic/controls/pause_inverse.svg'); }
+      // button.mute:hover {        background-image: url('/assets/_pic/controls/unmute_inverse.svg'); }
+      // button.full-screen:hover { background-image: url('/assets/_pic/controls/fullscreen_inverse.svg'); }
+    }
+    // button {
+      // opacity: 0;
+      // transition: opacity 0.2s ease-in-out;
+    // }
+    // button.play-pause {
+      // top: calc(50% - 22px); left: calc(50% - 22px);
+    // }
+    // button.full-screen {
+      // top: 20px;
+      // left: 20px;
+    // }
+    // button.mute {
+      // bottom: 20px;
+      // right: 20px;
+    // }
+    // new August
     img.archive-image {
       margin: 20px 0;
       width: 300px;
@@ -233,6 +283,7 @@ ul#archive-descriptions {
       // pointer-events: none; // prevent stupid stuff happening
     }
   }
+  .video-container:hover button { opacity: 1; }
   li.archive-project-description.hidden {
     display: none;
     height: 0;
@@ -875,13 +926,14 @@ body#follow {
     height: calc(100% - 140px);
     min-height: 440px;
     z-index: 1; // in front of project slider, behind archive
+    .video-container { margin: auto auto 20px; }
     li.archive-project-description {
       margin: 0 auto;
       padding: 0;
       padding-top: 20px;
       width: $smallscreen-width;
       justify-content: space-around;
-      video.archive-video,
+      video.archive-video {}
       img.archive-image {
         // urspr. gab es hierfür keine desktop-regeln
         margin: auto 0 2vh;
@@ -1276,7 +1328,8 @@ body#follow {
   ul#archive-descriptions {
     li.archive-project-description {
       width: $desktop-width;
-      video.archive-video,
+      .video-container { margin: auto auto 20px; }
+      video.archive-video {}
       img.archive-image {}
       div.archive-project-description-text {}
       .close {}
