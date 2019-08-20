@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var header = document.querySelector('header');
   var projectSliderArrowLeft = document.querySelector('#customButtonLeft');
   var projectSliderArrowRight = document.querySelector('#customButtonRight');
+  var allArchiveVideos = document.querySelectorAll('.archive-video');
+  var video = null; // empty Var, gets video when archive Project active and video available
 
   for (var i = 0; i < archive.length; i++ ) {
     archive[i].addEventListener('click' || 'touchend', handleArchiveClick);
@@ -19,12 +21,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   /* Event Handler: Show/Hide Description {{{*/
   function handleArchiveClick(e) {
     if (e.target.classList.contains('archive-project-description')) {
-      // clicked on the description such click should not close the modal
-      
+      // click on the description should not close the modal
       return true;
     }
 
-    //var archiveDescription = e.target.parentElement.children[1];
     var archiveDescription = descriptions[e.target.parentElement.archiveOrder];
 
     archiveDescription.classList.remove('hidden');
@@ -71,8 +71,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     flktyArc.select(index, true, false);
 
     // is there a video running?
-    var allArchiveVideos = document.querySelectorAll('.archive-video');
-    stopVideos(allArchiveVideos);
+    // stopVideos(allArchiveVideos);
+    
+    // Is there a Video in this Archive-Project?
+    video = archiveDescription.querySelector('video');
+    if (video) {
+      playVideo(video);
+    } else {
+      // no video, play nothing
+    }
+      
   }
 
   function hideArchiveDescription(e) {
@@ -108,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     projectSliderArrowRight.style.opacity = '1';
 
     // is there a video running?
-    var allArchiveVideos = document.querySelectorAll('.archive-video');
     stopVideos(allArchiveVideos);
   }
   /* Event Handler: Show/Hide Description }}}*/
@@ -163,6 +170,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   });
   
+  function playVideo(vid) {
+    if (vid.paused == true) {
+      vid.play();
+    }
+  }
+
   function stopVideos(arrOfVids) {
     arrOfVids.forEach(function(vid) {
       if (vid.paused == false) {
