@@ -54,7 +54,7 @@
         {% set video_url = entry.video[0].url %}
         
         <div class="video-container">
-          <video paused playsinline loop controls muted class="archive-video">
+          <video poster="{{ entry.archiveImg[0].getUrl('width_960') }}" paused playsinline loop controls muted class="archive-video">
             <source src="{{ video_url }}" type="video/mp4"></source>
             Sorry, your browser doesn't support embedded videos, 
             but don't worry, you can <a href="{{ video_url }}">download it</a>
