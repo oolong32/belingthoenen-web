@@ -218,8 +218,7 @@ ul#archive-descriptions {
       width: 100%;
       max-width: 90%;
       max-height: 630px;
-      display: flex;
-      justify-content: center;
+      display: block;
       video {
         max-width: 100%;
         max-height: 100%;
@@ -668,6 +667,7 @@ body#follow {
     margin: 0 auto;
     padding-top: 28px; // marquee
     height: 140px;
+    min-height: 140px;
     display: grid;
     background: transparent;
     grid-template-columns: 1fr 1fr 1fr;
@@ -926,14 +926,20 @@ body#follow {
     height: calc(100% - 140px);
     min-height: 440px;
     z-index: 1; // in front of project slider, behind archive
-    .video-container { margin: auto auto 20px; }
     li.archive-project-description {
       margin: 0 auto;
       padding: 0;
       padding-top: 20px;
       width: $smallscreen-width;
-      justify-content: space-around;
-      video.archive-video {}
+      justify-content: space-around; 
+      .video-container {
+        margin: auto auto 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; // no overlapping with header on shallow viewports
+        video.archive-video { }
+      }
       img.archive-image {
         // urspr. gab es hierfür keine desktop-regeln
         margin: auto 0 2vh;
