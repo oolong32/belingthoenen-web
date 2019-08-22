@@ -903,7 +903,13 @@ body#follow {
         justify-content: center;
         align-items: center;
         overflow: hidden; // no overlapping with header on shallow viewports
-        video.archive-video { }
+        video.archive-video {
+          margin: auto 0 2vh;
+          height: auto;
+          width: 40vh;
+          min-width: 300px;
+          max-width: 480px;
+        }
       }
       img.archive-image {
         // urspr. gab es hierfür keine desktop-regeln
@@ -1302,10 +1308,7 @@ body#follow {
       .video-container { margin: auto auto 20px; }
       video.archive-video {}
       img.archive-image {}
-      div.archive-project-description-text {
-        width: 100%;
-        max-width: 600px;
-      }
+      div.archive-project-description-text { }
       .close {}
     }
   }

@@ -798,6 +798,12 @@ body#follow footer {
         justify-content: center;
         align-items: center;
         overflow: hidden; }
+        ul#archive-descriptions li.archive-project-description .video-container video.archive-video {
+          margin: auto 0 2vh;
+          height: auto;
+          width: 40vh;
+          min-width: 300px;
+          max-width: 480px; }
       ul#archive-descriptions li.archive-project-description img.archive-image {
         margin: auto 0 2vh;
         height: auto;
@@ -1072,9 +1078,6 @@ body#follow footer {
     width: 1165px; }
     ul#archive-descriptions li.archive-project-description .video-container {
       margin: auto auto 20px; }
-    ul#archive-descriptions li.archive-project-description div.archive-project-description-text {
-      width: 100%;
-      max-width: 600px; }
   /* End Archive Project Descriptions }}}1 */
   /* Desktop About {{{1 */
   .about-carousel #about-intro {
