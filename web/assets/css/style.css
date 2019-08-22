@@ -197,7 +197,8 @@ ul#archive-descriptions {
     align-items: center;
     padding: 0 10px; }
     ul#archive-descriptions li.archive-project-description div.archive-project-description-text {
-      width: 300px;
+      min-width: 300px;
+      max-width: 480px;
       text-align: center;
       order: 2; }
     ul#archive-descriptions li.archive-project-description .video-container {
@@ -1071,6 +1072,9 @@ body#follow footer {
     width: 1165px; }
     ul#archive-descriptions li.archive-project-description .video-container {
       margin: auto auto 20px; }
+    ul#archive-descriptions li.archive-project-description div.archive-project-description-text {
+      width: 100%;
+      max-width: 600px; }
   /* End Archive Project Descriptions }}}1 */
   /* Desktop About {{{1 */
   .about-carousel #about-intro {

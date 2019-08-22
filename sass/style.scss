@@ -198,7 +198,6 @@ ul#archive-descriptions {
   flex-direction: column;
   justify-content: stretch;
   li.archive-project-description {
-    // min-height: 700px;
     height: 100%;
     background: black;
     color: white;
@@ -208,7 +207,9 @@ ul#archive-descriptions {
     align-items: center;
     padding: 0 10px;
     div.archive-project-description-text {
-      width: 300px;
+      // width: 300px;
+      min-width: 300px;
+      max-width: 480px;
       text-align: center;
       order: 2;
     }
@@ -223,43 +224,7 @@ ul#archive-descriptions {
         max-width: 100%;
         max-height: 100%;
       }
-      // button.play-pause,
-      // button.mute,
-      // button.full-screen {
-      //   outline: none;
-      //   border: none;
-      //   width: 44px;
-      //   height: 44px;
-      //   background: transparent;
-      //   z-index: 100;
-      //   position:absolute;
-      // }
-
-      // button.play-pause {  background-image: url('/assets/_pic/controls/play.svg'); }
-      // button.play-pause.active {  background-image: url('/assets/_pic/controls/pause.svg'); }
-      // button.mute {        background-image: url('/assets/_pic/controls/unmute.svg'); }
-      // button.full-screen { background-image: url('/assets/_pic/controls/fullscreen.svg'); }
-      // button.play-pause:hover {  background-image: url('/assets/_pic/controls/play_inverse.svg'); }
-      // button.play-pause.active:hover {  background-image: url('/assets/_pic/controls/pause_inverse.svg'); }
-      // button.mute:hover {        background-image: url('/assets/_pic/controls/unmute_inverse.svg'); }
-      // button.full-screen:hover { background-image: url('/assets/_pic/controls/fullscreen_inverse.svg'); }
     }
-    // button {
-      // opacity: 0;
-      // transition: opacity 0.2s ease-in-out;
-    // }
-    // button.play-pause {
-      // top: calc(50% - 22px); left: calc(50% - 22px);
-    // }
-    // button.full-screen {
-      // top: 20px;
-      // left: 20px;
-    // }
-    // button.mute {
-      // bottom: 20px;
-      // right: 20px;
-    // }
-    // new August
     img.archive-image {
       margin: 20px 0;
       width: 300px;
@@ -1337,7 +1302,10 @@ body#follow {
       .video-container { margin: auto auto 20px; }
       video.archive-video {}
       img.archive-image {}
-      div.archive-project-description-text {}
+      div.archive-project-description-text {
+        width: 100%;
+        max-width: 600px;
+      }
       .close {}
     }
   }
