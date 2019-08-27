@@ -53,17 +53,16 @@ a:visited {
 a:focus,
 a:hover { color: $violet; }
 
-// wahrsch. unnötig …
-// p.archive-link-external {
-// a,
-// a:link,
-// a:active,
-// a:visited {
-//   color: palegreen;
-// }
-// a:focus,
-// a:hover { color: $violet; }
-// }
+p.archive-link-external { 
+ a:before {
+        display: inline-block;
+        content: "";
+        background: url('/assets/_pic/back_arrow.svg') no-repeat 7px 4px;
+        width: 24px;
+        height: 18px;
+        transform: scale(0.7) translate(3px, 6px);
+      }
+}
 
 /* End Links }}} */
 
