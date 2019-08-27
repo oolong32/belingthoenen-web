@@ -210,6 +210,8 @@ ul#archive-descriptions {
       ul#archive-descriptions li.archive-project-description .video-container video {
         max-width: 100%;
         max-height: 100%; }
+    ul#archive-descriptions li.archive-project-description .archive-media-link {
+      margin: 0; }
     ul#archive-descriptions li.archive-project-description img.archive-image {
       margin: 20px 0;
       width: 300px;
@@ -792,6 +794,8 @@ body#follow footer {
       padding-top: 20px;
       width: 700px;
       justify-content: space-around; }
+      ul#archive-descriptions li.archive-project-description .archive-media-link {
+        margin: auto auto 0; }
       ul#archive-descriptions li.archive-project-description .video-container {
         margin: auto auto 20px;
         display: flex;

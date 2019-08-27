@@ -60,13 +60,6 @@
             but don't worry, you can <a href="{{ video_url }}">download it</a>
             and watch it with your favorite video player!
           </video>
-
-          {#
-          Oh shit: die netten buttons hier funktionieren natürlich auf mobile nie und nimmer :-(
-          <button class="play-pause"></button>
-          <button class="mute"></button>
-          <button class="full-screen"></button>
-          #}
         </div>
 
         {# Video Markup }}}#}
@@ -75,6 +68,9 @@
 
         {# Image Markup {{{#}
 
+        {% if entry.extLink|length %}
+          <a class="archive-media-link" href="{{ entry.extLink }}">
+        {% endif %}
         <img
           class="archive-image"
           src="{{ entry.archiveImg[0].getUrl('width_960') }}"
@@ -82,6 +78,9 @@
           width="{{ entry.archiveImg[0].getWidth('width_960') // 2 }}" {# ev. muss das abgeschaltet werden? #}
           height="{{ entry.archiveImg[0].getHeight('width_960') // 2 }}" {# ev. muss das abgeschaltet werden? #}
           >
+        {% if entry.extLink|length %}
+          </a>
+        {% endif %}
 
         {# Image Markup }}}#}
 
