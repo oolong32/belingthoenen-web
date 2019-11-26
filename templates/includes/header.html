@@ -7,8 +7,10 @@
 <header>
 
 {% set entry = craft.entries().section('home').one() %}
-{% set marquee = entry.newsTicker.all() %}
+{# Nov 26th: marquee changes from matrix to structure, probably variable 'entry' obsolete after that. #}
 
+{# set marquee = entry.newsTicker.all() #}
+{% set marquee =  craft.entries().section('newsTicker').all() %}
 
   {% if slug == "index" and marquee|length %}
     {% set counter = 0  %}
@@ -23,7 +25,7 @@
           {% if ( counter % 3 == 0 ) and (remainingItems > 1) %}
             <li><strong>Coming Soon</strong></li>
           {% endif %}
-          <li>{{ newsTickerItem.text }}</li>
+          <li>{{ newsTickerItem.title }}</li>
           {% set counter = counter + 1 %}
           {% set remainingItems = remainingItems - 1 %}
         {% endfor %}
