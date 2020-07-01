@@ -1,0 +1,38 @@
+{
+    "name": "dudagroup/dudagram",
+    "description": "Insta API",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dudagroup",
+            "homepage": "https://dudagroup.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0",
+        "putyourlightson/craft-log-to-file": "^1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "dudagroup\\dudagram\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "dudagram",
+        "handle": "dudagram",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "components": {
+            "dudagramService": "dudagroup\\dudagram\\services\\DudagramService"
+        },
+        "class": "dudagroup\\dudagram\\Dudagram"
+    }
+}

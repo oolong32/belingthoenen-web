@@ -11,8 +11,6 @@ config/general.php
 # Gulp related files
 gulpfile.js
 node_modules/
-composer.lock
-composer.json
 storage/config-backups/
 storage/composer-backups/
 package-lock.json
